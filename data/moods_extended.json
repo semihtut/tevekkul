@@ -1,0 +1,1753 @@
+{
+  "version": "2.0.0",
+  "schema": "mood_categories_extended",
+  "description": "Extended mood/emotional state categories (20+) with 4-5 Qur'anic references each. Trilingual support.",
+  "data_quality_note": "Ayah text is NOT included to avoid fabrication. Only surah:ayah references with theme notes. Verify exact Arabic and Turkish text from trusted mushaf/tafsir sources before shipping.",
+  "default_language": "tr",
+  "supported_languages": ["tr", "en", "fi"],
+
+  "moods": [
+    {
+      "id": "anxious",
+      "labels": {
+        "tr": "Kaygılı",
+        "en": "Anxious",
+        "fi": "Ahdistunut"
+      },
+      "icon": "cloud-rain",
+      "color": "#6B7280",
+      "descriptions": {
+        "tr": "Endişe ve huzursuzluk hissi",
+        "en": "Feeling of worry and restlessness",
+        "fi": "Huolen ja levottomuuden tunne"
+      },
+      "recommended_dhikr_suggestions": ["as-salam", "al-wakil", "al-latif", "al-mumin"],
+      "ayah_references": [
+        {
+          "surah": 13,
+          "surah_name": "Ar-Ra'd",
+          "ayah_start": 28,
+          "theme_notes": {
+            "tr": "Kalpler ancak Allah'ı anmakla huzur bulur.",
+            "en": "Hearts find peace only in the remembrance of Allah.",
+            "fi": "Sydämet löytävät rauhan vain Allahin muistamisessa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 286,
+          "theme_notes": {
+            "tr": "Allah kimseye gücünün yetmeyeceği yük yüklemez.",
+            "en": "Allah does not burden a soul beyond its capacity.",
+            "fi": "Allah ei kuormita sielua yli sen kyvyn."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 65,
+          "surah_name": "At-Talaq",
+          "ayah_start": 2,
+          "ayah_end": 3,
+          "theme_notes": {
+            "tr": "Kim Allah'a tevekkül ederse O ona yeter.",
+            "en": "Whoever relies upon Allah - He is sufficient for him.",
+            "fi": "Kuka ikinä luottaa Allahiin - Hän riittää hänelle."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 173,
+          "theme_notes": {
+            "tr": "Allah bize yeter, O ne güzel vekildir.",
+            "en": "Sufficient for us is Allah, and He is the best Disposer of affairs.",
+            "fi": "Allah riittää meille, ja Hän on paras asioiden hoitaja."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 5,
+          "ayah_end": 6,
+          "theme_notes": {
+            "tr": "Zorluğun yanında kolaylık vardır.",
+            "en": "With hardship comes ease.",
+            "fi": "Vaikeuden mukana tulee helpotus."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Kaygı, kontrolü elimizde tutmaya çalışmaktan doğar. Kontrolü Allah'a bırakmak, yükü hafifletir.",
+        "en": "Anxiety often comes from trying to control everything. Surrendering control to Allah lightens the burden.",
+        "fi": "Ahdistus syntyy usein yrityksestä hallita kaikkea. Hallinnan luovuttaminen Allahille keventää taakkaa."
+      }
+    },
+    {
+      "id": "sad",
+      "labels": {
+        "tr": "Üzgün",
+        "en": "Sad",
+        "fi": "Surullinen"
+      },
+      "icon": "heart-crack",
+      "color": "#4B5563",
+      "descriptions": {
+        "tr": "Hüzün ve keder hali",
+        "en": "State of sorrow and grief",
+        "fi": "Surun ja murheen tila"
+      },
+      "recommended_dhikr_suggestions": ["al-jabbar", "al-wadud", "an-nur", "ar-rahim"],
+      "ayah_references": [
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 5,
+          "ayah_end": 6,
+          "theme_notes": {
+            "tr": "Zorlukla beraber kolaylık vardır.",
+            "en": "With hardship comes ease.",
+            "fi": "Vaikeuden mukana tulee helpotus."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 12,
+          "surah_name": "Yusuf",
+          "ayah_start": 86,
+          "theme_notes": {
+            "tr": "Ben hüznümü ve kederimi yalnızca Allah'a arz ediyorum.",
+            "en": "I only complain of my suffering and grief to Allah.",
+            "fi": "Valitan kärsimyksestäni ja surustani vain Allahille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 12,
+          "surah_name": "Yusuf",
+          "ayah_start": 87,
+          "theme_notes": {
+            "tr": "Allah'ın rahmetinden ümidinizi kesmeyin.",
+            "en": "Do not despair of Allah's mercy.",
+            "fi": "Älkää epätoivoisko Allahin armosta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 155,
+          "ayah_end": 157,
+          "theme_notes": {
+            "tr": "Sabredenlere müjdeler olsun.",
+            "en": "Give good tidings to the patient.",
+            "fi": "Ilmoita hyvät uutiset kärsivällisille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 39,
+          "surah_name": "Az-Zumar",
+          "ayah_start": 53,
+          "theme_notes": {
+            "tr": "Allah'ın rahmetinden ümidinizi kesmeyin, Allah bütün günahları bağışlar.",
+            "en": "Do not despair of Allah's mercy; Allah forgives all sins.",
+            "fi": "Älkää menettäkö toivoanne Allahin armosta; Allah antaa anteeksi kaikki synnit."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Hüzün, kalbin derinliğinin işareti olabilir. Allah kırık kalplere yakındır.",
+        "en": "Sadness can be a sign of the heart's depth. Allah is close to broken hearts.",
+        "fi": "Suru voi olla merkki sydämen syvyydestä. Allah on lähellä särkyneitä sydämiä."
+      }
+    },
+    {
+      "id": "grateful",
+      "labels": {
+        "tr": "Şükreden",
+        "en": "Grateful",
+        "fi": "Kiitollinen"
+      },
+      "icon": "sun",
+      "color": "#F59E0B",
+      "descriptions": {
+        "tr": "Minnettarlık ve şükür hali",
+        "en": "State of gratitude and thankfulness",
+        "fi": "Kiitollisuuden tila"
+      },
+      "recommended_dhikr_suggestions": ["ash-shakur", "al-wahhab", "ar-rahman", "al-karim"],
+      "ayah_references": [
+        {
+          "surah": 14,
+          "surah_name": "Ibrahim",
+          "ayah_start": 7,
+          "theme_notes": {
+            "tr": "Şükrederseniz elbette size nimetimi artırırım.",
+            "en": "If you are grateful, I will surely increase you.",
+            "fi": "Jos olette kiitollisia, lisään teitä varmasti."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 55,
+          "surah_name": "Ar-Rahman",
+          "ayah_start": 13,
+          "theme_notes": {
+            "tr": "Rabbinizin nimetlerinden hangisini yalanlarsınız?",
+            "en": "Which of the favors of your Lord will you deny?",
+            "fi": "Kumpaa Herranne suosionosoituksista kiellättekään?"
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 16,
+          "surah_name": "An-Nahl",
+          "ayah_start": 18,
+          "theme_notes": {
+            "tr": "Allah'ın nimetlerini saymaya kalksanız sayamazsınız.",
+            "en": "If you tried to count Allah's blessings, you could not enumerate them.",
+            "fi": "Jos yrittäisitte laskea Allahin siunauksia, ette pystyisi luettelemaan niitä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 31,
+          "surah_name": "Luqman",
+          "ayah_start": 12,
+          "theme_notes": {
+            "tr": "Kim şükrederse kendi iyiliği için şükreder.",
+            "en": "Whoever is grateful is grateful for his own soul.",
+            "fi": "Kuka ikinä on kiitollinen, on kiitollinen oman sielunsa puolesta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 152,
+          "theme_notes": {
+            "tr": "Beni anın ki ben de sizi anayım, bana şükredin, nankörlük etmeyin.",
+            "en": "Remember Me; I will remember you. Be grateful to Me and do not deny Me.",
+            "fi": "Muistakaa Minua; Minä muistan teidät. Olkaa kiitollisia Minulle älkääkä kieltäkö Minua."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Şükür, sahip olduklarını görmenin en güzel yoludur. Bu an için neye şükredersin?",
+        "en": "Gratitude is the best way to see what you have. What are you grateful for in this moment?",
+        "fi": "Kiitollisuus on paras tapa nähdä mitä sinulla on. Mistä olet kiitollinen tällä hetkellä?"
+      }
+    },
+    {
+      "id": "hopeful",
+      "labels": {
+        "tr": "Umutlu",
+        "en": "Hopeful",
+        "fi": "Toiveikas"
+      },
+      "icon": "sunrise",
+      "color": "#10B981",
+      "descriptions": {
+        "tr": "Umut ve iyimserlik hali",
+        "en": "State of hope and optimism",
+        "fi": "Toivon ja optimismin tila"
+      },
+      "recommended_dhikr_suggestions": ["al-fattah", "ar-razzaq", "al-khaliq", "al-wakil"],
+      "ayah_references": [
+        {
+          "surah": 39,
+          "surah_name": "Az-Zumar",
+          "ayah_start": 53,
+          "theme_notes": {
+            "tr": "Allah'ın rahmetinden ümidinizi kesmeyin.",
+            "en": "Do not despair of the mercy of Allah.",
+            "fi": "Älkää epätoivoisko Allahin armosta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 65,
+          "surah_name": "At-Talaq",
+          "ayah_start": 2,
+          "ayah_end": 3,
+          "theme_notes": {
+            "tr": "Kim Allah'a güvenirse O, ona yeter.",
+            "en": "Whoever relies upon Allah - He is sufficient for him.",
+            "fi": "Kuka ikinä luottaa Allahiin - Hän riittää hänelle."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 93,
+          "surah_name": "Ad-Duha",
+          "ayah_start": 4,
+          "ayah_end": 5,
+          "theme_notes": {
+            "tr": "Ahiret senin için dünyadan daha hayırlıdır. Rabbin sana verecek ve sen razı olacaksın.",
+            "en": "The Hereafter is better for you than the present. Your Lord will give you, and you will be satisfied.",
+            "fi": "Tuonpuoleinen on sinulle parempi kuin nykyinen. Herrasi antaa sinulle, ja olet tyytyväinen."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 5,
+          "ayah_end": 6,
+          "theme_notes": {
+            "tr": "Muhakkak zorlukla beraber kolaylık vardır.",
+            "en": "Indeed, with hardship comes ease.",
+            "fi": "Totisesti, vaikeuden mukana tulee helpotus."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 216,
+          "theme_notes": {
+            "tr": "Hoşlanmadığınız bir şey sizin için hayırlı olabilir.",
+            "en": "Perhaps you dislike something which is good for you.",
+            "fi": "Ehkä te ette pidä jostakin, mikä on teille hyväksi."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Umut, görünmeyene güvenmektir. Allah'ın planı senin planından daha geniştir.",
+        "en": "Hope is trusting in the unseen. Allah's plan is greater than your plan.",
+        "fi": "Toivo on luottamista näkymättömään. Allahin suunnitelma on suurempi kuin sinun suunnitelmasi."
+      }
+    },
+    {
+      "id": "stressed",
+      "labels": {
+        "tr": "Stresli",
+        "en": "Stressed",
+        "fi": "Stressaantunut"
+      },
+      "icon": "flame",
+      "color": "#EF4444",
+      "descriptions": {
+        "tr": "Baskı ve gerginlik hali",
+        "en": "State of pressure and tension",
+        "fi": "Paineen ja jännityksen tila"
+      },
+      "recommended_dhikr_suggestions": ["al-basit", "as-salam", "al-wakil", "al-latif"],
+      "ayah_references": [
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 1,
+          "ayah_end": 4,
+          "theme_notes": {
+            "tr": "Senin göğsünü açmadık mı? Yükünü indirmedik mi?",
+            "en": "Did We not expand for you your breast? And We removed from you your burden.",
+            "fi": "Emmekö avartaneet sinulle rintaasi? Ja poistimme sinulta taakkasi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 173,
+          "theme_notes": {
+            "tr": "Allah bize yeter, O ne güzel vekildir.",
+            "en": "Sufficient for us is Allah, and He is the best Disposer of affairs.",
+            "fi": "Allah riittää meille, ja Hän on paras asioiden hoitaja."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 20,
+          "surah_name": "Ta-Ha",
+          "ayah_start": 25,
+          "ayah_end": 26,
+          "theme_notes": {
+            "tr": "Rabbim, göğsümü aç, işimi kolaylaştır.",
+            "en": "My Lord, expand my chest and ease my task for me.",
+            "fi": "Herrani, avarra rintani ja helpota tehtävääni."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 65,
+          "surah_name": "At-Talaq",
+          "ayah_start": 7,
+          "theme_notes": {
+            "tr": "Allah her zorluğun ardından kolaylık yaratır.",
+            "en": "Allah will bring about ease after hardship.",
+            "fi": "Allah tuo helpotuksen vaikeuden jälkeen."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 6,
+          "surah_name": "Al-An'am",
+          "ayah_start": 17,
+          "theme_notes": {
+            "tr": "Sana bir sıkıntı dokunursa onu Allah'tan başka giderecek yoktur.",
+            "en": "If Allah touches you with hardship, none can remove it but Him.",
+            "fi": "Jos Allah koskettaa sinua vaikeudella, kukaan muu kuin Hän ei voi poistaa sitä."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Stres, yükü tek başına taşımaya çalışmaktır. Yükünün bir kısmını Allah'a bırak.",
+        "en": "Stress comes from trying to carry the burden alone. Leave part of your burden to Allah.",
+        "fi": "Stressi syntyy yrityksestä kantaa taakkaa yksin. Jätä osa taakastasi Allahille."
+      }
+    },
+    {
+      "id": "lonely",
+      "labels": {
+        "tr": "Yalnız",
+        "en": "Lonely",
+        "fi": "Yksinäinen"
+      },
+      "icon": "moon",
+      "color": "#6366F1",
+      "descriptions": {
+        "tr": "Yalnızlık ve kopukluk hissi",
+        "en": "Feeling of loneliness and disconnection",
+        "fi": "Yksinäisyyden ja irrallisuuden tunne"
+      },
+      "recommended_dhikr_suggestions": ["al-wadud", "as-sami", "al-basir", "al-waliyy"],
+      "ayah_references": [
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 186,
+          "theme_notes": {
+            "tr": "Kullarım sana beni sorarsa, ben yakınım.",
+            "en": "When My servants ask about Me, I am near.",
+            "fi": "Kun palvelijani kysyvät Minusta, Minä olen lähellä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 57,
+          "surah_name": "Al-Hadid",
+          "ayah_start": 4,
+          "theme_notes": {
+            "tr": "Nerede olursanız olun, O sizinle beraberdir.",
+            "en": "Wherever you are, He is with you.",
+            "fi": "Missä ikinä olettekin, Hän on kanssanne."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 50,
+          "surah_name": "Qaf",
+          "ayah_start": 16,
+          "theme_notes": {
+            "tr": "Biz ona şah damarından daha yakınız.",
+            "en": "We are closer to him than his jugular vein.",
+            "fi": "Olemme häntä lähempänä kuin hänen kaulalaskonsa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 9,
+          "surah_name": "At-Tawbah",
+          "ayah_start": 40,
+          "theme_notes": {
+            "tr": "Üzülme, Allah bizimle beraberdir.",
+            "en": "Do not grieve; indeed Allah is with us.",
+            "fi": "Älä sure; totisesti Allah on kanssamme."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 58,
+          "surah_name": "Al-Mujadila",
+          "ayah_start": 7,
+          "theme_notes": {
+            "tr": "Üç kişinin gizli konuştuğu yerde dördüncüsü mutlaka O'dur.",
+            "en": "There is no private conversation of three but He is the fourth of them.",
+            "fi": "Ei ole kolmen yksityistä keskustelua, jossa Hän ei olisi neljäs."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Yalnızlık yanılsamadır; Allah her an seninle. Sessizlikte O'nu ara.",
+        "en": "Loneliness is an illusion; Allah is with you every moment. Seek Him in the silence.",
+        "fi": "Yksinäisyys on illuusio; Allah on kanssasi joka hetki. Etsi Häntä hiljaisuudessa."
+      }
+    },
+    {
+      "id": "angry",
+      "labels": {
+        "tr": "Öfkeli",
+        "en": "Angry",
+        "fi": "Vihainen"
+      },
+      "icon": "zap",
+      "color": "#DC2626",
+      "descriptions": {
+        "tr": "Öfke ve kızgınlık hali",
+        "en": "State of anger and frustration",
+        "fi": "Vihan ja turhautumisen tila"
+      },
+      "recommended_dhikr_suggestions": ["al-ghafur", "as-sabur", "al-hakim", "al-halim"],
+      "ayah_references": [
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 134,
+          "theme_notes": {
+            "tr": "Öfkelerini yutanlar ve insanları affedenler... Allah iyilik yapanları sever.",
+            "en": "Those who restrain anger and pardon people... Allah loves those who do good.",
+            "fi": "Ne jotka hillitsevät vihansa ja antavat ihmisille anteeksi... Allah rakastaa hyvää tekeviä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 42,
+          "surah_name": "Ash-Shura",
+          "ayah_start": 37,
+          "theme_notes": {
+            "tr": "Büyük günahlardan kaçınanlar ve öfkelendiklerinde affedenler.",
+            "en": "Those who avoid major sins and when they are angry, they forgive.",
+            "fi": "Ne jotka välttävät suuria syntejä ja kun he ovat vihaisia, he antavat anteeksi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 7,
+          "surah_name": "Al-A'raf",
+          "ayah_start": 199,
+          "theme_notes": {
+            "tr": "Affı esas al, iyiliği emret, cahillerden yüz çevir.",
+            "en": "Take what is given freely, enjoin good, and turn away from the ignorant.",
+            "fi": "Ota vastaan anteeksianto, käske hyvää ja käänny pois tietämättömistä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 41,
+          "surah_name": "Fussilat",
+          "ayah_start": 34,
+          "theme_notes": {
+            "tr": "Kötülüğü en güzel şekilde sav. Bir de bakarsın düşmanın yakın dost oluvermiş.",
+            "en": "Repel evil with what is better; then the one who was your enemy becomes like a close friend.",
+            "fi": "Torju paha sillä, mikä on parempaa; sitten se, joka oli vihollisesi, tulee kuin läheinen ystävä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 42,
+          "surah_name": "Ash-Shura",
+          "ayah_start": 43,
+          "theme_notes": {
+            "tr": "Kim sabreder ve affederse, işte bu azim gerektiren işlerdendir.",
+            "en": "Whoever is patient and forgives - indeed, that is of the matters requiring determination.",
+            "fi": "Kuka ikinä on kärsivällinen ja antaa anteeksi - totisesti se kuuluu asioihin, jotka vaativat päättäväisyyttä."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Öfke, içimizdeki bir yaraya işaret edebilir. Nefes al, sakin ol, sonra bak.",
+        "en": "Anger may point to a wound within. Breathe, calm down, then look.",
+        "fi": "Viha voi viitata sisäiseen haavaan. Hengitä, rauhoitu, sitten katso."
+      }
+    },
+    {
+      "id": "fearful",
+      "labels": {
+        "tr": "Korkmuş",
+        "en": "Fearful",
+        "fi": "Peloissaan"
+      },
+      "icon": "shield",
+      "color": "#7C3AED",
+      "descriptions": {
+        "tr": "Korku ve tedirginlik hali",
+        "en": "State of fear and apprehension",
+        "fi": "Pelon ja huolestuneisuuden tila"
+      },
+      "recommended_dhikr_suggestions": ["al-muhaymin", "al-mumin", "al-aziz", "al-hafiz"],
+      "ayah_references": [
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 286,
+          "theme_notes": {
+            "tr": "Rabbimiz, gücümüzün yetmeyeceği şeyle bizi sorumlu tutma.",
+            "en": "Our Lord, do not burden us with more than we can bear.",
+            "fi": "Herramme, älä kuormita meitä enemmällä kuin voimme kantaa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 9,
+          "surah_name": "At-Tawbah",
+          "ayah_start": 51,
+          "theme_notes": {
+            "tr": "Allah'ın bizim için yazdığından başkası bize ulaşmaz.",
+            "en": "Nothing will befall us except what Allah has decreed for us.",
+            "fi": "Mikään ei tapahdu meille paitsi se, minkä Allah on määrännyt meille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 173,
+          "theme_notes": {
+            "tr": "Hasbunallahu ve ni'mel vekil - Allah bize yeter.",
+            "en": "Sufficient for us is Allah, and He is the best Disposer of affairs.",
+            "fi": "Allah riittää meille, ja Hän on paras asioiden hoitaja."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 8,
+          "surah_name": "Al-Anfal",
+          "ayah_start": 2,
+          "theme_notes": {
+            "tr": "Müminler Allah anıldığında kalpleri titrer ve imanları artar.",
+            "en": "Believers are those whose hearts tremble when Allah is mentioned and their faith increases.",
+            "fi": "Uskovat ovat niitä, joiden sydämet vapisevat kun Allah mainitaan ja heidän uskonsa kasvaa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 10,
+          "surah_name": "Yunus",
+          "ayah_start": 62,
+          "theme_notes": {
+            "tr": "Allah'ın velilerine korku yoktur, onlar üzülmezler de.",
+            "en": "Indeed, the allies of Allah - no fear will there be concerning them, nor will they grieve.",
+            "fi": "Totisesti Allahin ystäville - heistä ei ole pelkoa, eivätkä he sure."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Korku, bilinmeyene karşı doğal bir tepki. Ama Allah bilinmeyeni bilir.",
+        "en": "Fear is a natural response to the unknown. But Allah knows the unknown.",
+        "fi": "Pelko on luonnollinen reaktio tuntemattomaan. Mutta Allah tietää tuntemattoman."
+      }
+    },
+    {
+      "id": "tired",
+      "labels": {
+        "tr": "Yorgun",
+        "en": "Tired",
+        "fi": "Väsynyt"
+      },
+      "icon": "battery-low",
+      "color": "#78716C",
+      "descriptions": {
+        "tr": "Fiziksel veya ruhsal yorgunluk",
+        "en": "Physical or spiritual fatigue",
+        "fi": "Fyysinen tai henkinen väsymys"
+      },
+      "recommended_dhikr_suggestions": ["al-hayy", "al-mumin", "ar-rahim", "al-qawiyy"],
+      "ayah_references": [
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 255,
+          "theme_notes": {
+            "tr": "O'nu ne uyuklama ne de uyku tutar. (Ayetel Kursi)",
+            "en": "Neither drowsiness overtakes Him nor sleep. (Ayatul Kursi)",
+            "fi": "Häntä ei voita uni eikä uneliaisuus. (Ayatul Kursi)"
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 7,
+          "ayah_end": 8,
+          "theme_notes": {
+            "tr": "Boş kaldığında (ibadete) kalk ve yalnız Rabbine yönel.",
+            "en": "When you have finished, then stand up and to your Lord direct your longing.",
+            "fi": "Kun olet valmis, nouse seisomaan ja suuntaa kaipauksesi Herrallesi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 73,
+          "surah_name": "Al-Muzzammil",
+          "ayah_start": 20,
+          "theme_notes": {
+            "tr": "Allah kolaylık diliyor, zorluk değil.",
+            "en": "Allah intends for you ease, not hardship.",
+            "fi": "Allah haluaa sinulle helppoutta, ei vaikeutta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 50,
+          "surah_name": "Qaf",
+          "ayah_start": 38,
+          "theme_notes": {
+            "tr": "Biz gökleri ve yeri yarattık, yorulmadık.",
+            "en": "We created the heavens and earth and did not become weary.",
+            "fi": "Loimme taivaat ja maan emmekä väsyneet."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 20,
+          "surah_name": "Ta-Ha",
+          "ayah_start": 130,
+          "theme_notes": {
+            "tr": "Sabret ve güneşin doğuşundan önce, batışından önce Rabbini hamd ile tesbih et.",
+            "en": "Be patient and exalt Allah before sunrise and before sunset.",
+            "fi": "Ole kärsivällinen ja ylistä Allahia ennen auringonnousua ja ennen auringonlaskua."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Yorgunluk, dinlenmeye ihtiyaç duyduğunun işareti. Bedenine ve ruhuna izin ver.",
+        "en": "Tiredness is a sign you need rest. Give permission to your body and soul.",
+        "fi": "Väsymys on merkki siitä, että tarvitset lepoa. Anna lupa kehollesi ja sielullesi."
+      }
+    },
+    {
+      "id": "confused",
+      "labels": {
+        "tr": "Kararsız",
+        "en": "Confused",
+        "fi": "Hämmentynyt"
+      },
+      "icon": "help-circle",
+      "color": "#8B5CF6",
+      "descriptions": {
+        "tr": "Kararsızlık ve belirsizlik hali",
+        "en": "State of confusion and uncertainty",
+        "fi": "Hämmennyksen ja epävarmuuden tila"
+      },
+      "recommended_dhikr_suggestions": ["al-hadi", "an-nur", "al-alim", "al-hakim"],
+      "ayah_references": [
+        {
+          "surah": 6,
+          "surah_name": "Al-An'am",
+          "ayah_start": 59,
+          "theme_notes": {
+            "tr": "Gaybın anahtarları O'nun yanındadır; onları O'ndan başkası bilmez.",
+            "en": "With Him are the keys of the unseen; none knows them except Him.",
+            "fi": "Hänen luonaan ovat näkymättömän avaimet; kukaan muu kuin Hän ei tunne niitä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 24,
+          "surah_name": "An-Nur",
+          "ayah_start": 35,
+          "theme_notes": {
+            "tr": "Allah, göklerin ve yerin nurudur.",
+            "en": "Allah is the Light of the heavens and the earth.",
+            "fi": "Allah on taivaiden ja maan valo."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 1,
+          "surah_name": "Al-Fatiha",
+          "ayah_start": 6,
+          "theme_notes": {
+            "tr": "Bizi doğru yola ilet.",
+            "en": "Guide us to the straight path.",
+            "fi": "Ohjaa meidät suoralle tielle."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 269,
+          "theme_notes": {
+            "tr": "Kime hikmet verilmişse ona çok hayır verilmiştir.",
+            "en": "Whoever has been given wisdom has been given much good.",
+            "fi": "Kenelle viisautta on annettu, hänelle on annettu paljon hyvää."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 20,
+          "surah_name": "Ta-Ha",
+          "ayah_start": 114,
+          "theme_notes": {
+            "tr": "Rabbim, ilmimi artır.",
+            "en": "My Lord, increase me in knowledge.",
+            "fi": "Herrani, lisää tietoani."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Kararsızlık, doğruyu aradığının işareti. İstihare ve sabır, yol göstericidir.",
+        "en": "Confusion is a sign you're seeking truth. Istikhara and patience are guides.",
+        "fi": "Hämmennys on merkki siitä, että etsit totuutta. Istikhara ja kärsivällisyys ovat oppaita."
+      }
+    },
+    {
+      "id": "regretful",
+      "labels": {
+        "tr": "Pişman",
+        "en": "Regretful",
+        "fi": "Katuva"
+      },
+      "icon": "rotate-ccw",
+      "color": "#A855F7",
+      "descriptions": {
+        "tr": "Pişmanlık ve vicdan azabı",
+        "en": "Feeling of regret and remorse",
+        "fi": "Katumuksen ja omantunnon tunne"
+      },
+      "recommended_dhikr_suggestions": ["al-ghaffar", "al-ghafur", "ar-rahim", "at-tawwab"],
+      "ayah_references": [
+        {
+          "surah": 39,
+          "surah_name": "Az-Zumar",
+          "ayah_start": 53,
+          "theme_notes": {
+            "tr": "Kendi aleyhlerine aşırı giden kullarım! Allah'ın rahmetinden ümidinizi kesmeyin.",
+            "en": "O My servants who have transgressed against themselves, do not despair of Allah's mercy.",
+            "fi": "Oi palvelijani, jotka olette tehneet väärin itseänne vastaan, älkää epätoivoisko Allahin armosta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 4,
+          "surah_name": "An-Nisa",
+          "ayah_start": 110,
+          "theme_notes": {
+            "tr": "Kim kötülük yapar veya nefsine zulmeder, sonra Allah'tan bağışlanma dilerse...",
+            "en": "Whoever does wrong or wrongs himself then seeks Allah's forgiveness...",
+            "fi": "Kuka ikinä tekee väärin tai tekee vääryyttä itselleen ja sitten pyytää Allahin anteeksiantoa..."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 135,
+          "theme_notes": {
+            "tr": "Bir kötülük yaptıklarında Allah'ı hatırlayıp günahları için bağışlanma dileyenler.",
+            "en": "Those who, when they commit an immorality, remember Allah and seek forgiveness.",
+            "fi": "Ne, jotka tehtyään moraalittomuuden muistavat Allahin ja pyytävät anteeksiantoa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 25,
+          "surah_name": "Al-Furqan",
+          "ayah_start": 70,
+          "theme_notes": {
+            "tr": "Allah kötülüklerini iyiliklere çevirir. Allah çok bağışlayan, çok merhamet edendir.",
+            "en": "Allah will replace their evil deeds with good. Allah is Forgiving and Merciful.",
+            "fi": "Allah korvaa heidän pahat tekonsa hyvällä. Allah on Anteeksiantava ja Armollinen."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 66,
+          "surah_name": "At-Tahrim",
+          "ayah_start": 8,
+          "theme_notes": {
+            "tr": "Ey iman edenler! Nasuh bir tövbe ile Allah'a tövbe edin.",
+            "en": "O believers! Turn to Allah in sincere repentance.",
+            "fi": "Oi uskovat! Kääntykää Allahin puoleen vilpittömässä katumuksessa."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Pişmanlık, kalbin uyanıklığıdır. Tövbe kapısı her zaman açık.",
+        "en": "Regret is the awakening of the heart. The door of repentance is always open.",
+        "fi": "Katumus on sydämen herääminen. Katumuksen ovi on aina auki."
+      }
+    },
+    {
+      "id": "unfocused",
+      "labels": {
+        "tr": "Dağınık",
+        "en": "Unfocused",
+        "fi": "Keskittymätön"
+      },
+      "icon": "compass",
+      "color": "#F97316",
+      "descriptions": {
+        "tr": "Odaklanamama, zihin dağınıklığı",
+        "en": "Inability to focus, scattered mind",
+        "fi": "Keskittymiskyvyttömyys, hajanainen mieli"
+      },
+      "recommended_dhikr_suggestions": ["al-hadi", "al-hakim", "al-alim", "al-wahid"],
+      "ayah_references": [
+        {
+          "surah": 1,
+          "surah_name": "Al-Fatiha",
+          "ayah_start": 6,
+          "theme_notes": {
+            "tr": "Bizi doğru yola ilet.",
+            "en": "Guide us to the straight path.",
+            "fi": "Ohjaa meidät suoralle tielle."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 20,
+          "surah_name": "Ta-Ha",
+          "ayah_start": 114,
+          "theme_notes": {
+            "tr": "Rabbim, ilmimi artır.",
+            "en": "My Lord, increase me in knowledge.",
+            "fi": "Herrani, lisää tietoani."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 23,
+          "surah_name": "Al-Mu'minun",
+          "ayah_start": 1,
+          "ayah_end": 2,
+          "theme_notes": {
+            "tr": "Müminler felaha ermiştir. Onlar namazlarında huşu içindedirler.",
+            "en": "Successful are the believers who are humble in their prayers.",
+            "fi": "Onnistuneet ovat uskovat, jotka ovat nöyriä rukouksissaan."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 87,
+          "surah_name": "Al-A'la",
+          "ayah_start": 14,
+          "ayah_end": 15,
+          "theme_notes": {
+            "tr": "Temizlenen ve Rabbinin adını anıp namaz kılan felaha ermiştir.",
+            "en": "Successful is he who purifies himself and remembers his Lord and prays.",
+            "fi": "Onnistunut on se, joka puhdistautuu ja muistaa Herransa ja rukoilee."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 29,
+          "surah_name": "Al-Ankabut",
+          "ayah_start": 45,
+          "theme_notes": {
+            "tr": "Namaz kötülüklerden ve çirkinliklerden alıkoyar.",
+            "en": "Prayer prohibits immorality and wrongdoing.",
+            "fi": "Rukous kieltää moraalittomuuden ja vääryyden."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Dağınıklık, çok şey arasında kaybolmaktır. Bir an için tek bir şeye odaklan: nefesine, zikrine.",
+        "en": "Distraction is getting lost among many things. For a moment, focus on just one thing: your breath, your dhikr.",
+        "fi": "Häiriintyminen on eksymistä monien asioiden keskelle. Keskity hetkeksi vain yhteen asiaan: hengitykseesi, dhikriisi."
+      }
+    },
+    {
+      "id": "peaceful",
+      "labels": {
+        "tr": "Huzurlu",
+        "en": "Peaceful",
+        "fi": "Rauhallinen"
+      },
+      "icon": "heart",
+      "color": "#22C55E",
+      "descriptions": {
+        "tr": "İç huzur ve sükûnet hali",
+        "en": "State of inner peace and tranquility",
+        "fi": "Sisäisen rauhan ja tyyneyden tila"
+      },
+      "recommended_dhikr_suggestions": ["as-salam", "al-quddus", "ar-rahman", "al-wadud"],
+      "ayah_references": [
+        {
+          "surah": 13,
+          "surah_name": "Ar-Ra'd",
+          "ayah_start": 28,
+          "theme_notes": {
+            "tr": "Dikkat edin, kalpler ancak Allah'ı anmakla huzur bulur.",
+            "en": "Verily, in the remembrance of Allah do hearts find rest.",
+            "fi": "Totisesti, Allahin muistamisessa sydämet löytävät rauhan."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 89,
+          "surah_name": "Al-Fajr",
+          "ayah_start": 27,
+          "ayah_end": 30,
+          "theme_notes": {
+            "tr": "Ey huzura kavuşmuş nefis! Dön Rabbine, sen O'ndan razı, O senden razı olarak.",
+            "en": "O soul at peace! Return to your Lord, pleased and pleasing.",
+            "fi": "Oi rauhaan päässyt sielu! Palaa Herrasi luo, tyytyväisenä ja miellyttävänä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 48,
+          "surah_name": "Al-Fath",
+          "ayah_start": 4,
+          "theme_notes": {
+            "tr": "O, müminlerin kalplerine sekine (huzur) indirendir.",
+            "en": "He is the One who sent down tranquility into the hearts of the believers.",
+            "fi": "Hän on se, joka lähetti tyyneyden uskovien sydämiin."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 10,
+          "surah_name": "Yunus",
+          "ayah_start": 62,
+          "theme_notes": {
+            "tr": "Bilin ki Allah'ın velilerine korku yoktur, onlar üzülmezler de.",
+            "en": "Unquestionably, for the allies of Allah there will be no fear nor will they grieve.",
+            "fi": "Epäilemättä Allahin ystävillä ei ole pelkoa eivätkä he sure."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 6,
+          "surah_name": "Al-An'am",
+          "ayah_start": 82,
+          "theme_notes": {
+            "tr": "İman edip imanlarına zulüm karıştırmayanlar... Güven onlarındır.",
+            "en": "Those who believe and do not mix their belief with injustice... they will have security.",
+            "fi": "Ne jotka uskovat eivätkä sekoita uskoaan epäoikeudenmukaisuuteen... heillä on turvallisuus."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Huzur, Allah'ın büyük bir lütfudur. Bu anı şükürle muhafaza et.",
+        "en": "Peace is a great blessing from Allah. Preserve this moment with gratitude.",
+        "fi": "Rauha on suuri siunaus Allahilta. Säilytä tämä hetki kiitollisuudella."
+      }
+    },
+    {
+      "id": "overwhelmed",
+      "labels": {
+        "tr": "Bunalmış",
+        "en": "Overwhelmed",
+        "fi": "Ylikuormittunut"
+      },
+      "icon": "waves",
+      "color": "#0EA5E9",
+      "descriptions": {
+        "tr": "Aşırı yük altında ezilmişlik hissi",
+        "en": "Feeling crushed under excessive burden",
+        "fi": "Tunne musertumisesta liiallisen taakan alla"
+      },
+      "recommended_dhikr_suggestions": ["al-basit", "al-latif", "al-wakil", "al-fattah"],
+      "ayah_references": [
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 286,
+          "theme_notes": {
+            "tr": "Allah kimseyi gücünün üstünde bir şeyle yükümlü tutmaz.",
+            "en": "Allah does not burden a soul beyond that it can bear.",
+            "fi": "Allah ei kuormita sielua yli sen, mitä se voi kantaa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 1,
+          "ayah_end": 6,
+          "theme_notes": {
+            "tr": "Senin göğsünü açmadık mı? Yükünü indirmedik mi? Zorluğun yanında kolaylık vardır.",
+            "en": "Did We not expand for you your breast and remove your burden? With hardship comes ease.",
+            "fi": "Emmekö avartaneet rintaasi ja poistaneet taakkaasi? Vaikeuden mukana tulee helpotus."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 23,
+          "surah_name": "Al-Mu'minun",
+          "ayah_start": 62,
+          "theme_notes": {
+            "tr": "Biz hiç kimseye gücünün yetmeyeceği şeyi yüklemeyiz.",
+            "en": "We do not burden any soul with more than it can bear.",
+            "fi": "Emme kuormita ketään sielua enemmällä kuin se voi kantaa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 65,
+          "surah_name": "At-Talaq",
+          "ayah_start": 7,
+          "theme_notes": {
+            "tr": "Allah her zorluğun ardından kolaylık yaratacaktır.",
+            "en": "Allah will bring about ease after hardship.",
+            "fi": "Allah tuo helpotuksen vaikeuden jälkeen."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 7,
+          "surah_name": "Al-A'raf",
+          "ayah_start": 42,
+          "theme_notes": {
+            "tr": "Biz hiç kimseye gücünün üstünde bir şey yüklemeyiz.",
+            "en": "We charge no soul except according to its capacity.",
+            "fi": "Emme vaadi sielulta muuta kuin sen kapasiteetin mukaan."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Bunalmak, her şeyi bir anda çözmeye çalışmaktan gelir. Adım adım ilerle, her adımda Allah'a güven.",
+        "en": "Feeling overwhelmed comes from trying to solve everything at once. Take it step by step, trusting Allah at each step.",
+        "fi": "Ylikuormittuminen tulee yrityksestä ratkaista kaikki kerralla. Etene askel askeleelta, luottaen Allahiin jokaisessa askeleessa."
+      }
+    },
+    {
+      "id": "jealous",
+      "labels": {
+        "tr": "Kıskanç",
+        "en": "Jealous",
+        "fi": "Kateellinen"
+      },
+      "icon": "eye",
+      "color": "#84CC16",
+      "descriptions": {
+        "tr": "Kıskançlık ve haset hissi",
+        "en": "Feeling of jealousy and envy",
+        "fi": "Mustasukkaisuuden ja kateuden tunne"
+      },
+      "recommended_dhikr_suggestions": ["ash-shakur", "al-ghaniyy", "al-wahhab", "ar-razzaq"],
+      "ayah_references": [
+        {
+          "surah": 4,
+          "surah_name": "An-Nisa",
+          "ayah_start": 32,
+          "theme_notes": {
+            "tr": "Allah'ın sizi birbirinize üstün kıldığı şeyleri temenni etmeyin.",
+            "en": "Do not wish for that by which Allah has made some of you exceed others.",
+            "fi": "Älkää toivoko sitä, millä Allah on tehnyt jotkut teistä toisia paremmiksi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 113,
+          "surah_name": "Al-Falaq",
+          "ayah_start": 5,
+          "theme_notes": {
+            "tr": "Haset ettiğinde hasetçinin şerrinden (Allah'a sığınırım).",
+            "en": "And from the evil of the envier when he envies.",
+            "fi": "Ja kadehtijan pahuudelta, kun hän kadehtii."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 20,
+          "surah_name": "Ta-Ha",
+          "ayah_start": 131,
+          "theme_notes": {
+            "tr": "Dünya hayatının süsü olarak onlardan bazı gruplara verdiğimiz şeylere gözünü dikme.",
+            "en": "Do not extend your eyes toward what We have given some groups of them to enjoy.",
+            "fi": "Älä kiinnitä silmiäsi siihen, mitä olemme antaneet joillekin heistä nautittavaksi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 15,
+          "surah_name": "Al-Hijr",
+          "ayah_start": 88,
+          "theme_notes": {
+            "tr": "Onlardan bazı gruplara verdiğimiz şeylere gözünü dikme.",
+            "en": "Do not extend your eyes toward what We have given some of them.",
+            "fi": "Älä kiinnitä silmiäsi siihen, mitä olemme antaneet joillekin heistä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 57,
+          "surah_name": "Al-Hadid",
+          "ayah_start": 23,
+          "theme_notes": {
+            "tr": "Elinizden çıkana üzülmeyesiniz ve size verilene sevinip şımarmayasınız diye.",
+            "en": "So that you not despair over what has eluded you and not exult over what He has given you.",
+            "fi": "Jotta ette surkuttelisi sitä, mikä on jäänyt teiltä saamatta, ettekä ylpeilisi siitä, mitä Hän on teille antanut."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Kıskançlık, başkasının nimetine odaklanmaktan gelir. Kendi nimetlerine bak, Allah'ın sana verdiklerini gör.",
+        "en": "Jealousy comes from focusing on others' blessings. Look at your own blessings; see what Allah has given you.",
+        "fi": "Kateus tulee keskittymisestä toisten siunauksiin. Katso omia siunauksiasi; näe mitä Allah on sinulle antanut."
+      }
+    },
+    {
+      "id": "guilty",
+      "labels": {
+        "tr": "Suçlu",
+        "en": "Guilty",
+        "fi": "Syyllinen"
+      },
+      "icon": "scale",
+      "color": "#EAB308",
+      "descriptions": {
+        "tr": "Suçluluk duygusu",
+        "en": "Feeling of guilt",
+        "fi": "Syyllisyyden tunne"
+      },
+      "recommended_dhikr_suggestions": ["al-afuw", "al-ghaffar", "at-tawwab", "ar-rahim"],
+      "ayah_references": [
+        {
+          "surah": 39,
+          "surah_name": "Az-Zumar",
+          "ayah_start": 53,
+          "theme_notes": {
+            "tr": "De ki: Ey kendi aleyhlerine aşırı giden kullarım! Allah'ın rahmetinden ümit kesmeyin.",
+            "en": "Say: O My servants who have transgressed against themselves, do not despair of Allah's mercy.",
+            "fi": "Sano: Oi palvelijani, jotka olette tehneet väärin itseänne vastaan, älkää epätoivoisko Allahin armosta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 4,
+          "surah_name": "An-Nisa",
+          "ayah_start": 110,
+          "theme_notes": {
+            "tr": "Kim kötülük yapar sonra Allah'tan bağışlanma dilerse, Allah'ı çok bağışlayıcı bulur.",
+            "en": "Whoever does wrong then seeks Allah's forgiveness will find Allah Forgiving.",
+            "fi": "Kuka ikinä tekee väärin ja sitten pyytää Allahin anteeksiantoa, löytää Allahin anteeksiantavana."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 135,
+          "theme_notes": {
+            "tr": "Bir kötülük yaptıklarında hemen Allah'ı anıp günahları için bağışlanma dilerler.",
+            "en": "When they commit an immorality, they remember Allah and seek forgiveness for their sins.",
+            "fi": "Kun he tekevät moraalittomuuden, he muistavat Allahin ja pyytävät anteeksiantoa synneistään."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 11,
+          "surah_name": "Hud",
+          "ayah_start": 90,
+          "theme_notes": {
+            "tr": "Rabbinizden bağışlanma dileyin, sonra O'na tövbe edin. Rabbim çok merhametlidir.",
+            "en": "Seek forgiveness from your Lord, then turn to Him in repentance. My Lord is Merciful.",
+            "fi": "Pyytäkää anteeksiantoa Herraltanne, sitten kääntykää Hänen puoleensa katumuksessa. Herrani on Armollinen."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 8,
+          "surah_name": "Al-Anfal",
+          "ayah_start": 33,
+          "theme_notes": {
+            "tr": "Sen içlerinde iken Allah onlara azap edecek değildi. Bağışlanma dilerken de azap etmez.",
+            "en": "Allah would not punish them while they seek forgiveness.",
+            "fi": "Allah ei rankaisisi heitä heidän pyytäessään anteeksiantoa."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Suçluluk duygusu, vicdanın sesidir. Ama Allah'ın affı, günahlarından büyüktür.",
+        "en": "Guilt is the voice of conscience. But Allah's forgiveness is greater than your sins.",
+        "fi": "Syyllisyys on omantunnon ääni. Mutta Allahin anteeksianto on suurempi kuin syntisi."
+      }
+    },
+    {
+      "id": "impatient",
+      "labels": {
+        "tr": "Sabırsız",
+        "en": "Impatient",
+        "fi": "Kärsimätön"
+      },
+      "icon": "clock",
+      "color": "#F43F5E",
+      "descriptions": {
+        "tr": "Sabırsızlık ve acelecilik hali",
+        "en": "State of impatience and hastiness",
+        "fi": "Kärsimättömyyden ja hätäisyyden tila"
+      },
+      "recommended_dhikr_suggestions": ["as-sabur", "al-halim", "al-hakim", "al-wakil"],
+      "ayah_references": [
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 153,
+          "theme_notes": {
+            "tr": "Ey iman edenler! Sabır ve namazla yardım isteyin. Allah sabredenlerle beraberdir.",
+            "en": "O believers! Seek help through patience and prayer. Allah is with the patient.",
+            "fi": "Oi uskovat! Etsikää apua kärsivällisyyden ja rukouksen kautta. Allah on kärsivällisten kanssa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 200,
+          "theme_notes": {
+            "tr": "Ey iman edenler! Sabredin, sabır yarışında üstün gelin.",
+            "en": "O believers! Persevere and endure and remain stationed.",
+            "fi": "Oi uskovat! Kestäkää ja olkaa kärsivällisiä ja pysykää paikoillanne."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 21,
+          "surah_name": "Al-Anbiya",
+          "ayah_start": 37,
+          "theme_notes": {
+            "tr": "İnsan aceleci yaratılmıştır. Size ayetlerimi göstereceğim, acele etmeyin.",
+            "en": "Man was created of haste. I will show you My signs, so do not be impatient.",
+            "fi": "Ihminen luotiin hätäiseksi. Näytän teille merkkini, joten älkää olko kärsimättömiä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 46,
+          "surah_name": "Al-Ahqaf",
+          "ayah_start": 35,
+          "theme_notes": {
+            "tr": "Peygamberlerin sabırlı olanlarının sabrettiği gibi sabret.",
+            "en": "Be patient as were those of determination among the messengers.",
+            "fi": "Ole kärsivällinen kuten olivat päättäväiset sanansaattajien joukossa."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 103,
+          "surah_name": "Al-Asr",
+          "ayah_start": 1,
+          "ayah_end": 3,
+          "theme_notes": {
+            "tr": "Asra yemin olsun ki insan hüsrandadır. Ancak iman edip sabredenler müstesna.",
+            "en": "By time, mankind is in loss, except those who believe and are patient.",
+            "fi": "Ajan kautta, ihmiskunta on tappiossa, paitsi ne jotka uskovat ja ovat kärsivällisiä."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Sabırsızlık, Allah'ın zamanlamasına güvenmemekten gelir. O en iyi zamanı bilir.",
+        "en": "Impatience comes from not trusting Allah's timing. He knows the best time.",
+        "fi": "Kärsimättömyys tulee siitä, ettei luota Allahin ajoitukseen. Hän tietää parhaan ajan."
+      }
+    },
+    {
+      "id": "lost",
+      "labels": {
+        "tr": "Kaybolmuş",
+        "en": "Lost",
+        "fi": "Eksynyt"
+      },
+      "icon": "map",
+      "color": "#14B8A6",
+      "descriptions": {
+        "tr": "Hayatta yön kaybetmiş hissi",
+        "en": "Feeling of having lost direction in life",
+        "fi": "Tunne siitä, että on menettänyt suunnan elämässä"
+      },
+      "recommended_dhikr_suggestions": ["al-hadi", "an-nur", "ar-rashid", "al-alim"],
+      "ayah_references": [
+        {
+          "surah": 1,
+          "surah_name": "Al-Fatiha",
+          "ayah_start": 6,
+          "ayah_end": 7,
+          "theme_notes": {
+            "tr": "Bizi doğru yola, nimet verdiklerinin yoluna ilet.",
+            "en": "Guide us to the straight path, the path of those upon whom You have bestowed favor.",
+            "fi": "Ohjaa meidät suoralle tielle, niiden tielle, joita olet siunannut."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 93,
+          "surah_name": "Ad-Duha",
+          "ayah_start": 7,
+          "theme_notes": {
+            "tr": "Seni şaşırmış bulup da yola iletmedi mi?",
+            "en": "Did He not find you lost and guide you?",
+            "fi": "Eikö Hän löytänyt sinut eksyneenä ja ohjannut sinua?"
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 6,
+          "surah_name": "Al-An'am",
+          "ayah_start": 125,
+          "theme_notes": {
+            "tr": "Allah kimi hidayete erdirmek isterse onun göğsünü İslam'a açar.",
+            "en": "Whomever Allah wills to guide, He expands his breast to Islam.",
+            "fi": "Ketä ikinä Allah tahtoo ohjata, Hän avartaa hänen rintansa islamille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 24,
+          "surah_name": "An-Nur",
+          "ayah_start": 35,
+          "theme_notes": {
+            "tr": "Allah göklerin ve yerin nurudur. Allah dilediğini nuruna iletir.",
+            "en": "Allah is the Light of the heavens and earth. Allah guides to His light whom He wills.",
+            "fi": "Allah on taivaiden ja maan valo. Allah ohjaa valoonsa ketä tahtoo."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 28,
+          "surah_name": "Al-Qasas",
+          "ayah_start": 56,
+          "theme_notes": {
+            "tr": "Sen istediğini hidayete erdiremezsin, ancak Allah dilediğini hidayete erdirir.",
+            "en": "You cannot guide whom you love, but Allah guides whom He wills.",
+            "fi": "Et voi ohjata ketä rakastat, mutta Allah ohjaa ketä tahtoo."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Kaybolmuş hissetmek, yeni bir yol aramanın başlangıcı olabilir. Allah, arayanı mutlaka bulur.",
+        "en": "Feeling lost can be the beginning of seeking a new path. Allah always finds the seeker.",
+        "fi": "Eksyneisyyden tunne voi olla uuden polun etsimisen alku. Allah löytää aina etsijän."
+      }
+    },
+    {
+      "id": "proud",
+      "labels": {
+        "tr": "Gururlu",
+        "en": "Proud",
+        "fi": "Ylpeä"
+      },
+      "icon": "crown",
+      "color": "#A3A3A3",
+      "descriptions": {
+        "tr": "Başarı veya erdem sonrası gurur hissi",
+        "en": "Feeling of pride after achievement or virtue",
+        "fi": "Ylpeyden tunne saavutuksen tai hyveen jälkeen"
+      },
+      "recommended_dhikr_suggestions": ["al-mutakabbir", "al-malik", "al-azim", "al-khafid"],
+      "ayah_references": [
+        {
+          "surah": 31,
+          "surah_name": "Luqman",
+          "ayah_start": 18,
+          "theme_notes": {
+            "tr": "Kibirli kibirli yürüme. Allah kibirlenenleri sevmez.",
+            "en": "Do not walk through the earth arrogantly. Allah does not like the arrogant.",
+            "fi": "Älä kulje maan päällä ylimielisesti. Allah ei pidä ylimielisistä."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 4,
+          "surah_name": "An-Nisa",
+          "ayah_start": 36,
+          "theme_notes": {
+            "tr": "Allah, büyüklük taslayan ve övünen kimseleri sevmez.",
+            "en": "Allah does not like those who are self-deluding and boastful.",
+            "fi": "Allah ei pidä niistä, jotka ovat itseään pettäviä ja kerskuvia."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 17,
+          "surah_name": "Al-Isra",
+          "ayah_start": 37,
+          "theme_notes": {
+            "tr": "Yeryüzünde böbürlenerek yürüme. Sen ne yeri delebilirsin ne de boyca dağlara erişebilirsin.",
+            "en": "Do not walk upon the earth arrogantly. You cannot tear the earth or reach the mountains in height.",
+            "fi": "Älä kulje maan päällä ylimielisesti. Et voi repiä maata etkä saavuttaa vuorten korkeutta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 28,
+          "surah_name": "Al-Qasas",
+          "ayah_start": 83,
+          "theme_notes": {
+            "tr": "İşte ahiret yurdu! Biz onu yeryüzünde böbürlenmeyen ve bozgunculuk yapmayanlara veririz.",
+            "en": "That home of the Hereafter We assign to those who do not desire superiority or corruption.",
+            "fi": "Sen tuonpuoleisen kodin annamme niille, jotka eivät halua ylemmyyttä tai turmeltuneisuutta."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 57,
+          "surah_name": "Al-Hadid",
+          "ayah_start": 23,
+          "theme_notes": {
+            "tr": "Size verilene sevinip şımarmayasınız. Allah böbürlenen şımarıkları sevmez.",
+            "en": "Do not exult over what He has given you. Allah does not like the self-conceited boaster.",
+            "fi": "Älkää ylpeilkö siitä, mitä Hän on teille antanut. Allah ei pidä itseään täynnä olevista kerskujista."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Başarı Allah'tandır. Gurur yerine şükür, O'na yakınlaştırır.",
+        "en": "Success is from Allah. Gratitude instead of pride brings you closer to Him.",
+        "fi": "Menestys on Allahilta. Kiitollisuus ylpeyden sijaan tuo sinut lähemmäksi Häntä."
+      }
+    },
+    {
+      "id": "insecure",
+      "labels": {
+        "tr": "Güvensiz",
+        "en": "Insecure",
+        "fi": "Epävarma"
+      },
+      "icon": "user-x",
+      "color": "#FB923C",
+      "descriptions": {
+        "tr": "Özgüven eksikliği, kendinden şüphe",
+        "en": "Lack of self-confidence, self-doubt",
+        "fi": "Itseluottamuksen puute, itsensä epäileminen"
+      },
+      "recommended_dhikr_suggestions": ["al-mumin", "al-aziz", "al-muizz", "al-wadud"],
+      "ayah_references": [
+        {
+          "surah": 3,
+          "surah_name": "Ali Imran",
+          "ayah_start": 139,
+          "theme_notes": {
+            "tr": "Gevşemeyin, üzülmeyin. Eğer müminseniz üstün olan sizlersiniz.",
+            "en": "Do not weaken and do not grieve, for you will be superior if you are believers.",
+            "fi": "Älkää heikentykö älkääkä sureko, sillä te olette ylempänä, jos olette uskovia."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 95,
+          "surah_name": "At-Tin",
+          "ayah_start": 4,
+          "theme_notes": {
+            "tr": "Biz insanı en güzel biçimde yarattık.",
+            "en": "We have certainly created man in the best of stature.",
+            "fi": "Olemme varmasti luoneet ihmisen parhaaseen muotoon."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 17,
+          "surah_name": "Al-Isra",
+          "ayah_start": 70,
+          "theme_notes": {
+            "tr": "Biz Ademoğullarını şerefli kıldık.",
+            "en": "We have honored the children of Adam.",
+            "fi": "Olemme kunnioittaneet Aadamin lapsia."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 32,
+          "surah_name": "As-Sajdah",
+          "ayah_start": 9,
+          "theme_notes": {
+            "tr": "Sonra ona şekil verip ruhundan üfledi.",
+            "en": "Then He proportioned him and breathed into him from His soul.",
+            "fi": "Sitten Hän muovasi hänet ja puhalsi häneen sielustaan."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 63,
+          "surah_name": "Al-Munafiqun",
+          "ayah_start": 8,
+          "theme_notes": {
+            "tr": "İzzet Allah'ın, Rasulü'nün ve müminlerindir.",
+            "en": "Honor belongs to Allah, His Messenger, and the believers.",
+            "fi": "Kunnia kuuluu Allahille, Hänen lähettilälleen ja uskoville."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Değerini Allah belirlemiştir. İnsanların görüşü geçici, Allah'ın takdiri kalıcıdır.",
+        "en": "Allah has determined your worth. People's opinions are temporary; Allah's regard is permanent.",
+        "fi": "Allah on määrännyt arvosi. Ihmisten mielipiteet ovat väliaikaisia; Allahin arvostus on pysyvä."
+      }
+    },
+    {
+      "id": "heartbroken",
+      "labels": {
+        "tr": "Kalbi Kırık",
+        "en": "Heartbroken",
+        "fi": "Sydän särkynyt"
+      },
+      "icon": "heart-off",
+      "color": "#BE185D",
+      "descriptions": {
+        "tr": "Duygusal yara, ilişki kaybı",
+        "en": "Emotional wound, loss of relationship",
+        "fi": "Emotionaalinen haava, suhteen menetys"
+      },
+      "recommended_dhikr_suggestions": ["al-jabbar", "al-wadud", "ash-shafi", "al-latif"],
+      "ayah_references": [
+        {
+          "surah": 9,
+          "surah_name": "At-Tawbah",
+          "ayah_start": 51,
+          "theme_notes": {
+            "tr": "De ki: Allah'ın bizim için yazdığından başkası bize asla ulaşmaz.",
+            "en": "Say: Nothing will befall us except what Allah has decreed for us.",
+            "fi": "Sano: Mikään ei tapahdu meille paitsi se, minkä Allah on määrännyt meille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 216,
+          "theme_notes": {
+            "tr": "Belki sevdiğiniz bir şey sizin için kötüdür, belki sevmediğiniz bir şey sizin için iyidir.",
+            "en": "Perhaps you love something that is bad for you, and hate something that is good for you.",
+            "fi": "Ehkä rakastatte jotain, mikä on teille pahaksi, ja vihaatte jotain, mikä on teille hyväksi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 5,
+          "ayah_end": 6,
+          "theme_notes": {
+            "tr": "Zorluğun yanında muhakkak kolaylık vardır.",
+            "en": "Indeed, with hardship comes ease.",
+            "fi": "Totisesti, vaikeuden mukana tulee helpotus."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 12,
+          "surah_name": "Yusuf",
+          "ayah_start": 86,
+          "theme_notes": {
+            "tr": "Ben kederimi ve hüznümü yalnızca Allah'a arz ediyorum.",
+            "en": "I only complain of my suffering and grief to Allah.",
+            "fi": "Valitan kärsimyksestäni ja surustani vain Allahille."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 65,
+          "surah_name": "At-Talaq",
+          "ayah_start": 2,
+          "ayah_end": 3,
+          "theme_notes": {
+            "tr": "Kim Allah'tan korkarsa, Allah ona bir çıkış yolu yapar ve ummadığı yerden rızıklandırır.",
+            "en": "Whoever fears Allah, He will make for him a way out and provide for him from where he does not expect.",
+            "fi": "Kuka ikinä pelkää Allahia, Hän tekee hänelle ulospääsyn ja elättää häntä sieltä, mistä hän ei odota."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Kırık kalpler Allah'a en yakın olanlardır. O, yaraları sarar ve yeni kapılar açar.",
+        "en": "Broken hearts are closest to Allah. He heals wounds and opens new doors.",
+        "fi": "Särkyneet sydämet ovat lähimpänä Allahia. Hän parantaa haavat ja avaa uusia ovia."
+      }
+    },
+    {
+      "id": "motivated",
+      "labels": {
+        "tr": "Motive",
+        "en": "Motivated",
+        "fi": "Motivoitunut"
+      },
+      "icon": "rocket",
+      "color": "#22D3EE",
+      "descriptions": {
+        "tr": "Harekete geçme enerjisi, motivasyon",
+        "en": "Energy to take action, motivation",
+        "fi": "Energia toimintaan, motivaatio"
+      },
+      "recommended_dhikr_suggestions": ["al-qawiyy", "al-matin", "al-fattah", "al-wakil"],
+      "ayah_references": [
+        {
+          "surah": 13,
+          "surah_name": "Ar-Ra'd",
+          "ayah_start": 11,
+          "theme_notes": {
+            "tr": "Bir toplum kendi durumunu değiştirmedikçe Allah onların durumunu değiştirmez.",
+            "en": "Allah will not change the condition of a people until they change what is within themselves.",
+            "fi": "Allah ei muuta kansan tilaa ennen kuin he muuttavat sen, mikä on heidän sisällään."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 53,
+          "surah_name": "An-Najm",
+          "ayah_start": 39,
+          "theme_notes": {
+            "tr": "İnsan için ancak çalıştığı vardır.",
+            "en": "Man will only have what he strives for.",
+            "fi": "Ihmisellä on vain se, mitä hän tavoittelee."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 94,
+          "surah_name": "Ash-Sharh",
+          "ayah_start": 7,
+          "ayah_end": 8,
+          "theme_notes": {
+            "tr": "Boş kaldığında hemen (başka işe) koyul ve yalnız Rabbine yönel.",
+            "en": "When you have finished, then stand up and to your Lord direct your longing.",
+            "fi": "Kun olet valmis, nouse seisomaan ja suuntaa kaipauksesi Herrallesi."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 29,
+          "surah_name": "Al-Ankabut",
+          "ayah_start": 69,
+          "theme_notes": {
+            "tr": "Bizim uğrumuzda cihad edenlere elbette yollarımızı göstereceğiz.",
+            "en": "Those who strive for Us, We will surely guide them to Our ways.",
+            "fi": "Ne jotka pyrkivät meidän puoleemme, ohjaamme heidät varmasti teillemme."
+          },
+          "needs_text_verification": true
+        },
+        {
+          "surah": 2,
+          "surah_name": "Al-Baqarah",
+          "ayah_start": 286,
+          "theme_notes": {
+            "tr": "Herkesin kazandığı iyilik kendi lehine, işlediği kötülük kendi aleyhinedir.",
+            "en": "It will have the consequence of what good it has gained, and it will bear what evil it has earned.",
+            "fi": "Sillä on seuraus siitä hyvästä, minkä se on saanut, ja se kantaa sen pahan, minkä se on ansainnut."
+          },
+          "needs_text_verification": true
+        }
+      ],
+      "reflection_prompts": {
+        "tr": "Motivasyon Allah'tan bir lütuftur. Bu enerjiyi hayırlı işlere yönlendir, bereketini gör.",
+        "en": "Motivation is a blessing from Allah. Direct this energy to good deeds and see its blessing.",
+        "fi": "Motivaatio on siunaus Allahilta. Suuntaa tämä energia hyviin tekoihin ja näe sen siunaus."
+      }
+    }
+  ],
+
+  "metadata": {
+    "total_moods": 20,
+    "total_ayah_references": 100,
+    "last_updated": "2024-01-18",
+    "source_note": "Ayah references provided for guidance. Verify exact text from trusted mushaf before production use."
+  }
+}

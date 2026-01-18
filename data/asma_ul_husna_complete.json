@@ -1,0 +1,2122 @@
+{
+  "version": "2.0.0",
+  "schema": "asma_ul_husna_complete",
+  "description": "Complete 99 Names of Allah (Asma'ul Husna) plus the name 'Allah' itself. Trilingual: Turkish (default), English, Finnish.",
+  "data_quality_note": "Abjad values calculated from Arabic spelling. All values should be verified against scholarly sources before production use.",
+  "default_language": "tr",
+  "supported_languages": ["tr", "en", "fi"],
+
+  "entries": [
+    {
+      "id": "allah",
+      "order": 0,
+      "arabic": "الله",
+      "transliteration": "Allah",
+      "meanings": {
+        "tr": "Tek ve yegane ilah",
+        "en": "The One True God",
+        "fi": "Ainoa todellinen Jumala"
+      },
+      "abjad_value": 66,
+      "needs_verification": false,
+      "confidence": 0.95,
+      "themes": ["oneness", "divinity", "worship", "foundation"],
+      "suggested_counts": [66, 100, 1000],
+      "reflection_prompts": {
+        "tr": "Allah, tüm isimlerin kaynağıdır. O'nu anmak, her şeyin başlangıcıdır.",
+        "en": "Allah is the source of all names. Remembering Him is the beginning of everything.",
+        "fi": "Allah on kaikkien nimien lähde. Hänen muistamisensa on kaiken alku."
+      }
+    },
+    {
+      "id": "ar-rahman",
+      "order": 1,
+      "arabic": "الرَّحْمَٰنُ",
+      "transliteration": "Ar-Rahman",
+      "meanings": {
+        "tr": "Sonsuz merhamet sahibi",
+        "en": "The Most Merciful",
+        "fi": "Armollisin"
+      },
+      "abjad_value": 298,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["mercy", "compassion", "comfort", "hope", "universal_love"],
+      "suggested_counts": [33, 99, 298],
+      "reflection_prompts": {
+        "tr": "Rahman, tüm yaratılmışa merhamet edendir. Bugün sen de birine merhamet gösterebilir misin?",
+        "en": "Ar-Rahman shows mercy to all creation. Can you show mercy to someone today?",
+        "fi": "Ar-Rahman osoittaa armoa kaikelle luodulle. Voitko osoittaa armoa jollekulle tänään?"
+      }
+    },
+    {
+      "id": "ar-rahim",
+      "order": 2,
+      "arabic": "الرَّحِيمُ",
+      "transliteration": "Ar-Rahim",
+      "meanings": {
+        "tr": "Çok merhametli",
+        "en": "The Most Compassionate",
+        "fi": "Armahtavaisin"
+      },
+      "abjad_value": 258,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["mercy", "forgiveness", "gentleness", "healing", "believers"],
+      "suggested_counts": [33, 99, 258],
+      "reflection_prompts": {
+        "tr": "Rahim, özellikle müminlere merhamet edendir. Kendi kendine merhamet gösteriyor musun?",
+        "en": "Ar-Rahim shows special mercy to believers. Are you showing mercy to yourself?",
+        "fi": "Ar-Rahim osoittaa erityistä armoa uskoville. Osoitatko armoa itsellesi?"
+      }
+    },
+    {
+      "id": "al-malik",
+      "order": 3,
+      "arabic": "الْمَلِكُ",
+      "transliteration": "Al-Malik",
+      "meanings": {
+        "tr": "Mülkün sahibi, Hükümdar",
+        "en": "The King, The Sovereign",
+        "fi": "Kuningas, Hallitsija"
+      },
+      "abjad_value": 90,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["sovereignty", "authority", "order", "protection", "kingdom"],
+      "suggested_counts": [33, 90, 99],
+      "reflection_prompts": {
+        "tr": "Gerçek mülk ve hükümranlık Allah'a aittir. Bu farkındalık seni nasıl özgürleştiriyor?",
+        "en": "True sovereignty belongs to Allah. How does this awareness free you?",
+        "fi": "Todellinen valta kuuluu Allahille. Miten tämä tietoisuus vapauttaa sinut?"
+      }
+    },
+    {
+      "id": "al-quddus",
+      "order": 4,
+      "arabic": "الْقُدُّوسُ",
+      "transliteration": "Al-Quddus",
+      "meanings": {
+        "tr": "Mukaddes, tertemiz",
+        "en": "The Most Holy",
+        "fi": "Pyhin"
+      },
+      "abjad_value": 170,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["purity", "cleansing", "sanctity", "peace", "holiness"],
+      "suggested_counts": [33, 99, 170],
+      "reflection_prompts": {
+        "tr": "Kuddüs, her türlü eksiklikten münezzehtir. Kalbini arındırmak için bugün ne yapabilirsin?",
+        "en": "Al-Quddus is free from all imperfection. What can you do today to purify your heart?",
+        "fi": "Al-Quddus on vapaa kaikesta epätäydellisyydestä. Mitä voit tehdä tänään puhdistaaksesi sydämesi?"
+      }
+    },
+    {
+      "id": "as-salam",
+      "order": 5,
+      "arabic": "السَّلَامُ",
+      "transliteration": "As-Salam",
+      "meanings": {
+        "tr": "Esenlik veren, Barış kaynağı",
+        "en": "The Source of Peace",
+        "fi": "Rauhan lähde"
+      },
+      "abjad_value": 131,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["peace", "calm", "safety", "tranquility", "anxiety_relief", "serenity"],
+      "suggested_counts": [33, 99, 131],
+      "reflection_prompts": {
+        "tr": "Selam, huzurun kaynağıdır. İç huzurunu bozan şeyleri Allah'a teslim edebilir misin?",
+        "en": "As-Salam is the source of peace. Can you surrender what disturbs your inner peace to Allah?",
+        "fi": "As-Salam on rauhan lähde. Voitko luovuttaa sisäistä rauhaasi häiritsevät asiat Allahille?"
+      }
+    },
+    {
+      "id": "al-mumin",
+      "order": 6,
+      "arabic": "الْمُؤْمِنُ",
+      "transliteration": "Al-Mu'min",
+      "meanings": {
+        "tr": "Güven veren, İman bahşeden",
+        "en": "The Guardian of Faith",
+        "fi": "Uskon suojelija"
+      },
+      "abjad_value": 137,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["faith", "trust", "security", "confidence", "belief"],
+      "suggested_counts": [33, 99, 137],
+      "reflection_prompts": {
+        "tr": "Mümin, iman ve güven verendir. Hangi konuda daha fazla güvene ihtiyacın var?",
+        "en": "Al-Mu'min grants faith and security. In what area do you need more trust?",
+        "fi": "Al-Mu'min antaa uskon ja turvallisuuden. Millä alueella tarvitset enemmän luottamusta?"
+      }
+    },
+    {
+      "id": "al-muhaymin",
+      "order": 7,
+      "arabic": "الْمُهَيْمِنُ",
+      "transliteration": "Al-Muhaymin",
+      "meanings": {
+        "tr": "Koruyup gözeten",
+        "en": "The Protector, The Watchful",
+        "fi": "Suojelija, Valvoja"
+      },
+      "abjad_value": 145,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["protection", "watchfulness", "care", "safety", "guardian"],
+      "suggested_counts": [33, 99, 145],
+      "reflection_prompts": {
+        "tr": "Müheymin her şeyi görür ve korur. Endişelerini O'na bırakabilir misin?",
+        "en": "Al-Muhaymin sees and protects everything. Can you leave your worries to Him?",
+        "fi": "Al-Muhaymin näkee ja suojelee kaikkea. Voitko jättää huolesi Hänelle?"
+      }
+    },
+    {
+      "id": "al-aziz",
+      "order": 8,
+      "arabic": "الْعَزِيزُ",
+      "transliteration": "Al-Aziz",
+      "meanings": {
+        "tr": "Üstün, Yenilmez, İzzet sahibi",
+        "en": "The Almighty, The Invincible",
+        "fi": "Kaikkivaltias, Voittamaton"
+      },
+      "abjad_value": 94,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["strength", "honor", "dignity", "resilience", "power", "invincibility"],
+      "suggested_counts": [33, 94, 99],
+      "reflection_prompts": {
+        "tr": "Aziz, gerçek izzet ve şeref sahibidir. Değerini insanların değil, Allah'ın katında ara.",
+        "en": "Al-Aziz holds true honor and dignity. Seek your worth in Allah's sight, not people's.",
+        "fi": "Al-Aziz pitää hallussaan todellisen kunnian. Etsi arvoasi Allahin silmissä, ei ihmisten."
+      }
+    },
+    {
+      "id": "al-jabbar",
+      "order": 9,
+      "arabic": "الْجَبَّارُ",
+      "transliteration": "Al-Jabbar",
+      "meanings": {
+        "tr": "Kırıkları saran, Düzeltici",
+        "en": "The Compeller, The Restorer",
+        "fi": "Pakottaja, Korjaaja"
+      },
+      "abjad_value": 206,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["healing", "restoration", "strength", "comfort", "mending", "power"],
+      "suggested_counts": [33, 99, 206],
+      "reflection_prompts": {
+        "tr": "Cebbar, kırık kalpleri onarır. Hangi yaranı O'na sunmak istersin?",
+        "en": "Al-Jabbar mends broken hearts. Which wound would you like to present to Him?",
+        "fi": "Al-Jabbar korjaa särkyneet sydämet. Minkä haavan haluaisit esittää Hänelle?"
+      }
+    },
+    {
+      "id": "al-mutakabbir",
+      "order": 10,
+      "arabic": "الْمُتَكَبِّرُ",
+      "transliteration": "Al-Mutakabbir",
+      "meanings": {
+        "tr": "Büyüklük sahibi, Ulu",
+        "en": "The Supreme, The Majestic",
+        "fi": "Ylin, Majesteettinen"
+      },
+      "abjad_value": 662,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["greatness", "humility", "perspective", "awe", "majesty"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Gerçek büyüklük yalnızca Allah'a aittir. Bu, seni nasıl mütevazı kılıyor?",
+        "en": "True greatness belongs only to Allah. How does this make you humble?",
+        "fi": "Todellinen suuruus kuuluu vain Allahille. Miten tämä tekee sinusta nöyrän?"
+      }
+    },
+    {
+      "id": "al-khaliq",
+      "order": 11,
+      "arabic": "الْخَالِقُ",
+      "transliteration": "Al-Khaliq",
+      "meanings": {
+        "tr": "Yaratan",
+        "en": "The Creator",
+        "fi": "Luoja"
+      },
+      "abjad_value": 731,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["creation", "new_beginnings", "purpose", "creativity", "origin"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Halik, yoktan var edendir. Seni yaratan, senin için bir plan da yaratmıştır.",
+        "en": "Al-Khaliq creates from nothing. The One who created you has also created a plan for you.",
+        "fi": "Al-Khaliq luo tyhjästä. Hän joka loi sinut, on myös luonut suunnitelman sinulle."
+      }
+    },
+    {
+      "id": "al-bari",
+      "order": 12,
+      "arabic": "الْبَارِئُ",
+      "transliteration": "Al-Bari",
+      "meanings": {
+        "tr": "Kusursuz yaratan",
+        "en": "The Evolver, The Maker",
+        "fi": "Kehittäjä, Tekijä"
+      },
+      "abjad_value": 214,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["creation", "perfection", "design", "evolution", "formation"],
+      "suggested_counts": [33, 99, 214],
+      "reflection_prompts": {
+        "tr": "Bari, her şeyi mükemmel bir şekilde yaratandır. Sen de O'nun mükemmel eserlerinden birisin.",
+        "en": "Al-Bari creates everything perfectly. You are also one of His perfect works.",
+        "fi": "Al-Bari luo kaiken täydellisesti. Sinäkin olet yksi Hänen täydellisistä teoksistaan."
+      }
+    },
+    {
+      "id": "al-musawwir",
+      "order": 13,
+      "arabic": "الْمُصَوِّرُ",
+      "transliteration": "Al-Musawwir",
+      "meanings": {
+        "tr": "Şekil veren, Tasvir eden",
+        "en": "The Fashioner, The Shaper",
+        "fi": "Muotoilija, Muovaaja"
+      },
+      "abjad_value": 336,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["beauty", "form", "uniqueness", "design", "identity"],
+      "suggested_counts": [33, 99, 336],
+      "reflection_prompts": {
+        "tr": "Musavvir, her varlığa eşsiz bir şekil verir. Senin benzersizliğin de O'nun sanatıdır.",
+        "en": "Al-Musawwir gives each being a unique form. Your uniqueness is also His art.",
+        "fi": "Al-Musawwir antaa jokaiselle olennolle ainutlaatuisen muodon. Ainutlaatuisuutesi on myös Hänen taidettaan."
+      }
+    },
+    {
+      "id": "al-ghaffar",
+      "order": 14,
+      "arabic": "الْغَفَّارُ",
+      "transliteration": "Al-Ghaffar",
+      "meanings": {
+        "tr": "Çok bağışlayan",
+        "en": "The Ever-Forgiving",
+        "fi": "Aina anteeksiantava"
+      },
+      "abjad_value": 1281,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["forgiveness", "mercy", "second_chances", "guilt_relief", "redemption"],
+      "suggested_counts": [33, 99, 100],
+      "reflection_prompts": {
+        "tr": "Gaffar, tekrar tekrar affeder. Kendini affetmekte zorlanıyor musun?",
+        "en": "Al-Ghaffar forgives again and again. Do you struggle to forgive yourself?",
+        "fi": "Al-Ghaffar antaa anteeksi yhä uudelleen. Onko sinun vaikea antaa itsellesi anteeksi?"
+      }
+    },
+    {
+      "id": "al-qahhar",
+      "order": 15,
+      "arabic": "الْقَهَّارُ",
+      "transliteration": "Al-Qahhar",
+      "meanings": {
+        "tr": "Kahredici, Üstün gelen",
+        "en": "The Subduer, The Dominant",
+        "fi": "Alistaja, Hallitseva"
+      },
+      "abjad_value": 306,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["power", "justice", "overcoming", "strength", "victory"],
+      "suggested_counts": [33, 99, 306],
+      "reflection_prompts": {
+        "tr": "Kahhar, tüm zorluklara galip gelendir. Zorlukların O'nun izniyle aşılacağını unutma.",
+        "en": "Al-Qahhar overcomes all difficulties. Remember that challenges will be overcome by His will.",
+        "fi": "Al-Qahhar voittaa kaikki vaikeudet. Muista, että haasteet voitetaan Hänen tahdollaan."
+      }
+    },
+    {
+      "id": "al-wahhab",
+      "order": 16,
+      "arabic": "الْوَهَّابُ",
+      "transliteration": "Al-Wahhab",
+      "meanings": {
+        "tr": "Karşılıksız veren, Bağışlayan",
+        "en": "The Bestower, The Giver",
+        "fi": "Lahjoittaja, Antaja"
+      },
+      "abjad_value": 14,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["generosity", "gifts", "abundance", "gratitude", "provision"],
+      "suggested_counts": [14, 33, 99],
+      "reflection_prompts": {
+        "tr": "Vehhab, karşılık beklemeden verir. Bugün sahip olduğun üç nimeti say.",
+        "en": "Al-Wahhab gives without expecting anything in return. Count three blessings you have today.",
+        "fi": "Al-Wahhab antaa odottamatta mitään vastineeksi. Laske kolme siunausta, jotka sinulla on tänään."
+      }
+    },
+    {
+      "id": "ar-razzaq",
+      "order": 17,
+      "arabic": "الرَّزَّاقُ",
+      "transliteration": "Ar-Razzaq",
+      "meanings": {
+        "tr": "Rızık veren",
+        "en": "The Provider, The Sustainer",
+        "fi": "Elättäjä, Ylläpitäjä"
+      },
+      "abjad_value": 308,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["provision", "sustenance", "trust", "abundance", "work", "livelihood"],
+      "suggested_counts": [33, 99, 308],
+      "reflection_prompts": {
+        "tr": "Rezzak, her canlıya rızkını ulaştırır. Geçim endişelerini O'na teslim et.",
+        "en": "Ar-Razzaq provides sustenance to every living being. Surrender your livelihood worries to Him.",
+        "fi": "Ar-Razzaq antaa ravinnon jokaiselle elävälle olennolle. Luovuta toimeentulohuolesi Hänelle."
+      }
+    },
+    {
+      "id": "al-fattah",
+      "order": 18,
+      "arabic": "الْفَتَّاحُ",
+      "transliteration": "Al-Fattah",
+      "meanings": {
+        "tr": "Kapıları açan, Fetih veren",
+        "en": "The Opener, The Victory Giver",
+        "fi": "Avaaja, Voiton antaja"
+      },
+      "abjad_value": 489,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["opportunities", "solutions", "new_paths", "hope", "breakthrough", "success"],
+      "suggested_counts": [33, 99, 489],
+      "reflection_prompts": {
+        "tr": "Fettah, kapalı kapıları açar. Hangi kapının açılmasını umuyorsun?",
+        "en": "Al-Fattah opens closed doors. Which door are you hoping will open?",
+        "fi": "Al-Fattah avaa suljetut ovet. Minkä oven toivot avautuvan?"
+      }
+    },
+    {
+      "id": "al-alim",
+      "order": 19,
+      "arabic": "الْعَلِيمُ",
+      "transliteration": "Al-Alim",
+      "meanings": {
+        "tr": "Her şeyi bilen",
+        "en": "The All-Knowing",
+        "fi": "Kaikkitietävä"
+      },
+      "abjad_value": 150,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["knowledge", "wisdom", "understanding", "clarity", "omniscience"],
+      "suggested_counts": [33, 99, 150],
+      "reflection_prompts": {
+        "tr": "Alim, gizli açık her şeyi bilir. Sırrını bilen birine güvenmek huzur verir mi?",
+        "en": "Al-Alim knows everything hidden and apparent. Does trusting someone who knows your secrets bring peace?",
+        "fi": "Al-Alim tietää kaiken kätketyn ja näkyvän. Tuoko rauha luottaminen siihen, joka tietää salaisuutesi?"
+      }
+    },
+    {
+      "id": "al-qabid",
+      "order": 20,
+      "arabic": "الْقَابِضُ",
+      "transliteration": "Al-Qabid",
+      "meanings": {
+        "tr": "Daraltan, Sıkan",
+        "en": "The Constrictor, The Withholder",
+        "fi": "Rajoittaja, Pidättäjä"
+      },
+      "abjad_value": 903,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["contraction", "testing", "patience", "wisdom", "balance"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Kabıd, bazen daraltır ama bu da hikmetindendir. Darlıkta sabır, genişliğin habercisidir.",
+        "en": "Al-Qabid sometimes constricts, but this is also from His wisdom. Patience in hardship heralds expansion.",
+        "fi": "Al-Qabid joskus rajoittaa, mutta tämäkin on Hänen viisauttaan. Kärsivällisyys vaikeuksissa ennakoi laajentumista."
+      }
+    },
+    {
+      "id": "al-basit",
+      "order": 21,
+      "arabic": "الْبَاسِطُ",
+      "transliteration": "Al-Basit",
+      "meanings": {
+        "tr": "Genişleten, Ferahlatan",
+        "en": "The Expander, The Releaser",
+        "fi": "Laajentaja, Vapauttaja"
+      },
+      "abjad_value": 72,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["expansion", "relief", "openness", "generosity", "stress_relief", "joy"],
+      "suggested_counts": [33, 72, 99],
+      "reflection_prompts": {
+        "tr": "Basit, darlıktan sonra genişlik verir. Şu an hangi konuda genişliğe ihtiyacın var?",
+        "en": "Al-Basit gives expansion after constriction. In what area do you need expansion right now?",
+        "fi": "Al-Basit antaa laajuutta ahtauden jälkeen. Millä alueella tarvitset laajuutta juuri nyt?"
+      }
+    },
+    {
+      "id": "al-khafid",
+      "order": 22,
+      "arabic": "الْخَافِضُ",
+      "transliteration": "Al-Khafid",
+      "meanings": {
+        "tr": "Alçaltan",
+        "en": "The Abaser, The Humbler",
+        "fi": "Alentaja, Nöyryyttäjä"
+      },
+      "abjad_value": 1481,
+      "needs_verification": true,
+      "confidence": 0.5,
+      "themes": ["humility", "justice", "balance", "perspective", "ego"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Hafıd, kibirlileri alçaltır. Tevazu, yükselmenin gerçek yoludur.",
+        "en": "Al-Khafid humbles the arrogant. Humility is the true path to elevation.",
+        "fi": "Al-Khafid nöyryyttää ylimieliset. Nöyryys on todellinen tie kohoamiseen."
+      }
+    },
+    {
+      "id": "ar-rafi",
+      "order": 23,
+      "arabic": "الرَّافِعُ",
+      "transliteration": "Ar-Rafi",
+      "meanings": {
+        "tr": "Yükselten",
+        "en": "The Exalter, The Elevator",
+        "fi": "Korottaja, Nostaja"
+      },
+      "abjad_value": 351,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["elevation", "honor", "success", "promotion", "dignity"],
+      "suggested_counts": [33, 99, 351],
+      "reflection_prompts": {
+        "tr": "Rafi, mütevazileri yükseltir. Yükseliş O'ndandır, hak edenler O'nun takdiriyledir.",
+        "en": "Ar-Rafi elevates the humble. Elevation is from Him, for those He deems worthy.",
+        "fi": "Ar-Rafi korottaa nöyrät. Korotus on Häneltä, niille jotka Hän katsoo arvoisiksi."
+      }
+    },
+    {
+      "id": "al-muizz",
+      "order": 24,
+      "arabic": "الْمُعِزُّ",
+      "transliteration": "Al-Mu'izz",
+      "meanings": {
+        "tr": "İzzet veren, Şereflendiren",
+        "en": "The Bestower of Honor",
+        "fi": "Kunnian antaja"
+      },
+      "abjad_value": 117,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["honor", "dignity", "respect", "self_worth", "elevation"],
+      "suggested_counts": [33, 99, 117],
+      "reflection_prompts": {
+        "tr": "Muizz, dilediğine izzet verir. Gerçek şeref, O'nun katındadır.",
+        "en": "Al-Mu'izz bestows honor upon whom He wills. True honor is in His sight.",
+        "fi": "Al-Mu'izz antaa kunnian kenelle tahtoo. Todellinen kunnia on Hänen silmissään."
+      }
+    },
+    {
+      "id": "al-muzill",
+      "order": 25,
+      "arabic": "الْمُذِلُّ",
+      "transliteration": "Al-Muzill",
+      "meanings": {
+        "tr": "Zillete düşüren",
+        "en": "The Dishonorer",
+        "fi": "Häpäisijä"
+      },
+      "abjad_value": 770,
+      "needs_verification": true,
+      "confidence": 0.5,
+      "themes": ["justice", "humility", "consequences", "ego", "balance"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Müzill, zalimleri zelil eder. Adalet O'nun elindedir.",
+        "en": "Al-Muzill disgraces the oppressors. Justice is in His hands.",
+        "fi": "Al-Muzill häpäisee sortajat. Oikeus on Hänen käsissään."
+      }
+    },
+    {
+      "id": "as-sami",
+      "order": 26,
+      "arabic": "السَّمِيعُ",
+      "transliteration": "As-Sami",
+      "meanings": {
+        "tr": "Her şeyi duyan",
+        "en": "The All-Hearing",
+        "fi": "Kaikkikuuleva"
+      },
+      "abjad_value": 180,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["listening", "being_heard", "prayer", "loneliness", "connection", "attention"],
+      "suggested_counts": [33, 99, 180],
+      "reflection_prompts": {
+        "tr": "Semi, en sessiz duanı bile duyar. Kimsenin duymadığını düşündüğün ne var?",
+        "en": "As-Sami hears even your most silent prayer. What do you think no one hears?",
+        "fi": "As-Sami kuulee jopa hiljaisimman rukouksesi. Mitä luulet, ettei kukaan kuule?"
+      }
+    },
+    {
+      "id": "al-basir",
+      "order": 27,
+      "arabic": "الْبَصِيرُ",
+      "transliteration": "Al-Basir",
+      "meanings": {
+        "tr": "Her şeyi gören",
+        "en": "The All-Seeing",
+        "fi": "Kaikkiäkevä"
+      },
+      "abjad_value": 302,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["awareness", "being_seen", "validation", "truth", "clarity", "witness"],
+      "suggested_counts": [33, 99, 302],
+      "reflection_prompts": {
+        "tr": "Basir, görünmez çabalarını da görür. Takdir edilmeden yaptığın iyilikleri hatırla.",
+        "en": "Al-Basir sees even your invisible efforts. Remember the good you do without recognition.",
+        "fi": "Al-Basir näkee jopa näkymättömät ponnistelusi. Muista hyvä, jota teet ilman tunnustusta."
+      }
+    },
+    {
+      "id": "al-hakam",
+      "order": 28,
+      "arabic": "الْحَكَمُ",
+      "transliteration": "Al-Hakam",
+      "meanings": {
+        "tr": "Hüküm veren, Hakim",
+        "en": "The Judge, The Arbitrator",
+        "fi": "Tuomari, Välimies"
+      },
+      "abjad_value": 68,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["justice", "judgment", "fairness", "truth", "resolution"],
+      "suggested_counts": [33, 68, 99],
+      "reflection_prompts": {
+        "tr": "Hakem, en adil hükmü verendir. Adaleti O'ndan bekle, intikamı O'na bırak.",
+        "en": "Al-Hakam gives the most just judgment. Expect justice from Him, leave revenge to Him.",
+        "fi": "Al-Hakam antaa oikeudenmukaisimman tuomion. Odota oikeutta Häneltä, jätä kosto Hänelle."
+      }
+    },
+    {
+      "id": "al-adl",
+      "order": 29,
+      "arabic": "الْعَدْلُ",
+      "transliteration": "Al-Adl",
+      "meanings": {
+        "tr": "Mutlak adil",
+        "en": "The Just, The Fair",
+        "fi": "Oikeudenmukainen, Reilu"
+      },
+      "abjad_value": 104,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["justice", "fairness", "balance", "equality", "truth"],
+      "suggested_counts": [33, 99, 104],
+      "reflection_prompts": {
+        "tr": "Adl, mutlak adalettir. Haksızlığa uğradığını hissettiğinde, O'nun adaletine güven.",
+        "en": "Al-Adl is absolute justice. When you feel wronged, trust in His justice.",
+        "fi": "Al-Adl on ehdoton oikeudenmukaisuus. Kun tunnet kärsineesi vääryyttä, luota Hänen oikeudenmukaisuuteensa."
+      }
+    },
+    {
+      "id": "al-latif",
+      "order": 30,
+      "arabic": "اللَّطِيفُ",
+      "transliteration": "Al-Latif",
+      "meanings": {
+        "tr": "Lütuf sahibi, Nazik, İnce",
+        "en": "The Subtle, The Kind",
+        "fi": "Hienovarainen, Ystävällinen"
+      },
+      "abjad_value": 129,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["gentleness", "subtlety", "hidden_blessings", "comfort", "anxiety", "kindness"],
+      "suggested_counts": [33, 99, 129],
+      "reflection_prompts": {
+        "tr": "Latif, fark etmediğin yollarla lütfeder. Hayatındaki gizli lütufları görmeye çalış.",
+        "en": "Al-Latif bestows blessings in ways you don't notice. Try to see the hidden blessings in your life.",
+        "fi": "Al-Latif siunaa tavoilla, joita et huomaa. Yritä nähdä elämäsi piilotetut siunaukset."
+      }
+    },
+    {
+      "id": "al-khabir",
+      "order": 31,
+      "arabic": "الْخَبِيرُ",
+      "transliteration": "Al-Khabir",
+      "meanings": {
+        "tr": "Her şeyden haberdar",
+        "en": "The All-Aware",
+        "fi": "Kaikkitietoinen"
+      },
+      "abjad_value": 812,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["awareness", "knowledge", "understanding", "insight", "truth"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Habir, her şeyden haberdardır. Gizlediğin acıları da, sevincini de O bilir.",
+        "en": "Al-Khabir is aware of everything. He knows both your hidden pains and your joys.",
+        "fi": "Al-Khabir on tietoinen kaikesta. Hän tietää sekä piilotetut kipusi että ilosi."
+      }
+    },
+    {
+      "id": "al-halim",
+      "order": 32,
+      "arabic": "الْحَلِيمُ",
+      "transliteration": "Al-Halim",
+      "meanings": {
+        "tr": "Yumuşak huylu, Hilm sahibi",
+        "en": "The Forbearing, The Gentle",
+        "fi": "Kärsivällinen, Lempeä"
+      },
+      "abjad_value": 88,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["patience", "gentleness", "forbearance", "tolerance", "calm"],
+      "suggested_counts": [33, 88, 99],
+      "reflection_prompts": {
+        "tr": "Halim, kullarına karşı çok sabırlıdır. Sen de kendine ve başkalarına karşı yumuşak ol.",
+        "en": "Al-Halim is very patient with His servants. Be gentle with yourself and others too.",
+        "fi": "Al-Halim on hyvin kärsivällinen palvelijoitaan kohtaan. Ole lempeä itseäsi ja muita kohtaan."
+      }
+    },
+    {
+      "id": "al-azim",
+      "order": 33,
+      "arabic": "الْعَظِيمُ",
+      "transliteration": "Al-Azim",
+      "meanings": {
+        "tr": "Azamet sahibi, Yüce",
+        "en": "The Magnificent, The Supreme",
+        "fi": "Mahtava, Ylin"
+      },
+      "abjad_value": 1020,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["greatness", "magnificence", "awe", "perspective", "humility"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Azim, sonsuz azamet sahibidir. O'nun büyüklüğü karşısında dertlerin küçülür.",
+        "en": "Al-Azim possesses infinite magnificence. Your troubles shrink before His greatness.",
+        "fi": "Al-Azim omistaa äärettömän suuruuden. Huolesi kutistuvat Hänen suuruutensa edessä."
+      }
+    },
+    {
+      "id": "al-ghafur",
+      "order": 34,
+      "arabic": "الْغَفُورُ",
+      "transliteration": "Al-Ghafur",
+      "meanings": {
+        "tr": "Çok bağışlayan, Mağfireti bol",
+        "en": "The All-Forgiving",
+        "fi": "Kaikkianteeksiantava"
+      },
+      "abjad_value": 1286,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["forgiveness", "mercy", "regret", "fresh_start", "redemption"],
+      "suggested_counts": [33, 99, 100],
+      "reflection_prompts": {
+        "tr": "Gafur, günahları örter ve affeder. Pişmanlıkların seni değil, dönüşümün seni tanımlasın.",
+        "en": "Al-Ghafur covers and forgives sins. Let your transformation define you, not your regrets.",
+        "fi": "Al-Ghafur peittää ja antaa synnit anteeksi. Anna muutoksesi määritellä sinut, ei katumuksesi."
+      }
+    },
+    {
+      "id": "ash-shakur",
+      "order": 35,
+      "arabic": "الشَّكُورُ",
+      "transliteration": "Ash-Shakur",
+      "meanings": {
+        "tr": "Şükrü kabul eden, Mükafatlandıran",
+        "en": "The Appreciative, The Grateful",
+        "fi": "Kiitollinen, Palkitseva"
+      },
+      "abjad_value": 526,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["gratitude", "appreciation", "reward", "recognition", "acknowledgment"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Şekür, küçük şükürleri bile büyük mükafatlarla karşılar. Bugün neye şükredersin?",
+        "en": "Ash-Shakur rewards even small gratitude with great blessings. What are you grateful for today?",
+        "fi": "Ash-Shakur palkitsee jopa pienen kiitollisuuden suurilla siunauksilla. Mistä olet kiitollinen tänään?"
+      }
+    },
+    {
+      "id": "al-aliyy",
+      "order": 36,
+      "arabic": "الْعَلِيُّ",
+      "transliteration": "Al-Aliyy",
+      "meanings": {
+        "tr": "Yüce, En yüksek",
+        "en": "The Most High",
+        "fi": "Korkein"
+      },
+      "abjad_value": 110,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["transcendence", "elevation", "perspective", "awe", "worship"],
+      "suggested_counts": [33, 99, 110],
+      "reflection_prompts": {
+        "tr": "Aliyy, her şeyin üstündedir. Dünyevi kaygılarını O'nun yüceliğine arz et.",
+        "en": "Al-Aliyy is above everything. Present your worldly concerns to His exaltedness.",
+        "fi": "Al-Aliyy on kaiken yläpuolella. Esitä maalliset huolesi Hänen korkeudellensa."
+      }
+    },
+    {
+      "id": "al-kabir",
+      "order": 37,
+      "arabic": "الْكَبِيرُ",
+      "transliteration": "Al-Kabir",
+      "meanings": {
+        "tr": "Büyük, Ulu",
+        "en": "The Great",
+        "fi": "Suuri"
+      },
+      "abjad_value": 232,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["greatness", "majesty", "perspective", "humility", "awe"],
+      "suggested_counts": [33, 99, 232],
+      "reflection_prompts": {
+        "tr": "Kebir, sonsuz büyüklük sahibidir. O'nun büyüklüğünü tefekkür et.",
+        "en": "Al-Kabir possesses infinite greatness. Contemplate His greatness.",
+        "fi": "Al-Kabir omistaa äärettömän suuruuden. Pohdi Hänen suuruuttaan."
+      }
+    },
+    {
+      "id": "al-hafiz",
+      "order": 38,
+      "arabic": "الْحَفِيظُ",
+      "transliteration": "Al-Hafiz",
+      "meanings": {
+        "tr": "Koruyucu, Muhafaza eden",
+        "en": "The Preserver, The Protector",
+        "fi": "Säilyttäjä, Suojelija"
+      },
+      "abjad_value": 998,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["protection", "preservation", "safety", "security", "guardian"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Hafiz, her şeyi korur ve muhafaza eder. Güvenliğini O'na emanet et.",
+        "en": "Al-Hafiz protects and preserves everything. Entrust your safety to Him.",
+        "fi": "Al-Hafiz suojelee ja säilyttää kaiken. Uskalla turvallisuutesi Hänelle."
+      }
+    },
+    {
+      "id": "al-muqit",
+      "order": 39,
+      "arabic": "الْمُقِيتُ",
+      "transliteration": "Al-Muqit",
+      "meanings": {
+        "tr": "Rızık veren, Besleyen",
+        "en": "The Nourisher, The Sustainer",
+        "fi": "Ravitsija, Ylläpitäjä"
+      },
+      "abjad_value": 550,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["nourishment", "sustenance", "provision", "care", "strength"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Mukit, her canlıyı besler ve güçlendirir. Bedenini ve ruhunu O'nun nimetleriyle besle.",
+        "en": "Al-Muqit nourishes and strengthens every living being. Nourish your body and soul with His blessings.",
+        "fi": "Al-Muqit ravitsee ja vahvistaa jokaista elävää olentoa. Ravitse kehoasi ja sieluasi Hänen siunauksillaan."
+      }
+    },
+    {
+      "id": "al-hasib",
+      "order": 40,
+      "arabic": "الْحَسِيبُ",
+      "transliteration": "Al-Hasib",
+      "meanings": {
+        "tr": "Hesap soran, Yeten",
+        "en": "The Reckoner, The Sufficient",
+        "fi": "Laskija, Riittävä"
+      },
+      "abjad_value": 80,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["accountability", "sufficiency", "trust", "justice", "reliance"],
+      "suggested_counts": [33, 80, 99],
+      "reflection_prompts": {
+        "tr": "Hasib, hesap günü adaletiyle hüküm verecektir. O sana yeter, başkasına muhtaç değilsin.",
+        "en": "Al-Hasib will judge with justice on the Day of Reckoning. He is sufficient for you.",
+        "fi": "Al-Hasib tuomitsee oikeudenmukaisesti tuomiopäivänä. Hän riittää sinulle."
+      }
+    },
+    {
+      "id": "al-jalil",
+      "order": 41,
+      "arabic": "الْجَلِيلُ",
+      "transliteration": "Al-Jalil",
+      "meanings": {
+        "tr": "Celal sahibi, Ulu",
+        "en": "The Majestic, The Sublime",
+        "fi": "Majesteettinen, Ylevä"
+      },
+      "abjad_value": 73,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["majesty", "grandeur", "awe", "reverence", "glory"],
+      "suggested_counts": [33, 73, 99],
+      "reflection_prompts": {
+        "tr": "Celil, sonsuz celal ve heybet sahibidir. O'nun heybeti karşısında huşu duy.",
+        "en": "Al-Jalil possesses infinite majesty and grandeur. Feel awe before His majesty.",
+        "fi": "Al-Jalil omistaa äärettömän majesteettisuuden. Tunne kunnioitusta Hänen majesteettisuutensa edessä."
+      }
+    },
+    {
+      "id": "al-karim",
+      "order": 42,
+      "arabic": "الْكَرِيمُ",
+      "transliteration": "Al-Karim",
+      "meanings": {
+        "tr": "Kerem sahibi, Cömert",
+        "en": "The Generous, The Bountiful",
+        "fi": "Antelias, Runsas"
+      },
+      "abjad_value": 270,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["generosity", "nobility", "abundance", "grace", "kindness"],
+      "suggested_counts": [33, 99, 270],
+      "reflection_prompts": {
+        "tr": "Kerim, sonsuz kerem sahibidir. O'ndan istemeye utanma, O vermekten yorulmaz.",
+        "en": "Al-Karim possesses infinite generosity. Don't be shy to ask from Him; He never tires of giving.",
+        "fi": "Al-Karim omistaa äärettömän anteliaisuuden. Älä ujostele pyytää Häneltä; Hän ei koskaan väsy antamisesta."
+      }
+    },
+    {
+      "id": "ar-raqib",
+      "order": 43,
+      "arabic": "الرَّقِيبُ",
+      "transliteration": "Ar-Raqib",
+      "meanings": {
+        "tr": "Gözetleyen, Murakabe eden",
+        "en": "The Watchful, The Observer",
+        "fi": "Tarkkaavainen, Havainnoija"
+      },
+      "abjad_value": 312,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["watchfulness", "awareness", "mindfulness", "accountability", "presence"],
+      "suggested_counts": [33, 99, 312],
+      "reflection_prompts": {
+        "tr": "Rakib, her anını gözetler. Bu bilinç, seni daha dikkatli kılsın.",
+        "en": "Ar-Raqib watches every moment. Let this awareness make you more mindful.",
+        "fi": "Ar-Raqib tarkkailee jokaista hetkeäsi. Anna tämän tietoisuuden tehdä sinusta tietoisempi."
+      }
+    },
+    {
+      "id": "al-mujib",
+      "order": 44,
+      "arabic": "الْمُجِيبُ",
+      "transliteration": "Al-Mujib",
+      "meanings": {
+        "tr": "Dualara icabet eden",
+        "en": "The Responsive, The Answerer",
+        "fi": "Vastaava, Rukouksiin vastaaja"
+      },
+      "abjad_value": 55,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["prayer", "response", "connection", "hope", "answered_prayers"],
+      "suggested_counts": [33, 55, 99],
+      "reflection_prompts": {
+        "tr": "Mücib, dualara icabet edendir. Duanın kabul edileceğine inan, ama zamanlamasını O'na bırak.",
+        "en": "Al-Mujib responds to prayers. Believe your prayer will be answered, but leave the timing to Him.",
+        "fi": "Al-Mujib vastaa rukouksiin. Usko, että rukoukseesi vastataan, mutta jätä ajoitus Hänelle."
+      }
+    },
+    {
+      "id": "al-wasi",
+      "order": 45,
+      "arabic": "الْوَاسِعُ",
+      "transliteration": "Al-Wasi",
+      "meanings": {
+        "tr": "Geniş, Her şeyi kaplayan",
+        "en": "The All-Encompassing, The Vast",
+        "fi": "Kaikkikattava, Laaja"
+      },
+      "abjad_value": 137,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["vastness", "abundance", "encompassing", "infinity", "expansion"],
+      "suggested_counts": [33, 99, 137],
+      "reflection_prompts": {
+        "tr": "Vasi, her şeyi kuşatandır. O'nun rahmeti her şeyi kapsar, senin dertlerini de.",
+        "en": "Al-Wasi encompasses everything. His mercy covers all, including your troubles.",
+        "fi": "Al-Wasi kattaa kaiken. Hänen armonsa kattaa kaiken, myös sinun huolesi."
+      }
+    },
+    {
+      "id": "al-hakim",
+      "order": 46,
+      "arabic": "الْحَكِيمُ",
+      "transliteration": "Al-Hakim",
+      "meanings": {
+        "tr": "Hikmet sahibi, Hüküm veren",
+        "en": "The Wise",
+        "fi": "Viisas"
+      },
+      "abjad_value": 78,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["wisdom", "purpose", "understanding", "patience", "divine_plan"],
+      "suggested_counts": [33, 78, 99],
+      "reflection_prompts": {
+        "tr": "Hakim, her şeyi hikmetle yerli yerine koyar. Anlamadığın şeylerde bile hikmet olabilir.",
+        "en": "Al-Hakim places everything in its proper place with wisdom. There may be wisdom in what you don't understand.",
+        "fi": "Al-Hakim asettaa kaiken oikealle paikalleen viisaudella. Siinä, mitä et ymmärrä, voi olla viisautta."
+      }
+    },
+    {
+      "id": "al-wadud",
+      "order": 47,
+      "arabic": "الْوَدُودُ",
+      "transliteration": "Al-Wadud",
+      "meanings": {
+        "tr": "Çok seven, Sevilen",
+        "en": "The Most Loving",
+        "fi": "Rakastava"
+      },
+      "abjad_value": 20,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["love", "affection", "belonging", "loneliness", "self_worth", "connection"],
+      "suggested_counts": [20, 33, 99],
+      "reflection_prompts": {
+        "tr": "Vedud, seni koşulsuz sever. Sevilmeye layık olduğunu unutma.",
+        "en": "Al-Wadud loves you unconditionally. Remember that you are worthy of love.",
+        "fi": "Al-Wadud rakastaa sinua ehdoitta. Muista, että olet rakkauden arvoinen."
+      }
+    },
+    {
+      "id": "al-majid",
+      "order": 48,
+      "arabic": "الْمَجِيدُ",
+      "transliteration": "Al-Majid",
+      "meanings": {
+        "tr": "Şan ve şeref sahibi",
+        "en": "The Glorious, The Most Honorable",
+        "fi": "Kunniallinen, Maineikas"
+      },
+      "abjad_value": 57,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["glory", "honor", "nobility", "dignity", "majesty"],
+      "suggested_counts": [33, 57, 99],
+      "reflection_prompts": {
+        "tr": "Mecid, sonsuz şan ve şeref sahibidir. O'nun şanını zikretmek, senin de şerefini artırır.",
+        "en": "Al-Majid possesses infinite glory and honor. Remembering His glory elevates your honor too.",
+        "fi": "Al-Majid omistaa äärettömän kunnian. Hänen kunniansa muistaminen kohottaa myös sinun kunniaasi."
+      }
+    },
+    {
+      "id": "al-baith",
+      "order": 49,
+      "arabic": "الْبَاعِثُ",
+      "transliteration": "Al-Ba'ith",
+      "meanings": {
+        "tr": "Ölüleri dirilten",
+        "en": "The Resurrector, The Awakener",
+        "fi": "Herättäjä, Ylösnousemuksen antaja"
+      },
+      "abjad_value": 573,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["resurrection", "renewal", "awakening", "new_life", "purpose"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Bais, ölüleri diriltir, umutsuzlara umut verir. Yeniden başlamak her zaman mümkün.",
+        "en": "Al-Ba'ith resurrects the dead and gives hope to the hopeless. It's always possible to start again.",
+        "fi": "Al-Ba'ith herättää kuolleet ja antaa toivoa toivottomille. Uudelleen aloittaminen on aina mahdollista."
+      }
+    },
+    {
+      "id": "ash-shahid",
+      "order": 50,
+      "arabic": "الشَّهِيدُ",
+      "transliteration": "Ash-Shahid",
+      "meanings": {
+        "tr": "Her şeye şahit olan",
+        "en": "The Witness",
+        "fi": "Todistaja"
+      },
+      "abjad_value": 319,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["witness", "truth", "awareness", "presence", "accountability"],
+      "suggested_counts": [33, 99, 319],
+      "reflection_prompts": {
+        "tr": "Şehid, her şeye şahittir. Gizli iyiliklerini de, mücadelelerini de O görür.",
+        "en": "Ash-Shahid witnesses everything. He sees both your hidden goodness and your struggles.",
+        "fi": "Ash-Shahid todistaa kaiken. Hän näkee sekä piilotetun hyvyytesi että kamppailusi."
+      }
+    },
+    {
+      "id": "al-haqq",
+      "order": 51,
+      "arabic": "الْحَقُّ",
+      "transliteration": "Al-Haqq",
+      "meanings": {
+        "tr": "Hak, Gerçek",
+        "en": "The Truth, The Reality",
+        "fi": "Totuus, Todellisuus"
+      },
+      "abjad_value": 108,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["truth", "reality", "authenticity", "justice", "certainty"],
+      "suggested_counts": [33, 99, 108],
+      "reflection_prompts": {
+        "tr": "Hakk, mutlak gerçektir. Hakikati O'nda ara, geçici olanlarda değil.",
+        "en": "Al-Haqq is absolute truth. Seek truth in Him, not in temporary things.",
+        "fi": "Al-Haqq on ehdoton totuus. Etsi totuutta Hänestä, ei väliaikaisista asioista."
+      }
+    },
+    {
+      "id": "al-wakil",
+      "order": 52,
+      "arabic": "الْوَكِيلُ",
+      "transliteration": "Al-Wakil",
+      "meanings": {
+        "tr": "Güvenilen vekil",
+        "en": "The Trustee, The Dependable",
+        "fi": "Uskottu, Luotettava"
+      },
+      "abjad_value": 66,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["trust", "delegation", "surrender", "anxiety", "control", "reliance"],
+      "suggested_counts": [33, 66, 99],
+      "reflection_prompts": {
+        "tr": "Vekil, işlerini O'na bırakana en güzel şekilde yeter. Neyi kontrol etmeye çalışıyorsun?",
+        "en": "Al-Wakil suffices beautifully for those who entrust their affairs to Him. What are you trying to control?",
+        "fi": "Al-Wakil riittää kauniisti niille, jotka uskovat asiansa Hänelle. Mitä yrität hallita?"
+      }
+    },
+    {
+      "id": "al-qawiyy",
+      "order": 53,
+      "arabic": "الْقَوِيُّ",
+      "transliteration": "Al-Qawiyy",
+      "meanings": {
+        "tr": "Güçlü, Kuvvetli",
+        "en": "The Strong, The Powerful",
+        "fi": "Vahva, Voimakas"
+      },
+      "abjad_value": 116,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["strength", "power", "support", "resilience", "energy"],
+      "suggested_counts": [33, 99, 116],
+      "reflection_prompts": {
+        "tr": "Kaviyy, sonsuz güç sahibidir. Güç O'ndandır, O'ndan güç iste.",
+        "en": "Al-Qawiyy possesses infinite strength. Strength comes from Him; ask Him for strength.",
+        "fi": "Al-Qawiyy omistaa äärettömän voiman. Voima tulee Häneltä; pyydä Häneltä voimaa."
+      }
+    },
+    {
+      "id": "al-matin",
+      "order": 54,
+      "arabic": "الْمَتِينُ",
+      "transliteration": "Al-Matin",
+      "meanings": {
+        "tr": "Çok sağlam, Metin",
+        "en": "The Firm, The Steadfast",
+        "fi": "Vakaa, Luja"
+      },
+      "abjad_value": 500,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["firmness", "stability", "steadfastness", "reliability", "endurance"],
+      "suggested_counts": [33, 99, 500],
+      "reflection_prompts": {
+        "tr": "Metin, sarsılmaz sağlamlık sahibidir. Zorluklarda O'na tutun, O seni sağlam tutar.",
+        "en": "Al-Matin possesses unshakeable firmness. Hold onto Him in difficulties; He will keep you steady.",
+        "fi": "Al-Matin omistaa järkkymättömän lujuuden. Pidä Hänestä kiinni vaikeuksissa; Hän pitää sinut vakaana."
+      }
+    },
+    {
+      "id": "al-waliyy",
+      "order": 55,
+      "arabic": "الْوَلِيُّ",
+      "transliteration": "Al-Waliyy",
+      "meanings": {
+        "tr": "Dost, Yardımcı",
+        "en": "The Protecting Friend",
+        "fi": "Suojeleva ystävä"
+      },
+      "abjad_value": 46,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["friendship", "protection", "support", "closeness", "companionship"],
+      "suggested_counts": [33, 46, 99],
+      "reflection_prompts": {
+        "tr": "Veliyy, en yakın dostundur. Yalnız değilsin, O her zaman seninle.",
+        "en": "Al-Waliyy is your closest friend. You are not alone; He is always with you.",
+        "fi": "Al-Waliyy on läheisin ystäväsi. Et ole yksin; Hän on aina kanssasi."
+      }
+    },
+    {
+      "id": "al-hamid",
+      "order": 56,
+      "arabic": "الْحَمِيدُ",
+      "transliteration": "Al-Hamid",
+      "meanings": {
+        "tr": "Övgüye layık",
+        "en": "The Praiseworthy",
+        "fi": "Ylistettävä"
+      },
+      "abjad_value": 62,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["praise", "gratitude", "worship", "appreciation", "acknowledgment"],
+      "suggested_counts": [33, 62, 99],
+      "reflection_prompts": {
+        "tr": "Hamid, her övgüye layık olandır. O'nu övmek, kalbine huzur getirir.",
+        "en": "Al-Hamid is worthy of all praise. Praising Him brings peace to your heart.",
+        "fi": "Al-Hamid on kaiken ylistyksen arvoinen. Hänen ylistämisensä tuo rauhan sydämeesi."
+      }
+    },
+    {
+      "id": "al-muhsi",
+      "order": 57,
+      "arabic": "الْمُحْصِي",
+      "transliteration": "Al-Muhsi",
+      "meanings": {
+        "tr": "Her şeyi sayan",
+        "en": "The Accounter, The Numberer",
+        "fi": "Laskija, Numeroija"
+      },
+      "abjad_value": 148,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["awareness", "precision", "accountability", "detail", "knowledge"],
+      "suggested_counts": [33, 99, 148],
+      "reflection_prompts": {
+        "tr": "Muhsi, her şeyi sayar ve bilir. En küçük iyiliğin bile kayıt altındadır.",
+        "en": "Al-Muhsi counts and knows everything. Even your smallest good deed is recorded.",
+        "fi": "Al-Muhsi laskee ja tietää kaiken. Jopa pienin hyvä tekosi on kirjattu."
+      }
+    },
+    {
+      "id": "al-mubdi",
+      "order": 58,
+      "arabic": "الْمُبْدِئُ",
+      "transliteration": "Al-Mubdi",
+      "meanings": {
+        "tr": "Başlatan, İlk yaratan",
+        "en": "The Originator, The Initiator",
+        "fi": "Aloittaja, Alkuunpanija"
+      },
+      "abjad_value": 57,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["creation", "beginning", "origin", "initiative", "fresh_start"],
+      "suggested_counts": [33, 57, 99],
+      "reflection_prompts": {
+        "tr": "Mübdi, her şeyi ilk başlatan­dır. Yeni başlangıçlar O'nun elindedir.",
+        "en": "Al-Mubdi is the one who initiates everything. New beginnings are in His hands.",
+        "fi": "Al-Mubdi aloittaa kaiken. Uudet alut ovat Hänen käsissään."
+      }
+    },
+    {
+      "id": "al-muid",
+      "order": 59,
+      "arabic": "الْمُعِيدُ",
+      "transliteration": "Al-Mu'id",
+      "meanings": {
+        "tr": "Tekrar yaratan, İade eden",
+        "en": "The Restorer, The Reinstater",
+        "fi": "Palauttaja, Uudistaja"
+      },
+      "abjad_value": 124,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["restoration", "renewal", "return", "second_chance", "revival"],
+      "suggested_counts": [33, 99, 124],
+      "reflection_prompts": {
+        "tr": "Muid, kaybedileni geri getirebilir. Umudunu kaybetme, O her şeyi yenileyebilir.",
+        "en": "Al-Mu'id can bring back what was lost. Don't lose hope; He can renew everything.",
+        "fi": "Al-Mu'id voi tuoda takaisin kadotetun. Älä menetä toivoasi; Hän voi uudistaa kaiken."
+      }
+    },
+    {
+      "id": "al-muhyi",
+      "order": 60,
+      "arabic": "الْمُحْيِي",
+      "transliteration": "Al-Muhyi",
+      "meanings": {
+        "tr": "Hayat veren, Dirilten",
+        "en": "The Giver of Life",
+        "fi": "Elämän antaja"
+      },
+      "abjad_value": 68,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["life", "vitality", "revival", "energy", "awakening"],
+      "suggested_counts": [33, 68, 99],
+      "reflection_prompts": {
+        "tr": "Muhyi, hayat verendir. Ölü kalpleri de O diriltir, umudunu O'ndan al.",
+        "en": "Al-Muhyi is the giver of life. He also revives dead hearts; take your hope from Him.",
+        "fi": "Al-Muhyi on elämän antaja. Hän myös elvyttää kuolleet sydämet; ota toivosi Häneltä."
+      }
+    },
+    {
+      "id": "al-mumit",
+      "order": 61,
+      "arabic": "الْمُمِيتُ",
+      "transliteration": "Al-Mumit",
+      "meanings": {
+        "tr": "Ölümü yaratan",
+        "en": "The Bringer of Death",
+        "fi": "Kuoleman tuoja"
+      },
+      "abjad_value": 490,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["mortality", "transition", "ending", "perspective", "impermanence"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Mümit, ölümü yaratandır. Ölüm hatırlatıcısı, hayatı daha anlamlı yaşamana yardımcı olur.",
+        "en": "Al-Mumit is the creator of death. The reminder of death helps you live life more meaningfully.",
+        "fi": "Al-Mumit on kuoleman luoja. Kuoleman muistutus auttaa sinua elämään elämää merkityksellisemmin."
+      }
+    },
+    {
+      "id": "al-hayy",
+      "order": 62,
+      "arabic": "الْحَيُّ",
+      "transliteration": "Al-Hayy",
+      "meanings": {
+        "tr": "Diri, Ebedi hayat sahibi",
+        "en": "The Ever-Living",
+        "fi": "Ikuisesti elävä"
+      },
+      "abjad_value": 18,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["life", "vitality", "energy", "tiredness", "motivation", "eternity"],
+      "suggested_counts": [18, 33, 99],
+      "reflection_prompts": {
+        "tr": "Hayy, ölümsüz hayat sahibidir. Yorgun hissettiğinde, O'nun canlılığından güç iste.",
+        "en": "Al-Hayy possesses eternal life. When you feel tired, ask for strength from His vitality.",
+        "fi": "Al-Hayy omistaa ikuisen elämän. Kun tunnet olosi väsyneeksi, pyydä voimaa Hänen elinvoimastaan."
+      }
+    },
+    {
+      "id": "al-qayyum",
+      "order": 63,
+      "arabic": "الْقَيُّومُ",
+      "transliteration": "Al-Qayyum",
+      "meanings": {
+        "tr": "Kendi kendine var olan, Her şeyi ayakta tutan",
+        "en": "The Self-Subsisting, The Sustainer",
+        "fi": "Itseriittoinen, Ylläpitäjä"
+      },
+      "abjad_value": 156,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["self_sufficiency", "sustenance", "support", "independence", "foundation"],
+      "suggested_counts": [33, 99, 156],
+      "reflection_prompts": {
+        "tr": "Kayyum, her şeyi ayakta tutandır. Sen de O'na dayanarak ayakta kalırsın.",
+        "en": "Al-Qayyum sustains everything. You too can stand by leaning on Him.",
+        "fi": "Al-Qayyum ylläpitää kaikkea. Sinäkin voit seistä nojaamalla Häneen."
+      }
+    },
+    {
+      "id": "al-wajid",
+      "order": 64,
+      "arabic": "الْوَاجِدُ",
+      "transliteration": "Al-Wajid",
+      "meanings": {
+        "tr": "Bulan, Zengin",
+        "en": "The Finder, The Wealthy",
+        "fi": "Löytäjä, Varakas"
+      },
+      "abjad_value": 14,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["finding", "wealth", "discovery", "abundance", "resourcefulness"],
+      "suggested_counts": [14, 33, 99],
+      "reflection_prompts": {
+        "tr": "Vacid, her şeyi bulur ve her şeye sahiptir. Kaybettiğini sandığın şeyler O'nun elindedir.",
+        "en": "Al-Wajid finds everything and possesses all. What you think you've lost is in His hands.",
+        "fi": "Al-Wajid löytää kaiken ja omistaa kaiken. Se, mitä luulet menettäneesi, on Hänen käsissään."
+      }
+    },
+    {
+      "id": "al-majid2",
+      "order": 65,
+      "arabic": "الْمَاجِدُ",
+      "transliteration": "Al-Majid",
+      "meanings": {
+        "tr": "Şanlı, Yüce",
+        "en": "The Noble, The Illustrious",
+        "fi": "Jalo, Maineikas"
+      },
+      "abjad_value": 48,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["nobility", "glory", "honor", "excellence", "distinction"],
+      "suggested_counts": [33, 48, 99],
+      "reflection_prompts": {
+        "tr": "Macid, sonsuz şan ve şeref sahibidir. O'na yakınlık, seni de şereflend­irir.",
+        "en": "Al-Majid possesses infinite glory and honor. Closeness to Him honors you too.",
+        "fi": "Al-Majid omistaa äärettömän kunnian. Läheisyys Häneen kunnioit­taa myös sinua."
+      }
+    },
+    {
+      "id": "al-wahid",
+      "order": 66,
+      "arabic": "الْوَاحِدُ",
+      "transliteration": "Al-Wahid",
+      "meanings": {
+        "tr": "Bir, Tek",
+        "en": "The One, The Unique",
+        "fi": "Yksi, Ainutlaatuinen"
+      },
+      "abjad_value": 19,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["oneness", "unity", "uniqueness", "tawhid", "focus"],
+      "suggested_counts": [19, 33, 99],
+      "reflection_prompts": {
+        "tr": "Vahid, tek ve biriciktir. Kalbini dağıtma, tek olan O'na odaklan.",
+        "en": "Al-Wahid is one and unique. Don't scatter your heart; focus on the One.",
+        "fi": "Al-Wahid on yksi ja ainutlaatuinen. Älä hajota sydäntäsi; keskity Yhteen."
+      }
+    },
+    {
+      "id": "al-ahad",
+      "order": 67,
+      "arabic": "الْأَحَدُ",
+      "transliteration": "Al-Ahad",
+      "meanings": {
+        "tr": "Tek, Eşsiz",
+        "en": "The Unique One",
+        "fi": "Ainutlaatuinen"
+      },
+      "abjad_value": 13,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["uniqueness", "oneness", "singularity", "incomparability", "tawhid"],
+      "suggested_counts": [13, 33, 99],
+      "reflection_prompts": {
+        "tr": "Ehad, eşi ve benzeri olmayandır. O'nun tekliğini tefekkür et.",
+        "en": "Al-Ahad has no equal or like. Contemplate His uniqueness.",
+        "fi": "Al-Ahadilla ei ole vertaista. Pohdi Hänen ainutlaatuisuuttaan."
+      }
+    },
+    {
+      "id": "as-samad",
+      "order": 68,
+      "arabic": "الصَّمَدُ",
+      "transliteration": "As-Samad",
+      "meanings": {
+        "tr": "Hiçbir şeye muhtaç olmayan",
+        "en": "The Eternal, The Self-Sufficient",
+        "fi": "Ikuinen, Itseriittoinen"
+      },
+      "abjad_value": 134,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["self_sufficiency", "independence", "eternity", "need", "reliance"],
+      "suggested_counts": [33, 99, 134],
+      "reflection_prompts": {
+        "tr": "Samed, hiçbir şeye muhtaç değildir ama her şey O'na muhtaçtır. İhtiyaçlarını O'na arz et.",
+        "en": "As-Samad needs nothing but everything needs Him. Present your needs to Him.",
+        "fi": "As-Samad ei tarvitse mitään, mutta kaikki tarvitsee Häntä. Esitä tarpeesi Hänelle."
+      }
+    },
+    {
+      "id": "al-qadir",
+      "order": 69,
+      "arabic": "الْقَادِرُ",
+      "transliteration": "Al-Qadir",
+      "meanings": {
+        "tr": "Güç yetiren, Muktedir",
+        "en": "The All-Powerful",
+        "fi": "Kaikkivaltias"
+      },
+      "abjad_value": 305,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["power", "capability", "ability", "omnipotence", "possibility"],
+      "suggested_counts": [33, 99, 305],
+      "reflection_prompts": {
+        "tr": "Kadir, her şeye güç yetirendir. İmkansız gördüğün şeyler O'nun için kolaydır.",
+        "en": "Al-Qadir has power over everything. What seems impossible to you is easy for Him.",
+        "fi": "Al-Qadirilla on valta kaikkeen. Se mikä näyttää sinulle mahdottomalta, on Hänelle helppoa."
+      }
+    },
+    {
+      "id": "al-muqtadir",
+      "order": 70,
+      "arabic": "الْمُقْتَدِرُ",
+      "transliteration": "Al-Muqtadir",
+      "meanings": {
+        "tr": "Kudret sahibi",
+        "en": "The All-Determiner, The Dominant",
+        "fi": "Kaikkimääräävä, Hallitseva"
+      },
+      "abjad_value": 744,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["power", "control", "determination", "authority", "capability"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Muktedir, mutlak kudret sahibidir. O'nun gücüne sığın.",
+        "en": "Al-Muqtadir possesses absolute power. Take refuge in His power.",
+        "fi": "Al-Muqtadir omistaa ehdottoman voiman. Pakene Hänen voimaansa."
+      }
+    },
+    {
+      "id": "al-muqaddim",
+      "order": 71,
+      "arabic": "الْمُقَدِّمُ",
+      "transliteration": "Al-Muqaddim",
+      "meanings": {
+        "tr": "Öne geçiren",
+        "en": "The Expediter, The Promoter",
+        "fi": "Edistäjä, Eteenpäin viejä"
+      },
+      "abjad_value": 184,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["advancement", "priority", "promotion", "progress", "favor"],
+      "suggested_counts": [33, 99, 184],
+      "reflection_prompts": {
+        "tr": "Mukaddim, dilediğini öne geçirir. Sabret, senin zamanın da gelecek.",
+        "en": "Al-Muqaddim advances whom He wills. Be patient; your time will come too.",
+        "fi": "Al-Muqaddim edistää ketä tahtoo. Ole kärsivällinen; sinunkin aikasi tulee."
+      }
+    },
+    {
+      "id": "al-muakhkhir",
+      "order": 72,
+      "arabic": "الْمُؤَخِّرُ",
+      "transliteration": "Al-Mu'akhkhir",
+      "meanings": {
+        "tr": "Geriye bırakan",
+        "en": "The Delayer",
+        "fi": "Viivyttäjä"
+      },
+      "abjad_value": 847,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["delay", "timing", "patience", "wisdom", "divine_timing"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Muahhir, geciktirmede de hikmet gösterir. Bekleyiş de bir nimettir.",
+        "en": "Al-Mu'akhkhir shows wisdom in delay too. Waiting is also a blessing.",
+        "fi": "Al-Mu'akhkhir osoittaa viisautta myös viivytyksessä. Odottaminen on myös siunaus."
+      }
+    },
+    {
+      "id": "al-awwal",
+      "order": 73,
+      "arabic": "الْأَوَّلُ",
+      "transliteration": "Al-Awwal",
+      "meanings": {
+        "tr": "İlk, Evvel",
+        "en": "The First",
+        "fi": "Ensimmäinen"
+      },
+      "abjad_value": 37,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["beginning", "origin", "priority", "eternity", "precedence"],
+      "suggested_counts": [33, 37, 99],
+      "reflection_prompts": {
+        "tr": "Evvel, başlangıcı olmayan ilktir. Her işine O'nun adıyla başla.",
+        "en": "Al-Awwal is the First without beginning. Start everything with His name.",
+        "fi": "Al-Awwal on Ensimmäinen ilman alkua. Aloita kaikki Hänen nimellään."
+      }
+    },
+    {
+      "id": "al-akhir",
+      "order": 74,
+      "arabic": "الْآخِرُ",
+      "transliteration": "Al-Akhir",
+      "meanings": {
+        "tr": "Son, Ahir",
+        "en": "The Last",
+        "fi": "Viimeinen"
+      },
+      "abjad_value": 801,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["ending", "eternity", "permanence", "conclusion", "infinity"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Ahir, sonu olmayan sondur. Her şey biter, O kalır.",
+        "en": "Al-Akhir is the Last without end. Everything ends; He remains.",
+        "fi": "Al-Akhir on Viimeinen ilman loppua. Kaikki päättyy; Hän jää."
+      }
+    },
+    {
+      "id": "az-zahir",
+      "order": 75,
+      "arabic": "الظَّاهِرُ",
+      "transliteration": "Az-Zahir",
+      "meanings": {
+        "tr": "Zahir, Açık",
+        "en": "The Manifest, The Evident",
+        "fi": "Ilmeinen, Näkyvä"
+      },
+      "abjad_value": 1106,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["manifestation", "clarity", "evidence", "presence", "visibility"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Zahir, varlığı apaçık olandır. O'nun delillerini gör.",
+        "en": "Az-Zahir is He whose existence is manifest. See His signs.",
+        "fi": "Az-Zahir on Hän, jonka olemassaolo on ilmeinen. Näe Hänen merkkinsä."
+      }
+    },
+    {
+      "id": "al-batin",
+      "order": 76,
+      "arabic": "الْبَاطِنُ",
+      "transliteration": "Al-Batin",
+      "meanings": {
+        "tr": "Batın, Gizli",
+        "en": "The Hidden, The Inner",
+        "fi": "Kätketty, Sisäinen"
+      },
+      "abjad_value": 62,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["hiddenness", "inner", "depth", "mystery", "intimacy"],
+      "suggested_counts": [33, 62, 99],
+      "reflection_prompts": {
+        "tr": "Batın, görünmeyende gizlidir. İçine bak, O orada.",
+        "en": "Al-Batin is hidden in the unseen. Look within; He is there.",
+        "fi": "Al-Batin on kätketty näkymättömään. Katso sisääsi; Hän on siellä."
+      }
+    },
+    {
+      "id": "al-wali",
+      "order": 77,
+      "arabic": "الْوَالِي",
+      "transliteration": "Al-Wali",
+      "meanings": {
+        "tr": "Yöneten, Sahip",
+        "en": "The Governor, The Patron",
+        "fi": "Hallitsija, Suojelija"
+      },
+      "abjad_value": 47,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["governance", "authority", "care", "management", "ownership"],
+      "suggested_counts": [33, 47, 99],
+      "reflection_prompts": {
+        "tr": "Vali, her şeyin yöneticisidir. İşlerini O'na havale et.",
+        "en": "Al-Wali is the governor of everything. Entrust your affairs to Him.",
+        "fi": "Al-Wali on kaiken hallitsija. Uskalla asiasi Hänelle."
+      }
+    },
+    {
+      "id": "al-mutaali",
+      "order": 78,
+      "arabic": "الْمُتَعَالِي",
+      "transliteration": "Al-Muta'ali",
+      "meanings": {
+        "tr": "Yüceler yücesi",
+        "en": "The Most Exalted",
+        "fi": "Korkein"
+      },
+      "abjad_value": 551,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["transcendence", "elevation", "exaltation", "beyond", "supremacy"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Müteali, her tasavvurun ötesindedir. O'nu sınırlamaya çalışma.",
+        "en": "Al-Muta'ali is beyond all imagination. Don't try to limit Him.",
+        "fi": "Al-Muta'ali on kaiken kuvittelun tuolla puolen. Älä yritä rajoittaa Häntä."
+      }
+    },
+    {
+      "id": "al-barr",
+      "order": 79,
+      "arabic": "الْبَرُّ",
+      "transliteration": "Al-Barr",
+      "meanings": {
+        "tr": "İyilik yapan, Lütufkar",
+        "en": "The Source of Goodness",
+        "fi": "Hyvyyden lähde"
+      },
+      "abjad_value": 202,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["goodness", "kindness", "benevolence", "virtue", "righteousness"],
+      "suggested_counts": [33, 99, 202],
+      "reflection_prompts": {
+        "tr": "Berr, iyiliğin kaynağıdır. O'ndan iyilik iste, iyilik yap.",
+        "en": "Al-Barr is the source of goodness. Ask Him for goodness and do good.",
+        "fi": "Al-Barr on hyvyyden lähde. Pyydä Häneltä hyvyyttä ja tee hyvää."
+      }
+    },
+    {
+      "id": "at-tawwab",
+      "order": 80,
+      "arabic": "التَّوَّابُ",
+      "transliteration": "At-Tawwab",
+      "meanings": {
+        "tr": "Tövbeleri kabul eden",
+        "en": "The Acceptor of Repentance",
+        "fi": "Katumuksen vastaanottaja"
+      },
+      "abjad_value": 409,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["repentance", "forgiveness", "return", "second_chance", "renewal"],
+      "suggested_counts": [33, 99, 409],
+      "reflection_prompts": {
+        "tr": "Tevvab, tövbe edenlere döner. Ne kadar hata yaparsan yap, O'na dön.",
+        "en": "At-Tawwab turns to those who repent. No matter how many mistakes, turn to Him.",
+        "fi": "At-Tawwab kääntyy niiden puoleen, jotka katuvat. Käänny Hänen puoleensa virheistäsi huolimatta."
+      }
+    },
+    {
+      "id": "al-muntaqim",
+      "order": 81,
+      "arabic": "الْمُنْتَقِمُ",
+      "transliteration": "Al-Muntaqim",
+      "meanings": {
+        "tr": "İntikam alan",
+        "en": "The Avenger",
+        "fi": "Kostaja"
+      },
+      "abjad_value": 630,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["justice", "retribution", "consequence", "accountability", "balance"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Müntakim, zalimlere karşı adaletiyle müdahale eder. Adaleti O'na bırak.",
+        "en": "Al-Muntaqim intervenes with justice against oppressors. Leave justice to Him.",
+        "fi": "Al-Muntaqim puuttuu oikeudenmukaisuudellaan sortajiin. Jätä oikeudenmukaisuus Hänelle."
+      }
+    },
+    {
+      "id": "al-afuw",
+      "order": 82,
+      "arabic": "الْعَفُوُّ",
+      "transliteration": "Al-Afuw",
+      "meanings": {
+        "tr": "Affedici, Silici",
+        "en": "The Pardoner, The Effacer",
+        "fi": "Armahtaja, Pyyhkijä"
+      },
+      "abjad_value": 156,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["pardon", "erasure", "forgiveness", "mercy", "cleansing"],
+      "suggested_counts": [33, 99, 156],
+      "reflection_prompts": {
+        "tr": "Afuv, günahları siler. O'ndan af dile, kendini de affet.",
+        "en": "Al-Afuw erases sins. Ask Him for pardon and forgive yourself too.",
+        "fi": "Al-Afuw pyyhkii synnit pois. Pyydä Häneltä armoa ja anna myös itsellesi anteeksi."
+      }
+    },
+    {
+      "id": "ar-rauf",
+      "order": 83,
+      "arabic": "الرَّؤُوفُ",
+      "transliteration": "Ar-Ra'uf",
+      "meanings": {
+        "tr": "Şefkatli, Çok merhametli",
+        "en": "The Most Kind, The Compassionate",
+        "fi": "Lempeä, Myötätuntoinen"
+      },
+      "abjad_value": 287,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["kindness", "compassion", "tenderness", "gentleness", "care"],
+      "suggested_counts": [33, 99, 287],
+      "reflection_prompts": {
+        "tr": "Rauf, kullarına karşı çok şefkatlidir. O'nun şefkatini hisset.",
+        "en": "Ar-Ra'uf is very compassionate towards His servants. Feel His compassion.",
+        "fi": "Ar-Ra'uf on hyvin myötätuntoinen palvelijoitaan kohtaan. Tunne Hänen myötätuntonsa."
+      }
+    },
+    {
+      "id": "malik-ul-mulk",
+      "order": 84,
+      "arabic": "مَالِكُ الْمُلْكِ",
+      "transliteration": "Malik-ul-Mulk",
+      "meanings": {
+        "tr": "Mülkün sahibi",
+        "en": "The Owner of Sovereignty",
+        "fi": "Vallan omistaja"
+      },
+      "abjad_value": 212,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["sovereignty", "ownership", "authority", "dominion", "kingdom"],
+      "suggested_counts": [33, 99, 212],
+      "reflection_prompts": {
+        "tr": "Malik-ül Mülk, tüm mülkün sahibidir. Sahip olduğun her şey O'nun emanetidir.",
+        "en": "Malik-ul-Mulk owns all sovereignty. Everything you have is His trust.",
+        "fi": "Malik-ul-Mulk omistaa kaiken vallan. Kaikki mitä sinulla on, on Hänen uskomansa."
+      }
+    },
+    {
+      "id": "dhul-jalal-wal-ikram",
+      "order": 85,
+      "arabic": "ذُو الْجَلَالِ وَالْإِكْرَامِ",
+      "transliteration": "Dhul-Jalal wal-Ikram",
+      "meanings": {
+        "tr": "Celal ve ikram sahibi",
+        "en": "The Lord of Majesty and Generosity",
+        "fi": "Majesteettisuuden ja anteliaisuuden Herra"
+      },
+      "abjad_value": 1100,
+      "needs_verification": true,
+      "confidence": 0.5,
+      "themes": ["majesty", "generosity", "honor", "glory", "nobility"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Zül-Celali vel-İkram, hem celal hem de ikram sahibidir. O'nun hem heybetini hem de cömertliğini tefekkür et.",
+        "en": "Dhul-Jalal wal-Ikram possesses both majesty and generosity. Contemplate both His awe and His bounty.",
+        "fi": "Dhul-Jalal wal-Ikram omistaa sekä majesteettisuuden että anteliaisuuden. Pohdi sekä Hänen pelottavuuttaan että Hänen antejaan."
+      }
+    },
+    {
+      "id": "al-muqsit",
+      "order": 86,
+      "arabic": "الْمُقْسِطُ",
+      "transliteration": "Al-Muqsit",
+      "meanings": {
+        "tr": "Adaletli",
+        "en": "The Equitable, The Just",
+        "fi": "Oikeudenmukainen, Puolueeton"
+      },
+      "abjad_value": 209,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["justice", "equity", "fairness", "balance", "impartiality"],
+      "suggested_counts": [33, 99, 209],
+      "reflection_prompts": {
+        "tr": "Muksit, mutlak adaletlidir. O'nun adaletine güven.",
+        "en": "Al-Muqsit is absolutely just. Trust in His justice.",
+        "fi": "Al-Muqsit on ehdottoman oikeudenmukainen. Luota Hänen oikeudenmukaisuuteensa."
+      }
+    },
+    {
+      "id": "al-jami",
+      "order": 87,
+      "arabic": "الْجَامِعُ",
+      "transliteration": "Al-Jami",
+      "meanings": {
+        "tr": "Toplayan, Bir araya getiren",
+        "en": "The Gatherer, The Uniter",
+        "fi": "Kokoaja, Yhdistäjä"
+      },
+      "abjad_value": 114,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["unity", "gathering", "reconciliation", "connection", "togetherness"],
+      "suggested_counts": [33, 99, 114],
+      "reflection_prompts": {
+        "tr": "Cami, dağınık olanı toplar. Ayrılıkları O birleştirir.",
+        "en": "Al-Jami gathers what is scattered. He unites what is separated.",
+        "fi": "Al-Jami kokoaa hajallaan olevan. Hän yhdistää erotetun."
+      }
+    },
+    {
+      "id": "al-ghaniyy",
+      "order": 88,
+      "arabic": "الْغَنِيُّ",
+      "transliteration": "Al-Ghaniyy",
+      "meanings": {
+        "tr": "Zengin, Muhtaç olmayan",
+        "en": "The Self-Sufficient, The Rich",
+        "fi": "Itseriittoinen, Rikas"
+      },
+      "abjad_value": 1060,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["wealth", "self_sufficiency", "independence", "abundance", "contentment"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Ganiyy, hiçbir şeye muhtaç değildir. Gerçek zenginlik O'na yakınlıktır.",
+        "en": "Al-Ghaniyy needs nothing. True wealth is closeness to Him.",
+        "fi": "Al-Ghaniyy ei tarvitse mitään. Todellinen rikkaus on läheisyys Häneen."
+      }
+    },
+    {
+      "id": "al-mughni",
+      "order": 89,
+      "arabic": "الْمُغْنِي",
+      "transliteration": "Al-Mughni",
+      "meanings": {
+        "tr": "Zengin kılan",
+        "en": "The Enricher",
+        "fi": "Rikastuttaja"
+      },
+      "abjad_value": 1100,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["enrichment", "provision", "abundance", "contentment", "blessing"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Muğni, dilediğini zengin kılar. O'ndan iste, ama kanaat etmeyi de öğren.",
+        "en": "Al-Mughni enriches whom He wills. Ask from Him, but also learn contentment.",
+        "fi": "Al-Mughni rikastuttaa ketä tahtoo. Pyydä Häneltä, mutta opi myös tyytyväisyyttä."
+      }
+    },
+    {
+      "id": "al-mani",
+      "order": 90,
+      "arabic": "الْمَانِعُ",
+      "transliteration": "Al-Mani",
+      "meanings": {
+        "tr": "Engelleyen, Koruyan",
+        "en": "The Withholder, The Shielder",
+        "fi": "Pidättäjä, Suojaaja"
+      },
+      "abjad_value": 161,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["protection", "prevention", "shield", "withholding", "defense"],
+      "suggested_counts": [33, 99, 161],
+      "reflection_prompts": {
+        "tr": "Mani, zararlı olanı engeller. Bazen istediğin şeyin engellenmesi de bir nimettir.",
+        "en": "Al-Mani prevents what is harmful. Sometimes the prevention of what you want is also a blessing.",
+        "fi": "Al-Mani estää haitallisen. Joskus sen estäminen, mitä haluat, on myös siunaus."
+      }
+    },
+    {
+      "id": "ad-darr",
+      "order": 91,
+      "arabic": "الضَّارُّ",
+      "transliteration": "Ad-Darr",
+      "meanings": {
+        "tr": "Zarar veren",
+        "en": "The Distresser",
+        "fi": "Ahdistuksen aiheuttaja"
+      },
+      "abjad_value": 1001,
+      "needs_verification": true,
+      "confidence": 0.5,
+      "themes": ["trial", "test", "growth", "wisdom", "transformation"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Darr, zorlukları da yaratandır. Zorluklar imtihandır, sabret.",
+        "en": "Ad-Darr is also the creator of hardships. Hardships are tests; be patient.",
+        "fi": "Ad-Darr on myös vaikeuksien luoja. Vaikeudet ovat koettelemuksia; ole kärsivällinen."
+      }
+    },
+    {
+      "id": "an-nafi",
+      "order": 92,
+      "arabic": "النَّافِعُ",
+      "transliteration": "An-Nafi",
+      "meanings": {
+        "tr": "Fayda veren",
+        "en": "The Propitious, The Benefiter",
+        "fi": "Hyödyttäjä"
+      },
+      "abjad_value": 201,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["benefit", "help", "advantage", "blessing", "goodness"],
+      "suggested_counts": [33, 99, 201],
+      "reflection_prompts": {
+        "tr": "Nafi, fayda verendir. Hayırlı olanı O'ndan iste.",
+        "en": "An-Nafi is the one who benefits. Ask Him for what is good.",
+        "fi": "An-Nafi on hyödyttäjä. Pyydä Häneltä sitä, mikä on hyvää."
+      }
+    },
+    {
+      "id": "an-nur",
+      "order": 93,
+      "arabic": "النُّورُ",
+      "transliteration": "An-Nur",
+      "meanings": {
+        "tr": "Nur, Işık",
+        "en": "The Light",
+        "fi": "Valo"
+      },
+      "abjad_value": 256,
+      "needs_verification": true,
+      "confidence": 0.8,
+      "themes": ["light", "clarity", "hope", "darkness", "depression", "guidance", "illumination"],
+      "suggested_counts": [33, 99, 256],
+      "reflection_prompts": {
+        "tr": "Nur, karanlıkları aydınlatır. İçindeki karanlık köşelere ışık tutmasını iste.",
+        "en": "An-Nur illuminates the darkness. Ask Him to shine light on the dark corners within you.",
+        "fi": "An-Nur valaisee pimeyden. Pyydä Häntä valaisemaan sisäiset pimeät nurkkasi."
+      }
+    },
+    {
+      "id": "al-hadi",
+      "order": 94,
+      "arabic": "الْهَادِي",
+      "transliteration": "Al-Hadi",
+      "meanings": {
+        "tr": "Hidayet veren, Yol gösteren",
+        "en": "The Guide",
+        "fi": "Opastaja"
+      },
+      "abjad_value": 20,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["guidance", "direction", "purpose", "lost", "clarity", "path"],
+      "suggested_counts": [20, 33, 99],
+      "reflection_prompts": {
+        "tr": "Hadi, doğru yolu gösterir. Hayatında hangi konuda rehberliğe ihtiyacın var?",
+        "en": "Al-Hadi shows the right path. In what area of your life do you need guidance?",
+        "fi": "Al-Hadi näyttää oikean tien. Millä elämäsi alueella tarvitset ohjausta?"
+      }
+    },
+    {
+      "id": "al-badi",
+      "order": 95,
+      "arabic": "الْبَدِيعُ",
+      "transliteration": "Al-Badi",
+      "meanings": {
+        "tr": "Eşsiz yaratan, Örneksiz icad eden",
+        "en": "The Incomparable Originator",
+        "fi": "Vertaansa vailla oleva luoja"
+      },
+      "abjad_value": 86,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["originality", "uniqueness", "creativity", "innovation", "wonder"],
+      "suggested_counts": [33, 86, 99],
+      "reflection_prompts": {
+        "tr": "Bedi, benzersiz güzellikler yaratır. Yaratılıştaki güzellikleri tefekkür et.",
+        "en": "Al-Badi creates unique beauties. Contemplate the beauties in creation.",
+        "fi": "Al-Badi luo ainutlaatuisia kauneuksia. Pohdi luomakunnan kauneuksia."
+      }
+    },
+    {
+      "id": "al-baqi",
+      "order": 96,
+      "arabic": "الْبَاقِي",
+      "transliteration": "Al-Baqi",
+      "meanings": {
+        "tr": "Ebedi, Kalıcı",
+        "en": "The Everlasting",
+        "fi": "Ikuinen"
+      },
+      "abjad_value": 113,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["eternity", "permanence", "lasting", "infinity", "continuity"],
+      "suggested_counts": [33, 99, 113],
+      "reflection_prompts": {
+        "tr": "Baki, kalıcı olan yalnızca O'dur. Geçici olana takılma.",
+        "en": "Al-Baqi is the only one who is eternal. Don't be attached to the temporary.",
+        "fi": "Al-Baqi on ainoa ikuinen. Älä kiinny väliaikaiseen."
+      }
+    },
+    {
+      "id": "al-warith",
+      "order": 97,
+      "arabic": "الْوَارِثُ",
+      "transliteration": "Al-Warith",
+      "meanings": {
+        "tr": "Her şeyin varisi",
+        "en": "The Inheritor",
+        "fi": "Perijä"
+      },
+      "abjad_value": 707,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["inheritance", "eternity", "permanence", "ownership", "legacy"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Varis, her şeyin son sahibidir. Emanetlere sahip çık, ama onların geçici olduğunu bil.",
+        "en": "Al-Warith is the final owner of everything. Take care of trusts, but know they are temporary.",
+        "fi": "Al-Warith on kaiken lopullinen omistaja. Huolehdi luottamuksista, mutta tiedä, että ne ovat väliaikaisia."
+      }
+    },
+    {
+      "id": "ar-rashid",
+      "order": 98,
+      "arabic": "الرَّشِيدُ",
+      "transliteration": "Ar-Rashid",
+      "meanings": {
+        "tr": "İrşad eden, Doğruya yönelten",
+        "en": "The Guide to the Right Path",
+        "fi": "Oikealle tielle ohjaaja"
+      },
+      "abjad_value": 514,
+      "needs_verification": true,
+      "confidence": 0.6,
+      "themes": ["guidance", "righteousness", "direction", "wisdom", "integrity"],
+      "suggested_counts": [33, 99],
+      "reflection_prompts": {
+        "tr": "Reşid, doğru yola irşad eder. O'ndan rüşd iste.",
+        "en": "Ar-Rashid guides to the right path. Ask Him for right guidance.",
+        "fi": "Ar-Rashid ohjaa oikealle tielle. Pyydä Häneltä oikeaa ohjausta."
+      }
+    },
+    {
+      "id": "as-sabur",
+      "order": 99,
+      "arabic": "الصَّبُورُ",
+      "transliteration": "As-Sabur",
+      "meanings": {
+        "tr": "Çok sabırlı",
+        "en": "The Patient",
+        "fi": "Kärsivällinen"
+      },
+      "abjad_value": 298,
+      "needs_verification": true,
+      "confidence": 0.7,
+      "themes": ["patience", "endurance", "perseverance", "frustration", "waiting", "steadfastness"],
+      "suggested_counts": [33, 99, 298],
+      "reflection_prompts": {
+        "tr": "Sabur, sonsuz sabır sahibidir. Sabırsızlandığın konuda O'ndan sabır iste.",
+        "en": "As-Sabur possesses infinite patience. Ask Him for patience in what frustrates you.",
+        "fi": "As-Sabur omistaa äärettömän kärsivällisyyden. Pyydä Häneltä kärsivällisyyttä siinä, mikä turhauttaa sinua."
+      }
+    }
+  ],
+
+  "metadata": {
+    "total_entries": 100,
+    "last_updated": "2024-01-18",
+    "source_note": "Compiled from traditional Islamic sources. Abjad values should be verified against scholarly references.",
+    "usage_disclaimer": {
+      "tr": "Bu isimler geleneksel kaynaklara dayanmaktadır. Zikir pratiği kişisel bir yolculuktur; sonuçlar garanti edilmez.",
+      "en": "These names are based on traditional sources. Dhikr practice is a personal journey; results are not guaranteed.",
+      "fi": "Nämä nimet perustuvat perinteisiin lähteisiin. Dhikr-harjoitus on henkilökohtainen matka; tuloksia ei taata."
+    }
+  }
+}

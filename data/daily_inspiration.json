@@ -1,0 +1,696 @@
+{
+  "version": "1.0.0",
+  "schema": "daily_inspiration",
+  "description": "Daily motivational, spiritual, and positive energy content. NO medical claims, NO frequency healing promises - purely inspirational and spiritually uplifting.",
+  "default_language": "tr",
+  "supported_languages": ["tr", "en", "fi"],
+
+  "categories": [
+    {
+      "id": "spiritual_wisdom",
+      "labels": {
+        "tr": "Manevi Hikmet",
+        "en": "Spiritual Wisdom",
+        "fi": "Hengellinen viisaus"
+      },
+      "icon": "sparkles"
+    },
+    {
+      "id": "gratitude_reminder",
+      "labels": {
+        "tr": "Şükür Hatırlatması",
+        "en": "Gratitude Reminder",
+        "fi": "Kiitollisuusmuistutus"
+      },
+      "icon": "heart"
+    },
+    {
+      "id": "positive_energy",
+      "labels": {
+        "tr": "Pozitif Enerji",
+        "en": "Positive Energy",
+        "fi": "Positiivinen energia"
+      },
+      "icon": "sun"
+    },
+    {
+      "id": "inner_peace",
+      "labels": {
+        "tr": "İç Huzur",
+        "en": "Inner Peace",
+        "fi": "Sisäinen rauha"
+      },
+      "icon": "leaf"
+    },
+    {
+      "id": "daily_motivation",
+      "labels": {
+        "tr": "Günlük Motivasyon",
+        "en": "Daily Motivation",
+        "fi": "Päivittäinen motivaatio"
+      },
+      "icon": "zap"
+    },
+    {
+      "id": "mindful_moment",
+      "labels": {
+        "tr": "Bilinçli An",
+        "en": "Mindful Moment",
+        "fi": "Tietoinen hetki"
+      },
+      "icon": "eye"
+    }
+  ],
+
+  "inspirations": [
+    {
+      "id": "insp_001",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Her nefes bir nimettir. Nefes alırken 'Allah', verirken 'Hû' de — ve bu anın ne kadar değerli olduğunu hisset.",
+        "en": "Every breath is a blessing. Say 'Allah' as you inhale, 'Hu' as you exhale — and feel how precious this moment is.",
+        "fi": "Jokainen hengenveto on siunaus. Sano 'Allah' sisäänhengittäessäsi, 'Hu' uloshengittäessäsi — ja tunne, kuinka arvokas tämä hetki on."
+      },
+      "source": null,
+      "themes": ["breath", "awareness", "gratitude"]
+    },
+    {
+      "id": "insp_002",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Bugün gözlerini açabildin, bu bile şükür gerektirir. Binlerce nimet içinde yüzüyorsun — birine odaklan ve teşekkür et.",
+        "en": "Today you opened your eyes — that alone deserves gratitude. You swim in thousands of blessings — focus on one and give thanks.",
+        "fi": "Tänään avasit silmäsi — sekin ansaitsee kiitollisuuden. Uit tuhansissa siunauksissa — keskity yhteen ja kiitä."
+      },
+      "source": null,
+      "themes": ["morning", "gratitude", "awareness"]
+    },
+    {
+      "id": "insp_003",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Güneş her gün doğar, sen de her gün yeniden başlayabilirsin. Dünün hataları bugünün yükü değil, dersidirler.",
+        "en": "The sun rises every day, and you can start fresh too. Yesterday's mistakes are not today's burdens — they are lessons.",
+        "fi": "Aurinko nousee joka päivä, ja sinäkin voit aloittaa alusta. Eilisen virheet eivät ole tämän päivän taakkoja — ne ovat oppitunteja."
+      },
+      "source": null,
+      "themes": ["new_beginning", "hope", "morning"]
+    },
+    {
+      "id": "insp_004",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Huzur dışarıda değil, içeride başlar. Bir dakika sessizce otur ve kalbine kulak ver — orada Allah'ın rahmeti var.",
+        "en": "Peace begins not outside, but within. Sit quietly for a minute and listen to your heart — Allah's mercy is there.",
+        "fi": "Rauha ei ala ulkopuolelta, vaan sisältä. Istu hiljaa minuutin ja kuuntele sydäntäsi — Allahin armo on siellä."
+      },
+      "source": null,
+      "themes": ["meditation", "heart", "peace"]
+    },
+    {
+      "id": "insp_005",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Büyük değişimler küçük adımlarla başlar. Bugün atacağın bir adım, yarının kapılarını açabilir.",
+        "en": "Great changes begin with small steps. One step you take today can open tomorrow's doors.",
+        "fi": "Suuret muutokset alkavat pienistä askeleista. Yksi askel, jonka otat tänään, voi avata huomisen ovet."
+      },
+      "source": null,
+      "themes": ["action", "progress", "hope"]
+    },
+    {
+      "id": "insp_006",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Bu anı tam olarak yaşa. Geçmiş gitti, gelecek belirsiz — ama şu an senin ve Allah seninle.",
+        "en": "Live this moment fully. The past is gone, the future uncertain — but this moment is yours, and Allah is with you.",
+        "fi": "Elä tämä hetki täysin. Menneisyys on mennyt, tulevaisuus epävarma — mutta tämä hetki on sinun, ja Allah on kanssasi."
+      },
+      "source": null,
+      "themes": ["presence", "mindfulness", "now"]
+    },
+    {
+      "id": "insp_007",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Zikir, kalbin cilasıdır. Düzenli zikir ile kalp parlar, huzur bulur, Allah'a yakınlaşır.",
+        "en": "Dhikr is the polish of the heart. With regular dhikr, the heart shines, finds peace, and draws closer to Allah.",
+        "fi": "Dhikr on sydämen kiillotus. Säännöllisellä dhikrillä sydän loistaa, löytää rauhan ja lähestyy Allahia."
+      },
+      "source": "hadith_reference",
+      "themes": ["dhikr", "heart", "purification"]
+    },
+    {
+      "id": "insp_008",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Şükür, mevcut nimetlerin artmasının sırrıdır. Ne kadar çok şükredersen, o kadar çok görürsün.",
+        "en": "Gratitude is the secret to increasing blessings. The more you give thanks, the more you see.",
+        "fi": "Kiitollisuus on salaisuus siunausten lisäämiseen. Mitä enemmän kiität, sitä enemmän näet."
+      },
+      "source": "quran_14_7",
+      "themes": ["gratitude", "abundance", "awareness"]
+    },
+    {
+      "id": "insp_009",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Gülümsemek sadakadır. Bugün birine gülümse — hem onun hem senin enerjin yükselsin.",
+        "en": "A smile is charity. Smile at someone today — let both their energy and yours rise.",
+        "fi": "Hymy on hyväntekeväisyyttä. Hymyile jollekulle tänään — anna sekä hänen että sinun energiasi nousta."
+      },
+      "source": "hadith_reference",
+      "themes": ["smile", "kindness", "connection"]
+    },
+    {
+      "id": "insp_010",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Kalpler ancak Allah'ı anmakla huzur bulur. Bir anlık zikir bile fırtınalı düşünceleri sakinleştirebilir.",
+        "en": "Hearts find peace only in remembering Allah. Even a moment of dhikr can calm stormy thoughts.",
+        "fi": "Sydämet löytävät rauhan vain muistamalla Allahia. Jopa hetken dhikr voi rauhoittaa myrskyisät ajatukset."
+      },
+      "source": "quran_13_28",
+      "themes": ["dhikr", "peace", "heart"]
+    },
+    {
+      "id": "insp_011",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Elinden gelenin en iyisini yap, sonucu Allah'a bırak. Tevekkül budur: çalış ve güven.",
+        "en": "Do your best, then leave the result to Allah. This is tawakkul: work and trust.",
+        "fi": "Tee parhaasi, sitten jätä tulos Allahille. Tämä on tawakkul: työskentele ja luota."
+      },
+      "source": null,
+      "themes": ["effort", "trust", "tawakkul"]
+    },
+    {
+      "id": "insp_012",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Yediğin lokmayı düşün: topraktan sofraya nasıl geldi? Her lokmada Allah'ın sanatı ve rahmeti var.",
+        "en": "Think about the food you eat: how did it travel from earth to table? In every bite is Allah's art and mercy.",
+        "fi": "Ajattele ruokaa, jota syöt: miten se kulki maasta pöytään? Jokaisessa suupalassa on Allahin taide ja armo."
+      },
+      "source": null,
+      "themes": ["food", "gratitude", "awareness"]
+    },
+    {
+      "id": "insp_013",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Sabah namazından sonra bir dakika tefekkür, bütün günün bereketini artırabilir.",
+        "en": "A minute of reflection after Fajr can increase the blessings of your entire day.",
+        "fi": "Minuutin pohdiskelu Fajrin jälkeen voi lisätä koko päiväsi siunauksia."
+      },
+      "source": null,
+      "themes": ["fajr", "reflection", "barakah"]
+    },
+    {
+      "id": "insp_014",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Sağlık öyle bir tacıdır ki, onu ancak hastalar görür. Bugün sağlığına şükret.",
+        "en": "Health is a crown only the sick can see. Be grateful for your health today.",
+        "fi": "Terveys on kruunu, jonka vain sairaat näkevät. Ole kiitollinen terveydestäsi tänään."
+      },
+      "source": "wisdom",
+      "themes": ["health", "gratitude", "perspective"]
+    },
+    {
+      "id": "insp_015",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Senin varlığın dünyaya bir armağandır. Bugün bu armağanı bilinçli olarak paylaş.",
+        "en": "Your existence is a gift to the world. Consciously share this gift today.",
+        "fi": "Olemassaolosi on lahja maailmalle. Jaa tämä lahja tietoisesti tänään."
+      },
+      "source": null,
+      "themes": ["purpose", "contribution", "self_worth"]
+    },
+    {
+      "id": "insp_016",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Derin bir nefes al. Şimdi başka bir tane daha. Huzur bu kadar yakın — sadece nefes kadar.",
+        "en": "Take a deep breath. Now another. Peace is this close — just a breath away.",
+        "fi": "Ota syvä hengitys. Nyt toinen. Rauha on näin lähellä — vain hengityksen päässä."
+      },
+      "source": null,
+      "themes": ["breathing", "calm", "instant_peace"]
+    },
+    {
+      "id": "insp_017",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Her zorluk bir öğretmendir. Bugünkü zorluk sana ne öğretmeye çalışıyor?",
+        "en": "Every difficulty is a teacher. What is today's difficulty trying to teach you?",
+        "fi": "Jokainen vaikeus on opettaja. Mitä tämän päivän vaikeus yrittää opettaa sinulle?"
+      },
+      "source": null,
+      "themes": ["challenges", "growth", "learning"]
+    },
+    {
+      "id": "insp_018",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Ayaklarının yere değdiğini hisset. Sen buradasın, şu anda, hayattasın — bu mucize.",
+        "en": "Feel your feet touching the ground. You are here, in this moment, alive — this is a miracle.",
+        "fi": "Tunne jalkojesi koskettavan maata. Olet täällä, tässä hetkessä, elossa — tämä on ihme."
+      },
+      "source": null,
+      "themes": ["grounding", "presence", "miracle"]
+    },
+    {
+      "id": "insp_019",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Allah sevdiği kulunu imtihan eder. Zorluk, O'nun seni unutmadığının işareti olabilir.",
+        "en": "Allah tests those He loves. Difficulty may be a sign that He hasn't forgotten you.",
+        "fi": "Allah testaa niitä, joita Hän rakastaa. Vaikeus voi olla merkki siitä, ettei Hän ole unohtanut sinua."
+      },
+      "source": "hadith_reference",
+      "themes": ["test", "love", "perspective"]
+    },
+    {
+      "id": "insp_020",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Su içerken düşün: bu basit nimet, milyonların hayali. Elhamdülillah de.",
+        "en": "When drinking water, think: this simple blessing is a dream for millions. Say Alhamdulillah.",
+        "fi": "Kun juot vettä, ajattele: tämä yksinkertainen siunaus on miljoonien unelma. Sano Alhamdulillah."
+      },
+      "source": null,
+      "themes": ["water", "gratitude", "perspective"]
+    },
+    {
+      "id": "insp_021",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Bugün ne olursa olsun, yarın yeni bir sayfa. Ve her sayfa 'Bismillah' ile başlar.",
+        "en": "Whatever happens today, tomorrow is a new page. And every page begins with 'Bismillah'.",
+        "fi": "Mitä tahansa tapahtuukaan tänään, huomenna on uusi sivu. Ja jokainen sivu alkaa 'Bismillahilla'."
+      },
+      "source": null,
+      "themes": ["hope", "new_day", "bismillah"]
+    },
+    {
+      "id": "insp_022",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Kontrolün dışındaki şeylere takılma. Senin görevin çabalamak, sonuç Allah'a ait.",
+        "en": "Don't dwell on things outside your control. Your job is to strive; the result belongs to Allah.",
+        "fi": "Älä vatvoo asioita, jotka ovat hallintasi ulkopuolella. Sinun tehtäväsi on pyrkiä; tulos kuuluu Allahille."
+      },
+      "source": null,
+      "themes": ["letting_go", "control", "peace"]
+    },
+    {
+      "id": "insp_023",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Yolculuk bin adımla başlar, ama her adım önemlidir. Bugün hangi adımı atacaksın?",
+        "en": "A journey begins with a thousand steps, but every step matters. What step will you take today?",
+        "fi": "Matka alkaa tuhannesta askeleesta, mutta jokainen askel on tärkeä. Minkä askeleen otat tänään?"
+      },
+      "source": null,
+      "themes": ["journey", "action", "steps"]
+    },
+    {
+      "id": "insp_024",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Şu an gördüğün en güzel şeye bak. O güzellik Allah'ın bir ayeti, bir işareti.",
+        "en": "Look at the most beautiful thing you see right now. That beauty is a sign, an ayah of Allah.",
+        "fi": "Katso kauneinta asiaa, jonka näet juuri nyt. Se kauneus on merkki, Allahin aya."
+      },
+      "source": null,
+      "themes": ["beauty", "signs", "awareness"]
+    },
+    {
+      "id": "insp_025",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Dua, müminin silahıdır. Bugün hangi duayı edeceksin? Küçük de olsa, samimi olsun.",
+        "en": "Dua is the weapon of the believer. What dua will you make today? Even if small, let it be sincere.",
+        "fi": "Dua on uskovan ase. Minkä duan teet tänään? Vaikka pieni, olkoon se vilpitön."
+      },
+      "source": "hadith_reference",
+      "themes": ["dua", "prayer", "sincerity"]
+    },
+    {
+      "id": "insp_026",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Bugün üç şey için şükret: bir geçmiş nimet, bir şu anki nimet, bir gelecek umut.",
+        "en": "Give thanks for three things today: a past blessing, a present blessing, a future hope.",
+        "fi": "Kiitä kolmesta asiasta tänään: menneestä siunauksesta, nykyisestä siunauksesta, tulevasta toivosta."
+      },
+      "source": null,
+      "themes": ["gratitude", "practice", "time"]
+    },
+    {
+      "id": "insp_027",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Güzel söz sadakadır. Bugün birine güzel bir söz söyle — enerji geri döner.",
+        "en": "A kind word is charity. Say a kind word to someone today — energy returns.",
+        "fi": "Ystävällinen sana on hyväntekeväisyyttä. Sano ystävällinen sana jollekulle tänään — energia palaa."
+      },
+      "source": "hadith_reference",
+      "themes": ["words", "kindness", "energy"]
+    },
+    {
+      "id": "insp_028",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Affet — kendini de, başkalarını da. Affetmek, kalbindeki ağırlığı bırakmaktır.",
+        "en": "Forgive — yourself and others. Forgiveness is releasing the weight in your heart.",
+        "fi": "Anna anteeksi — itsellesi ja muille. Anteeksianto on painon vapauttamista sydämestäsi."
+      },
+      "source": null,
+      "themes": ["forgiveness", "release", "peace"]
+    },
+    {
+      "id": "insp_029",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Mükemmel olmak zorunda değilsin, sadece bugünkünden biraz daha iyi olmaya çalış.",
+        "en": "You don't have to be perfect — just try to be a little better than yesterday.",
+        "fi": "Sinun ei tarvitse olla täydellinen — yritä vain olla hieman parempi kuin eilen."
+      },
+      "source": null,
+      "themes": ["progress", "perfection", "growth"]
+    },
+    {
+      "id": "insp_030",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Ellerini aç ve avuçlarına bak. Bu eller nice hayırlara vesile olabilir — bugün ne yapacaklar?",
+        "en": "Open your hands and look at your palms. These hands can be a means of much good — what will they do today?",
+        "fi": "Avaa kätesi ja katso kämmeniäsi. Nämä kädet voivat olla keino moneen hyvään — mitä ne tekevät tänään?"
+      },
+      "source": null,
+      "themes": ["hands", "action", "potential"]
+    },
+    {
+      "id": "insp_031",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Her gece bir ölüm, her sabah bir diriliştir. Bugün yeniden doğdun — nasıl yaşayacaksın?",
+        "en": "Every night is a death, every morning a resurrection. Today you were born again — how will you live?",
+        "fi": "Jokainen yö on kuolema, jokainen aamu ylösnousemus. Tänään synnyit uudelleen — miten elät?"
+      },
+      "source": "wisdom",
+      "themes": ["morning", "rebirth", "intention"]
+    },
+    {
+      "id": "insp_032",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Bir an dur ve etrafına bak. Kaç tane görünmez nimet seni çevreliyor — hava, ışık, sevgi...",
+        "en": "Pause and look around. How many invisible blessings surround you — air, light, love...",
+        "fi": "Pysähdy ja katso ympärillesi. Kuinka monta näkymätöntä siunausta ympäröi sinua — ilma, valo, rakkaus..."
+      },
+      "source": null,
+      "themes": ["invisible_blessings", "awareness", "gratitude"]
+    },
+    {
+      "id": "insp_033",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Düşünceler tohumlar gibidir. Güzel düşünceler ek, güzel meyveler topla.",
+        "en": "Thoughts are like seeds. Plant beautiful thoughts, harvest beautiful fruits.",
+        "fi": "Ajatukset ovat kuin siemeniä. Kylvä kauniita ajatuksia, korjaa kauniita hedelmiä."
+      },
+      "source": null,
+      "themes": ["thoughts", "seeds", "manifestation"]
+    },
+    {
+      "id": "insp_034",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Sessizlik bazen en güçlü zikirdir. Bir dakika sessizce otur ve Allah'ın varlığını hisset.",
+        "en": "Silence is sometimes the most powerful dhikr. Sit quietly for a minute and feel Allah's presence.",
+        "fi": "Hiljaisuus on joskus voimakkain dhikr. Istu hiljaa minuutin ja tunne Allahin läsnäolo."
+      },
+      "source": null,
+      "themes": ["silence", "presence", "meditation"]
+    },
+    {
+      "id": "insp_035",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Başarısızlık son değil, geri bildirimdir. Her düşüş, yükseliş için hazırlıktır.",
+        "en": "Failure is not the end — it's feedback. Every fall is preparation for rising.",
+        "fi": "Epäonnistuminen ei ole loppu — se on palautetta. Jokainen kaatuminen on valmistautumista nousemiseen."
+      },
+      "source": null,
+      "themes": ["failure", "feedback", "resilience"]
+    },
+    {
+      "id": "insp_036",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Kalbine sor: 'Bugün neye ihtiyacın var?' Cevabı dinle ve o ihtiyacı Allah'a arz et.",
+        "en": "Ask your heart: 'What do you need today?' Listen to the answer and present that need to Allah.",
+        "fi": "Kysy sydämeltäsi: 'Mitä tarvitset tänään?' Kuuntele vastausta ja esitä se tarve Allahille."
+      },
+      "source": null,
+      "themes": ["heart", "listening", "needs"]
+    },
+    {
+      "id": "insp_037",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Kim Allah için bir adım atarsa, Allah ona on adım yaklaşır. Bugün o bir adımı at.",
+        "en": "Whoever takes one step toward Allah, Allah takes ten steps toward them. Take that one step today.",
+        "fi": "Kuka ikinä ottaa yhden askeleen kohti Allahia, Allah ottaa kymmenen askelta häntä kohti. Ota se yksi askel tänään."
+      },
+      "source": "hadith_reference",
+      "themes": ["steps", "closeness", "effort"]
+    },
+    {
+      "id": "insp_038",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Sevdiklerin var mı? Bu en büyük nimetlerden biri. Onlara bugün sevgini göster.",
+        "en": "Do you have loved ones? This is one of the greatest blessings. Show them your love today.",
+        "fi": "Onko sinulla rakkaita? Tämä on yksi suurimmista siunauksista. Näytä heille rakkautesi tänään."
+      },
+      "source": null,
+      "themes": ["love", "family", "expression"]
+    },
+    {
+      "id": "insp_039",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Sabah kalktığında 'Elhamdülillah' de — ve günün tonunu belirle. Başlangıçlar önemlidir.",
+        "en": "When you wake up, say 'Alhamdulillah' — and set the tone for the day. Beginnings matter.",
+        "fi": "Kun heräät, sano 'Alhamdulillah' — ja aseta päivän sävy. Aloitukset ovat tärkeitä."
+      },
+      "source": null,
+      "themes": ["morning", "gratitude", "intention"]
+    },
+    {
+      "id": "insp_040",
+      "category": "inner_peace",
+      "content": {
+        "tr": "Endişe, yarın için bugünün enerjisini harcamaktır. Bugüne odaklan, yarını Allah'a bırak.",
+        "en": "Worry is spending today's energy on tomorrow. Focus on today; leave tomorrow to Allah.",
+        "fi": "Huoli on tämän päivän energian kuluttamista huomiseen. Keskity tähän päivään; jätä huominen Allahille."
+      },
+      "source": null,
+      "themes": ["worry", "present", "trust"]
+    },
+    {
+      "id": "insp_041",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Küçük iyilikler küçümseme. Bir damla bir damla, okyanus olur.",
+        "en": "Don't underestimate small good deeds. Drop by drop, the ocean is formed.",
+        "fi": "Älä aliarvioi pieniä hyviä tekoja. Pisara pisaralta, valtameri muodostuu."
+      },
+      "source": null,
+      "themes": ["small_deeds", "consistency", "impact"]
+    },
+    {
+      "id": "insp_042",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Bir ağaca bak. Yıllardır orada, sessizce büyüyor, Allah'a teslim. Sen de öyle ol.",
+        "en": "Look at a tree. It's been there for years, growing silently, surrendered to Allah. Be like it.",
+        "fi": "Katso puuta. Se on ollut siellä vuosia, kasvaa hiljaa, antautuneena Allahille. Ole kuin se."
+      },
+      "source": null,
+      "themes": ["nature", "patience", "surrender"]
+    },
+    {
+      "id": "insp_043",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Tevekkül, eli bağlamak değil, bağladıktan sonra kalbi rahat tutmaktır.",
+        "en": "Tawakkul is not tying your hands — it's keeping your heart at peace after you've done your part.",
+        "fi": "Tawakkul ei ole käsien sitomista — se on sydämesi pitämistä rauhassa sen jälkeen, kun olet tehnyt osasi."
+      },
+      "source": "wisdom",
+      "themes": ["tawakkul", "effort", "peace"]
+    },
+    {
+      "id": "insp_044",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Gökyüzüne bak — ne kadar geniş, ne kadar muhteşem. Ve sen bu mucizenin bir parçasısın.",
+        "en": "Look at the sky — how vast, how magnificent. And you are a part of this miracle.",
+        "fi": "Katso taivaalle — kuinka laaja, kuinka mahtava. Ja sinä olet osa tätä ihmettä."
+      },
+      "source": null,
+      "themes": ["sky", "wonder", "belonging"]
+    },
+    {
+      "id": "insp_045",
+      "category": "positive_energy",
+      "content": {
+        "tr": "Bugün bir engelle karşılaşırsan, onu merdiven basamağı gibi gör — seni yükseltiyor.",
+        "en": "If you face an obstacle today, see it as a stepping stone — it's elevating you.",
+        "fi": "Jos kohtaat esteen tänään, näe se ponnahduslautana — se kohottaa sinua."
+      },
+      "source": null,
+      "themes": ["obstacles", "growth", "perspective"]
+    },
+    {
+      "id": "insp_046",
+      "category": "inner_peace",
+      "content": {
+        "tr": "İnsanların sözleri seni yaralıyorsa, hatırla: gerçek değerin Allah'ın katında. Oraya bak.",
+        "en": "If people's words hurt you, remember: your true worth is with Allah. Look there.",
+        "fi": "Jos ihmisten sanat satuttavat sinua, muista: todellinen arvosi on Allahin luona. Katso sinne."
+      },
+      "source": null,
+      "themes": ["self_worth", "opinions", "divine_value"]
+    },
+    {
+      "id": "insp_047",
+      "category": "daily_motivation",
+      "content": {
+        "tr": "Hedefine ulaşmak için mükemmel koşulları bekleme. Bugünkü koşullarla başla.",
+        "en": "Don't wait for perfect conditions to reach your goal. Start with today's conditions.",
+        "fi": "Älä odota täydellisiä olosuhteita saavuttaaksesi tavoitteesi. Aloita tämän päivän olosuhteilla."
+      },
+      "source": null,
+      "themes": ["action", "waiting", "now"]
+    },
+    {
+      "id": "insp_048",
+      "category": "mindful_moment",
+      "content": {
+        "tr": "Bir dakika sadece dinle — ne sesler duyuyorsun? Her ses, yaratılışın bir parçası.",
+        "en": "For one minute, just listen — what sounds do you hear? Every sound is a part of creation.",
+        "fi": "Minuutin ajan vain kuuntele — mitä ääniä kuulet? Jokainen ääni on osa luomakuntaa."
+      },
+      "source": null,
+      "themes": ["listening", "sounds", "awareness"]
+    },
+    {
+      "id": "insp_049",
+      "category": "spiritual_wisdom",
+      "content": {
+        "tr": "Allah'ın rahmeti gazabını geçmiştir. Ne kadar hata yapmış olursan ol, O'nun kapısı açık.",
+        "en": "Allah's mercy surpasses His wrath. No matter how many mistakes you've made, His door is open.",
+        "fi": "Allahin armo ylittää Hänen vihansa. Riippumatta siitä, kuinka monta virhettä olet tehnyt, Hänen ovensa on auki."
+      },
+      "source": "hadith_reference",
+      "themes": ["mercy", "forgiveness", "hope"]
+    },
+    {
+      "id": "insp_050",
+      "category": "gratitude_reminder",
+      "content": {
+        "tr": "Her günün sonunda üç güzel şeyi hatırla. Bu pratik, mutluluğu artırır ve kalbi yumuşatır.",
+        "en": "At the end of each day, recall three good things. This practice increases happiness and softens the heart.",
+        "fi": "Jokaisen päivän lopussa muistele kolme hyvää asiaa. Tämä käytäntö lisää onnellisuutta ja pehmentää sydäntä."
+      },
+      "source": null,
+      "themes": ["evening", "reflection", "gratitude"]
+    }
+  ],
+
+  "morning_affirmations": [
+    {
+      "id": "morning_001",
+      "content": {
+        "tr": "Bugün Allah'ın bir lütfudur. Bu günü en güzel şekilde değerlendireceğim.",
+        "en": "Today is a blessing from Allah. I will make the most of this day.",
+        "fi": "Tämä päivä on siunaus Allahilta. Teen parhaan tämästä päivästä."
+      }
+    },
+    {
+      "id": "morning_002",
+      "content": {
+        "tr": "Bismillah. Allah'ın adıyla başlıyorum ve O'na güveniyorum.",
+        "en": "Bismillah. I begin with Allah's name and I trust in Him.",
+        "fi": "Bismillah. Aloitan Allahin nimellä ja luotan Häneen."
+      }
+    },
+    {
+      "id": "morning_003",
+      "content": {
+        "tr": "Bugün karşılaşacağım her şey, benim için bir öğrenme fırsatı.",
+        "en": "Everything I encounter today is a learning opportunity for me.",
+        "fi": "Kaikki, mitä kohtaan tänään, on oppimismahdollisuus minulle."
+      }
+    },
+    {
+      "id": "morning_004",
+      "content": {
+        "tr": "Allah bana yeter. Bugün huzurlu, kararlı ve şükürle dolu olacağım.",
+        "en": "Allah is sufficient for me. Today I will be peaceful, determined, and full of gratitude.",
+        "fi": "Allah riittää minulle. Tänään olen rauhallinen, päättäväinen ja täynnä kiitollisuutta."
+      }
+    },
+    {
+      "id": "morning_005",
+      "content": {
+        "tr": "Bu yeni gün, yeni fırsatlar ve yeni lütuflar demek. Elhamdülillah.",
+        "en": "This new day means new opportunities and new blessings. Alhamdulillah.",
+        "fi": "Tämä uusi päivä tarkoittaa uusia mahdollisuuksia ja uusia siunauksia. Alhamdulillah."
+      }
+    }
+  ],
+
+  "evening_reflections": [
+    {
+      "id": "evening_001",
+      "content": {
+        "tr": "Bugün yaptığım iyilikleri hatırlıyorum ve şükrediyorum. Hatalarım için af diliyorum.",
+        "en": "I remember the good I did today and give thanks. I ask forgiveness for my mistakes.",
+        "fi": "Muistan tänään tekemäni hyvän ja kiitän. Pyydän anteeksi virheitäni."
+      }
+    },
+    {
+      "id": "evening_002",
+      "content": {
+        "tr": "Bu gün de Allah'ın bir lütfuydu. Yarın için umutluyum, bugün için şükrederim.",
+        "en": "This day was also a blessing from Allah. I am hopeful for tomorrow, grateful for today.",
+        "fi": "Tämäkin päivä oli Allahin siunaus. Olen toiveikas huomisesta, kiitollinen tästä päivästä."
+      }
+    },
+    {
+      "id": "evening_003",
+      "content": {
+        "tr": "Tüm kaygılarımı Allah'a bırakarak uyuyorum. O en güzel koruyucudur.",
+        "en": "I sleep, leaving all my worries to Allah. He is the best protector.",
+        "fi": "Nukun jättäen kaikki huoleni Allahille. Hän on paras suojelija."
+      }
+    }
+  ],
+
+  "metadata": {
+    "total_inspirations": 50,
+    "total_morning_affirmations": 5,
+    "total_evening_reflections": 3,
+    "total_categories": 6,
+    "last_updated": "2024-01-18",
+    "disclaimer": "Bu içerikler manevi ilham amaçlıdır. Tıbbi veya psikolojik tavsiye yerine geçmez."
+  }
+}

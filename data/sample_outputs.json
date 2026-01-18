@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "description": "Sample outputs for testing and demonstration purposes",
+    "version": "1.0"
+  },
+  "ebced_calculation_examples": [
+    {
+      "input": {
+        "name": "Ali",
+        "language": "tr"
+      },
+      "output": {
+        "name": "Ali",
+        "letters": [
+          { "letter": "a", "value": 1 },
+          { "letter": "l", "value": 30 },
+          { "letter": "i", "value": 10 }
+        ],
+        "total_value": 41,
+        "digit_sum": 5,
+        "primary_esma": {
+          "id": "al-wali",
+          "arabic": "الْوَلِيُّ",
+          "transliteration": "Al-Veli",
+          "meaning": {
+            "tr": "Dost, yardımcı",
+            "en": "The Protecting Friend",
+            "fi": "Suojeleva Ystava"
+          },
+          "abjad_value": 46,
+          "match_method": "range_match"
+        },
+        "secondary_esma": {
+          "id": "al-muhyi",
+          "transliteration": "Al-Muhyi",
+          "reason": "digit_sum_5"
+        },
+        "recommended_dhikr": {
+          "count": 41,
+          "or_multiples": [41, 82, 123]
+        }
+      }
+    },
+    {
+      "input": {
+        "name": "Fatma",
+        "language": "tr"
+      },
+      "output": {
+        "name": "Fatma",
+        "letters": [
+          { "letter": "f", "value": 80 },
+          { "letter": "a", "value": 1 },
+          { "letter": "t", "value": 400 },
+          { "letter": "m", "value": 40 },
+          { "letter": "a", "value": 1 }
+        ],
+        "total_value": 522,
+        "digit_sum": 9,
+        "primary_esma": {
+          "id": "al-mumin",
+          "arabic": "الْمُؤْمِنُ",
+          "transliteration": "Al-Mumin",
+          "meaning": {
+            "tr": "Güven veren",
+            "en": "The Giver of Security",
+            "fi": "Turvallisuuden Antaja"
+          },
+          "abjad_value": 137,
+          "match_method": "range_match"
+        },
+        "secondary_esma": {
+          "id": "ar-rahim",
+          "transliteration": "Ar-Rahim",
+          "reason": "digit_sum_9"
+        },
+        "recommended_dhikr": {
+          "count": 137,
+          "or_multiples": [137, 274]
+        }
+      }
+    },
+    {
+      "input": {
+        "name": "Muhammed",
+        "language": "tr"
+      },
+      "output": {
+        "name": "Muhammed",
+        "letters": [
+          { "letter": "m", "value": 40 },
+          { "letter": "u", "value": 6 },
+          { "letter": "h", "value": 8 },
+          { "letter": "a", "value": 1 },
+          { "letter": "m", "value": 40 },
+          { "letter": "m", "value": 40 },
+          { "letter": "e", "value": 5 },
+          { "letter": "d", "value": 4 }
+        ],
+        "total_value": 144,
+        "digit_sum": 9,
+        "primary_esma": {
+          "id": "ar-rahim",
+          "arabic": "الرَّحِيمُ",
+          "transliteration": "Ar-Rahim",
+          "meaning": {
+            "tr": "Cok merhametli",
+            "en": "The Most Merciful",
+            "fi": "Armollisin"
+          },
+          "abjad_value": 258,
+          "match_method": "range_match"
+        },
+        "secondary_esma": {
+          "id": "ar-rahim",
+          "transliteration": "Ar-Rahim",
+          "reason": "digit_sum_9"
+        },
+        "recommended_dhikr": {
+          "count": 144,
+          "or_multiples": [144, 288]
+        }
+      }
+    }
+  ],
+  "mood_recommendation_examples": [
+    {
+      "input": {
+        "mood": "anxious",
+        "language": "tr"
+      },
+      "output": {
+        "mood_id": "anxious",
+        "label": "Endiseli",
+        "ayah_references": [
+          {
+            "surah": "Al-Baqarah",
+            "ayah": 286,
+            "theme_note": "Allah kimseye taşıyamayacağı yük yüklemez"
+          },
+          {
+            "surah": "Ar-Ra'd",
+            "ayah": 28,
+            "theme_note": "Kalpler ancak Allah'ı anmakla huzur bulur"
+          }
+        ],
+        "recommended_esmas": [
+          {
+            "arabic": "يَا سَلَامُ",
+            "transliteration": "Ya Salam",
+            "meaning": "Ey selamet veren",
+            "count": 100
+          },
+          {
+            "arabic": "يَا لَطِيفُ",
+            "transliteration": "Ya Latif",
+            "meaning": "Ey lutuf sahibi",
+            "count": 129
+          }
+        ],
+        "reflection_prompt": "Şu an seni endişelendiren şey nedir? Bu duyguyu Allah'a teslim etmeye hazır mısın?"
+      }
+    },
+    {
+      "input": {
+        "mood": "grateful",
+        "language": "en"
+      },
+      "output": {
+        "mood_id": "grateful",
+        "label": "Grateful",
+        "ayah_references": [
+          {
+            "surah": "Ibrahim",
+            "ayah": 7,
+            "theme_note": "If you are grateful, I will surely increase you"
+          },
+          {
+            "surah": "An-Nahl",
+            "ayah": 18,
+            "theme_note": "And if you should count the favors of Allah, you could not enumerate them"
+          }
+        ],
+        "recommended_esmas": [
+          {
+            "arabic": "يَا شَكُورُ",
+            "transliteration": "Ya Shakur",
+            "meaning": "O Most Appreciative",
+            "count": 100
+          }
+        ],
+        "reflection_prompt": "List three blessings from today. How did they make you feel?"
+      }
+    }
+  ],
+  "daily_esma_surprise_examples": [
+    {
+      "date": "2024-01-15",
+      "esma": {
+        "id": "ar-rahman",
+        "order": 1,
+        "arabic": "الرَّحْمَٰنُ",
+        "transliteration": "Ar-Rahman",
+        "meaning": {
+          "tr": "Esirgeyen, sonsuz merhamet sahibi",
+          "en": "The Most Gracious",
+          "fi": "Armahtavin"
+        },
+        "abjad_value": 298,
+        "themes": ["mercy", "compassion", "grace"],
+        "suggested_count": 298,
+        "reflection_prompt": {
+          "tr": "Bugün Allah'ın rahmetini hayatında nasıl görebilirsin?",
+          "en": "How can you see Allah's mercy in your life today?",
+          "fi": "Miten voit nähdä Allahin armon elämässäsi tänään?"
+        }
+      },
+      "daily_inspiration": {
+        "text": {
+          "tr": "Her nefes bir nimettir, her kalp atışı bir hediye.",
+          "en": "Every breath is a blessing, every heartbeat is a gift.",
+          "fi": "Jokainen hengitys on siunaus, jokainen sydämen lyönti on lahja."
+        },
+        "category": "gratitude_reminder"
+      }
+    },
+    {
+      "date": "2024-01-16",
+      "esma": {
+        "id": "al-latif",
+        "order": 30,
+        "arabic": "اللَّطِيفُ",
+        "transliteration": "Al-Latif",
+        "meaning": {
+          "tr": "Lutuf sahibi, en ince ayrıntıları bilen",
+          "en": "The Subtle One, The Kind",
+          "fi": "Hienovarainen, Ystävällinen"
+        },
+        "abjad_value": 129,
+        "themes": ["subtlety", "kindness", "gentleness"],
+        "suggested_count": 129,
+        "reflection_prompt": {
+          "tr": "Allah'ın hayatındaki gizli lütuflarını düşün.",
+          "en": "Think about Allah's subtle blessings in your life.",
+          "fi": "Mieti Allahin hienovaraisia siunauksia elämässäsi."
+        }
+      },
+      "daily_inspiration": {
+        "text": {
+          "tr": "Bazen en güzel şeyler görünmez olanlardır.",
+          "en": "Sometimes the most beautiful things are the ones unseen.",
+          "fi": "Joskus kauneimmat asiat ovat näkymättömiä."
+        },
+        "category": "spiritual_wisdom"
+      }
+    }
+  ],
+  "program_progress_example": {
+    "program_id": "inner_peace",
+    "user_progress": {
+      "current_day": 3,
+      "started_at": "2024-01-13T06:00:00Z",
+      "completed_days": [1, 2],
+      "streak": 2,
+      "total_dhikr_count": 366,
+      "daily_logs": [
+        {
+          "day": 1,
+          "completed_at": "2024-01-13T06:30:00Z",
+          "dhikrs_completed": [
+            { "name": "Subhanallah", "target": 33, "actual": 33 },
+            { "name": "Ya Salam", "target": 100, "actual": 100 }
+          ],
+          "reflection_written": true,
+          "mood_before": "anxious",
+          "mood_after": "peaceful"
+        },
+        {
+          "day": 2,
+          "completed_at": "2024-01-14T07:15:00Z",
+          "dhikrs_completed": [
+            { "name": "Estagfirullah", "target": 100, "actual": 100 },
+            { "name": "Ya Gafur", "target": 70, "actual": 70 }
+          ],
+          "reflection_written": true,
+          "mood_before": "sad",
+          "mood_after": "hopeful"
+        }
+      ]
+    },
+    "next_day_preview": {
+      "day": 3,
+      "title": {
+        "tr": "Şükür ve Minnettarlık",
+        "en": "Gratitude and Thankfulness",
+        "fi": "Kiitollisuus"
+      },
+      "total_dhikr_count": 133
+    }
+  },
+  "weekly_summary_example": {
+    "week_start": "2024-01-08",
+    "week_end": "2024-01-14",
+    "statistics": {
+      "total_dhikr_count": 2847,
+      "days_active": 6,
+      "longest_streak": 6,
+      "most_used_esma": {
+        "id": "ya-salam",
+        "transliteration": "Ya Salam",
+        "count": 700
+      },
+      "average_daily_dhikr": 474,
+      "mood_improvements": 4,
+      "reflections_written": 5
+    },
+    "daily_breakdown": [
+      { "date": "2024-01-08", "count": 433, "active": true },
+      { "date": "2024-01-09", "count": 521, "active": true },
+      { "date": "2024-01-10", "count": 0, "active": false },
+      { "date": "2024-01-11", "count": 489, "active": true },
+      { "date": "2024-01-12", "count": 512, "active": true },
+      { "date": "2024-01-13", "count": 433, "active": true },
+      { "date": "2024-01-14", "count": 459, "active": true }
+    ],
+    "encouragement_message": {
+      "tr": "Harika bir hafta geçirdin! 6 gün aktif kaldın ve toplam 2847 zikir yaptın.",
+      "en": "You had a great week! You stayed active for 6 days and completed 2847 dhikr.",
+      "fi": "Sinulla oli loistava viikko! Olit aktiivinen 6 päivää ja suoritit 2847 dhikria."
+    }
+  },
+  "gamification_examples": {
+    "badges_earned": [
+      {
+        "id": "first_step",
+        "name": {
+          "tr": "İlk Adım",
+          "en": "First Step",
+          "fi": "Ensimmäinen Askel"
+        },
+        "description": {
+          "tr": "İlk zikrini tamamladın",
+          "en": "Completed your first dhikr",
+          "fi": "Suoritit ensimmäisen dhikrisi"
+        },
+        "icon": "footsteps",
+        "earned_at": "2024-01-08T10:00:00Z"
+      },
+      {
+        "id": "week_warrior",
+        "name": {
+          "tr": "Hafta Savaşçısı",
+          "en": "Week Warrior",
+          "fi": "Viikon Soturi"
+        },
+        "description": {
+          "tr": "7 gün üst üste zikir yaptın",
+          "en": "Completed dhikr for 7 consecutive days",
+          "fi": "Suoritit dhikrin 7 peräkkäisenä päivänä"
+        },
+        "icon": "shield",
+        "earned_at": "2024-01-15T10:00:00Z"
+      }
+    ],
+    "streak_info": {
+      "current_streak": 7,
+      "longest_streak": 14,
+      "streak_start_date": "2024-01-08"
+    },
+    "level_info": {
+      "current_level": 3,
+      "level_name": {
+        "tr": "Sabırlı",
+        "en": "Patient",
+        "fi": "Kärsivällinen"
+      },
+      "xp_current": 450,
+      "xp_next_level": 600,
+      "progress_percent": 75
+    }
+  }
+}

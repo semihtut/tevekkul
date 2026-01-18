@@ -1,0 +1,1092 @@
+{
+  "programs": [
+    {
+      "id": "inner_peace",
+      "name": {
+        "tr": "Ic Huzur Programi",
+        "en": "Inner Peace Program",
+        "fi": "Sisaisen Rauhan Ohjelma"
+      },
+      "description": {
+        "tr": "7 gunluk bu program, kalp huzuru ve zihin dinginligi icin ozel olarak hazirlanmistir.",
+        "en": "This 7-day program is specially designed for heart tranquility and mental serenity.",
+        "fi": "Tama 7 paivan ohjelma on suunniteltu erityisesti sydamen rauhaa ja mielen tyyneytta varten."
+      },
+      "duration_days": 7,
+      "difficulty": "beginner",
+      "themes": ["peace", "tranquility", "calm"],
+      "days": [
+        {
+          "day": 1,
+          "title": {
+            "tr": "Huzura Adim",
+            "en": "Step into Peace",
+            "fi": "Askel Rauhaan"
+          },
+          "dhikrs": [
+            {
+              "arabic": "سُبْحَانَ اللهِ",
+              "transliteration": "Subhanallah",
+              "meaning": {
+                "tr": "Allah'i tenzih ederim",
+                "en": "Glory be to Allah",
+                "fi": "Kunnia Allahille"
+              },
+              "count": 33
+            },
+            {
+              "arabic": "يَا سَلَامُ",
+              "transliteration": "Ya Salam",
+              "meaning": {
+                "tr": "Ey selamet veren",
+                "en": "O Source of Peace",
+                "fi": "Oi Rauhan Lahde"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Bugün icindeki huzuru hissetmeye odaklan.",
+            "en": "Today, focus on feeling the peace within.",
+            "fi": "Tänään keskity tuntemaan sisäinen rauha."
+          }
+        },
+        {
+          "day": 2,
+          "title": {
+            "tr": "Kalp Temizligi",
+            "en": "Heart Purification",
+            "fi": "Sydamen Puhdistus"
+          },
+          "dhikrs": [
+            {
+              "arabic": "أَسْتَغْفِرُ اللهَ",
+              "transliteration": "Estağfirullah",
+              "meaning": {
+                "tr": "Allah'tan bagislanma dilerim",
+                "en": "I seek forgiveness from Allah",
+                "fi": "Pyydän anteeksiantoa Allahilta"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا غَفُورُ",
+              "transliteration": "Ya Gafur",
+              "meaning": {
+                "tr": "Ey cok bagislayan",
+                "en": "O Most Forgiving",
+                "fi": "Oi Anteeksiantavin"
+              },
+              "count": 70
+            }
+          ],
+          "reflection": {
+            "tr": "Kalbini agirlaştıran seyleri bırak.",
+            "en": "Let go of what weighs on your heart.",
+            "fi": "Päästä irti siitä mikä painaa sydäntäsi."
+          }
+        },
+        {
+          "day": 3,
+          "title": {
+            "tr": "Sukur ve Minnettarlik",
+            "en": "Gratitude and Thankfulness",
+            "fi": "Kiitollisuus"
+          },
+          "dhikrs": [
+            {
+              "arabic": "الْحَمْدُ لِلَّهِ",
+              "transliteration": "Elhamdulillah",
+              "meaning": {
+                "tr": "Hamd Allah'a mahsustur",
+                "en": "All praise is due to Allah",
+                "fi": "Kaikki ylistys kuuluu Allahille"
+              },
+              "count": 33
+            },
+            {
+              "arabic": "يَا شَكُورُ",
+              "transliteration": "Ya Şekur",
+              "meaning": {
+                "tr": "Ey sukru bol kabul eden",
+                "en": "O Most Appreciative",
+                "fi": "Oi Kiitollinen"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Hayatındaki 3 nimeti düşün ve şükret.",
+            "en": "Think of 3 blessings in your life and be grateful.",
+            "fi": "Mieti kolmea siunausta elamassasi ja ole kiitollinen."
+          }
+        },
+        {
+          "day": 4,
+          "title": {
+            "tr": "Tevekkül",
+            "en": "Trust in Allah",
+            "fi": "Luottamus Allahiin"
+          },
+          "dhikrs": [
+            {
+              "arabic": "حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيلُ",
+              "transliteration": "Hasbunallahu ve ni'mel vekil",
+              "meaning": {
+                "tr": "Allah bize yeter, O ne güzel vekildir",
+                "en": "Allah is sufficient for us, and He is the best Disposer of affairs",
+                "fi": "Allah riittaa meille, Han on paras asioiden hoitaja"
+              },
+              "count": 70
+            },
+            {
+              "arabic": "يَا وَكِيلُ",
+              "transliteration": "Ya Vekil",
+              "meaning": {
+                "tr": "Ey vekil olan",
+                "en": "O Trustee",
+                "fi": "Oi Uskottu"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Kontrolün dışındaki şeyleri Allah'a bırak.",
+            "en": "Leave what's beyond your control to Allah.",
+            "fi": "Jata se mita et voi hallita Allahin kasiin."
+          }
+        },
+        {
+          "day": 5,
+          "title": {
+            "tr": "Sabır ve Dayanıklılık",
+            "en": "Patience and Resilience",
+            "fi": "Kärsivällisyys ja Kestävyys"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا صَبُورُ",
+              "transliteration": "Ya Sabur",
+              "meaning": {
+                "tr": "Ey çok sabırlı olan",
+                "en": "O Most Patient",
+                "fi": "Oi Kärsivallisin"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ",
+              "transliteration": "La havle ve la kuvvete illa billah",
+              "meaning": {
+                "tr": "Güç ve kuvvet ancak Allah iledir",
+                "en": "There is no power nor strength except with Allah",
+                "fi": "Ei ole voimaa eika vahvuutta paitsi Allahin kautta"
+              },
+              "count": 33
+            }
+          ],
+          "reflection": {
+            "tr": "Zorluklarin seni güçlendirdiğini hatırla.",
+            "en": "Remember that difficulties strengthen you.",
+            "fi": "Muista etta vaikeudet vahvistavat sinua."
+          }
+        },
+        {
+          "day": 6,
+          "title": {
+            "tr": "Sevgi ve Merhamet",
+            "en": "Love and Compassion",
+            "fi": "Rakkaus ja Myötätunto"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا وَدُودُ",
+              "transliteration": "Ya Vedud",
+              "meaning": {
+                "tr": "Ey çok seven",
+                "en": "O Most Loving",
+                "fi": "Oi Rakastavin"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا رَحِيمُ",
+              "transliteration": "Ya Rahim",
+              "meaning": {
+                "tr": "Ey çok merhamet eden",
+                "en": "O Most Merciful",
+                "fi": "Oi Armollisin"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Bugün birine iyilik yap, küçük de olsa.",
+            "en": "Do a kindness for someone today, no matter how small.",
+            "fi": "Tee tänään hyvä teko jollekin, vaikka pienikin."
+          }
+        },
+        {
+          "day": 7,
+          "title": {
+            "tr": "Bütünleşme",
+            "en": "Integration",
+            "fi": "Yhdistyminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "لَا إِلَهَ إِلَّا اللهُ",
+              "transliteration": "La ilahe illallah",
+              "meaning": {
+                "tr": "Allah'tan başka ilah yoktur",
+                "en": "There is no god but Allah",
+                "fi": "Ei ole jumalaa paitsi Allah"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا نُورُ",
+              "transliteration": "Ya Nur",
+              "meaning": {
+                "tr": "Ey nur olan",
+                "en": "O Light",
+                "fi": "Oi Valo"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا هَادِي",
+              "transliteration": "Ya Hadi",
+              "meaning": {
+                "tr": "Ey hidayet veren",
+                "en": "O Guide",
+                "fi": "Oi Opastaja"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Bu hafta boyunca öğrendiklerini hayatına entegre et.",
+            "en": "Integrate what you've learned this week into your life.",
+            "fi": "Yhdistä tällä viikolla oppimasi elamaasi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "spiritual_strength",
+      "name": {
+        "tr": "Manevi Güç Programı",
+        "en": "Spiritual Strength Program",
+        "fi": "Hengellisen Voiman Ohjelma"
+      },
+      "description": {
+        "tr": "Manevi gücünüzü artırmak ve iç kuvvetinizi keşfetmek için tasarlanmış 7 günlük program.",
+        "en": "A 7-day program designed to increase your spiritual strength and discover your inner power.",
+        "fi": "7 päivän ohjelma, joka on suunniteltu lisäämään hengellistä voimaasi ja löytämään sisäisen voimasi."
+      },
+      "duration_days": 7,
+      "difficulty": "intermediate",
+      "themes": ["strength", "power", "resilience"],
+      "days": [
+        {
+          "day": 1,
+          "title": {
+            "tr": "Güce Uyanış",
+            "en": "Awakening to Strength",
+            "fi": "Herääminen Voimaan"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا قَوِيُّ",
+              "transliteration": "Ya Kaviyy",
+              "meaning": {
+                "tr": "Ey güçlü olan",
+                "en": "O Most Strong",
+                "fi": "Oi Voimakkain"
+              },
+              "count": 116
+            },
+            {
+              "arabic": "اللهُ أَكْبَرُ",
+              "transliteration": "Allahu Ekber",
+              "meaning": {
+                "tr": "Allah en büyüktür",
+                "en": "Allah is the Greatest",
+                "fi": "Allah on Suurin"
+              },
+              "count": 33
+            }
+          ],
+          "reflection": {
+            "tr": "Gerçek gücün Allah'tan geldiğini hatırla.",
+            "en": "Remember that true strength comes from Allah.",
+            "fi": "Muista, että todellinen voima tulee Allahilta."
+          }
+        },
+        {
+          "day": 2,
+          "title": {
+            "tr": "Azim ve Kararlılık",
+            "en": "Determination",
+            "fi": "Päättäväisyys"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا مَتِينُ",
+              "transliteration": "Ya Metin",
+              "meaning": {
+                "tr": "Ey sağlam olan",
+                "en": "O Firm One",
+                "fi": "Oi Luja"
+              },
+              "count": 500
+            },
+            {
+              "arabic": "رَبِّ زِدْنِي عِلْمًا",
+              "transliteration": "Rabbi zidni ilma",
+              "meaning": {
+                "tr": "Rabbim ilmimi artır",
+                "en": "My Lord, increase me in knowledge",
+                "fi": "Herrani, lisää tietoani"
+              },
+              "count": 70
+            }
+          ],
+          "reflection": {
+            "tr": "Hedeflerine ulaşmak için ne yapman gerektiğini düşün.",
+            "en": "Think about what you need to do to reach your goals.",
+            "fi": "Mieti, mitä sinun täytyy tehdä saavuttaaksesi tavoitteesi."
+          }
+        },
+        {
+          "day": 3,
+          "title": {
+            "tr": "Koruma Kalkanı",
+            "en": "Shield of Protection",
+            "fi": "Suojan Kilpi"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا حَفِيظُ",
+              "transliteration": "Ya Hafiz",
+              "meaning": {
+                "tr": "Ey koruyan",
+                "en": "O Protector",
+                "fi": "Oi Suojelija"
+              },
+              "count": 998
+            },
+            {
+              "arabic": "بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ",
+              "transliteration": "Bismillahillezi la yedurru me'asmihi şey'un",
+              "meaning": {
+                "tr": "Allah'ın adıyla ki, O'nun adı anıldığında hiçbir şey zarar veremez",
+                "en": "In the name of Allah, with whose name nothing can cause harm",
+                "fi": "Allahin nimeen, jonka nimellä mikään ei voi vahingoittaa"
+              },
+              "count": 3
+            }
+          ],
+          "reflection": {
+            "tr": "Allah'ın seni her an koruduğunu hisset.",
+            "en": "Feel that Allah protects you at all times.",
+            "fi": "Tunne, että Allah suojelee sinua joka hetki."
+          }
+        },
+        {
+          "day": 4,
+          "title": {
+            "tr": "Yenilmez İrade",
+            "en": "Invincible Will",
+            "fi": "Voittamaton Tahto"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا عَزِيزُ",
+              "transliteration": "Ya Aziz",
+              "meaning": {
+                "tr": "Ey üstün olan",
+                "en": "O Almighty",
+                "fi": "Oi Kaikkivaltias"
+              },
+              "count": 94
+            },
+            {
+              "arabic": "يَا جَبَّارُ",
+              "transliteration": "Ya Cebbar",
+              "meaning": {
+                "tr": "Ey kahredici güç sahibi",
+                "en": "O Compeller",
+                "fi": "Oi Pakottaja"
+              },
+              "count": 206
+            }
+          ],
+          "reflection": {
+            "tr": "Zorluklar karşısında iradeni güçlendir.",
+            "en": "Strengthen your will in the face of difficulties.",
+            "fi": "Vahvista tahtoasi vaikeuksien edessä."
+          }
+        },
+        {
+          "day": 5,
+          "title": {
+            "tr": "Bolluk ve Bereket",
+            "en": "Abundance and Blessing",
+            "fi": "Runsaus ja Siunaus"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا رَزَّاقُ",
+              "transliteration": "Ya Rezzak",
+              "meaning": {
+                "tr": "Ey rızık veren",
+                "en": "O Provider",
+                "fi": "Oi Elättäjä"
+              },
+              "count": 308
+            },
+            {
+              "arabic": "يَا فَتَّاحُ",
+              "transliteration": "Ya Fettah",
+              "meaning": {
+                "tr": "Ey kapıları açan",
+                "en": "O Opener",
+                "fi": "Oi Avaaja"
+              },
+              "count": 489
+            }
+          ],
+          "reflection": {
+            "tr": "Rızkının Allah'tan geldiğine güven.",
+            "en": "Trust that your provision comes from Allah.",
+            "fi": "Luota siihen, että elatuksesi tulee Allahilta."
+          }
+        },
+        {
+          "day": 6,
+          "title": {
+            "tr": "Zafer ve Başarı",
+            "en": "Victory and Success",
+            "fi": "Voitto ja Menestys"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا نَصِيرُ",
+              "transliteration": "Ya Nasir",
+              "meaning": {
+                "tr": "Ey yardım eden",
+                "en": "O Helper",
+                "fi": "Oi Auttaja"
+              },
+              "count": 500
+            },
+            {
+              "arabic": "رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً",
+              "transliteration": "Rabbena atina min ledunke rahmeten",
+              "meaning": {
+                "tr": "Rabbimiz, bize katından rahmet ver",
+                "en": "Our Lord, grant us mercy from Yourself",
+                "fi": "Herramme, anna meille armoa luotasi"
+              },
+              "count": 70
+            }
+          ],
+          "reflection": {
+            "tr": "Başarının Allah'ın yardımıyla geldiğini unutma.",
+            "en": "Remember that success comes with Allah's help.",
+            "fi": "Muista, että menestys tulee Allahin avulla."
+          }
+        },
+        {
+          "day": 7,
+          "title": {
+            "tr": "Tamamlanma",
+            "en": "Completion",
+            "fi": "Valmistuminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا كَافِي",
+              "transliteration": "Ya Kafi",
+              "meaning": {
+                "tr": "Ey yeten",
+                "en": "O Sufficient One",
+                "fi": "Oi Riittävä"
+              },
+              "count": 111
+            },
+            {
+              "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+              "transliteration": "Elhamdulillahi Rabbil alemin",
+              "meaning": {
+                "tr": "Alemlerin Rabbi Allah'a hamd olsun",
+                "en": "All praise is due to Allah, Lord of all worlds",
+                "fi": "Kaikki ylistys kuuluu Allahille, maailmojen Herralle"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Bu haftaki manevi yolculuğunu değerlendir.",
+            "en": "Evaluate your spiritual journey this week.",
+            "fi": "Arvioi hengellinen matkasi tällä viikolla."
+          }
+        }
+      ]
+    },
+    {
+      "id": "heart_healing",
+      "name": {
+        "tr": "Kalp Şifası Programı",
+        "en": "Heart Healing Program",
+        "fi": "Sydämen Parantumisen Ohjelma"
+      },
+      "description": {
+        "tr": "Kırık kalpleri onarmak ve duygusal yaraları iyileştirmek için özel olarak hazırlanmış 7 günlük program.",
+        "en": "A 7-day program specially designed to mend broken hearts and heal emotional wounds.",
+        "fi": "7 päivän ohjelma, joka on erityisesti suunniteltu parantamaan särkyneitä sydämiä ja emotionaalisia haavoja."
+      },
+      "duration_days": 7,
+      "difficulty": "beginner",
+      "themes": ["healing", "comfort", "recovery"],
+      "days": [
+        {
+          "day": 1,
+          "title": {
+            "tr": "Acıyı Kabul",
+            "en": "Accepting Pain",
+            "fi": "Kivun Hyväksyminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا جَابِرُ",
+              "transliteration": "Ya Cabir",
+              "meaning": {
+                "tr": "Ey kırıkları saran",
+                "en": "O Mender of broken things",
+                "fi": "Oi Särkyneiden Korjaaja"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+              "transliteration": "İnna lillahi ve inna ileyhi raciun",
+              "meaning": {
+                "tr": "Biz Allah'a aidiz ve O'na döneceğiz",
+                "en": "We belong to Allah and to Him we shall return",
+                "fi": "Me kuulumme Allahille ja Häneen palaamme"
+              },
+              "count": 33
+            }
+          ],
+          "reflection": {
+            "tr": "Acını inkar etme, onu Allah'a teslim et.",
+            "en": "Don't deny your pain, surrender it to Allah.",
+            "fi": "Älä kiellä kipuasi, luovuta se Allahille."
+          }
+        },
+        {
+          "day": 2,
+          "title": {
+            "tr": "Rahmet Yağmuru",
+            "en": "Rain of Mercy",
+            "fi": "Armon Sade"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا رَحْمَٰنُ",
+              "transliteration": "Ya Rahman",
+              "meaning": {
+                "tr": "Ey esirgeyen",
+                "en": "O Most Gracious",
+                "fi": "Oi Armahtavin"
+              },
+              "count": 298
+            },
+            {
+              "arabic": "يَا رَحِيمُ",
+              "transliteration": "Ya Rahim",
+              "meaning": {
+                "tr": "Ey bağışlayan",
+                "en": "O Most Merciful",
+                "fi": "Oi Armollisin"
+              },
+              "count": 258
+            }
+          ],
+          "reflection": {
+            "tr": "Allah'ın rahmeti her şeyi kuşatır.",
+            "en": "Allah's mercy encompasses everything.",
+            "fi": "Allahin armo ymparöi kaiken."
+          }
+        },
+        {
+          "day": 3,
+          "title": {
+            "tr": "Bağışlama Gücü",
+            "en": "Power of Forgiveness",
+            "fi": "Anteeksiannon Voima"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا عَفُوُّ",
+              "transliteration": "Ya Afuv",
+              "meaning": {
+                "tr": "Ey affeden",
+                "en": "O Pardoner",
+                "fi": "Oi Armahtaja"
+              },
+              "count": 156
+            },
+            {
+              "arabic": "أَسْتَغْفِرُ اللهَ الْعَظِيمَ",
+              "transliteration": "Estağfirullahel azim",
+              "meaning": {
+                "tr": "Yüce Allah'tan bağışlanma dilerim",
+                "en": "I seek forgiveness from Allah the Magnificent",
+                "fi": "Pyydän anteeksiantoa Suurelta Allahilta"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Başkalarını affetmek önce seni özgürleştirir.",
+            "en": "Forgiving others frees you first.",
+            "fi": "Muiden anteeksiantaminen vapauttaa sinut ensin."
+          }
+        },
+        {
+          "day": 4,
+          "title": {
+            "tr": "Teselli Bulma",
+            "en": "Finding Comfort",
+            "fi": "Lohdun Löytäminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا لَطِيفُ",
+              "transliteration": "Ya Latif",
+              "meaning": {
+                "tr": "Ey lütuf sahibi",
+                "en": "O Most Subtle",
+                "fi": "Oi Hienovaraisin"
+              },
+              "count": 129
+            },
+            {
+              "arabic": "يَا بَرُّ",
+              "transliteration": "Ya Berr",
+              "meaning": {
+                "tr": "Ey iyilik kaynağı",
+                "en": "O Source of Goodness",
+                "fi": "Oi Hyvyyden Lähde"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Allah her zorlukta bir kolaylık yaratır.",
+            "en": "Allah creates ease in every difficulty.",
+            "fi": "Allah luo helpotusta jokaisessa vaikeudessa."
+          }
+        },
+        {
+          "day": 5,
+          "title": {
+            "tr": "Umut Işığı",
+            "en": "Light of Hope",
+            "fi": "Toivon Valo"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا نُورُ",
+              "transliteration": "Ya Nur",
+              "meaning": {
+                "tr": "Ey nur",
+                "en": "O Light",
+                "fi": "Oi Valo"
+              },
+              "count": 256
+            },
+            {
+              "arabic": "لَا تَقْنَطُوا مِن رَّحْمَةِ اللهِ",
+              "transliteration": "La taknetu min rahmetillah",
+              "meaning": {
+                "tr": "Allah'ın rahmetinden ümit kesmeyin",
+                "en": "Do not despair of Allah's mercy",
+                "fi": "Älkää menettäkö toivoa Allahin armosta"
+              },
+              "count": 70
+            }
+          ],
+          "reflection": {
+            "tr": "En karanlık gecenin ardından şafak söker.",
+            "en": "Dawn breaks after the darkest night.",
+            "fi": "Aamunkoitto sarastaa pimeimmän yön jälkeen."
+          }
+        },
+        {
+          "day": 6,
+          "title": {
+            "tr": "Yeniden Doğuş",
+            "en": "Rebirth",
+            "fi": "Uudestisyntyminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا مُحْيِي",
+              "transliteration": "Ya Muhyi",
+              "meaning": {
+                "tr": "Ey hayat veren",
+                "en": "O Giver of Life",
+                "fi": "Oi Elamän Antaja"
+              },
+              "count": 68
+            },
+            {
+              "arabic": "يَا بَاعِثُ",
+              "transliteration": "Ya Bais",
+              "meaning": {
+                "tr": "Ey dirilten",
+                "en": "O Resurrector",
+                "fi": "Oi Ylösherättäjä"
+              },
+              "count": 573
+            }
+          ],
+          "reflection": {
+            "tr": "Her son, yeni bir başlangıçtır.",
+            "en": "Every ending is a new beginning.",
+            "fi": "Jokainen loppu on uusi alku."
+          }
+        },
+        {
+          "day": 7,
+          "title": {
+            "tr": "Şükür ve Kabul",
+            "en": "Gratitude and Acceptance",
+            "fi": "Kiitollisuus ja Hyväksyntä"
+          },
+          "dhikrs": [
+            {
+              "arabic": "الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ",
+              "transliteration": "Elhamdulillahi ala külli hal",
+              "meaning": {
+                "tr": "Her halde Allah'a hamd olsun",
+                "en": "All praise is due to Allah in every condition",
+                "fi": "Kiitos Allahille kaikissa olosuhteissa"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا وَدُودُ",
+              "transliteration": "Ya Vedud",
+              "meaning": {
+                "tr": "Ey çok seven",
+                "en": "O Most Loving",
+                "fi": "Oi Rakastavin"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Yaşadıkların seni bugün sen yapan şeylerdir.",
+            "en": "What you've experienced has made you who you are today.",
+            "fi": "Kokemuksesi ovat tehneet sinusta sen, kuka olet tänään."
+          }
+        }
+      ]
+    },
+    {
+      "id": "morning_routine",
+      "name": {
+        "tr": "Sabah Rutini Programı",
+        "en": "Morning Routine Program",
+        "fi": "Aamurutiinin Ohjelma"
+      },
+      "description": {
+        "tr": "Güne bereketli ve huzurlu başlamak için 7 günlük sabah zikir programı.",
+        "en": "A 7-day morning dhikr program to start your day with blessing and peace.",
+        "fi": "7 päivän aamu-dhikr-ohjelma päivän aloittamiseksi siunauksella ja rauhalla."
+      },
+      "duration_days": 7,
+      "difficulty": "beginner",
+      "themes": ["morning", "blessing", "energy"],
+      "days": [
+        {
+          "day": 1,
+          "title": {
+            "tr": "Şükürle Uyanış",
+            "en": "Waking with Gratitude",
+            "fi": "Herääminen Kiitollisuudella"
+          },
+          "dhikrs": [
+            {
+              "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا",
+              "transliteration": "Elhamdulillahillezi ahyana ba'de ma ematena",
+              "meaning": {
+                "tr": "Bizi öldürdükten sonra dirilten Allah'a hamd olsun",
+                "en": "Praise to Allah who gave us life after death",
+                "fi": "Ylistys Allahille, joka antoi meille elaman kuoleman jalkeen"
+              },
+              "count": 1
+            },
+            {
+              "arabic": "يَا حَيُّ يَا قَيُّومُ",
+              "transliteration": "Ya Hayyu Ya Kayyum",
+              "meaning": {
+                "tr": "Ey diri olan, ey her şeyi ayakta tutan",
+                "en": "O Ever-Living, O Self-Sustaining",
+                "fi": "Oi Ikuisesti Elävä, Oi Itseriittävä"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Yeni bir güne uyanmak büyük bir nimettir.",
+            "en": "Waking to a new day is a great blessing.",
+            "fi": "Uuteen päivään herääminen on suuri siunaus."
+          }
+        },
+        {
+          "day": 2,
+          "title": {
+            "tr": "Bereket Duası",
+            "en": "Blessing Prayer",
+            "fi": "Siunauksen Rukous"
+          },
+          "dhikrs": [
+            {
+              "arabic": "بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ",
+              "transliteration": "Bismillahirrahmanirrahim",
+              "meaning": {
+                "tr": "Rahman ve Rahim olan Allah'ın adıyla",
+                "en": "In the name of Allah, the Most Gracious, the Most Merciful",
+                "fi": "Allahin, Armeliaimman, Armollisimman nimeen"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا مُبَارِكُ",
+              "transliteration": "Ya Mübarik",
+              "meaning": {
+                "tr": "Ey bereket veren",
+                "en": "O Blessed One",
+                "fi": "Oi Siunattu"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Her işe besmele ile başla.",
+            "en": "Begin every task with Bismillah.",
+            "fi": "Aloita jokainen tehtävä Bismillahilla."
+          }
+        },
+        {
+          "day": 3,
+          "title": {
+            "tr": "Koruma Kalkanı",
+            "en": "Shield of Protection",
+            "fi": "Suojan Kilpi"
+          },
+          "dhikrs": [
+            {
+              "arabic": "أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+              "transliteration": "Euzu billahi mineş şeytanir racim",
+              "meaning": {
+                "tr": "Kovulmuş şeytandan Allah'a sığınırım",
+                "en": "I seek refuge in Allah from the accursed Satan",
+                "fi": "Turvaudun Allahiin kirotuita saatanalta"
+              },
+              "count": 3
+            },
+            {
+              "arabic": "آيَةُ الْكُرْسِيِّ",
+              "transliteration": "Ayetel Kursi",
+              "meaning": {
+                "tr": "Taht Ayeti (Bakara 255)",
+                "en": "The Throne Verse (Al-Baqarah 255)",
+                "fi": "Valtaistuinjae (Al-Baqarah 255)"
+              },
+              "count": 1
+            },
+            {
+              "arabic": "يَا حَفِيظُ",
+              "transliteration": "Ya Hafiz",
+              "meaning": {
+                "tr": "Ey koruyan",
+                "en": "O Protector",
+                "fi": "Oi Suojelija"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Allah'ın korumasına sığın.",
+            "en": "Seek refuge in Allah's protection.",
+            "fi": "Turvaudu Allahin suojaan."
+          }
+        },
+        {
+          "day": 4,
+          "title": {
+            "tr": "Rızık Kapıları",
+            "en": "Gates of Provision",
+            "fi": "Elatuksen Portit"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا رَزَّاقُ",
+              "transliteration": "Ya Rezzak",
+              "meaning": {
+                "tr": "Ey rızık veren",
+                "en": "O Provider",
+                "fi": "Oi Elättäjä"
+              },
+              "count": 308
+            },
+            {
+              "arabic": "يَا فَتَّاحُ",
+              "transliteration": "Ya Fettah",
+              "meaning": {
+                "tr": "Ey kapıları açan",
+                "en": "O Opener",
+                "fi": "Oi Avaaja"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Rızkın Allah'tandır, telaş etme.",
+            "en": "Your provision is from Allah, don't worry.",
+            "fi": "Elatuksesi tulee Allahilta, älä huolehdi."
+          }
+        },
+        {
+          "day": 5,
+          "title": {
+            "tr": "Hidayet Nuru",
+            "en": "Light of Guidance",
+            "fi": "Opastuksen Valo"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا هَادِي",
+              "transliteration": "Ya Hadi",
+              "meaning": {
+                "tr": "Ey hidayet veren",
+                "en": "O Guide",
+                "fi": "Oi Opastaja"
+              },
+              "count": 20
+            },
+            {
+              "arabic": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+              "transliteration": "İhdinas sıratal mustakim",
+              "meaning": {
+                "tr": "Bizi doğru yola ilet",
+                "en": "Guide us to the straight path",
+                "fi": "Johda meitä suoralle tielle"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Her adımda Allah'ın rehberliğini iste.",
+            "en": "Ask for Allah's guidance in every step.",
+            "fi": "Pyydä Allahin opastusta joka askeleessa."
+          }
+        },
+        {
+          "day": 6,
+          "title": {
+            "tr": "Güç ve Enerji",
+            "en": "Strength and Energy",
+            "fi": "Voima ja Energia"
+          },
+          "dhikrs": [
+            {
+              "arabic": "يَا قَوِيُّ",
+              "transliteration": "Ya Kaviyy",
+              "meaning": {
+                "tr": "Ey güçlü olan",
+                "en": "O Most Strong",
+                "fi": "Oi Voimakkain"
+              },
+              "count": 116
+            },
+            {
+              "arabic": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ",
+              "transliteration": "La havle ve la kuvvete illa billah",
+              "meaning": {
+                "tr": "Güç ve kuvvet ancak Allah iledir",
+                "en": "There is no power nor strength except with Allah",
+                "fi": "Ei ole voimaa eikä vahvuutta paitsi Allahin kautta"
+              },
+              "count": 100
+            }
+          ],
+          "reflection": {
+            "tr": "Gerçek güç Allah'tandır.",
+            "en": "True strength is from Allah.",
+            "fi": "Todellinen voima on Allahilta."
+          }
+        },
+        {
+          "day": 7,
+          "title": {
+            "tr": "Tam Teslimiyet",
+            "en": "Complete Surrender",
+            "fi": "Täydellinen Antautuminen"
+          },
+          "dhikrs": [
+            {
+              "arabic": "تَوَكَّلْتُ عَلَى اللهِ",
+              "transliteration": "Tevekkeltü alallah",
+              "meaning": {
+                "tr": "Allah'a tevekkül ettim",
+                "en": "I put my trust in Allah",
+                "fi": "Luotan Allahiin"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "يَا وَكِيلُ",
+              "transliteration": "Ya Vekil",
+              "meaning": {
+                "tr": "Ey vekil olan",
+                "en": "O Trustee",
+                "fi": "Oi Uskottu"
+              },
+              "count": 100
+            },
+            {
+              "arabic": "حَسْبِيَ اللهُ لَا إِلَٰهَ إِلَّا هُوَ",
+              "transliteration": "Hasbiyallahu la ilahe illa hu",
+              "meaning": {
+                "tr": "Allah bana yeter, O'ndan başka ilah yoktur",
+                "en": "Allah is sufficient for me, there is no god but He",
+                "fi": "Allah riittää minulle, ei ole jumalaa paitsi Hän"
+              },
+              "count": 7
+            }
+          ],
+          "reflection": {
+            "tr": "Günü tam bir tevekkül ile başlat.",
+            "en": "Start your day with complete trust in Allah.",
+            "fi": "Aloita päiväsi täydellisellä luottamuksella Allahiin."
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "total_programs": 4,
+    "supported_languages": ["tr", "en", "fi"],
+    "default_language": "tr"
+  }
+}

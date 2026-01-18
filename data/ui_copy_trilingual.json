@@ -1,0 +1,908 @@
+{
+  "version": "2.0.0",
+  "schema": "ui_copy_trilingual",
+  "description": "All UI microcopy strings in Turkish (default), English, and Finnish",
+  "default_language": "tr",
+  "supported_languages": ["tr", "en", "fi"],
+
+  "onboarding": {
+    "welcome_title": {
+      "tr": "Hoş Geldin",
+      "en": "Welcome",
+      "fi": "Tervetuloa"
+    },
+    "welcome_subtitle": {
+      "tr": "Tevekkül, zikir yolculuğunda sana nazikçe eşlik eder.",
+      "en": "Tevekkül gently accompanies you on your dhikr journey.",
+      "fi": "Tevekkül seuraa sinua lempeästi dhikr-matkallasi."
+    },
+    "language_selection_title": {
+      "tr": "Dil Seçin",
+      "en": "Select Language",
+      "fi": "Valitse kieli"
+    },
+    "language_selection_subtitle": {
+      "tr": "Uygulamayı hangi dilde kullanmak istersiniz?",
+      "en": "Which language would you like to use?",
+      "fi": "Millä kielellä haluaisit käyttää sovellusta?"
+    },
+    "name_prompt_title": {
+      "tr": "İsmini Öğrenelim",
+      "en": "Tell Us Your Name",
+      "fi": "Kerro meille nimesi"
+    },
+    "name_prompt_subtitle": {
+      "tr": "Ebced-i Kebir hesabıyla sana özel öneriler sunacağız.",
+      "en": "We'll offer personalized suggestions based on Abjad calculation.",
+      "fi": "Tarjoamme sinulle henkilökohtaisia ehdotuksia Abjad-laskennan perusteella."
+    },
+    "name_input_placeholder": {
+      "tr": "Adın",
+      "en": "Your name",
+      "fi": "Nimesi"
+    },
+    "mother_name_input_placeholder": {
+      "tr": "Annenin adı (isteğe bağlı)",
+      "en": "Mother's name (optional)",
+      "fi": "Äidin nimi (valinnainen)"
+    },
+    "mother_name_hint": {
+      "tr": "Bazı geleneklerde anne adı da hesaba katılır.",
+      "en": "Some traditions include the mother's name in calculations.",
+      "fi": "Joissakin perinteissä myös äidin nimi huomioidaan laskelmissa."
+    },
+    "skip_button": {
+      "tr": "Şimdilik Geç",
+      "en": "Skip for Now",
+      "fi": "Ohita toistaiseksi"
+    },
+    "privacy_note": {
+      "tr": "Bilgilerin cihazında kalır, hiçbir yere gönderilmez.",
+      "en": "Your information stays on your device and is never sent anywhere.",
+      "fi": "Tietosi pysyvät laitteessasi eikä niitä lähetetä minnekään."
+    },
+    "get_started": {
+      "tr": "Başlayalım",
+      "en": "Get Started",
+      "fi": "Aloitetaan"
+    }
+  },
+
+  "home": {
+    "greeting_morning": {
+      "tr": "Günaydın",
+      "en": "Good morning",
+      "fi": "Hyvää huomenta"
+    },
+    "greeting_afternoon": {
+      "tr": "İyi günler",
+      "en": "Good afternoon",
+      "fi": "Hyvää iltapäivää"
+    },
+    "greeting_evening": {
+      "tr": "İyi akşamlar",
+      "en": "Good evening",
+      "fi": "Hyvää iltaa"
+    },
+    "greeting_night": {
+      "tr": "İyi geceler",
+      "en": "Good night",
+      "fi": "Hyvää yötä"
+    },
+    "subtitle": {
+      "tr": "Bugün ruhuna ne iyi gelir?",
+      "en": "What would nourish your soul today?",
+      "fi": "Mikä tekisi sielullesi hyvää tänään?"
+    },
+    "daily_progress_label": {
+      "tr": "Bugünkü İlerleme",
+      "en": "Today's Progress",
+      "fi": "Tämän päivän edistyminen"
+    },
+    "streak_label": {
+      "tr": "{count} gündür devam ediyorsun",
+      "en": "{count} day streak",
+      "fi": "{count} päivän putki"
+    },
+    "streak_start": {
+      "tr": "Bugün başla",
+      "en": "Start today",
+      "fi": "Aloita tänään"
+    },
+    "esma_card_title": {
+      "tr": "Günün Esması",
+      "en": "Today's Divine Name",
+      "fi": "Päivän jumalallinen nimi"
+    },
+    "mood_prompt": {
+      "tr": "Bugün nasıl hissediyorsun?",
+      "en": "How are you feeling today?",
+      "fi": "Miltä sinusta tuntuu tänään?"
+    },
+    "current_program_label": {
+      "tr": "Devam Eden Program",
+      "en": "Current Program",
+      "fi": "Nykyinen ohjelma"
+    },
+    "day_label": {
+      "tr": "Gün",
+      "en": "Day",
+      "fi": "Päivä"
+    },
+    "no_program_title": {
+      "tr": "Henüz program yok",
+      "en": "No program yet",
+      "fi": "Ei ohjelmaa vielä"
+    },
+    "no_program_subtitle": {
+      "tr": "İsmini girerek kişisel bir program önerisi al.",
+      "en": "Enter your name to get a personalized program suggestion.",
+      "fi": "Syötä nimesi saadaksesi henkilökohtaisen ohjelmaehdotuksen."
+    },
+    "daily_inspiration_title": {
+      "tr": "Günün İlhamı",
+      "en": "Daily Inspiration",
+      "fi": "Päivän inspiraatio"
+    }
+  },
+
+  "features": {
+    "ebced": {
+      "title": {
+        "tr": "İsim & Ebced",
+        "en": "Name & Abjad",
+        "fi": "Nimi & Abjad"
+      },
+      "description": {
+        "tr": "Kişisel dhikr programı oluştur",
+        "en": "Create your personal dhikr program",
+        "fi": "Luo henkilökohtainen dhikr-ohjelma"
+      }
+    },
+    "mood": {
+      "title": {
+        "tr": "Ruh Haline Göre",
+        "en": "By Your Mood",
+        "fi": "Mielialasi mukaan"
+      },
+      "description": {
+        "tr": "Ayet ve dhikr önerisi al",
+        "en": "Get ayah and dhikr suggestions",
+        "fi": "Saat ayah- ja dhikr-suosituksia"
+      }
+    },
+    "esma": {
+      "title": {
+        "tr": "Esma Sürprizi",
+        "en": "Asma Surprise",
+        "fi": "Asma-yllätys"
+      },
+      "description": {
+        "tr": "Günün esması ile tanış",
+        "en": "Discover today's Divine Name",
+        "fi": "Tutustu päivän jumalalliseen nimeen"
+      }
+    }
+  },
+
+  "ebced_screen": {
+    "title": {
+      "tr": "Ebced Hesabı",
+      "en": "Abjad Calculation",
+      "fi": "Abjad-laskenta"
+    },
+    "your_ebced_value": {
+      "tr": "Senin Ebced Değerin",
+      "en": "Your Abjad Value",
+      "fi": "Abjad-arvosi"
+    },
+    "breakdown_title": {
+      "tr": "Hesap Detayı",
+      "en": "Calculation Breakdown",
+      "fi": "Laskennan erittely"
+    },
+    "suggestions_title": {
+      "tr": "Sana Özel Öneriler",
+      "en": "Personalized Suggestions",
+      "fi": "Henkilökohtaiset ehdotukset"
+    },
+    "suggestions_intro": {
+      "tr": "Ebced değerine göre bu Esma'lar geleneksel olarak ilişkilendirilir:",
+      "en": "Based on your Abjad value, these Names are traditionally associated:",
+      "fi": "Abjad-arvosi perusteella nämä nimet liitetään perinteisesti:"
+    },
+    "program_suggestion_title": {
+      "tr": "Önerilen Program",
+      "en": "Suggested Program",
+      "fi": "Ehdotettu ohjelma"
+    },
+    "start_program_button": {
+      "tr": "Programı Başlat",
+      "en": "Start Program",
+      "fi": "Aloita ohjelma"
+    },
+    "explore_freely_button": {
+      "tr": "Kendi Başıma Keşfet",
+      "en": "Explore on My Own",
+      "fi": "Tutustu itse"
+    },
+    "recalculate_link": {
+      "tr": "Yeniden Hesapla",
+      "en": "Recalculate",
+      "fi": "Laske uudelleen"
+    }
+  },
+
+  "mood_screen": {
+    "title": {
+      "tr": "Şu An Nasılsın?",
+      "en": "How Are You Feeling?",
+      "fi": "Miltä sinusta tuntuu?"
+    },
+    "subtitle": {
+      "tr": "Bir duygu seç, sana uygun ayet ve zikir önerelim.",
+      "en": "Select a mood, and we'll suggest a verse and dhikr for you.",
+      "fi": "Valitse mieliala, ja ehdotamme sinulle jakeen ja dhikrin."
+    }
+  },
+
+  "reflection_screen": {
+    "ayah_source_prefix": {
+      "tr": "Kaynak:",
+      "en": "Source:",
+      "fi": "Lähde:"
+    },
+    "ayah_verification_note": {
+      "tr": "Ayet metnini güvenilir bir kaynaktan doğrulayın.",
+      "en": "Please verify the verse text from a trusted source.",
+      "fi": "Varmista jakeen teksti luotettavasta lähteestä."
+    },
+    "reflection_title": {
+      "tr": "Tefekkür",
+      "en": "Reflection",
+      "fi": "Pohdinta"
+    },
+    "start_dhikr_button": {
+      "tr": "Zikre Başla",
+      "en": "Start Dhikr",
+      "fi": "Aloita dhikr"
+    },
+    "suggested_dhikr_label": {
+      "tr": "Önerilen Zikir",
+      "en": "Suggested Dhikr",
+      "fi": "Ehdotettu dhikr"
+    }
+  },
+
+  "zikirmatik": {
+    "title": {
+      "tr": "Zikirmatik",
+      "en": "Tasbih Counter",
+      "fi": "Tasbih-laskuri"
+    },
+    "tap_to_count": {
+      "tr": "Dokun ve Say",
+      "en": "Tap to Count",
+      "fi": "Napauta laskeaksesi"
+    },
+    "tap_hint": {
+      "tr": "Her dokunuş +1",
+      "en": "Each tap +1",
+      "fi": "Jokainen napautus +1"
+    },
+    "current_count": {
+      "tr": "Sayı",
+      "en": "Count",
+      "fi": "Laskuri"
+    },
+    "target_label": {
+      "tr": "Hedef",
+      "en": "Target",
+      "fi": "Tavoite"
+    },
+    "no_target": {
+      "tr": "Hedefsiz",
+      "en": "No target",
+      "fi": "Ei tavoitetta"
+    },
+    "infinite": {
+      "tr": "∞",
+      "en": "∞",
+      "fi": "∞"
+    },
+    "target_reached_title": {
+      "tr": "Hedefe Ulaştın!",
+      "en": "Target Reached!",
+      "fi": "Tavoite saavutettu!"
+    },
+    "target_reached_message": {
+      "tr": "Devam etmek ister misin?",
+      "en": "Would you like to continue?",
+      "fi": "Haluatko jatkaa?"
+    },
+    "continue_button": {
+      "tr": "Devam Et",
+      "en": "Continue",
+      "fi": "Jatka"
+    },
+    "finish_button": {
+      "tr": "Bitir",
+      "en": "Finish",
+      "fi": "Lopeta"
+    },
+    "reset_button": {
+      "tr": "Sıfırla",
+      "en": "Reset",
+      "fi": "Nollaa"
+    },
+    "haptics_on": {
+      "tr": "Titreşim Açık",
+      "en": "Haptics On",
+      "fi": "Värinä päällä"
+    },
+    "haptics_off": {
+      "tr": "Titreşim Kapalı",
+      "en": "Haptics Off",
+      "fi": "Värinä pois"
+    },
+    "session_saved": {
+      "tr": "Oturum kaydedildi.",
+      "en": "Session saved.",
+      "fi": "Istunto tallennettu."
+    },
+    "completion_dua": {
+      "tr": "Allah kabul etsin.",
+      "en": "May Allah accept.",
+      "fi": "Jumala hyväksyköön."
+    },
+    "night_mode_toggle": {
+      "tr": "Gece Modu",
+      "en": "Night Mode",
+      "fi": "Yötila"
+    }
+  },
+
+  "esma_card": {
+    "abjad_label": {
+      "tr": "Ebced Değeri",
+      "en": "Abjad Value",
+      "fi": "Abjad-arvo"
+    },
+    "abjad_note": {
+      "tr": "(geleneksel)",
+      "en": "(traditional)",
+      "fi": "(perinteinen)"
+    },
+    "themes_label": {
+      "tr": "İlişkili Temalar",
+      "en": "Related Themes",
+      "fi": "Liittyvät teemat"
+    },
+    "suggested_counts_label": {
+      "tr": "Önerilen Sayılar",
+      "en": "Suggested Counts",
+      "fi": "Ehdotetut luvut"
+    },
+    "suggested_counts_note": {
+      "tr": "Bazı geleneklerde bu sayılar önerilir:",
+      "en": "Some traditions suggest these counts:",
+      "fi": "Joissakin perinteissä ehdotetaan näitä lukuja:"
+    },
+    "practice_button": {
+      "tr": "Şimdi Zikret",
+      "en": "Practice Now",
+      "fi": "Harjoittele nyt"
+    },
+    "share_button": {
+      "tr": "Paylaş",
+      "en": "Share",
+      "fi": "Jaa"
+    }
+  },
+
+  "favorites": {
+    "title": {
+      "tr": "Favorilerim",
+      "en": "My Favorites",
+      "fi": "Suosikkini"
+    },
+    "add_new": {
+      "tr": "Yeni Ekle",
+      "en": "Add New",
+      "fi": "Lisää uusi"
+    },
+    "times_used": {
+      "tr": "{count} kez",
+      "en": "{count} times",
+      "fi": "{count} kertaa"
+    },
+    "remove_favorite": {
+      "tr": "Favorilerden Kaldır",
+      "en": "Remove from Favorites",
+      "fi": "Poista suosikeista"
+    },
+    "add_to_favorites": {
+      "tr": "Favorilere Ekle",
+      "en": "Add to Favorites",
+      "fi": "Lisää suosikkeihin"
+    }
+  },
+
+  "custom_dhikr": {
+    "title": {
+      "tr": "Özel Zikir Ekle",
+      "en": "Add Custom Dhikr",
+      "fi": "Lisää mukautettu dhikr"
+    },
+    "arabic_label": {
+      "tr": "Arapça Metin",
+      "en": "Arabic Text",
+      "fi": "Arabiankielinen teksti"
+    },
+    "arabic_placeholder": {
+      "tr": "مثال: سُبْحَانَ اللّٰهِ",
+      "en": "Example: سُبْحَانَ اللّٰهِ",
+      "fi": "Esimerkki: سُبْحَانَ اللّٰهِ"
+    },
+    "transliteration_label": {
+      "tr": "Okunuşu (Latin)",
+      "en": "Transliteration (Latin)",
+      "fi": "Translitterointi (latinalainen)"
+    },
+    "transliteration_placeholder": {
+      "tr": "Örn: SubhanAllah",
+      "en": "E.g., SubhanAllah",
+      "fi": "Esim. SubhanAllah"
+    },
+    "meaning_label": {
+      "tr": "Anlamı",
+      "en": "Meaning",
+      "fi": "Merkitys"
+    },
+    "meaning_placeholder": {
+      "tr": "Türkçe anlamı",
+      "en": "Meaning in your language",
+      "fi": "Merkitys omalla kielelläsi"
+    },
+    "default_target_label": {
+      "tr": "Varsayılan Hedef",
+      "en": "Default Target",
+      "fi": "Oletustavoite"
+    },
+    "custom_target": {
+      "tr": "Özel",
+      "en": "Custom",
+      "fi": "Mukautettu"
+    },
+    "note_label": {
+      "tr": "Not (İsteğe bağlı)",
+      "en": "Note (Optional)",
+      "fi": "Huomautus (valinnainen)"
+    },
+    "note_placeholder": {
+      "tr": "Kişisel notun...",
+      "en": "Your personal note...",
+      "fi": "Henkilökohtainen huomautuksesi..."
+    },
+    "preview_label": {
+      "tr": "Önizleme",
+      "en": "Preview",
+      "fi": "Esikatselu"
+    },
+    "save_button": {
+      "tr": "Kaydet",
+      "en": "Save",
+      "fi": "Tallenna"
+    }
+  },
+
+  "weekly_summary": {
+    "title": {
+      "tr": "Haftalık Özet",
+      "en": "Weekly Summary",
+      "fi": "Viikkokatsaus"
+    },
+    "this_week": {
+      "tr": "Bu Hafta",
+      "en": "This Week",
+      "fi": "Tämä viikko"
+    },
+    "total_dhikr": {
+      "tr": "toplam zikir",
+      "en": "total dhikr",
+      "fi": "yhteensä dhikr"
+    },
+    "daily_average": {
+      "tr": "Günlük Ort.",
+      "en": "Daily Avg.",
+      "fi": "Päivittäinen ka."
+    },
+    "streak_days": {
+      "tr": "Gün Serisi",
+      "en": "Day Streak",
+      "fi": "Päiväputki"
+    },
+    "badges": {
+      "tr": "Rozet",
+      "en": "Badges",
+      "fi": "Merkit"
+    },
+    "days": {
+      "monday": { "tr": "Pzt", "en": "Mon", "fi": "Ma" },
+      "tuesday": { "tr": "Sal", "en": "Tue", "fi": "Ti" },
+      "wednesday": { "tr": "Çar", "en": "Wed", "fi": "Ke" },
+      "thursday": { "tr": "Per", "en": "Thu", "fi": "To" },
+      "friday": { "tr": "Cum", "en": "Fri", "fi": "Pe" },
+      "saturday": { "tr": "Cmt", "en": "Sat", "fi": "La" },
+      "sunday": { "tr": "Paz", "en": "Sun", "fi": "Su" }
+    },
+    "motivation_message": {
+      "tr": "Harika gidiyorsun! Geçen haftaya göre %{percent} daha fazla zikir yaptın.",
+      "en": "Great job! You did {percent}% more dhikr than last week.",
+      "fi": "Hienoa! Teit {percent}% enemmän dhikr kuin viime viikolla."
+    }
+  },
+
+  "qibla": {
+    "title": {
+      "tr": "Kıble",
+      "en": "Qibla",
+      "fi": "Qibla"
+    },
+    "compass_title": {
+      "tr": "Kıble Pusulası",
+      "en": "Qibla Compass",
+      "fi": "Qibla-kompassi"
+    },
+    "direction_label": {
+      "tr": "Kıble Yönü",
+      "en": "Qibla Direction",
+      "fi": "Qibla-suunta"
+    },
+    "location_label": {
+      "tr": "Konum",
+      "en": "Location",
+      "fi": "Sijainti"
+    },
+    "calibration_hint": {
+      "tr": "Telefonunu düz tutarak kıble yönünü bul. Yeşil ok Kabe'yi gösterir.",
+      "en": "Hold your phone flat to find the Qibla direction. The green arrow points to the Kaaba.",
+      "fi": "Pidä puhelinta tasaisena löytääksesi Qibla-suunnan. Vihreä nuoli osoittaa Kaabaan."
+    },
+    "compass_directions": {
+      "north": { "tr": "K", "en": "N", "fi": "P" },
+      "south": { "tr": "G", "en": "S", "fi": "E" },
+      "east": { "tr": "D", "en": "E", "fi": "I" },
+      "west": { "tr": "B", "en": "W", "fi": "L" }
+    }
+  },
+
+  "program": {
+    "day_complete": {
+      "tr": "Gün Tamamlandı",
+      "en": "Day Complete",
+      "fi": "Päivä suoritettu"
+    },
+    "day_complete_message": {
+      "tr": "Bugünkü pratiğini bitirdin. Yarın devam!",
+      "en": "You finished today's practice. Continue tomorrow!",
+      "fi": "Suoritit tämän päivän harjoituksen. Jatka huomenna!"
+    },
+    "program_complete_title": {
+      "tr": "Program Tamamlandı",
+      "en": "Program Complete",
+      "fi": "Ohjelma suoritettu"
+    },
+    "program_complete_message": {
+      "tr": "7 günü bitirdin. Tebrikler! İstersen tekrar başlayabilirsin.",
+      "en": "You completed 7 days. Congratulations! You can restart if you wish.",
+      "fi": "Suoritit 7 päivää. Onnittelut! Voit aloittaa uudelleen jos haluat."
+    },
+    "restart_button": {
+      "tr": "Tekrar Başlat",
+      "en": "Restart",
+      "fi": "Aloita uudelleen"
+    },
+    "new_program_button": {
+      "tr": "Yeni Program Seç",
+      "en": "Choose New Program",
+      "fi": "Valitse uusi ohjelma"
+    }
+  },
+
+  "gamification": {
+    "streak_lost_title": {
+      "tr": "Ara Verdin",
+      "en": "You Took a Break",
+      "fi": "Otit tauon"
+    },
+    "streak_lost_message": {
+      "tr": "Sorun değil. Her gün yeni bir başlangıç.",
+      "en": "No problem. Every day is a new beginning.",
+      "fi": "Ei hätää. Jokainen päivä on uusi alku."
+    },
+    "streak_milestone_7": {
+      "tr": "7 gün! Harika bir başlangıç.",
+      "en": "7 days! A great start.",
+      "fi": "7 päivää! Hieno alku."
+    },
+    "streak_milestone_21": {
+      "tr": "21 gün! Alışkanlık oluşuyor.",
+      "en": "21 days! A habit is forming.",
+      "fi": "21 päivää! Tapa muodostuu."
+    },
+    "streak_milestone_40": {
+      "tr": "40 gün! Gelenekte özel bir sayı.",
+      "en": "40 days! A special number in tradition.",
+      "fi": "40 päivää! Perinteessä erityinen luku."
+    },
+    "progress_empty": {
+      "tr": "Bugün henüz başlamadın.",
+      "en": "You haven't started today yet.",
+      "fi": "Et ole vielä aloittanut tänään."
+    },
+    "progress_partial": {
+      "tr": "Güzel gidiyorsun!",
+      "en": "You're doing great!",
+      "fi": "Menee hienosti!"
+    },
+    "progress_complete": {
+      "tr": "Bugünü tamamladın!",
+      "en": "You completed today!",
+      "fi": "Suoritit tämän päivän!"
+    }
+  },
+
+  "settings": {
+    "title": {
+      "tr": "Ayarlar",
+      "en": "Settings",
+      "fi": "Asetukset"
+    },
+    "edit_name": {
+      "tr": "İsmi Düzenle",
+      "en": "Edit Name",
+      "fi": "Muokkaa nimeä"
+    },
+    "language": {
+      "tr": "Dil",
+      "en": "Language",
+      "fi": "Kieli"
+    },
+    "haptics_toggle": {
+      "tr": "Titreşim Geri Bildirimi",
+      "en": "Haptic Feedback",
+      "fi": "Värinäpalaute"
+    },
+    "dark_mode": {
+      "tr": "Karanlık Mod",
+      "en": "Dark Mode",
+      "fi": "Tumma tila"
+    },
+    "notifications": {
+      "tr": "Bildirimler",
+      "en": "Notifications",
+      "fi": "Ilmoitukset"
+    },
+    "reset_progress": {
+      "tr": "İlerlemeyi Sıfırla",
+      "en": "Reset Progress",
+      "fi": "Nollaa edistyminen"
+    },
+    "reset_confirm_title": {
+      "tr": "Emin misin?",
+      "en": "Are you sure?",
+      "fi": "Oletko varma?"
+    },
+    "reset_confirm_message": {
+      "tr": "Tüm ilerleme ve seri verilerin silinecek.",
+      "en": "All your progress and streak data will be deleted.",
+      "fi": "Kaikki edistymis- ja putkitietosi poistetaan."
+    },
+    "reset_confirm_button": {
+      "tr": "Sıfırla",
+      "en": "Reset",
+      "fi": "Nollaa"
+    },
+    "cancel_button": {
+      "tr": "Vazgeç",
+      "en": "Cancel",
+      "fi": "Peruuta"
+    },
+    "about_title": {
+      "tr": "Hakkında",
+      "en": "About",
+      "fi": "Tietoja"
+    },
+    "version_label": {
+      "tr": "Sürüm",
+      "en": "Version",
+      "fi": "Versio"
+    },
+    "disclaimer_title": {
+      "tr": "Sorumluluk Reddi",
+      "en": "Disclaimer",
+      "fi": "Vastuuvapauslauseke"
+    }
+  },
+
+  "nav": {
+    "home": {
+      "tr": "Ana Sayfa",
+      "en": "Home",
+      "fi": "Koti"
+    },
+    "counter": {
+      "tr": "Zikirmatik",
+      "en": "Counter",
+      "fi": "Laskuri"
+    },
+    "favorites": {
+      "tr": "Favoriler",
+      "en": "Favorites",
+      "fi": "Suosikit"
+    },
+    "progress": {
+      "tr": "İlerleme",
+      "en": "Progress",
+      "fi": "Edistyminen"
+    }
+  },
+
+  "buttons": {
+    "continue": {
+      "tr": "Devam Et",
+      "en": "Continue",
+      "fi": "Jatka"
+    },
+    "start": {
+      "tr": "Başla",
+      "en": "Start",
+      "fi": "Aloita"
+    },
+    "save": {
+      "tr": "Kaydet",
+      "en": "Save",
+      "fi": "Tallenna"
+    },
+    "cancel": {
+      "tr": "Vazgeç",
+      "en": "Cancel",
+      "fi": "Peruuta"
+    },
+    "done": {
+      "tr": "Tamam",
+      "en": "Done",
+      "fi": "Valmis"
+    },
+    "next": {
+      "tr": "İleri",
+      "en": "Next",
+      "fi": "Seuraava"
+    },
+    "back": {
+      "tr": "Geri",
+      "en": "Back",
+      "fi": "Takaisin"
+    },
+    "skip": {
+      "tr": "Geç",
+      "en": "Skip",
+      "fi": "Ohita"
+    },
+    "retry": {
+      "tr": "Tekrar Dene",
+      "en": "Retry",
+      "fi": "Yritä uudelleen"
+    },
+    "close": {
+      "tr": "Kapat",
+      "en": "Close",
+      "fi": "Sulje"
+    }
+  },
+
+  "disclaimers": {
+    "general": {
+      "tr": "Bu uygulama, zikir pratiğine nazikçe eşlik etmek için tasarlanmıştır. Herhangi bir kesin sonuç, şifa veya maddi kazanç vaat etmez.",
+      "en": "This app is designed to gently accompany your dhikr practice. It does not promise any guaranteed results, healing, or material gain.",
+      "fi": "Tämä sovellus on suunniteltu seuraamaan lempeästi dhikr-harjoitustasi. Se ei lupaa mitään taattuja tuloksia, parantumista tai aineellista hyötyä."
+    },
+    "ebced": {
+      "tr": "Ebced hesabı, Osmanlı döneminden gelen geleneksel bir uygulamadır. Kader belirleyici değildir; manevi bir rehberlik aracı olarak sunulmaktadır.",
+      "en": "Abjad calculation is a traditional practice from the Ottoman era. It does not determine destiny; it is offered as a spiritual guidance tool.",
+      "fi": "Abjad-laskenta on perinteinen käytäntö ottomaanien ajalta. Se ei määritä kohtaloa; sitä tarjotaan hengellisenä ohjausvälineenä."
+    },
+    "esma_associations": {
+      "tr": "Esma'ların tematik ilişkilendirmeleri geleneksel kaynaklara dayanır. Bunlar öneri niteliğindedir, garanti değildir.",
+      "en": "The thematic associations of the Divine Names are based on traditional sources. These are suggestions, not guarantees.",
+      "fi": "Jumalallisten nimien temaattiset yhteydet perustuvat perinteisiin lähteisiin. Nämä ovat ehdotuksia, eivät takuita."
+    },
+    "ayah_note": {
+      "tr": "Ayet metinleri için lütfen güvenilir bir Mushaf veya tefsir kaynağını kontrol edin.",
+      "en": "For verse texts, please verify from a trusted Mushaf or tafsir source.",
+      "fi": "Jakeiden tekstit varmista luotettavasta Mushaf- tai tafsir-lähteestä."
+    },
+    "health_note": {
+      "tr": "Bu uygulama tıbbi, psikolojik veya profesyonel tavsiye yerine geçmez. Ciddi sorunlar için uzmana başvurun.",
+      "en": "This app does not replace medical, psychological, or professional advice. Consult a specialist for serious issues.",
+      "fi": "Tämä sovellus ei korvaa lääketieteellistä, psykologista tai ammatillista neuvontaa. Ota yhteyttä asiantuntijaan vakavissa asioissa."
+    },
+    "counts_note": {
+      "tr": "Sayılar geleneksel önerilerdir. Kendinize uygun miktarı seçebilirsiniz.",
+      "en": "These counts are traditional suggestions. Feel free to choose what feels right for you.",
+      "fi": "Nämä luvut ovat perinteisiä ehdotuksia. Voit vapaasti valita itsellesi sopivan määrän."
+    }
+  },
+
+  "empty_states": {
+    "no_favorites": {
+      "title": {
+        "tr": "Henüz favori yok",
+        "en": "No favorites yet",
+        "fi": "Ei suosikkeja vielä"
+      },
+      "description": {
+        "tr": "İlk zikrini favorilere ekle.",
+        "en": "Add your first dhikr to favorites.",
+        "fi": "Lisää ensimmäinen dhikr suosikkeihin."
+      }
+    },
+    "no_sessions_today": {
+      "tr": "Bugün henüz zikir yapmadın.",
+      "en": "You haven't done any dhikr today.",
+      "fi": "Et ole tehnyt dhikr tänään."
+    },
+    "no_program_active": {
+      "tr": "Aktif program yok.",
+      "en": "No active program.",
+      "fi": "Ei aktiivista ohjelmaa."
+    },
+    "no_history": {
+      "tr": "Henüz geçmiş yok.",
+      "en": "No history yet.",
+      "fi": "Ei historiaa vielä."
+    }
+  },
+
+  "accessibility": {
+    "counter_tap_hint": {
+      "tr": "Saymak için çift dokun",
+      "en": "Double tap to count",
+      "fi": "Kaksoisnapauta laskeaksesi"
+    },
+    "counter_count_announcement": {
+      "tr": "Sayı: {count}",
+      "en": "Count: {count}",
+      "fi": "Laskuri: {count}"
+    },
+    "progress_bar_label": {
+      "tr": "Günlük ilerleme yüzdesi {percent}",
+      "en": "Daily progress percentage {percent}",
+      "fi": "Päivittäinen edistymisprosentti {percent}"
+    },
+    "streak_announcement": {
+      "tr": "{days} gündür devam ediyorsun",
+      "en": "{days} day streak",
+      "fi": "{days} päivän putki"
+    }
+  },
+
+  "languages": {
+    "tr": {
+      "name": "Türkçe",
+      "native_name": "Türkçe",
+      "flag": "🇹🇷"
+    },
+    "en": {
+      "name": "English",
+      "native_name": "English",
+      "flag": "🇬🇧"
+    },
+    "fi": {
+      "name": "Finnish",
+      "native_name": "Suomi",
+      "flag": "🇫🇮"
+    }
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": {
+      "tr": "Ebced değerinden Esma'ul Husna önerisi için kurallar",
+      "en": "Rules for recommending Asma'ul Husna from Abjad value",
+      "fi": "Säännöt Asma'ul Husnan suosittelemiseksi Abjad-arvosta"
+    },
+    "needs_verification": true,
+    "note": "These matching rules are based on traditional practices and should be verified by scholars"
+  },
+  "matching_methods": [
+    {
+      "id": "direct_match",
+      "name": {
+        "tr": "Doğrudan Eşleşme",
+        "en": "Direct Match",
+        "fi": "Suora Vastaavuus"
+      },
+      "description": {
+        "tr": "Ebced değeri bir Esma'nın değerine tam olarak eşitse",
+        "en": "If the Abjad value exactly matches an Asma's value",
+        "fi": "Jos Abjad-arvo vastaa täsmälleen Asman arvoa"
+      },
+      "priority": 1
+    },
+    {
+      "id": "modulo_match",
+      "name": {
+        "tr": "Mod Eşleşme",
+        "en": "Modulo Match",
+        "fi": "Modulo Vastaavuus"
+      },
+      "description": {
+        "tr": "Ebced değeri mod 100 veya mod 1000 ile eşleşme",
+        "en": "Match using Abjad value mod 100 or mod 1000",
+        "fi": "Vastaavuus käyttäen Abjad-arvoa mod 100 tai mod 1000"
+      },
+      "priority": 2
+    },
+    {
+      "id": "digit_sum",
+      "name": {
+        "tr": "Rakam Toplamı",
+        "en": "Digit Sum",
+        "fi": "Numeroiden Summa"
+      },
+      "description": {
+        "tr": "Rakamların toplamı tek haneye indirilir",
+        "en": "Sum of digits reduced to single digit",
+        "fi": "Numeroiden summa vähennetään yksittäiseksi numeroksi"
+      },
+      "priority": 3
+    },
+    {
+      "id": "range_match",
+      "name": {
+        "tr": "Aralık Eşleşme",
+        "en": "Range Match",
+        "fi": "Alueen Vastaavuus"
+      },
+      "description": {
+        "tr": "Belirli sayı aralıklarına göre eşleşme",
+        "en": "Match based on specific number ranges",
+        "fi": "Vastaavuus tiettyjen numeroalueiden perusteella"
+      },
+      "priority": 4
+    }
+  ],
+  "range_recommendations": [
+    {
+      "range": [1, 100],
+      "primary_esma": "Ya Rahman",
+      "theme": {
+        "tr": "Başlangıç ve rahmet",
+        "en": "Beginning and mercy",
+        "fi": "Alku ja armo"
+      }
+    },
+    {
+      "range": [101, 200],
+      "primary_esma": "Ya Rahim",
+      "theme": {
+        "tr": "Merhamet ve şefkat",
+        "en": "Compassion and kindness",
+        "fi": "Myötätunto ja ystävällisyys"
+      }
+    },
+    {
+      "range": [201, 300],
+      "primary_esma": "Ya Malik",
+      "theme": {
+        "tr": "Sahiplik ve güç",
+        "en": "Sovereignty and power",
+        "fi": "Hallitseminen ja voima"
+      }
+    },
+    {
+      "range": [301, 400],
+      "primary_esma": "Ya Kuddus",
+      "theme": {
+        "tr": "Saflık ve kutsallık",
+        "en": "Purity and holiness",
+        "fi": "Puhtaus ja pyhyys"
+      }
+    },
+    {
+      "range": [401, 500],
+      "primary_esma": "Ya Salam",
+      "theme": {
+        "tr": "Barış ve selamet",
+        "en": "Peace and safety",
+        "fi": "Rauha ja turvallisuus"
+      }
+    },
+    {
+      "range": [501, 600],
+      "primary_esma": "Ya Mumin",
+      "theme": {
+        "tr": "İman ve güvenlik",
+        "en": "Faith and security",
+        "fi": "Usko ja turvallisuus"
+      }
+    },
+    {
+      "range": [601, 700],
+      "primary_esma": "Ya Muheymin",
+      "theme": {
+        "tr": "Koruma ve gözetim",
+        "en": "Protection and watchfulness",
+        "fi": "Suojelu ja valppaus"
+      }
+    },
+    {
+      "range": [701, 800],
+      "primary_esma": "Ya Aziz",
+      "theme": {
+        "tr": "İzzet ve onur",
+        "en": "Honor and dignity",
+        "fi": "Kunnia ja arvokkuus"
+      }
+    },
+    {
+      "range": [801, 900],
+      "primary_esma": "Ya Cebbar",
+      "theme": {
+        "tr": "Güç ve onarım",
+        "en": "Power and restoration",
+        "fi": "Voima ja palauttaminen"
+      }
+    },
+    {
+      "range": [901, 1000],
+      "primary_esma": "Ya Mutekebbir",
+      "theme": {
+        "tr": "Büyüklük ve yücelik",
+        "en": "Greatness and majesty",
+        "fi": "Suuruus ja majesteettisuus"
+      }
+    }
+  ],
+  "special_number_meanings": {
+    "1": {
+      "esma": "Allah",
+      "meaning": {
+        "tr": "Birlik, tek olan",
+        "en": "Unity, the One",
+        "fi": "Ykseys, Yksi"
+      }
+    },
+    "7": {
+      "esma": "Ya Sami",
+      "meaning": {
+        "tr": "Yedi kat gök, kutsal sayı",
+        "en": "Seven heavens, sacred number",
+        "fi": "Seitsemän taivasta, pyhä numero"
+      }
+    },
+    "19": {
+      "esma": "Ya Vahid",
+      "meaning": {
+        "tr": "Kur'an'ın matematiksel mucizesi",
+        "en": "Mathematical miracle of Quran",
+        "fi": "Koraanin matemaattinen ihme"
+      }
+    },
+    "33": {
+      "esma": "Ya Latif",
+      "meaning": {
+        "tr": "Tesbih sayısı",
+        "en": "Tasbih count",
+        "fi": "Tasbih-lukumäärä"
+      }
+    },
+    "66": {
+      "esma": "Allah",
+      "meaning": {
+        "tr": "Allah isminin Ebced değeri",
+        "en": "Abjad value of Allah's name",
+        "fi": "Allahin nimen Abjad-arvo"
+      }
+    },
+    "99": {
+      "esma": "Ya Sabur",
+      "meaning": {
+        "tr": "99 Esma'ul Husna",
+        "en": "99 Beautiful Names",
+        "fi": "99 Kaunista Nimeä"
+      }
+    },
+    "100": {
+      "esma": "Ya Kafi",
+      "meaning": {
+        "tr": "Tamlık ve yeterlilik",
+        "en": "Completeness and sufficiency",
+        "fi": "Täydellisyys ja riittävyys"
+      }
+    },
+    "786": {
+      "esma": "Bismillahirrahmanirrahim",
+      "meaning": {
+        "tr": "Besmele'nin Ebced değeri",
+        "en": "Abjad value of Bismillah",
+        "fi": "Bismillahin Abjad-arvo"
+      }
+    }
+  },
+  "digit_sum_meanings": {
+    "1": {
+      "esma": "Ya Vahid",
+      "quality": {
+        "tr": "Birlik, liderlik, başlangıç",
+        "en": "Unity, leadership, beginning",
+        "fi": "Ykseys, johtajuus, alku"
+      }
+    },
+    "2": {
+      "esma": "Ya Vedud",
+      "quality": {
+        "tr": "Sevgi, ortaklık, denge",
+        "en": "Love, partnership, balance",
+        "fi": "Rakkaus, kumppanuus, tasapaino"
+      }
+    },
+    "3": {
+      "esma": "Ya Bari",
+      "quality": {
+        "tr": "Yaratıcılık, ifade, genişleme",
+        "en": "Creativity, expression, expansion",
+        "fi": "Luovuus, ilmaisu, laajeneminen"
+      }
+    },
+    "4": {
+      "esma": "Ya Halik",
+      "quality": {
+        "tr": "Yapı, düzen, temel",
+        "en": "Structure, order, foundation",
+        "fi": "Rakenne, järjestys, perusta"
+      }
+    },
+    "5": {
+      "esma": "Ya Muhyi",
+      "quality": {
+        "tr": "Değişim, özgürlük, canlılık",
+        "en": "Change, freedom, vitality",
+        "fi": "Muutos, vapaus, elinvoima"
+      }
+    },
+    "6": {
+      "esma": "Ya Berr",
+      "quality": {
+        "tr": "Sorumluluk, aile, hizmet",
+        "en": "Responsibility, family, service",
+        "fi": "Vastuu, perhe, palvelu"
+      }
+    },
+    "7": {
+      "esma": "Ya Alim",
+      "quality": {
+        "tr": "Bilgelik, içe bakış, manevi arayış",
+        "en": "Wisdom, introspection, spiritual seeking",
+        "fi": "Viisaus, itsetutkiskelu, hengellinen etsintä"
+      }
+    },
+    "8": {
+      "esma": "Ya Rezzak",
+      "quality": {
+        "tr": "Bolluk, başarı, maddi güç",
+        "en": "Abundance, success, material power",
+        "fi": "Runsaus, menestys, aineellinen voima"
+      }
+    },
+    "9": {
+      "esma": "Ya Rahim",
+      "quality": {
+        "tr": "Tamamlama, şefkat, evrensel sevgi",
+        "en": "Completion, compassion, universal love",
+        "fi": "Valmistuminen, myötätunto, universaali rakkaus"
+      }
+    }
+  },
+  "recommendation_algorithm": {
+    "steps": [
+      {
+        "step": 1,
+        "action": {
+          "tr": "Ebced değerini hesapla",
+          "en": "Calculate Abjad value",
+          "fi": "Laske Abjad-arvo"
+        }
+      },
+      {
+        "step": 2,
+        "action": {
+          "tr": "Doğrudan eşleşme kontrol et (Esma değerleriyle)",
+          "en": "Check for direct match (with Asma values)",
+          "fi": "Tarkista suora vastaavuus (Asma-arvoilla)"
+        }
+      },
+      {
+        "step": 3,
+        "action": {
+          "tr": "Özel sayıları kontrol et (66, 786, vb.)",
+          "en": "Check special numbers (66, 786, etc.)",
+          "fi": "Tarkista erityiset numerot (66, 786, jne.)"
+        }
+      },
+      {
+        "step": 4,
+        "action": {
+          "tr": "Aralık eşleşmesi yap",
+          "en": "Apply range matching",
+          "fi": "Käytä alueen vastaavuutta"
+        }
+      },
+      {
+        "step": 5,
+        "action": {
+          "tr": "Rakam toplamı hesapla ve ikincil öneri sun",
+          "en": "Calculate digit sum for secondary recommendation",
+          "fi": "Laske numeroiden summa toissijaiseksi suositukseksi"
+        }
+      },
+      {
+        "step": 6,
+        "action": {
+          "tr": "Birincil ve ikincil Esma önerilerini döndür",
+          "en": "Return primary and secondary Asma recommendations",
+          "fi": "Palauta ensisijaiset ja toissijaiset Asma-suositukset"
+        }
+      }
+    ],
+    "typescript_example": "function recommendEsma(name: string): EsmaRecommendation {\n  const ebcedValue = computeEbced(name);\n  \n  // 1. Check direct match with Asma values\n  const directMatch = asmaList.find(a => a.abjad_value === ebcedValue);\n  if (directMatch) return { primary: directMatch, method: 'direct' };\n  \n  // 2. Check special numbers\n  const specialMatch = specialNumbers[ebcedValue];\n  if (specialMatch) return { primary: specialMatch, method: 'special' };\n  \n  // 3. Apply range matching\n  const range = ranges.find(r => ebcedValue >= r.min && ebcedValue <= r.max);\n  const rangeMatch = range?.primary_esma;\n  \n  // 4. Calculate digit sum\n  let digitSum = ebcedValue;\n  while (digitSum > 9) {\n    digitSum = String(digitSum).split('').reduce((a, b) => a + parseInt(b), 0);\n  }\n  const digitSumMatch = digitSumMeanings[digitSum];\n  \n  return {\n    primary: rangeMatch,\n    secondary: digitSumMatch,\n    ebcedValue,\n    digitSum\n  };\n}"
+  }
+}

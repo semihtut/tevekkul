@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "system": "Ebced-i Kebir (Classic Ottoman Abjad)",
+    "description": {
+      "tr": "Osmanlı döneminde kullanılan geleneksel Ebced-i Kebir sistemi. Her harfin sayısal bir değeri vardır.",
+      "en": "Traditional Ebced-i Kebir system used in the Ottoman era. Each letter has a numerical value.",
+      "fi": "Perinteinen Ebced-i Kebir -järjestelmä, jota käytettiin osmanien aikana. Jokaisella kirjaimella on numeerinen arvo."
+    },
+    "version": "1.0",
+    "needs_verification": true,
+    "confidence": 0.95,
+    "note": "Values should be verified by Islamic scholars for accuracy"
+  },
+  "arabic_letters": {
+    "ا": { "name": "Elif", "value": 1 },
+    "ب": { "name": "Be", "value": 2 },
+    "ج": { "name": "Cim", "value": 3 },
+    "د": { "name": "Dal", "value": 4 },
+    "ه": { "name": "He", "value": 5 },
+    "و": { "name": "Vav", "value": 6 },
+    "ز": { "name": "Ze", "value": 7 },
+    "ح": { "name": "Ha", "value": 8 },
+    "ط": { "name": "Tı", "value": 9 },
+    "ي": { "name": "Ye", "value": 10 },
+    "ك": { "name": "Kef", "value": 20 },
+    "ل": { "name": "Lam", "value": 30 },
+    "م": { "name": "Mim", "value": 40 },
+    "ن": { "name": "Nun", "value": 50 },
+    "س": { "name": "Sin", "value": 60 },
+    "ع": { "name": "Ayn", "value": 70 },
+    "ف": { "name": "Fe", "value": 80 },
+    "ص": { "name": "Sad", "value": 90 },
+    "ق": { "name": "Kaf", "value": 100 },
+    "ر": { "name": "Ra", "value": 200 },
+    "ش": { "name": "Şın", "value": 300 },
+    "ت": { "name": "Te", "value": 400 },
+    "ث": { "name": "Se", "value": 500 },
+    "خ": { "name": "Hı", "value": 600 },
+    "ذ": { "name": "Zel", "value": 700 },
+    "ض": { "name": "Dad", "value": 800 },
+    "ظ": { "name": "Zı", "value": 900 },
+    "غ": { "name": "Gayın", "value": 1000 }
+  },
+  "turkish_to_arabic_mapping": {
+    "a": "ا",
+    "b": "ب",
+    "c": "ج",
+    "ç": "ج",
+    "d": "د",
+    "e": "ه",
+    "f": "ف",
+    "g": "ك",
+    "ğ": "غ",
+    "h": "ح",
+    "ı": "ي",
+    "i": "ي",
+    "j": "ج",
+    "k": "ك",
+    "l": "ل",
+    "m": "م",
+    "n": "ن",
+    "o": "و",
+    "ö": "و",
+    "p": "ب",
+    "r": "ر",
+    "s": "س",
+    "ş": "ش",
+    "t": "ت",
+    "u": "و",
+    "ü": "و",
+    "v": "و",
+    "y": "ي",
+    "z": "ز"
+  },
+  "turkish_direct_values": {
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "ç": 3,
+    "d": 4,
+    "e": 5,
+    "f": 80,
+    "g": 20,
+    "ğ": 1000,
+    "h": 8,
+    "ı": 10,
+    "i": 10,
+    "j": 3,
+    "k": 20,
+    "l": 30,
+    "m": 40,
+    "n": 50,
+    "o": 6,
+    "ö": 6,
+    "p": 2,
+    "r": 200,
+    "s": 60,
+    "ş": 300,
+    "t": 400,
+    "u": 6,
+    "ü": 6,
+    "v": 6,
+    "y": 10,
+    "z": 7
+  },
+  "english_direct_values": {
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "d": 4,
+    "e": 5,
+    "f": 80,
+    "g": 20,
+    "h": 8,
+    "i": 10,
+    "j": 3,
+    "k": 20,
+    "l": 30,
+    "m": 40,
+    "n": 50,
+    "o": 6,
+    "p": 2,
+    "q": 100,
+    "r": 200,
+    "s": 60,
+    "t": 400,
+    "u": 6,
+    "v": 6,
+    "w": 6,
+    "x": 60,
+    "y": 10,
+    "z": 7
+  },
+  "special_cases": {
+    "double_letters": {
+      "description": {
+        "tr": "Çift harfler (şedde) iki kez sayılır",
+        "en": "Double letters (shadda) are counted twice",
+        "fi": "Kaksoiskirjaimet (shadda) lasketaan kahdesti"
+      },
+      "example": "Muhammed = م + ح + م + م + د = 40 + 8 + 40 + 40 + 4 = 132"
+    },
+    "hamza": {
+      "ء": { "name": "Hemze", "value": 1 },
+      "أ": { "name": "Elif with Hamza above", "value": 1 },
+      "إ": { "name": "Elif with Hamza below", "value": 1 },
+      "آ": { "name": "Elif Medda", "value": 1 },
+      "ؤ": { "name": "Vav with Hamza", "value": 6 },
+      "ئ": { "name": "Ya with Hamza", "value": 10 }
+    },
+    "ta_marbuta": {
+      "ة": { "name": "Te Marbuta", "value": 5, "note": "Counted as He (ه) at the end of words" }
+    },
+    "alif_maksura": {
+      "ى": { "name": "Elif Maksura", "value": 10, "note": "Counted as Ya (ي)" }
+    }
+  },
+  "calculation_rules": {
+    "tr": [
+      "1. İsmi küçük harflere çevir",
+      "2. Her harfin Ebced değerini bul",
+      "3. Tüm değerleri topla",
+      "4. Sonuç Esma ile eşleştirilir"
+    ],
+    "en": [
+      "1. Convert name to lowercase",
+      "2. Find the Abjad value of each letter",
+      "3. Sum all values",
+      "4. Result is matched with Asma"
+    ],
+    "fi": [
+      "1. Muunna nimi pieniksi kirjaimiksi",
+      "2. Etsi jokaisen kirjaimen Abjad-arvo",
+      "3. Laske kaikki arvot yhteen",
+      "4. Tulos yhdistetään Asmaan"
+    ]
+  },
+  "examples": [
+    {
+      "name": "Ali",
+      "calculation": "a(1) + l(30) + i(10) = 41",
+      "total": 41,
+      "matched_esma": "Ya Veli"
+    },
+    {
+      "name": "Fatma",
+      "calculation": "f(80) + a(1) + t(400) + m(40) + a(1) = 522",
+      "total": 522,
+      "matched_esma": "Ya Kaviyy (mod calculation)"
+    },
+    {
+      "name": "Mehmet",
+      "calculation": "m(40) + e(5) + h(8) + m(40) + e(5) + t(400) = 498",
+      "total": 498,
+      "matched_esma": "Ya Fettah (mod calculation)"
+    },
+    {
+      "name": "Ayşe",
+      "calculation": "a(1) + y(10) + ş(300) + e(5) = 316",
+      "total": 316,
+      "matched_esma": "Ya Hayy (mod calculation)"
+    }
+  ]
+}

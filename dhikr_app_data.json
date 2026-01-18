@@ -1,0 +1,506 @@
+{
+  "_comment": "DHIKR APP - JSON DATA FILES",
+  "_version": "1.0.0",
+  "_languages": ["tr", "en", "fi"],
+  
+  "dhikr_list": [
+    {
+      "id": "subhanallah",
+      "arabic": "سُبْحَانَ اللّٰهِ",
+      "transliteration": "SubhanAllah",
+      "meaning": {
+        "tr": "Allah'ı tüm eksikliklerden tenzih ederim",
+        "en": "Glory be to Allah",
+        "fi": "Kunnia Jumalalle"
+      },
+      "default_target": 33,
+      "category": "tasbih"
+    },
+    {
+      "id": "alhamdulillah",
+      "arabic": "الْحَمْدُ لِلّٰهِ",
+      "transliteration": "Alhamdulillah",
+      "meaning": {
+        "tr": "Hamd Allah'a mahsustur",
+        "en": "All praise is due to Allah",
+        "fi": "Kaikki ylistys kuuluu Jumalalle"
+      },
+      "default_target": 33,
+      "category": "tasbih"
+    },
+    {
+      "id": "allahuakbar",
+      "arabic": "اللّٰهُ أَكْبَرُ",
+      "transliteration": "Allahu Akbar",
+      "meaning": {
+        "tr": "Allah en büyüktür",
+        "en": "Allah is the Greatest",
+        "fi": "Jumala on suurin"
+      },
+      "default_target": 33,
+      "category": "tasbih"
+    },
+    {
+      "id": "estagfirullah",
+      "arabic": "أَسْتَغْفِرُ اللّٰهَ",
+      "transliteration": "Estağfirullah",
+      "meaning": {
+        "tr": "Allah'tan bağışlanma dilerim",
+        "en": "I seek forgiveness from Allah",
+        "fi": "Pyydän Jumalalta anteeksiantoa"
+      },
+      "default_target": 100,
+      "category": "istigfar"
+    },
+    {
+      "id": "lahavle",
+      "arabic": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ",
+      "transliteration": "La havle vela kuvvete illa billah",
+      "meaning": {
+        "tr": "Güç ve kuvvet ancak Allah'tandır",
+        "en": "There is no power except with Allah",
+        "fi": "Ei ole voimaa paitsi Jumalalla"
+      },
+      "default_target": 99,
+      "category": "general"
+    },
+    {
+      "id": "bismillah",
+      "arabic": "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ",
+      "transliteration": "Bismillahirrahmanirrahim",
+      "meaning": {
+        "tr": "Rahman ve Rahim olan Allah'ın adıyla",
+        "en": "In the name of Allah, the Most Gracious, the Most Merciful",
+        "fi": "Armollisen ja armahtavaisen Jumalan nimeen"
+      },
+      "default_target": 1,
+      "category": "general"
+    },
+    {
+      "id": "salawat",
+      "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ",
+      "transliteration": "Allahumme salli ala Muhammed",
+      "meaning": {
+        "tr": "Allah'ım! Muhammed'e salat et",
+        "en": "O Allah, send blessings upon Muhammad",
+        "fi": "Oi Jumala, siunaa Muhammedia"
+      },
+      "default_target": 100,
+      "category": "salawat"
+    }
+  ],
+  
+  "moods": [
+    {
+      "id": "anxious",
+      "emoji": "😰",
+      "label": { "tr": "Kaygılı", "en": "Anxious", "fi": "Ahdistunut" },
+      "description": {
+        "tr": "Endişeli ve gergin hissediyorum",
+        "en": "Feeling worried and tense",
+        "fi": "Tunnen oloni huolestuneeksi"
+      },
+      "suggested_dhikr": ["subhanallah", "lahavle", "estagfirullah"],
+      "ayah_refs": [
+        { "surah": 13, "ayah": 28, "theme": "Hearts find peace in remembrance" },
+        { "surah": 94, "ayah": 5, "theme": "With hardship comes ease" }
+      ],
+      "reflection": {
+        "tr": "Kaygı anlarında kalbini Allah'a yönelt. Her zikir bir nefes, her tesbih bir huzur...",
+        "en": "In moments of anxiety, turn your heart to Allah. Each dhikr is a breath, each tasbih brings peace...",
+        "fi": "Ahdistuksen hetkellä käännä sydämesi Jumalaan. Jokainen dhikr on hengitys, jokainen tasbih tuo rauhaa..."
+      }
+    },
+    {
+      "id": "sad",
+      "emoji": "😢",
+      "label": { "tr": "Üzgün", "en": "Sad", "fi": "Surullinen" },
+      "description": {
+        "tr": "Kalbim ağır, üzüntülüyüm",
+        "en": "My heart is heavy with sadness",
+        "fi": "Sydämeni on raskas surusta"
+      },
+      "suggested_dhikr": ["alhamdulillah", "subhanallah", "estagfirullah"],
+      "ayah_refs": [
+        { "surah": 94, "ayah": 6, "theme": "With hardship comes ease" },
+        { "surah": 2, "ayah": 286, "theme": "Allah does not burden a soul" }
+      ],
+      "reflection": {
+        "tr": "Üzüntü kalbin duasıdır. Allah seni görüyor, duyuyor. Sabır ve şükürle bu geçecek...",
+        "en": "Sadness is the prayer of the heart. Allah sees you, hears you. With patience and gratitude, this too shall pass...",
+        "fi": "Suru on sydämen rukous. Jumala näkee sinut, kuulee sinut. Kärsivällisyydellä ja kiitollisuudella tämäkin menee ohi..."
+      }
+    },
+    {
+      "id": "grateful",
+      "emoji": "🙏",
+      "label": { "tr": "Şükür", "en": "Grateful", "fi": "Kiitollinen" },
+      "description": {
+        "tr": "Minnettarım ve şükrediyorum",
+        "en": "Feeling thankful and blessed",
+        "fi": "Tunnen kiitollisuutta"
+      },
+      "suggested_dhikr": ["alhamdulillah", "subhanallah", "allahuakbar"],
+      "ayah_refs": [
+        { "surah": 14, "ayah": 7, "theme": "If you are grateful, I will increase you" }
+      ],
+      "reflection": {
+        "tr": "Şükür kalbin zenginliğidir. Her 'Alhamdulillah' nimetleri çoğaltır...",
+        "en": "Gratitude is the wealth of the heart. Each 'Alhamdulillah' multiplies blessings...",
+        "fi": "Kiitollisuus on sydämen rikkaus. Jokainen 'Alhamdulillah' moninkertaistaa siunaukset..."
+      }
+    },
+    {
+      "id": "stressed",
+      "emoji": "😤",
+      "label": { "tr": "Stresli", "en": "Stressed", "fi": "Stressaantunut" },
+      "description": {
+        "tr": "Çok fazla baskı altındayım",
+        "en": "Under too much pressure",
+        "fi": "Olen liian suuren paineen alla"
+      },
+      "suggested_dhikr": ["lahavle", "estagfirullah", "subhanallah"],
+      "ayah_refs": [
+        { "surah": 65, "ayah": 3, "theme": "Allah is sufficient for whoever relies on Him" }
+      ],
+      "reflection": {
+        "tr": "Yükün ağır mı? Onu taşıyan Allah'a bırak. La havle ile teslim ol...",
+        "en": "Is your burden heavy? Leave it to Allah who carries all. Surrender with La hawla...",
+        "fi": "Onko taakkasi raskas? Jätä se Jumalalle, joka kantaa kaiken..."
+      }
+    },
+    {
+      "id": "hopeful",
+      "emoji": "🌱",
+      "label": { "tr": "Umutlu", "en": "Hopeful", "fi": "Toiveikas" },
+      "description": {
+        "tr": "Geleceğe umutla bakıyorum",
+        "en": "Looking forward with hope",
+        "fi": "Katson tulevaisuuteen toiveikkaana"
+      },
+      "suggested_dhikr": ["alhamdulillah", "allahuakbar", "salawat"],
+      "ayah_refs": [
+        { "surah": 12, "ayah": 87, "theme": "Never despair of Allah's mercy" }
+      ],
+      "reflection": {
+        "tr": "Umut Allah'a güvenin meyvesidir. Her yeni gün yeni bir rahmet kapısı...",
+        "en": "Hope is the fruit of trusting Allah. Every new day is a new door of mercy...",
+        "fi": "Toivo on Jumalaan luottamisen hedelmä. Jokainen uusi päivä on uusi armon ovi..."
+      }
+    },
+    {
+      "id": "unfocused",
+      "emoji": "😶‍🌫️",
+      "label": { "tr": "Dağınık", "en": "Unfocused", "fi": "Hajamielinen" },
+      "description": {
+        "tr": "Odaklanamıyorum, zihnim dağınık",
+        "en": "Can't focus, mind is scattered",
+        "fi": "En pysty keskittymään"
+      },
+      "suggested_dhikr": ["bismillah", "subhanallah", "estagfirullah"],
+      "ayah_refs": [
+        { "surah": 13, "ayah": 28, "theme": "Hearts find peace in remembrance" }
+      ],
+      "reflection": {
+        "tr": "Zihin dağınıkken kalp Allah'ı hatırlarsa, huzur gelir. Her tesbih bir odaklanma...",
+        "en": "When the mind is scattered, if the heart remembers Allah, peace comes. Each tasbih is focus...",
+        "fi": "Kun mieli on hajallaan, sydän muistaa Jumalan ja rauha tulee..."
+      }
+    },
+    {
+      "id": "lonely",
+      "emoji": "😔",
+      "label": { "tr": "Yalnız", "en": "Lonely", "fi": "Yksinäinen" },
+      "description": {
+        "tr": "Kendimi yalnız hissediyorum",
+        "en": "Feeling alone",
+        "fi": "Tunnen itseni yksinäiseksi"
+      },
+      "suggested_dhikr": ["allahuakbar", "salawat", "alhamdulillah"],
+      "ayah_refs": [
+        { "surah": 2, "ayah": 186, "theme": "I am near, I respond" }
+      ],
+      "reflection": {
+        "tr": "Allah'la olan hiç yalnız değildir. O sana şah damarından daha yakın...",
+        "en": "One who is with Allah is never alone. He is closer to you than your jugular vein...",
+        "fi": "Se, joka on Jumalan kanssa, ei ole koskaan yksin..."
+      }
+    },
+    {
+      "id": "inneed",
+      "emoji": "🤲",
+      "label": { "tr": "Muhtaç", "en": "In Need", "fi": "Tarpeessa" },
+      "description": {
+        "tr": "Bir şeylere çok ihtiyacım var",
+        "en": "I need something deeply",
+        "fi": "Tarvitsen jotain syvasti"
+      },
+      "suggested_dhikr": ["lahavle", "estagfirullah", "salawat"],
+      "ayah_refs": [
+        { "surah": 35, "ayah": 15, "theme": "O mankind, you are the ones in need of Allah" }
+      ],
+      "reflection": {
+        "tr": "Muhtaçlık kulluğun özüdür. El açtığında Allah'ın kapısı açıktır...",
+        "en": "Need is the essence of servitude. When you raise your hands, Allah's door is open...",
+        "fi": "Tarve on palvelemisen ydin. Kun nostat kätesi, Jumalan ovi on auki..."
+      }
+    },
+    {
+      "id": "peaceful",
+      "emoji": "😌",
+      "label": { "tr": "Huzurlu", "en": "Peaceful", "fi": "Rauhallinen" },
+      "description": {
+        "tr": "İç huzur içindeyim",
+        "en": "Feeling inner peace",
+        "fi": "Tunnen sisäistä rauhaa"
+      },
+      "suggested_dhikr": ["alhamdulillah", "subhanallah", "allahuakbar"],
+      "ayah_refs": [
+        { "surah": 89, "ayah": 27, "theme": "O tranquil soul" }
+      ],
+      "reflection": {
+        "tr": "Huzur Allah'ın en güzel hediyesidir. Bu anı şükürle yaşa, zikirle derinleştir...",
+        "en": "Peace is Allah's most beautiful gift. Live this moment with gratitude, deepen it with dhikr...",
+        "fi": "Rauha on Jumalan kaunein lahja. Elä tämä hetki kiitollisuudella..."
+      }
+    }
+  ],
+  
+  "esma_ul_husna": [
+    {
+      "id": 1,
+      "arabic": "اللّٰه",
+      "transliteration": "Allah",
+      "meaning": { "tr": "Tek ve gerçek ilah", "en": "The One True God", "fi": "Ainoa todellinen Jumala" },
+      "abjad": 66,
+      "themes": ["foundation", "oneness"],
+      "suggested_counts": [66, 99, 100],
+      "reflection": { "tr": "Her şeyin başı ve sonu O'dur...", "en": "He is the beginning and end of all...", "fi": "Hän on kaiken alku ja loppu..." }
+    },
+    {
+      "id": 2,
+      "arabic": "الرَّحْمٰنُ",
+      "transliteration": "Er-Rahman",
+      "meaning": { "tr": "Sonsuz merhamet sahibi", "en": "The Most Gracious", "fi": "Armollisin" },
+      "abjad": 298,
+      "themes": ["mercy", "compassion", "love"],
+      "suggested_counts": [33, 99, 298],
+      "reflection": { "tr": "Rahman'ın rahmeti her şeyi kuşatır...", "en": "The mercy of Rahman encompasses all...", "fi": "Rahmanin armo kattaa kaiken..." }
+    },
+    {
+      "id": 3,
+      "arabic": "الرَّحِيمُ",
+      "transliteration": "Er-Rahim",
+      "meaning": { "tr": "Çok merhametli", "en": "The Most Merciful", "fi": "Armahtavaisin" },
+      "abjad": 258,
+      "themes": ["mercy", "forgiveness"],
+      "suggested_counts": [33, 99, 258],
+      "reflection": { "tr": "Rahim, kullarına özel rahmet edendir...", "en": "Rahim shows special mercy to His servants...", "fi": "Rahim osoittaa erityistä armoa palvelijoilleen..." }
+    },
+    {
+      "id": 4,
+      "arabic": "الْمَلِكُ",
+      "transliteration": "El-Melik",
+      "meaning": { "tr": "Mülkün sahibi, hükümdar", "en": "The King, The Sovereign", "fi": "Kuningas, hallitsija" },
+      "abjad": 90,
+      "themes": ["sovereignty", "power"],
+      "suggested_counts": [33, 90, 99],
+      "reflection": { "tr": "Gerçek mülk O'nundur...", "en": "True sovereignty belongs to Him...", "fi": "Todellinen valta kuuluu Hänelle..." }
+    },
+    {
+      "id": 5,
+      "arabic": "الْقُدُّوسُ",
+      "transliteration": "El-Kuddüs",
+      "meaning": { "tr": "Mukaddes, her türlü eksiklikten uzak", "en": "The Most Holy", "fi": "Pyhin" },
+      "abjad": 170,
+      "themes": ["purity", "holiness"],
+      "suggested_counts": [33, 99, 170],
+      "reflection": { "tr": "O her türlü noksanlıktan münezzehtir...", "en": "He is free from all imperfection...", "fi": "Hän on vapaa kaikesta epätäydellisyydestä..." }
+    },
+    {
+      "id": 6,
+      "arabic": "السَّلَامُ",
+      "transliteration": "Es-Selam",
+      "meaning": { "tr": "Selamet veren, barış kaynağı", "en": "The Source of Peace", "fi": "Rauhan lähde" },
+      "abjad": 131,
+      "themes": ["peace", "safety", "calm"],
+      "suggested_counts": [33, 99, 131],
+      "reflection": { "tr": "Gerçek huzur O'ndandır...", "en": "True peace comes from Him...", "fi": "Todellinen rauha tulee Häneltä..." }
+    },
+    {
+      "id": 7,
+      "arabic": "الْمُؤْمِنُ",
+      "transliteration": "El-Mü'min",
+      "meaning": { "tr": "Güven veren, iman nurunu veren", "en": "The Guardian of Faith", "fi": "Uskon vartija" },
+      "abjad": 137,
+      "themes": ["faith", "trust", "security"],
+      "suggested_counts": [33, 99, 137],
+      "reflection": { "tr": "İman O'nun en büyük hediyesidir...", "en": "Faith is His greatest gift...", "fi": "Usko on Hänen suurin lahjansa..." }
+    },
+    {
+      "id": 8,
+      "arabic": "الْوَدُودُ",
+      "transliteration": "El-Vedud",
+      "meaning": { "tr": "Çok seven, sevilen", "en": "The Most Loving", "fi": "Rakastavin" },
+      "abjad": 20,
+      "themes": ["love", "affection", "relationship"],
+      "suggested_counts": [20, 33, 99],
+      "reflection": { "tr": "O seni senden çok sever...", "en": "He loves you more than you love yourself...", "fi": "Hän rakastaa sinua enemmän kuin sinä itse..." }
+    },
+    {
+      "id": 9,
+      "arabic": "الْغَفُورُ",
+      "transliteration": "El-Gafur",
+      "meaning": { "tr": "Çok bağışlayan", "en": "The All-Forgiving", "fi": "Anteeksiantava" },
+      "abjad": 1286,
+      "themes": ["forgiveness", "mercy", "second_chance"],
+      "suggested_counts": [33, 99, 100],
+      "reflection": { "tr": "Günahlar ne kadar çok olursa olsun, O'nun affı daha büyüktür...", "en": "No matter how many sins, His forgiveness is greater...", "fi": "Vaikka syntejä olisi kuinka paljon, Hänen anteeksiantonsa on suurempi..." }
+    },
+    {
+      "id": 10,
+      "arabic": "الصَّبُورُ",
+      "transliteration": "Es-Sabur",
+      "meaning": { "tr": "Çok sabırlı", "en": "The Most Patient", "fi": "Kärsivällisin" },
+      "abjad": 298,
+      "themes": ["patience", "perseverance"],
+      "suggested_counts": [33, 99, 298],
+      "reflection": { "tr": "Sabrın sonu selamettir...", "en": "The end of patience is salvation...", "fi": "Kärsivällisyyden lopussa on pelastus..." }
+    }
+  ],
+  
+  "ui_copy": {
+    "home": {
+      "greeting": {
+        "tr": "Selam, {name} 👋",
+        "en": "Hello, {name} 👋",
+        "fi": "Hei, {name} 👋"
+      },
+      "subtitle": {
+        "tr": "Bugün ruhuna ne iyi gelir?",
+        "en": "What would nourish your soul today?",
+        "fi": "Mikä tekisi sielullesi hyvää tänään?"
+      },
+      "daily_progress": {
+        "tr": "Bugünkü İlerleme",
+        "en": "Today's Progress",
+        "fi": "Päivän edistyminen"
+      },
+      "streak": {
+        "tr": "{count} gün",
+        "en": "{count} days",
+        "fi": "{count} päivää"
+      }
+    },
+    "features": {
+      "ebced": {
+        "title": { "tr": "İsim & Ebced", "en": "Name & Abjad", "fi": "Nimi & Abjad" },
+        "desc": { "tr": "Kişisel dhikr programı oluştur", "en": "Create your personal dhikr program", "fi": "Luo henkilökohtainen dhikr-ohjelma" }
+      },
+      "mood": {
+        "title": { "tr": "Ruh Haline Göre", "en": "By Your Mood", "fi": "Mielialasi mukaan" },
+        "desc": { "tr": "Ayet ve dhikr önerisi al", "en": "Get ayah and dhikr suggestions", "fi": "Saat ajaah- ja dhikr-suosituksia" }
+      },
+      "esma": {
+        "title": { "tr": "Esma Sürprizi", "en": "Asma Surprise", "fi": "Asma-yllätys" },
+        "desc": { "tr": "Günün esması ile tanış", "en": "Discover today's Divine Name", "fi": "Tutustu päivän jumalalliseen nimeen" }
+      }
+    },
+    "zikirmatik": {
+      "title": { "tr": "Zikirmatik", "en": "Tasbih Counter", "fi": "Tasbih-laskuri" },
+      "tap_to_count": { "tr": "Dokun ve Say", "en": "Tap to Count", "fi": "Napauta laskeaksesi" },
+      "tap_hint": { "tr": "Her dokunuş +1", "en": "Each tap +1", "fi": "Jokainen napautus +1" },
+      "target": { "tr": "Hedef", "en": "Target", "fi": "Tavoite" },
+      "reset": { "tr": "Sıfırla", "en": "Reset", "fi": "Nollaa" },
+      "complete": { "tr": "Tamamlandı! 🎉", "en": "Complete! 🎉", "fi": "Valmis! 🎉" }
+    },
+    "favorites": {
+      "title": { "tr": "Favorilerim", "en": "My Favorites", "fi": "Suosikkini" },
+      "add_new": { "tr": "Yeni Ekle", "en": "Add New", "fi": "Lisää uusi" },
+      "times_used": { "tr": "{count} kez", "en": "{count} times", "fi": "{count} kertaa" }
+    },
+    "settings": {
+      "title": { "tr": "Ayarlar", "en": "Settings", "fi": "Asetukset" },
+      "language": { "tr": "Dil", "en": "Language", "fi": "Kieli" },
+      "dark_mode": { "tr": "Karanlık Mod", "en": "Dark Mode", "fi": "Tumma tila" },
+      "haptic": { "tr": "Titreşim", "en": "Haptic Feedback", "fi": "Värinäpalaute" },
+      "notifications": { "tr": "Bildirimler", "en": "Notifications", "fi": "Ilmoitukset" },
+      "about": { "tr": "Hakkında", "en": "About", "fi": "Tietoja" }
+    },
+    "nav": {
+      "home": { "tr": "Ana Sayfa", "en": "Home", "fi": "Koti" },
+      "counter": { "tr": "Zikirmatik", "en": "Counter", "fi": "Laskuri" },
+      "favorites": { "tr": "Favoriler", "en": "Favorites", "fi": "Suosikit" },
+      "progress": { "tr": "İlerleme", "en": "Progress", "fi": "Edistyminen" }
+    },
+    "buttons": {
+      "continue": { "tr": "Devam", "en": "Continue", "fi": "Jatka" },
+      "save": { "tr": "Kaydet", "en": "Save", "fi": "Tallenna" },
+      "cancel": { "tr": "İptal", "en": "Cancel", "fi": "Peruuta" },
+      "start": { "tr": "Başla", "en": "Start", "fi": "Aloita" },
+      "done": { "tr": "Tamam", "en": "Done", "fi": "Valmis" }
+    },
+    "disclaimers": {
+      "ebced": {
+        "tr": "Bu öneriler geleneksel ebced hesabına dayanır. Kesin sonuç garantisi vermez, manevi bir rehber olarak değerlendirin.",
+        "en": "These suggestions are based on traditional Abjad calculations. They do not guarantee results and should be considered as spiritual guidance.",
+        "fi": "Nämä ehdotukset perustuvat perinteisiin Abjad-laskelmiin. Ne eivät takaa tuloksia vaan ovat henkistä ohjausta."
+      },
+      "esma_counts": {
+        "tr": "Sayılar geleneksel önerilerdir. Kendinize uygun miktarı seçebilirsiniz.",
+        "en": "These counts are traditional suggestions. Feel free to choose what feels right for you.",
+        "fi": "Nämä luvut ovat perinteisiä ehdotuksia. Voit valita itsellesi sopivan määrän."
+      }
+    },
+    "empty_states": {
+      "no_favorites": {
+        "title": { "tr": "Henüz favori yok", "en": "No favorites yet", "fi": "Ei suosikkeja vielä" },
+        "desc": { "tr": "İlk zikrini favorilere ekle", "en": "Add your first dhikr to favorites", "fi": "Lisää ensimmäinen dhikr suosikkeihin" }
+      }
+    }
+  },
+  
+  "ebced_mapping": {
+    "system": "Ebced-i Kebir",
+    "description": "Traditional Abjad numeral system",
+    "letters": {
+      "ا": 1, "أ": 1, "إ": 1, "آ": 1,
+      "ب": 2, "پ": 2,
+      "ج": 3, "چ": 3,
+      "د": 4,
+      "ه": 5, "ة": 5,
+      "و": 6,
+      "ز": 7, "ژ": 7,
+      "ح": 8,
+      "ط": 9,
+      "ي": 10, "ى": 10, "ی": 10,
+      "ك": 20, "ک": 20, "گ": 20,
+      "ل": 30,
+      "م": 40,
+      "ن": 50,
+      "س": 60,
+      "ع": 70,
+      "ف": 80,
+      "ص": 90,
+      "ق": 100,
+      "ر": 200,
+      "ش": 300,
+      "ت": 400,
+      "ث": 500,
+      "خ": 600,
+      "ذ": 700,
+      "ض": 800,
+      "ظ": 900,
+      "غ": 1000
+    },
+    "latin_to_arabic": {
+      "a": "ا", "e": "ا", "i": "ي", "o": "و", "u": "و",
+      "b": "ب", "c": "ج", "ç": "ج", "d": "د",
+      "f": "ف", "g": "گ", "ğ": "غ", "h": "ح",
+      "j": "ج", "k": "ك", "l": "ل", "m": "م",
+      "n": "ن", "p": "ب", "r": "ر", "s": "س",
+      "ş": "ش", "t": "ت", "v": "و", "y": "ي",
+      "z": "ز"
+    }
+  }
+}

@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhikr App MVP - Full Feature Set</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(180deg, #e8f4f3 0%, #d0e8e6 50%, #b8dcd9 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .header span {
+      color: #0d9488;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .header h1 {
+      color: #134e4a;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+    
+    .header p {
+      color: #5f9ea0;
+      font-size: 13px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .feature-tag {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #134e4a;
+      border: 1px solid rgba(13,148,136,0.1);
+    }
+    
+    .feature-tag.new {
+      background: linear-gradient(135deg, #0d9488, #14b8a6);
+      color: #fff;
+      border: none;
+    }
+    
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    
+    .screen-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .screen-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(13,148,136,0.1);
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    
+    .screen-label.new {
+      background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(192,132,252,0.1));
+    }
+    
+    .screen-label-icon {
+      font-size: 14px;
+    }
+    
+    .screen-label-text {
+      color: #0d9488;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .screen-label.new .screen-label-text {
+      color: #7c3aed;
+    }
+    
+    .screen-title {
+      color: #134e4a;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    
+    .screen-desc {
+      color: #5f9ea0;
+      font-size: 12px;
+      margin-bottom: 16px;
+      text-align: center;
+      max-width: 260px;
+    }
+    
+    .phone {
+      width: 280px;
+      height: 605px;
+      background: #1a1a1a;
+      border-radius: 44px;
+      padding: 8px;
+      box-shadow: 
+        0 25px 80px rgba(13,148,136,0.2),
+        0 10px 30px rgba(0,0,0,0.12);
+    }
+    
+    .screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, #f0f9f8 0%, #e6f3f2 100%);
+    }
+    
+    /* Night mode screen */
+    .screen.night {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    }
+    
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 20px 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #134e4a;
+    }
+    
+    .screen.night .status-bar {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+    }
+    
+    .nav-btn {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(13,148,136,0.1);
+      border-radius: 10px;
+      color: #0d9488;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .screen.night .nav-btn {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .nav-title {
+      color: #134e4a;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    
+    .screen.night .nav-title {
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(13,148,136,0.06);
+    }
+    
+    .screen.night .card {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: none;
+    }
+    
+    .btn-primary {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      box-shadow: 0 4px 16px rgba(13,148,136,0.25);
+    }
+    
+    /* Daily Progress */
+    .daily-progress {
+      margin: 0 16px 12px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 14px;
+      border: 1px solid rgba(13,148,136,0.08);
+    }
+    
+    .screen.night .daily-progress {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .daily-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .daily-progress-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #134e4a;
+    }
+    
+    .screen.night .daily-progress-label {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .daily-progress-streak {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: #0d9488;
+      font-weight: 600;
+    }
+    
+    .screen.night .daily-progress-streak {
+      color: #2dd4bf;
+    }
+    
+    .daily-progress-bar {
+      height: 8px;
+      background: rgba(13,148,136,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .daily-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0d9488, #14b8a6, #2dd4bf);
+      border-radius: 4px;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       ZIKIRMATIK - TASBIH COUNTER
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .zikirmatik-display {
+      text-align: center;
+      padding: 20px 16px;
+    }
+    
+    .zikirmatik-arabic {
+      font-size: 28px;
+      font-family: 'Amiri', serif;
+      color: #134e4a;
+      margin-bottom: 4px;
+      direction: rtl;
+    }
+    
+    .screen.night .zikirmatik-arabic {
+      color: rgba(255,255,255,0.95);
+    }
+    
+    .zikirmatik-transliteration {
+      font-size: 14px;
+      color: #0d9488;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    
+    .screen.night .zikirmatik-transliteration {
+      color: #2dd4bf;
+    }
+    
+    .zikirmatik-meaning {
+      font-size: 12px;
+      color: #5f9ea0;
+    }
+    
+    .screen.night .zikirmatik-meaning {
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .zikirmatik-counter {
+      position: relative;
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+    }
+    
+    .zikirmatik-counter svg {
+      transform: rotate(-90deg);
+      filter: drop-shadow(0 4px 20px rgba(13,148,136,0.2));
+    }
+    
+    .screen.night .zikirmatik-counter svg {
+      filter: drop-shadow(0 4px 30px rgba(45,212,191,0.3));
+    }
+    
+    .counter-ring-bg {
+      fill: none;
+      stroke: rgba(13,148,136,0.1);
+      stroke-width: 10;
+    }
+    
+    .screen.night .counter-ring-bg {
+      stroke: rgba(255,255,255,0.08);
+    }
+    
+    .counter-ring-progress {
+      fill: none;
+      stroke: url(#tealGradient);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 565;
+      stroke-dashoffset: 282;
+    }
+    
+    .zikirmatik-value {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .zikirmatik-number {
+      font-size: 64px;
+      font-weight: 300;
+      color: #134e4a;
+      line-height: 1;
+    }
+    
+    .screen.night .zikirmatik-number {
+      color: #fff;
+    }
+    
+    .zikirmatik-target {
+      font-size: 14px;
+      color: #5f9ea0;
+      margin-top: 4px;
+    }
+    
+    .screen.night .zikirmatik-target {
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .zikirmatik-tap-area {
+      margin: 0 16px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(13,148,136,0.08), rgba(20,184,166,0.04));
+      border: 2px dashed rgba(13,148,136,0.2);
+      border-radius: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    
+    .zikirmatik-tap-area:active {
+      transform: scale(0.98);
+      background: linear-gradient(135deg, rgba(13,148,136,0.15), rgba(20,184,166,0.08));
+    }
+    
+    .screen.night .zikirmatik-tap-area {
+      background: linear-gradient(135deg, rgba(45,212,191,0.1), rgba(20,184,166,0.05));
+      border-color: rgba(45,212,191,0.2);
+    }
+    
+    .zikirmatik-tap-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0d9488;
+    }
+    
+    .screen.night .zikirmatik-tap-text {
+      color: #2dd4bf;
+    }
+    
+    .zikirmatik-tap-hint {
+      font-size: 11px;
+      color: #5f9ea0;
+      margin-top: 4px;
+    }
+    
+    .screen.night .zikirmatik-tap-hint {
+      color: rgba(255,255,255,0.4);
+    }
+    
+    .zikirmatik-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+    }
+    
+    .zikirmatik-control-btn {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(13,148,136,0.15);
+      border-radius: 14px;
+      color: #0d9488;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .screen.night .zikirmatik-control-btn {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.1);
+      color: #2dd4bf;
+    }
+    
+    .zikirmatik-control-btn.active {
+      background: rgba(13,148,136,0.15);
+      border-color: rgba(13,148,136,0.3);
+    }
+    
+    /* Target selector */
+    .target-selector {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px 16px;
+    }
+    
+    .target-chip {
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(13,148,136,0.1);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5f9ea0;
+    }
+    
+    .target-chip.selected {
+      background: linear-gradient(135deg, #0d9488, #14b8a6);
+      color: #fff;
+      border: none;
+    }
+    
+    .screen.night .target-chip {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .screen.night .target-chip.selected {
+      background: linear-gradient(135deg, #0d9488, #14b8a6);
+      color: #fff;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       FAVORITES
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 0 16px;
+    }
+    
+    .favorite-card {
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    
+    .favorite-card:active {
+      transform: scale(0.97);
+    }
+    
+    .favorite-heart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 14px;
+      color: #ef4444;
+    }
+    
+    .favorite-arabic {
+      font-size: 22px;
+      font-family: 'Amiri', serif;
+      color: #134e4a;
+      margin-bottom: 6px;
+      direction: rtl;
+    }
+    
+    .favorite-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0d9488;
+      margin-bottom: 2px;
+    }
+    
+    .favorite-count {
+      font-size: 10px;
+      color: #5f9ea0;
+    }
+    
+    .add-favorite-card {
+      padding: 24px 16px;
+      border: 2px dashed rgba(13,148,136,0.2);
+      background: transparent;
+      text-align: center;
+      border-radius: 16px;
+    }
+    
+    .add-favorite-icon {
+      font-size: 28px;
+      color: #0d9488;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+    
+    .add-favorite-text {
+      font-size: 12px;
+      color: #5f9ea0;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       WEEKLY SUMMARY
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .weekly-summary-card {
+      margin: 0 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .weekly-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.1));
+      border-radius: 100px;
+      font-size: 11px;
+      color: #b45309;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .weekly-number {
+      font-size: 56px;
+      font-weight: 300;
+      color: #134e4a;
+      line-height: 1;
+    }
+    
+    .weekly-label {
+      font-size: 14px;
+      color: #5f9ea0;
+      margin-bottom: 20px;
+    }
+    
+    .weekly-chart {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 80px;
+      padding: 0 10px;
+      margin-bottom: 8px;
+    }
+    
+    .weekly-bar {
+      width: 28px;
+      background: linear-gradient(180deg, #0d9488, #14b8a6);
+      border-radius: 6px 6px 0 0;
+      position: relative;
+    }
+    
+    .weekly-bar.today {
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+    }
+    
+    .weekly-days {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+    
+    .weekly-day {
+      width: 28px;
+      text-align: center;
+      font-size: 10px;
+      color: #5f9ea0;
+      font-weight: 500;
+    }
+    
+    .weekly-day.today {
+      color: #f59e0b;
+      font-weight: 700;
+    }
+    
+    .weekly-motivation {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(13,148,136,0.05);
+      border-radius: 12px;
+    }
+    
+    .weekly-motivation-text {
+      font-size: 13px;
+      color: #134e4a;
+      font-style: italic;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       QIBLA COMPASS
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .qibla-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    
+    .qibla-compass {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    
+    .qibla-compass-ring {
+      width: 100%;
+      height: 100%;
+      border: 3px solid rgba(13,148,136,0.2);
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    .qibla-compass-inner {
+      position: absolute;
+      inset: 20px;
+      border: 2px solid rgba(13,148,136,0.1);
+      border-radius: 50%;
+    }
+    
+    .qibla-directions {
+      position: absolute;
+      inset: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5f9ea0;
+    }
+    
+    .qibla-direction {
+      position: absolute;
+    }
+    
+    .qibla-direction.n { top: 8px; left: 50%; transform: translateX(-50%); color: #0d9488; }
+    .qibla-direction.s { bottom: 8px; left: 50%; transform: translateX(-50%); }
+    .qibla-direction.e { right: 8px; top: 50%; transform: translateY(-50%); }
+    .qibla-direction.w { left: 8px; top: 50%; transform: translateY(-50%); }
+    
+    .qibla-needle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 80px;
+      transform: translate(-50%, -100%) rotate(45deg);
+      transform-origin: bottom center;
+    }
+    
+    .qibla-needle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 24px solid #0d9488;
+    }
+    
+    .qibla-needle::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 16px solid rgba(13,148,136,0.3);
+    }
+    
+    .qibla-kaaba {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+    }
+    
+    .qibla-info {
+      text-align: center;
+    }
+    
+    .qibla-degrees {
+      font-size: 32px;
+      font-weight: 300;
+      color: #134e4a;
+      margin-bottom: 4px;
+    }
+    
+    .qibla-degrees span {
+      font-size: 18px;
+      color: #0d9488;
+    }
+    
+    .qibla-label {
+      font-size: 13px;
+      color: #5f9ea0;
+      margin-bottom: 16px;
+    }
+    
+    .qibla-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(13,148,136,0.1);
+      border-radius: 100px;
+      font-size: 12px;
+      color: #134e4a;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       CUSTOM DHIKR
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .custom-dhikr-form {
+      padding: 0 16px;
+    }
+    
+    .input-group {
+      margin-bottom: 16px;
+    }
+    
+    .input-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #5f9ea0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: block;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(13,148,136,0.15);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: inherit;
+      color: #134e4a;
+    }
+    
+    .input-field.arabic {
+      font-family: 'Amiri', serif;
+      font-size: 20px;
+      text-align: right;
+      direction: rtl;
+    }
+    
+    .input-field::placeholder {
+      color: #a0c4c2;
+    }
+    
+    /* ══════════════════════════════════════════════════════════════════════
+       WIDGETS PREVIEW
+       ══════════════════════════════════════════════════════════════════════ */
+    
+    .widgets-showcase {
+      padding: 20px 16px;
+    }
+    
+    .widget-preview {
+      margin-bottom: 20px;
+    }
+    
+    .widget-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #5f9ea0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    
+    .widget-small {
+      width: 140px;
+      height: 140px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .widget-small-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    
+    .widget-small-icon {
+      font-size: 16px;
+    }
+    
+    .widget-small-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #134e4a;
+    }
+    
+    .widget-small-value {
+      font-size: 32px;
+      font-weight: 300;
+      color: #0d9488;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    
+    .widget-small-label {
+      font-size: 10px;
+      color: #5f9ea0;
+      margin-bottom: auto;
+    }
+    
+    .widget-small-streak {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: #f59e0b;
+      font-weight: 600;
+    }
+    
+    .widget-medium {
+      width: 280px;
+      height: 140px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 16px;
+    }
+    
+    .widget-medium-left {
+      flex: 1;
+    }
+    
+    .widget-medium-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .widget-counter-btn {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0d9488, #14b8a6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 32px;
+      box-shadow: 0 4px 16px rgba(13,148,136,0.3);
+    }
+    
+    /* Bottom Nav */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px 24px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(13,148,136,0.08);
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .screen.night .bottom-nav {
+      background: rgba(15,23,42,0.95);
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .nav-item-icon { font-size: 20px; opacity: 0.5; }
+    .nav-item.active .nav-item-icon { opacity: 1; }
+    
+    .nav-item-label {
+      font-size: 10px;
+      color: #5f9ea0;
+      font-weight: 500;
+    }
+    
+    .nav-item.active .nav-item-label {
+      color: #0d9488;
+      font-weight: 600;
+    }
+    
+    .screen.night .nav-item-label {
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .screen.night .nav-item.active .nav-item-label {
+      color: #2dd4bf;
+    }
+    
+    /* Section dividers */
+    .section-divider {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 30px 0 10px;
+      margin: 20px 0;
+    }
+    
+    .section-divider h2 {
+      color: #134e4a;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .section-divider p {
+      color: #5f9ea0;
+      font-size: 13px;
+    }
+    
+    .new-badge {
+      padding: 4px 10px;
+      background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+      border-radius: 100px;
+      font-size: 10px;
+      color: #fff;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>Complete Feature Set</span>
+    <h1>Dhikr App — Full MVP</h1>
+    <p>Zikirmatik, Gece Modu, Favoriler, Haftalık Özet, Kıble ve daha fazlası</p>
+  </div>
+  
+  <div class="feature-list">
+    <span class="feature-tag">3 Dil</span>
+    <span class="feature-tag">Ebced</span>
+    <span class="feature-tag">Mood Ayah</span>
+    <span class="feature-tag">Esma Sürprizi</span>
+    <span class="feature-tag new">📿 Zikirmatik</span>
+    <span class="feature-tag new">🌙 Gece Modu</span>
+    <span class="feature-tag new">❤️ Favoriler</span>
+    <span class="feature-tag new">📊 Haftalık Özet</span>
+    <span class="feature-tag new">🧭 Kıble</span>
+    <span class="feature-tag new">✏️ Özel Zikir</span>
+  </div>
+  
+  <div class="screens-grid">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION: ZIKIRMATIK
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <h2>📿 Zikirmatik <span class="new-badge">YENİ</span></h2>
+      <p>Klasik tasbeeh counter, modern tasarım</p>
+    </div>
+    
+    <!-- ZIKIRMATIK - LIGHT -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">📿</span>
+        <span class="screen-label-text">Zikirmatik</span>
+      </div>
+      <h3 class="screen-title">Light Mode</h3>
+      <p class="screen-desc">Gündüz kullanımı için aydınlık tema</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">‹</div>
+            <span class="nav-title">Zikirmatik</span>
+            <div class="nav-btn">🌙</div>
+          </div>
+          
+          <div class="zikirmatik-display">
+            <p class="zikirmatik-arabic">سُبْحَانَ اللّٰهِ</p>
+            <p class="zikirmatik-transliteration">SubhanAllah</p>
+            <p class="zikirmatik-meaning">Allah'ı tüm eksikliklerden tenzih ederim</p>
+          </div>
+          
+          <div class="zikirmatik-counter">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <defs>
+                <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0d9488"/>
+                  <stop offset="100%" stop-color="#2dd4bf"/>
+                </linearGradient>
+              </defs>
+              <circle class="counter-ring-bg" cx="100" cy="100" r="90"/>
+              <circle class="counter-ring-progress" cx="100" cy="100" r="90"/>
+            </svg>
+            <div class="zikirmatik-value">
+              <span class="zikirmatik-number">17</span>
+              <span class="zikirmatik-target">/ 33</span>
+            </div>
+          </div>
+          
+          <div class="target-selector">
+            <span class="target-chip selected">33</span>
+            <span class="target-chip">99</span>
+            <span class="target-chip">100</span>
+            <span class="target-chip">∞</span>
+          </div>
+          
+          <div class="zikirmatik-tap-area">
+            <p class="zikirmatik-tap-text">Dokun ve Say</p>
+            <p class="zikirmatik-tap-hint">Her dokunuş +1</p>
+          </div>
+          
+          <div class="zikirmatik-controls">
+            <div class="zikirmatik-control-btn">↺</div>
+            <div class="zikirmatik-control-btn active">📳</div>
+            <div class="zikirmatik-control-btn">❤️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ZIKIRMATIK - NIGHT -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">🌙</span>
+        <span class="screen-label-text">Gece Modu</span>
+      </div>
+      <h3 class="screen-title">Night Mode</h3>
+      <p class="screen-desc">Gece namazı ve karanlık ortam için</p>
+      <div class="phone">
+        <div class="screen night">
+          <div class="status-bar">
+            <span>3:42</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">‹</div>
+            <span class="nav-title">Zikirmatik</span>
+            <div class="nav-btn">☀️</div>
+          </div>
+          
+          <div class="zikirmatik-display">
+            <p class="zikirmatik-arabic">أَسْتَغْفِرُ اللّٰهَ</p>
+            <p class="zikirmatik-transliteration">Estağfirullah</p>
+            <p class="zikirmatik-meaning">Allah'tan bağışlanma dilerim</p>
+          </div>
+          
+          <div class="zikirmatik-counter">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <circle class="counter-ring-bg" cx="100" cy="100" r="90"/>
+              <circle class="counter-ring-progress" cx="100" cy="100" r="90" style="stroke-dashoffset: 141;"/>
+            </svg>
+            <div class="zikirmatik-value">
+              <span class="zikirmatik-number">50</span>
+              <span class="zikirmatik-target">/ 100</span>
+            </div>
+          </div>
+          
+          <div class="target-selector">
+            <span class="target-chip">33</span>
+            <span class="target-chip">99</span>
+            <span class="target-chip selected">100</span>
+            <span class="target-chip">∞</span>
+          </div>
+          
+          <div class="zikirmatik-tap-area">
+            <p class="zikirmatik-tap-text">Dokun ve Say</p>
+            <p class="zikirmatik-tap-hint">Her dokunuş +1</p>
+          </div>
+          
+          <div class="zikirmatik-controls">
+            <div class="zikirmatik-control-btn">↺</div>
+            <div class="zikirmatik-control-btn active">📳</div>
+            <div class="zikirmatik-control-btn">❤️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION: FAVORITES
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <h2>❤️ Favoriler <span class="new-badge">YENİ</span></h2>
+      <p>Sık kullandığın zikirlere hızlı erişim</p>
+    </div>
+    
+    <!-- FAVORITES -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">❤️</span>
+        <span class="screen-label-text">Favoriler</span>
+      </div>
+      <h3 class="screen-title">Favori Zikirlerim</h3>
+      <p class="screen-desc">Tek dokunuşla zikre başla</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">‹</div>
+            <span class="nav-title">Favorilerim</span>
+            <div class="nav-btn">+</div>
+          </div>
+          
+          <div class="daily-progress">
+            <div class="daily-progress-header">
+              <span class="daily-progress-label">Bugünkü İlerleme</span>
+              <span class="daily-progress-streak">🔥 12 gün</span>
+            </div>
+            <div class="daily-progress-bar">
+              <div class="daily-progress-fill" style="width: 45%"></div>
+            </div>
+          </div>
+          
+          <div class="favorites-grid">
+            <div class="favorite-card card">
+              <span class="favorite-heart">❤️</span>
+              <p class="favorite-arabic">سُبْحَانَ اللّٰهِ</p>
+              <p class="favorite-name">SubhanAllah</p>
+              <p class="favorite-count">×33 · 247 kez</p>
+            </div>
+            
+            <div class="favorite-card card">
+              <span class="favorite-heart">❤️</span>
+              <p class="favorite-arabic">الْحَمْدُ لِلّٰهِ</p>
+              <p class="favorite-name">Alhamdulillah</p>
+              <p class="favorite-count">×33 · 198 kez</p>
+            </div>
+            
+            <div class="favorite-card card">
+              <span class="favorite-heart">❤️</span>
+              <p class="favorite-arabic">اللّٰهُ أَكْبَرُ</p>
+              <p class="favorite-name">Allahu Akbar</p>
+              <p class="favorite-count">×33 · 156 kez</p>
+            </div>
+            
+            <div class="favorite-card card">
+              <span class="favorite-heart">❤️</span>
+              <p class="favorite-arabic">أَسْتَغْفِرُ اللّٰهَ</p>
+              <p class="favorite-name">Estağfirullah</p>
+              <p class="favorite-count">×100 · 89 kez</p>
+            </div>
+            
+            <div class="favorite-card card">
+              <span class="favorite-heart">❤️</span>
+              <p class="favorite-arabic">الرَّحْمٰنُ</p>
+              <p class="favorite-name">Er-Rahman</p>
+              <p class="favorite-count">×298 · 12 kez</p>
+            </div>
+            
+            <div class="add-favorite-card">
+              <p class="add-favorite-icon">+</p>
+              <p class="add-favorite-text">Yeni Ekle</p>
+            </div>
+          </div>
+          
+          <div class="bottom-nav">
+            <div class="nav-item">
+              <span class="nav-item-icon">🏠</span>
+              <span class="nav-item-label">Ana Sayfa</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-item-icon">📿</span>
+              <span class="nav-item-label">Zikirmatik</span>
+            </div>
+            <div class="nav-item active">
+              <span class="nav-item-icon">❤️</span>
+              <span class="nav-item-label">Favoriler</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-item-icon">📊</span>
+              <span class="nav-item-label">İlerleme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CUSTOM DHIKR -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">✏️</span>
+        <span class="screen-label-text">Özel Zikir</span>
+      </div>
+      <h3 class="screen-title">Özel Zikir Ekle</h3>
+      <p class="screen-desc">Kendi zikrini oluştur</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">✕</div>
+            <span class="nav-title">Yeni Zikir</span>
+            <div class="nav-btn" style="background: linear-gradient(135deg, #0d9488, #14b8a6); color: #fff; border: none; font-size: 12px; font-weight: 600;">Kaydet</div>
+          </div>
+          
+          <div class="custom-dhikr-form">
+            <div class="input-group">
+              <label class="input-label">Arapça Metin</label>
+              <input type="text" class="input-field arabic" placeholder="مثال: سُبْحَانَ اللّٰهِ" value="لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ">
+            </div>
+            
+            <div class="input-group">
+              <label class="input-label">Okunuşu (Latin)</label>
+              <input type="text" class="input-field" placeholder="Örn: SubhanAllah" value="La havle vela kuvvete illa billah">
+            </div>
+            
+            <div class="input-group">
+              <label class="input-label">Anlamı</label>
+              <input type="text" class="input-field" placeholder="Türkçe anlamı" value="Güç ve kuvvet ancak Allah'tandır">
+            </div>
+            
+            <div class="input-group">
+              <label class="input-label">Varsayılan Hedef</label>
+              <div class="target-selector" style="justify-content: flex-start; padding: 0;">
+                <span class="target-chip">33</span>
+                <span class="target-chip selected">99</span>
+                <span class="target-chip">100</span>
+                <span class="target-chip">Özel</span>
+              </div>
+            </div>
+            
+            <div class="input-group">
+              <label class="input-label">Not (İsteğe bağlı)</label>
+              <input type="text" class="input-field" placeholder="Kişisel notun..." value="Sıkıntılı anlarda okunur">
+            </div>
+          </div>
+          
+          <div style="padding: 0 16px; margin-top: 16px;">
+            <div class="card" style="padding: 16px; text-align: center;">
+              <p style="font-size: 11px; color: #5f9ea0; margin-bottom: 8px;">Önizleme</p>
+              <p style="font-size: 24px; font-family: 'Amiri', serif; color: #134e4a; direction: rtl;">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ</p>
+              <p style="font-size: 13px; color: #0d9488; margin-top: 4px;">La havle vela kuvvete illa billah</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION: WEEKLY & QIBLA
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <h2>📊 İlerleme & Kıble <span class="new-badge">YENİ</span></h2>
+      <p>Haftalık özet ve basit kıble pusulası</p>
+    </div>
+    
+    <!-- WEEKLY SUMMARY -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">📊</span>
+        <span class="screen-label-text">Haftalık</span>
+      </div>
+      <h3 class="screen-title">Haftalık Özet</h3>
+      <p class="screen-desc">Bu haftaki zikir istatistiklerin</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">‹</div>
+            <span class="nav-title">İlerleme</span>
+            <div class="nav-btn" style="opacity:0"></div>
+          </div>
+          
+          <div class="daily-progress">
+            <div class="daily-progress-header">
+              <span class="daily-progress-label">Bugünkü İlerleme</span>
+              <span class="daily-progress-streak">🔥 12 gün seri!</span>
+            </div>
+            <div class="daily-progress-bar">
+              <div class="daily-progress-fill" style="width: 78%"></div>
+            </div>
+          </div>
+          
+          <div class="weekly-summary-card card">
+            <div class="weekly-badge">
+              🏆 Bu Hafta
+            </div>
+            
+            <p class="weekly-number">2,847</p>
+            <p class="weekly-label">toplam zikir</p>
+            
+            <div class="weekly-chart">
+              <div class="weekly-bar" style="height: 40%"></div>
+              <div class="weekly-bar" style="height: 65%"></div>
+              <div class="weekly-bar" style="height: 55%"></div>
+              <div class="weekly-bar" style="height: 80%"></div>
+              <div class="weekly-bar" style="height: 45%"></div>
+              <div class="weekly-bar" style="height: 70%"></div>
+              <div class="weekly-bar today" style="height: 60%"></div>
+            </div>
+            <div class="weekly-days">
+              <span class="weekly-day">Pzt</span>
+              <span class="weekly-day">Sal</span>
+              <span class="weekly-day">Çar</span>
+              <span class="weekly-day">Per</span>
+              <span class="weekly-day">Cum</span>
+              <span class="weekly-day">Cmt</span>
+              <span class="weekly-day today">Paz</span>
+            </div>
+            
+            <div class="weekly-motivation">
+              <p class="weekly-motivation-text">🌟 Harika gidiyorsun! Geçen haftaya göre %23 daha fazla zikir yaptın.</p>
+            </div>
+          </div>
+          
+          <div style="padding: 16px;">
+            <div style="display: flex; gap: 12px;">
+              <div class="card" style="flex: 1; padding: 14px; text-align: center;">
+                <p style="font-size: 24px; font-weight: 300; color: #0d9488;">12</p>
+                <p style="font-size: 11px; color: #5f9ea0;">Gün Serisi</p>
+              </div>
+              <div class="card" style="flex: 1; padding: 14px; text-align: center;">
+                <p style="font-size: 24px; font-weight: 300; color: #0d9488;">406</p>
+                <p style="font-size: 11px; color: #5f9ea0;">Günlük Ort.</p>
+              </div>
+              <div class="card" style="flex: 1; padding: 14px; text-align: center;">
+                <p style="font-size: 24px; font-weight: 300; color: #0d9488;">5</p>
+                <p style="font-size: 11px; color: #5f9ea0;">Rozet</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bottom-nav">
+            <div class="nav-item">
+              <span class="nav-item-icon">🏠</span>
+              <span class="nav-item-label">Ana Sayfa</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-item-icon">📿</span>
+              <span class="nav-item-label">Zikirmatik</span>
+            </div>
+            <div class="nav-item">
+              <span class="nav-item-icon">❤️</span>
+              <span class="nav-item-label">Favoriler</span>
+            </div>
+            <div class="nav-item active">
+              <span class="nav-item-icon">📊</span>
+              <span class="nav-item-label">İlerleme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- QIBLA COMPASS -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">🧭</span>
+        <span class="screen-label-text">Kıble</span>
+      </div>
+      <h3 class="screen-title">Kıble Pusulası</h3>
+      <p class="screen-desc">Basit ve minimal kıble yönü</p>
+      <div class="phone">
+        <div class="screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="nav-bar">
+            <div class="nav-btn">‹</div>
+            <span class="nav-title">Kıble</span>
+            <div class="nav-btn" style="opacity:0"></div>
+          </div>
+          
+          <div class="qibla-container">
+            <div class="qibla-compass">
+              <div class="qibla-compass-ring">
+                <div class="qibla-compass-inner"></div>
+                <div class="qibla-directions">
+                  <span class="qibla-direction n">K</span>
+                  <span class="qibla-direction s">G</span>
+                  <span class="qibla-direction e">D</span>
+                  <span class="qibla-direction w">B</span>
+                </div>
+                <div class="qibla-needle"></div>
+                <div class="qibla-kaaba">🕋</div>
+              </div>
+            </div>
+            
+            <div class="qibla-info">
+              <p class="qibla-degrees">136° <span>GD</span></p>
+              <p class="qibla-label">Kıble Yönü</p>
+              <div class="qibla-location">
+                <span>📍</span>
+                <span>Tampere, Finlandiya</span>
+              </div>
+            </div>
+          </div>
+          
+          <div style="padding: 0 16px;">
+            <div class="card" style="padding: 14px; display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 20px;">💡</span>
+              <p style="font-size: 12px; color: #5f9ea0; line-height: 1.4;">Telefonunu düz tutarak kıble yönünü bul. Yeşil ok Kabe'yi gösterir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SECTION: WIDGETS
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <h2>📱 Widget Önizleme <span class="new-badge">YENİ</span></h2>
+      <p>Ana ekran widget'ları (iOS & Android)</p>
+    </div>
+    
+    <!-- WIDGETS -->
+    <div class="screen-section">
+      <div class="screen-label new">
+        <span class="screen-label-icon">📱</span>
+        <span class="screen-label-text">Widgets</span>
+      </div>
+      <h3 class="screen-title">Home Screen Widgets</h3>
+      <p class="screen-desc">Tek dokunuşla zikir</p>
+      <div class="phone">
+        <div class="screen" style="background: linear-gradient(180deg, #1e293b 0%, #334155 100%);">
+          <div class="status-bar" style="color: rgba(255,255,255,0.8);">
+            <span>9:41</span>
+            <span>🔋</span>
+          </div>
+          
+          <div class="widgets-showcase">
+            <div class="widget-preview">
+              <p class="widget-label" style="color: rgba(255,255,255,0.5);">Small Widget (2×2)</p>
+              <div class="widget-small">
+                <div class="widget-small-header">
+                  <span class="widget-small-icon">📿</span>
+                  <span class="widget-small-title">Dhikr</span>
+                </div>
+                <p class="widget-small-value">247</p>
+                <p class="widget-small-label">bugün</p>
+                <div class="widget-small-streak">🔥 12 gün</div>
+              </div>
+            </div>
+            
+            <div class="widget-preview">
+              <p class="widget-label" style="color: rgba(255,255,255,0.5);">Medium Widget (4×2)</p>
+              <div class="widget-medium">
+                <div class="widget-medium-left">
+                  <div class="widget-small-header">
+                    <span class="widget-small-icon">📿</span>
+                    <span class="widget-small-title">Dhikr</span>
+                  </div>
+                  <p class="widget-small-value">17<span style="font-size: 16px; color: #5f9ea0;">/33</span></p>
+                  <p class="widget-small-label">SubhanAllah</p>
+                  <div class="widget-small-streak">🔥 12 gün seri</div>
+                </div>
+                <div class="widget-medium-right">
+                  <div class="widget-counter-btn">+1</div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 16px; background: rgba(255,255,255,0.06); border-radius: 16px;">
+              <p style="font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Widget Özellikleri:</p>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2dd4bf;">✓</span>
+                  <span style="font-size: 11px; color: rgba(255,255,255,0.6);">Ana ekrandan tek dokunuşla sayaç</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2dd4bf;">✓</span>
+                  <span style="font-size: 11px; color: rgba(255,255,255,0.6);">Günlük ilerleme göstergesi</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2dd4bf;">✓</span>
+                  <span style="font-size: 11px; color: rgba(255,255,255,0.6);">Streak takibi</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #2dd4bf;">✓</span>
+                  <span style="font-size: 11px; color: rgba(255,255,255,0.6);">Haptic feedback</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
