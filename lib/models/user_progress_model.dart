@@ -5,6 +5,7 @@ class UserProgressModel {
   final int todayDhikrCount;
   final DateTime? lastActiveDate;
   final List<DailyProgress> weeklyProgress;
+  final List<DailyProgress> monthlyProgress; // Last 30 days
   final List<Badge> earnedBadges;
   final int currentLevel;
   final int currentXp;
@@ -17,11 +18,45 @@ class UserProgressModel {
     this.todayDhikrCount = 0,
     this.lastActiveDate,
     this.weeklyProgress = const [],
+    this.monthlyProgress = const [],
     this.earnedBadges = const [],
     this.currentLevel = 1,
     this.currentXp = 0,
     this.xpForNextLevel = 100,
   });
+
+  // Get this week's total
+  int get weeklyTotal {
+    return weeklyProgress.fold(0, (sum, p) => sum + p.count);
+  }
+
+  // Get this month's total
+  int get monthlyTotal {
+    return monthlyProgress.fold(0, (sum, p) => sum + p.count);
+  }
+
+  // Get average dhikr per day this week
+  double get weeklyAverage {
+    if (weeklyProgress.isEmpty) return 0;
+    return weeklyTotal / weeklyProgress.length;
+  }
+
+  // Get average dhikr per day this month
+  double get monthlyAverage {
+    if (monthlyProgress.isEmpty) return 0;
+    return monthlyTotal / monthlyProgress.length;
+  }
+
+  // Get max dhikr in a single day
+  int get maxDailyDhikr {
+    if (monthlyProgress.isEmpty) return 0;
+    return monthlyProgress.map((p) => p.count).reduce((a, b) => a > b ? a : b);
+  }
+
+  // Get active days this month
+  int get activeDaysThisMonth {
+    return monthlyProgress.where((p) => p.count > 0).length;
+  }
 
   double get todayProgressPercent {
     const dailyGoal = 100; // Default daily goal
@@ -40,6 +75,7 @@ class UserProgressModel {
     int? todayDhikrCount,
     DateTime? lastActiveDate,
     List<DailyProgress>? weeklyProgress,
+    List<DailyProgress>? monthlyProgress,
     List<Badge>? earnedBadges,
     int? currentLevel,
     int? currentXp,
@@ -52,6 +88,7 @@ class UserProgressModel {
       todayDhikrCount: todayDhikrCount ?? this.todayDhikrCount,
       lastActiveDate: lastActiveDate ?? this.lastActiveDate,
       weeklyProgress: weeklyProgress ?? this.weeklyProgress,
+      monthlyProgress: monthlyProgress ?? this.monthlyProgress,
       earnedBadges: earnedBadges ?? this.earnedBadges,
       currentLevel: currentLevel ?? this.currentLevel,
       currentXp: currentXp ?? this.currentXp,
@@ -67,6 +104,7 @@ class UserProgressModel {
       'todayDhikrCount': todayDhikrCount,
       'lastActiveDate': lastActiveDate?.toIso8601String(),
       'weeklyProgress': weeklyProgress.map((e) => e.toJson()).toList(),
+      'monthlyProgress': monthlyProgress.map((e) => e.toJson()).toList(),
       'earnedBadges': earnedBadges.map((e) => e.toJson()).toList(),
       'currentLevel': currentLevel,
       'currentXp': currentXp,
@@ -84,6 +122,10 @@ class UserProgressModel {
           ? DateTime.parse(json['lastActiveDate'] as String)
           : null,
       weeklyProgress: (json['weeklyProgress'] as List<dynamic>?)
+              ?.map((e) => DailyProgress.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      monthlyProgress: (json['monthlyProgress'] as List<dynamic>?)
               ?.map((e) => DailyProgress.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

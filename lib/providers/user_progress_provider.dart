@@ -19,30 +19,19 @@ class UserProgressNotifier extends StateNotifier<UserProgressModel> {
 
     int newTodayCount = isNewDay ? count : state.todayDhikrCount + count;
 
-    // Update weekly progress
-    List<DailyProgress> updatedWeekly = [...state.weeklyProgress];
-    final existingIndex = updatedWeekly.indexWhere(
-      (p) =>
-          p.date.year == today.year &&
-          p.date.month == today.month &&
-          p.date.day == today.day,
+    // Update weekly and monthly progress
+    List<DailyProgress> updatedWeekly = _updateProgressList(
+      [...state.weeklyProgress],
+      today,
+      count,
+      7,
     );
-
-    if (existingIndex >= 0) {
-      updatedWeekly[existingIndex] = DailyProgress(
-        date: today,
-        count: updatedWeekly[existingIndex].count + count,
-      );
-    } else {
-      updatedWeekly.add(DailyProgress(
-        date: today,
-        count: count,
-      ));
-      // Keep only last 7 days
-      if (updatedWeekly.length > 7) {
-        updatedWeekly = updatedWeekly.sublist(updatedWeekly.length - 7);
-      }
-    }
+    List<DailyProgress> updatedMonthly = _updateProgressList(
+      [...state.monthlyProgress],
+      today,
+      count,
+      30,
+    );
 
     // Calculate streak
     int newStreak = _calculateStreak(updatedWeekly, state.currentStreak, isNewDay);
@@ -66,11 +55,43 @@ class UserProgressNotifier extends StateNotifier<UserProgressModel> {
       currentStreak: newStreak,
       longestStreak: newLongestStreak,
       weeklyProgress: updatedWeekly,
+      monthlyProgress: updatedMonthly,
       lastActiveDate: today,
       currentLevel: newLevel,
       currentXp: newXp,
       xpForNextLevel: newXpForNext,
     );
+  }
+
+  List<DailyProgress> _updateProgressList(
+    List<DailyProgress> list,
+    DateTime today,
+    int count,
+    int maxDays,
+  ) {
+    final existingIndex = list.indexWhere(
+      (p) =>
+          p.date.year == today.year &&
+          p.date.month == today.month &&
+          p.date.day == today.day,
+    );
+
+    if (existingIndex >= 0) {
+      list[existingIndex] = DailyProgress(
+        date: today,
+        count: list[existingIndex].count + count,
+      );
+    } else {
+      list.add(DailyProgress(
+        date: today,
+        count: count,
+      ));
+      // Keep only last N days
+      if (list.length > maxDays) {
+        list.removeRange(0, list.length - maxDays);
+      }
+    }
+    return list;
   }
 
   int _calculateStreak(List<DailyProgress> weekly, int currentStreak, bool isNewDay) {
