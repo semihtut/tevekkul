@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import '../models/esma_model.dart';
 import '../models/mood_model.dart';
@@ -18,11 +19,11 @@ class DataLoaderService {
       final jsonString = await rootBundle.loadString('data/asma_ul_husna_complete.json');
       final Map<String, dynamic> jsonData = json.decode(jsonString);
 
-      final List<dynamic> esmaData = jsonData['asma_ul_husna'] ?? [];
+      final List<dynamic> esmaData = jsonData['entries'] ?? jsonData['asma_ul_husna'] ?? [];
       _cachedEsmaList = esmaData.map((e) => EsmaModel.fromJson(e as Map<String, dynamic>)).toList();
       return _cachedEsmaList!;
     } catch (e) {
-      print('Error loading esma data: $e');
+      debugPrint('Error loading esma data: $e');
       return [];
     }
   }
@@ -38,7 +39,7 @@ class DataLoaderService {
       _cachedMoodList = moodData.map((e) => MoodModel.fromJson(e as Map<String, dynamic>)).toList();
       return _cachedMoodList!;
     } catch (e) {
-      print('Error loading mood data: $e');
+      debugPrint('Error loading mood data: $e');
       return [];
     }
   }

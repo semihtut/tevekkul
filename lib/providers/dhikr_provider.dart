@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/dhikr_model.dart';
+import '../services/storage_service.dart';
 
 class DhikrState {
   final List<DhikrModel> dhikrs;
@@ -37,7 +38,15 @@ class DhikrNotifier extends StateNotifier<DhikrState> {
   DhikrNotifier() : super(const DhikrState());
 
   void setDhikrs(List<DhikrModel> dhikrs) {
-    state = state.copyWith(dhikrs: dhikrs);
+    // Load saved favorite IDs and apply to dhikrs
+    final savedFavoriteIds = StorageService().loadFavorites();
+    final dhikrsWithFavorites = dhikrs.map((d) {
+      if (savedFavoriteIds.contains(d.id)) {
+        return d.copyWith(isFavorite: true);
+      }
+      return d;
+    }).toList();
+    state = state.copyWith(dhikrs: dhikrsWithFavorites);
   }
 
   void selectDhikr(DhikrModel dhikr) {
@@ -93,6 +102,13 @@ class DhikrNotifier extends StateNotifier<DhikrState> {
       dhikrs: updatedDhikrs,
       selectedDhikr: updatedSelected ?? state.selectedDhikr,
     );
+
+    // Save favorites to persistent storage
+    final favoriteIds = updatedDhikrs
+        .where((d) => d.isFavorite)
+        .map((d) => d.id)
+        .toList();
+    StorageService().saveFavorites(favoriteIds);
   }
 
   List<DhikrModel> get favorites {

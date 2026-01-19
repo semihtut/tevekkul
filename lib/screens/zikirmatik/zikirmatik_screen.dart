@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_constants.dart';
+import '../../config/app_translations.dart';
 import '../../config/app_typography.dart';
 import '../../providers/dhikr_provider.dart';
 import '../../providers/user_progress_provider.dart';
@@ -24,6 +25,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final dhikrState = ref.watch(dhikrProvider);
     final settings = ref.watch(settingsProvider);
+    final lang = ref.watch(languageProvider);
 
     return Scaffold(
       body: Container(
@@ -36,7 +38,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
           child: Column(
             children: [
               // App Bar
-              _buildAppBar(context, isDark, dhikrState),
+              _buildAppBar(context, isDark, dhikrState, lang),
 
               // Main Content
               Expanded(
@@ -51,7 +53,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
 
                         // Dhikr Name
                         if (dhikrState.selectedDhikr != null)
-                          _buildDhikrInfo(isDark, dhikrState),
+                          _buildDhikrInfo(isDark, dhikrState, lang),
 
                         const SizedBox(height: AppConstants.spacingXL),
 
@@ -82,7 +84,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
                         const SizedBox(height: AppConstants.spacingL),
 
                         // Reset Button
-                        _buildResetButton(isDark, ref),
+                        _buildResetButton(isDark, ref, lang),
 
                         const SizedBox(height: AppConstants.spacingXL),
                       ],
@@ -97,32 +99,38 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     );
   }
 
-  Widget _buildAppBar(BuildContext context, bool isDark, DhikrState dhikrState) {
+  Widget _buildAppBar(BuildContext context, bool isDark, DhikrState dhikrState, String lang) {
+    final canPop = Navigator.canPop(context);
+
     return Padding(
       padding: const EdgeInsets.all(AppConstants.spacingM),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: GlassContainer(
-              padding: const EdgeInsets.all(AppConstants.spacingS),
-              borderRadius: BorderRadius.circular(AppConstants.radiusFull),
-              child: Icon(
-                Icons.arrow_back_rounded,
-                color: isDark ? Colors.white : AppColors.textPrimaryLight,
-                size: 24,
+          // Only show back button if we can navigate back (came from another screen)
+          if (canPop)
+            GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: GlassContainer(
+                padding: const EdgeInsets.all(AppConstants.spacingS),
+                borderRadius: BorderRadius.circular(AppConstants.radiusFull),
+                child: Icon(
+                  Icons.arrow_back_rounded,
+                  color: isDark ? Colors.white : AppColors.textPrimaryLight,
+                  size: 24,
+                ),
               ),
-            ),
-          ),
+            )
+          else
+            const SizedBox(width: 48), // Placeholder for alignment
           Text(
-            'Zikirmatik',
+            AppTranslations.get('zikirmatik', lang),
             style: AppTypography.headingSmall.copyWith(
               color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
             ),
           ),
           GestureDetector(
-            onTap: () => _showDhikrPicker(context, isDark),
+            onTap: () => _showDhikrPicker(context, isDark, lang),
             child: GlassContainer(
               padding: const EdgeInsets.all(AppConstants.spacingS),
               borderRadius: BorderRadius.circular(AppConstants.radiusFull),
@@ -138,7 +146,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     );
   }
 
-  Widget _buildDhikrInfo(bool isDark, DhikrState dhikrState) {
+  Widget _buildDhikrInfo(bool isDark, DhikrState dhikrState, String lang) {
     final dhikr = dhikrState.selectedDhikr!;
     return Column(
       children: [
@@ -158,7 +166,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
         ),
         const SizedBox(height: AppConstants.spacingXS),
         Text(
-          dhikr.getMeaning('tr'),
+          dhikr.getMeaning(lang),
           style: AppTypography.bodySmall.copyWith(
             color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
             fontStyle: FontStyle.italic,
@@ -168,9 +176,9 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     );
   }
 
-  Widget _buildResetButton(bool isDark, WidgetRef ref) {
+  Widget _buildResetButton(bool isDark, WidgetRef ref, String lang) {
     return GestureDetector(
-      onTap: () => _showResetDialog(context, ref),
+      onTap: () => _showResetDialog(context, ref, lang),
       child: GlassContainer(
         padding: const EdgeInsets.symmetric(
           horizontal: AppConstants.spacingL,
@@ -186,7 +194,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
             ),
             const SizedBox(width: AppConstants.spacingS),
             Text(
-              'Sifirla',
+              AppTranslations.get('reset', lang),
               style: AppTypography.labelMedium.copyWith(
                 color: isDark ? AppColors.accentDark : AppColors.primary,
               ),
@@ -200,15 +208,19 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
   void _handleTap(WidgetRef ref, SettingsState settings) {
     ref.read(dhikrProvider.notifier).increment();
     ref.read(userProgressProvider.notifier).incrementDhikr(1);
-
-    // Haptic feedback would be triggered here if enabled
-    // if (settings.hapticEnabled) {
-    //   HapticFeedback.mediumImpact();
-    // }
   }
 
-  void _showResetDialog(BuildContext context, WidgetRef ref) {
+  void _showResetDialog(BuildContext context, WidgetRef ref, String lang) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final title = lang == 'en'
+        ? 'Reset Counter'
+        : (lang == 'fi' ? 'Nollaa laskuri' : 'Sayacı Sıfırla');
+    final content = lang == 'en'
+        ? 'Are you sure you want to reset the current count?'
+        : (lang == 'fi'
+            ? 'Haluatko varmasti nollata nykyisen laskurin?'
+            : 'Mevcut sayımı sıfırlamak istediğinize emin misiniz?');
 
     showDialog(
       context: context,
@@ -218,13 +230,13 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
           borderRadius: BorderRadius.circular(AppConstants.radiusLarge),
         ),
         title: Text(
-          'Sayaci Sifirla',
+          title,
           style: AppTypography.headingSmall.copyWith(
             color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
           ),
         ),
         content: Text(
-          'Mevcut sayimi sifirlamak istediginize emin misiniz?',
+          content,
           style: AppTypography.bodyMedium.copyWith(
             color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
           ),
@@ -233,7 +245,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              'Iptal',
+              AppTranslations.get('cancel', lang),
               style: TextStyle(
                 color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
               ),
@@ -245,7 +257,7 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
               Navigator.pop(context);
             },
             child: Text(
-              'Sifirla',
+              AppTranslations.get('reset', lang),
               style: TextStyle(
                 color: isDark ? AppColors.accentDark : AppColors.primary,
                 fontWeight: FontWeight.w600,
@@ -257,8 +269,12 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     );
   }
 
-  void _showDhikrPicker(BuildContext context, bool isDark) {
+  void _showDhikrPicker(BuildContext context, bool isDark, String lang) {
     final dhikrs = ref.read(dhikrProvider).dhikrs;
+
+    final title = lang == 'en'
+        ? 'Select Dhikr'
+        : (lang == 'fi' ? 'Valitse Dhikr' : 'Zikir Seç');
 
     showModalBottomSheet(
       context: context,
@@ -279,13 +295,13 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withOpacity(0.2) : Colors.black.withOpacity(0.1),
+                color: isDark ? Colors.white.withValues(alpha: 0.2) : Colors.black.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             const SizedBox(height: AppConstants.spacingL),
             Text(
-              'Zikir Sec',
+              title,
               style: AppTypography.headingSmall.copyWith(
                 color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
               ),
@@ -307,13 +323,13 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
                       padding: const EdgeInsets.all(AppConstants.spacingM),
                       decoration: BoxDecoration(
                         color: isDark
-                            ? Colors.white.withOpacity(0.05)
-                            : AppColors.primary.withOpacity(0.05),
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : AppColors.primary.withValues(alpha: 0.05),
                         borderRadius: BorderRadius.circular(AppConstants.radiusMedium),
                         border: Border.all(
                           color: isDark
-                              ? Colors.white.withOpacity(0.1)
-                              : AppColors.primary.withOpacity(0.1),
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : AppColors.primary.withValues(alpha: 0.1),
                         ),
                       ),
                       child: Row(

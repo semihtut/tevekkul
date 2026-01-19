@@ -53,6 +53,18 @@ class StorageService {
     return List<String>.from(jsonDecode(jsonStr));
   }
 
+  // ==================== ESMA FAVORITES STORAGE ====================
+
+  Future<void> saveEsmaFavorites(List<String> favoriteIds) async {
+    await _dhikrsBox.put('esmaFavorites', jsonEncode(favoriteIds));
+  }
+
+  List<String> loadEsmaFavorites() {
+    final jsonStr = _dhikrsBox.get('esmaFavorites');
+    if (jsonStr == null) return [];
+    return List<String>.from(jsonDecode(jsonStr));
+  }
+
   // ==================== USER PROGRESS STORAGE ====================
 
   Future<void> saveUserProgress(UserProgressModel progress) async {
@@ -135,6 +147,24 @@ class StorageService {
 
   bool getNotificationsEnabled() {
     return _settingsBox.get('notificationsEnabled', defaultValue: true) as bool;
+  }
+
+  // ==================== USER NAME STORAGE ====================
+
+  Future<void> saveUserName(String name) async {
+    await _settingsBox.put('userName', name);
+  }
+
+  String getUserName() {
+    return _settingsBox.get('userName', defaultValue: '') as String;
+  }
+
+  Future<void> saveOnboardingComplete(bool complete) async {
+    await _settingsBox.put('onboardingComplete', complete);
+  }
+
+  bool isOnboardingComplete() {
+    return _settingsBox.get('onboardingComplete', defaultValue: false) as bool;
   }
 
   // ==================== DAILY ESMA STORAGE ====================

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'config/app_theme.dart';
 import 'providers/settings_provider.dart';
 import 'screens/home/home_screen.dart';
+import 'screens/welcome/welcome_screen.dart';
+import 'services/storage_service.dart';
 
 class TevekkulApp extends ConsumerWidget {
   const TevekkulApp({super.key});
@@ -11,9 +13,11 @@ class TevekkulApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(settingsProvider);
+    final storage = StorageService();
+    final isOnboardingComplete = storage.isOnboardingComplete();
 
     return MaterialApp(
-      title: 'Tevekkul',
+      title: 'QalbHz',
       debugShowCheckedModeBanner: false,
       themeMode: settings.themeMode,
       theme: AppTheme.lightTheme.copyWith(
@@ -26,7 +30,7 @@ class TevekkulApp extends ConsumerWidget {
           AppTheme.darkTheme.textTheme,
         ),
       ),
-      home: const HomeScreen(),
+      home: isOnboardingComplete ? const HomeScreen() : const WelcomeScreen(),
     );
   }
 }

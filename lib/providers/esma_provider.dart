@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/esma_model.dart';
+import '../services/storage_service.dart';
 import 'dart:math';
 
 class EsmaState {
@@ -36,7 +37,33 @@ class EsmaNotifier extends StateNotifier<EsmaState> {
   final _random = Random();
 
   void setEsmaList(List<EsmaModel> list) {
-    state = state.copyWith(esmaList: list);
+    // Load saved favorite IDs and apply to esmas
+    final savedFavoriteIds = StorageService().loadEsmaFavorites();
+    final esmasWithFavorites = list.map((e) {
+      if (savedFavoriteIds.contains(e.id)) {
+        return e.copyWith(isFavorite: true);
+      }
+      return e;
+    }).toList();
+    state = state.copyWith(esmaList: esmasWithFavorites);
+  }
+
+  void toggleFavorite(String esmaId) {
+    final updatedEsmas = state.esmaList.map((e) {
+      if (e.id == esmaId) {
+        return e.copyWith(isFavorite: !e.isFavorite);
+      }
+      return e;
+    }).toList();
+
+    state = state.copyWith(esmaList: updatedEsmas);
+
+    // Save favorites to persistent storage
+    final favoriteIds = updatedEsmas
+        .where((e) => e.isFavorite)
+        .map((e) => e.id)
+        .toList();
+    StorageService().saveEsmaFavorites(favoriteIds);
   }
 
   void setDailyEsma(EsmaModel esma) {
@@ -87,4 +114,9 @@ final dailyEsmaProvider = Provider<EsmaModel?>((ref) {
 
 final surpriseEsmaProvider = Provider<EsmaModel?>((ref) {
   return ref.watch(esmaProvider).surpriseEsma;
+});
+
+final favoriteEsmasProvider = Provider<List<EsmaModel>>((ref) {
+  final state = ref.watch(esmaProvider);
+  return state.esmaList.where((e) => e.isFavorite).toList();
 });

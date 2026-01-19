@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_constants.dart';
+import '../../config/app_translations.dart';
 import '../../config/app_typography.dart';
+import '../../models/esma_model.dart';
+import '../../providers/settings_provider.dart';
+import '../../services/ebced_service.dart';
+import '../../services/data_loader_service.dart';
 import '../../widgets/common/glass_container.dart';
-import '../../widgets/common/app_button.dart';
 
 class EbcedScreen extends ConsumerStatefulWidget {
   const EbcedScreen({super.key});
@@ -15,8 +19,29 @@ class EbcedScreen extends ConsumerStatefulWidget {
 
 class _EbcedScreenState extends ConsumerState<EbcedScreen> {
   final _controller = TextEditingController();
+  final _ebcedService = EbcedService();
   int? _result;
-  String? _matchingEsma;
+  EsmaModel? _matchingEsma;
+  List<EsmaModel> _esmaList = [];
+  bool _isLoading = true;
+  Map<String, dynamic>? _detailedResult;
+  String? _matchMethod; // 'exact', 'kucuk_ebced', 'closest'
+
+  @override
+  void initState() {
+    super.initState();
+    _loadEsmaList();
+  }
+
+  Future<void> _loadEsmaList() async {
+    final list = await DataLoaderService().loadEsmaList();
+    if (mounted) {
+      setState(() {
+        _esmaList = list;
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -28,40 +53,81 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
     final name = _controller.text.trim();
     if (name.isEmpty) return;
 
-    // Simple ebced calculation (this would use a proper service)
-    int total = 0;
-    final Map<String, int> ebcedValues = {
-      'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 80, 'g': 3, 'h': 8,
-      'i': 10, 'j': 3, 'k': 20, 'l': 30, 'm': 40, 'n': 50, 'o': 70, 'p': 80,
-      'r': 200, 's': 60, 't': 400, 'u': 6, 'v': 6, 'y': 10, 'z': 7,
-    };
+    // Close keyboard
+    FocusScope.of(context).unfocus();
 
-    for (var char in name.toLowerCase().split('')) {
-      total += ebcedValues[char] ?? 0;
-    }
+    // Use proper EbcedService for calculation with details
+    final detailed = _ebcedService.calculateDetailed(name);
+    final total = detailed['total'] as int;
 
     setState(() {
       _result = total;
-      _matchingEsma = _findMatchingEsma(total);
+      _detailedResult = detailed;
+      final matchResult = _findMatchingEsmaWithMethod(total);
+      _matchingEsma = matchResult.$1;
+      _matchMethod = matchResult.$2;
     });
   }
 
-  String _findMatchingEsma(int value) {
-    // Simplified matching - would use actual data
-    final esmaMap = {
-      66: 'Allah',
-      298: 'Rahman',
-      289: 'Rahim',
-      // Add more mappings
-    };
-    return esmaMap[value] ?? 'El-Alim';
+  (EsmaModel?, String?) _findMatchingEsmaWithMethod(int value) {
+    if (_esmaList.isEmpty) return (null, null);
+
+    // 1. Try exact match (İsmin ebced değeri = Esma'nın ebced değeri)
+    for (final esma in _esmaList) {
+      if (esma.abjadValue == value) {
+        return (esma, 'exact');
+      }
+    }
+
+    // 2. Try küçük ebced match (İsmin digit sum'ı = Esma'nın digit sum'ı)
+    // Örn: 262 → 2+6+2=10 → 1+0=1, esma 66 → 6+6=12 → 1+2=3
+    final nameDigitalRoot = _getDigitalRoot(value);
+    for (final esma in _esmaList) {
+      final esmaDigitalRoot = _getDigitalRoot(esma.abjadValue);
+      if (esmaDigitalRoot == nameDigitalRoot) {
+        return (esma, 'kucuk_ebced');
+      }
+    }
+
+    // 3. Find closest abjad value match
+    EsmaModel? closest;
+    int minDiff = 999999;
+    for (final esma in _esmaList) {
+      final diff = (esma.abjadValue - value).abs();
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = esma;
+      }
+    }
+
+    return (closest, 'closest');
+  }
+
+  /// Küçük ebced - rakamları topla ta ki tek hane kalana kadar
+  int _getDigitalRoot(int number) {
+    while (number > 9) {
+      int sum = 0;
+      while (number > 0) {
+        sum += number % 10;
+        number ~/= 10;
+      }
+      number = sum;
+    }
+    return number;
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final lang = ref.watch(languageProvider);
+    final mediaQuery = MediaQuery.of(context);
+    // Use viewPadding for system UI, ignore keyboard for bottom padding
+    // Ensure minimum 48px for gesture navigation on devices like Mi MIX 2
+    final systemBottom = mediaQuery.viewPadding.bottom;
+    final bottomPadding = systemBottom > 0 ? systemBottom : 48.0;
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: Container(
         decoration: BoxDecoration(
           gradient: isDark
@@ -69,136 +135,416 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
               : AppColors.backgroundGradientLight,
         ),
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppConstants.spacingL),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildAppBar(context, isDark),
-                const SizedBox(height: AppConstants.spacingXL),
-
-                Text(
-                  'Ebced Hesaplama',
-                  style: AppTypography.headingMedium.copyWith(
-                    color: isDark
-                        ? AppColors.textPrimaryDark
-                        : AppColors.textPrimaryLight,
-                  ),
+          bottom: false,
+          child: Column(
+            children: [
+              // Header
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppConstants.spacingL,
+                  AppConstants.spacingL,
+                  AppConstants.spacingL,
+                  0,
                 ),
-                const SizedBox(height: AppConstants.spacingS),
-                Text(
-                  'Isminin sayisal degerini ogren ve sana uygun esmayi kesfet',
-                  style: AppTypography.bodyMedium.copyWith(
-                    color: isDark
-                        ? AppColors.textSecondaryDark
-                        : AppColors.textSecondaryLight,
-                  ),
-                ),
-
-                const SizedBox(height: AppConstants.spacingXL),
-
-                // Input Field
-                GlassContainer(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppConstants.spacingM,
-                    vertical: AppConstants.spacingS,
-                  ),
-                  child: TextField(
-                    controller: _controller,
-                    style: AppTypography.bodyLarge.copyWith(
-                      color: isDark
-                          ? AppColors.textPrimaryDark
-                          : AppColors.textPrimaryLight,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Isminizi girin...',
-                      hintStyle: AppTypography.bodyLarge.copyWith(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildAppBar(context, isDark),
+                    const SizedBox(height: AppConstants.spacingXL),
+                    Text(
+                      AppTranslations.get('ebced', lang),
+                      style: AppTypography.headingMedium.copyWith(
                         color: isDark
-                            ? AppColors.textSecondaryDark.withOpacity(0.5)
-                            : AppColors.textSecondaryLight.withOpacity(0.5),
-                      ),
-                      border: InputBorder.none,
-                      prefixIcon: Icon(
-                        Icons.person_outline_rounded,
-                        color: isDark ? AppColors.accentDark : AppColors.primary,
+                            ? AppColors.textPrimaryDark
+                            : AppColors.textPrimaryLight,
                       ),
                     ),
-                    onSubmitted: (_) => _calculate(),
-                  ),
+                    const SizedBox(height: AppConstants.spacingS),
+                    Text(
+                      lang == 'en'
+                          ? 'Learn the numerical value of your name and discover the matching Esma'
+                          : (lang == 'fi'
+                              ? 'Opi nimesi numeerinen arvo ja löydä vastaava Esma'
+                              : 'İsminin sayısal değerini öğren ve sana uygun esmayı keşfet'),
+                      style: AppTypography.bodyMedium.copyWith(
+                        color: isDark
+                            ? AppColors.textSecondaryDark
+                            : AppColors.textSecondaryLight,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
 
-                const SizedBox(height: AppConstants.spacingL),
-
-                AppButton(
-                  label: 'Hesapla',
-                  isFullWidth: true,
-                  onPressed: _calculate,
-                ),
-
-                if (_result != null) ...[
-                  const SizedBox(height: AppConstants.spacingXXL),
-
-                  // Result Card
-                  GlassContainer(
-                    padding: const EdgeInsets.all(AppConstants.spacingL),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Ebced Degeri',
-                          style: AppTypography.labelMedium.copyWith(
-                            color: isDark
-                                ? AppColors.textSecondaryDark
-                                : AppColors.textSecondaryLight,
-                          ),
+              // Main scrollable content
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(AppConstants.spacingL),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Input Field
+                      TextField(
+                        controller: _controller,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF134E4A),
                         ),
-                        const SizedBox(height: AppConstants.spacingS),
-                        Text(
-                          '$_result',
-                          style: AppTypography.headingLarge.copyWith(
-                            fontSize: 48,
-                            color: isDark
-                                ? AppColors.accentDark
-                                : AppColors.primary,
+                        decoration: InputDecoration(
+                          hintText: AppTranslations.get('enter_your_name', lang),
+                          hintStyle: TextStyle(
+                            fontSize: 16,
+                            color: const Color(0xFF5F9EA0).withValues(alpha: 0.7),
                           ),
-                        ),
-                        const SizedBox(height: AppConstants.spacingL),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: AppConstants.spacingL,
-                            vertical: AppConstants.spacingM,
+                          filled: true,
+                          fillColor: Colors.white,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 16,
                           ),
-                          decoration: BoxDecoration(
-                            gradient: AppColors.primaryGradient,
-                            borderRadius: BorderRadius.circular(
-                              AppConstants.radiusMedium,
+                          prefixIcon: const Icon(
+                            Icons.person_outline_rounded,
+                            color: Color(0xFF0D9488),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(
+                              color: const Color(0xFF0D9488).withValues(alpha: 0.3),
                             ),
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D9488),
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        onSubmitted: (_) => _calculate(),
+                      ),
+
+                      if (_result != null) ...[
+                        const SizedBox(height: AppConstants.spacingXXL),
+
+                        // Result Card - Ebced Result & Esma
+                        GlassContainer(
+                          padding: const EdgeInsets.all(AppConstants.spacingL),
                           child: Column(
                             children: [
                               Text(
-                                'Onerilen Esma',
-                                style: AppTypography.labelSmall.copyWith(
-                                  color: Colors.white.withOpacity(0.8),
+                                AppTranslations.get('your_ebced_value', lang),
+                                style: AppTypography.labelMedium.copyWith(
+                                  color: isDark
+                                      ? AppColors.textSecondaryDark
+                                      : AppColors.textSecondaryLight,
                                 ),
                               ),
-                              const SizedBox(height: AppConstants.spacingXS),
+                              const SizedBox(height: AppConstants.spacingS),
                               Text(
-                                _matchingEsma ?? '',
-                                style: AppTypography.headingMedium.copyWith(
-                                  color: Colors.white,
+                                '$_result',
+                                style: AppTypography.headingLarge.copyWith(
+                                  fontSize: 48,
+                                  color: isDark
+                                      ? AppColors.accentDark
+                                      : AppColors.primary,
                                 ),
                               ),
+                              if (_matchingEsma != null) ...[
+                                const SizedBox(height: AppConstants.spacingL),
+                                // Arabic name
+                                Text(
+                                  _matchingEsma!.arabic,
+                                  style: AppTypography.headingLarge.copyWith(
+                                    fontSize: 32,
+                                    color: isDark
+                                        ? AppColors.textPrimaryDark
+                                        : AppColors.textPrimaryLight,
+                                  ),
+                                ),
+                                const SizedBox(height: AppConstants.spacingS),
+                                // Transliteration
+                                Text(
+                                  _matchingEsma!.transliteration,
+                                  style: AppTypography.bodyLarge.copyWith(
+                                    color: isDark
+                                        ? AppColors.accentDark
+                                        : AppColors.primary,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(height: AppConstants.spacingS),
+                                // Meaning
+                                Text(
+                                  _matchingEsma!.getMeaning(lang),
+                                  style: AppTypography.bodyMedium.copyWith(
+                                    color: isDark
+                                        ? AppColors.textSecondaryDark
+                                        : AppColors.textSecondaryLight,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: AppConstants.spacingM),
+                                // Esma Abjad value chip
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: AppConstants.spacingM,
+                                    vertical: AppConstants.spacingS,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    gradient: AppColors.primaryGradient,
+                                    borderRadius: BorderRadius.circular(
+                                      AppConstants.radiusFull,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Esma Ebced: ${_matchingEsma!.abjadValue}',
+                                    style: AppTypography.labelMedium.copyWith(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ],
                           ),
                         ),
+
+                        // Details Card - below result
+                        if (_detailedResult != null) ...[
+                          const SizedBox(height: AppConstants.spacingM),
+                          _buildDetailsCard(isDark, lang),
+                        ],
                       ],
-                    ),
+                    ],
                   ),
-                ],
-              ],
-            ),
+                ),
+              ),
+
+              // Bottom button with manual bottom padding
+              Padding(
+                padding: EdgeInsets.fromLTRB(16, 16, 16, 16 + bottomPadding),
+                child: ElevatedButton(
+                  onPressed: _isLoading ? null : _calculate,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0D9488),
+                    disabledBackgroundColor: const Color(0xFF0D9488).withValues(alpha: 0.4),
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 56),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    elevation: 0,
+                  ),
+                  child: Text(
+                    _isLoading
+                        ? AppTranslations.get('loading', lang)
+                        : AppTranslations.get('calculate', lang),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildDetailsCard(bool isDark, String lang) {
+    final breakdown = _detailedResult!['breakdown'] as List<dynamic>;
+    final kucukEbced = _getDigitalRoot(_result!);
+
+    // Calculate digit sum steps for display
+    String digitSumSteps = _result.toString().split('').join('+');
+    int firstSum = _result.toString().split('').map(int.parse).reduce((a, b) => a + b);
+    if (firstSum > 9) {
+      digitSumSteps += '=$firstSum→$kucukEbced';
+    } else {
+      digitSumSteps += '=$kucukEbced';
+    }
+
+    return GlassContainer(
+      padding: const EdgeInsets.all(AppConstants.spacingM),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header with icon
+          Row(
+            children: [
+              Icon(
+                Icons.calculate_rounded,
+                size: 16,
+                color: isDark ? AppColors.accentDark : AppColors.primary,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                AppTranslations.get('how_calculated', lang),
+                style: AppTypography.labelSmall.copyWith(
+                  color: isDark ? AppColors.accentDark : AppColors.primary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppConstants.spacingM),
+
+          // Letter breakdown
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: breakdown.map((item) {
+              final original = item['original'] as String;
+              final value = item['value'] as int;
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : AppColors.primary.withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  '$original=$value',
+                  style: AppTypography.labelSmall.copyWith(
+                    color: isDark
+                        ? AppColors.textPrimaryDark
+                        : AppColors.textPrimaryLight,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 11,
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+
+          const SizedBox(height: AppConstants.spacingM),
+
+          // Divider
+          Container(
+            height: 1,
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : AppColors.primary.withValues(alpha: 0.1),
+          ),
+
+          const SizedBox(height: AppConstants.spacingS),
+
+          // Total
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                AppTranslations.get('total_ebced', lang),
+                style: AppTypography.labelSmall.copyWith(
+                  color: isDark
+                      ? AppColors.textSecondaryDark
+                      : AppColors.textSecondaryLight,
+                ),
+              ),
+              Text(
+                '$_result',
+                style: AppTypography.bodyMedium.copyWith(
+                  color: isDark ? AppColors.accentDark : AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 4),
+
+          // Küçük Ebced with calculation
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                AppTranslations.get('kucuk_ebced', lang),
+                style: AppTypography.labelSmall.copyWith(
+                  color: isDark
+                      ? AppColors.textSecondaryDark
+                      : AppColors.textSecondaryLight,
+                ),
+              ),
+              Text(
+                '$kucukEbced',
+                style: AppTypography.bodyMedium.copyWith(
+                  color: isDark ? AppColors.accentDark : AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+
+          // Digit sum calculation display
+          Text(
+            digitSumSteps,
+            style: AppTypography.labelSmall.copyWith(
+              color: isDark
+                  ? AppColors.textSecondaryDark.withValues(alpha: 0.7)
+                  : AppColors.textSecondaryLight.withValues(alpha: 0.7),
+              fontSize: 10,
+            ),
+          ),
+
+          const SizedBox(height: AppConstants.spacingS),
+
+          // Match method badge
+          _buildMatchMethodBadge(isDark, lang),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMatchMethodBadge(bool isDark, String lang) {
+    String methodText;
+    Color badgeColor;
+
+    switch (_matchMethod) {
+      case 'exact':
+        methodText = AppTranslations.get('exact_match', lang);
+        badgeColor = const Color(0xFF10B981); // Green
+        break;
+      case 'kucuk_ebced':
+        methodText = AppTranslations.get('kucuk_ebced_match', lang);
+        badgeColor = const Color(0xFF3B82F6); // Blue
+        break;
+      case 'closest':
+        methodText = AppTranslations.get('closest_match', lang);
+        badgeColor = const Color(0xFFF59E0B); // Orange
+        break;
+      default:
+        methodText = '';
+        badgeColor = Colors.grey;
+    }
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: badgeColor.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(AppConstants.radiusFull),
+        border: Border.all(color: badgeColor.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            _matchMethod == 'exact'
+                ? Icons.check_circle_rounded
+                : (_matchMethod == 'kucuk_ebced'
+                    ? Icons.calculate_rounded
+                    : Icons.near_me_rounded),
+            size: 14,
+            color: badgeColor,
+          ),
+          const SizedBox(width: 6),
+          Text(
+            methodText,
+            style: AppTypography.labelSmall.copyWith(
+              color: badgeColor,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -208,13 +554,19 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
       children: [
         GestureDetector(
           onTap: () => Navigator.pop(context),
-          child: GlassContainer(
-            padding: const EdgeInsets.all(AppConstants.spacingS),
-            borderRadius: BorderRadius.circular(AppConstants.radiusFull),
-            child: Icon(
-              Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : AppColors.textPrimaryLight,
-              size: 24,
+          child: Container(
+            width: 48,
+            height: 48,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: const Color(0xFF0D9488).withValues(alpha: 0.1),
+              ),
+            ),
+            child: const Icon(
+              Icons.arrow_back,
+              color: Color(0xFF134E4A),
             ),
           ),
         ),

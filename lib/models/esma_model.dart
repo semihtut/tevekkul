@@ -10,6 +10,7 @@ class EsmaModel {
   final List<String> themes;
   final List<int> suggestedCounts;
   final Map<String, String> reflectionPrompts; // tr, en, fi
+  final bool isFavorite;
 
   const EsmaModel({
     required this.id,
@@ -23,7 +24,38 @@ class EsmaModel {
     this.themes = const [],
     this.suggestedCounts = const [99, 100],
     this.reflectionPrompts = const {},
+    this.isFavorite = false,
   });
+
+  EsmaModel copyWith({
+    String? id,
+    int? order,
+    String? arabic,
+    String? transliteration,
+    Map<String, String>? meaning,
+    int? abjadValue,
+    bool? needsVerification,
+    double? confidence,
+    List<String>? themes,
+    List<int>? suggestedCounts,
+    Map<String, String>? reflectionPrompts,
+    bool? isFavorite,
+  }) {
+    return EsmaModel(
+      id: id ?? this.id,
+      order: order ?? this.order,
+      arabic: arabic ?? this.arabic,
+      transliteration: transliteration ?? this.transliteration,
+      meaning: meaning ?? this.meaning,
+      abjadValue: abjadValue ?? this.abjadValue,
+      needsVerification: needsVerification ?? this.needsVerification,
+      confidence: confidence ?? this.confidence,
+      themes: themes ?? this.themes,
+      suggestedCounts: suggestedCounts ?? this.suggestedCounts,
+      reflectionPrompts: reflectionPrompts ?? this.reflectionPrompts,
+      isFavorite: isFavorite ?? this.isFavorite,
+    );
+  }
 
   String getMeaning(String languageCode) {
     return meaning[languageCode] ?? meaning['tr'] ?? '';

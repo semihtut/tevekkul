@@ -37,18 +37,38 @@ class MoodModel {
     if (json['emoji'] != null) {
       emoji = json['emoji'] as String;
     } else if (json['icon'] != null) {
-      // Map icon names to emojis
+      // Map icon names to emojis (matching moods_extended.json icons)
       const iconMap = {
-        'cloud-rain': '😰',
-        'heart-crack': '😢',
+        // Negative emotions
+        'cloud-rain': '😰',      // Kaygılı/Anxious
+        'heart-crack': '😢',     // Üzgün/Sad
+        'zap': '😤',             // Stresli/Stressed
+        'moon': '🌙',            // Yalnız/Lonely
+        'flame': '😠',           // Öfkeli/Angry
+        'shield': '😨',          // Korkmuş/Fearful
+        'battery-low': '😴',     // Yorgun/Tired
+        'help-circle': '😕',     // Şaşkın/Confused
+        'rotate-ccw': '😔',      // Pişman/Regretful
+        'user-x': '😞',          // Reddedilmiş/Rejected
+
+        // Positive emotions
+        'sun': '😊',             // Şükreden/Grateful
+        'sunrise': '🌅',         // Umutlu/Hopeful
+        'heart': '❤️',           // Sevgi Dolu/Loving
+        'waves': '😌',           // Huzurlu/Peaceful
+        'eye': '🤲',             // Tevekkül/Trusting
+        'scale': '⚖️',           // Sabırlı/Patient
+        'clock': '🙏',           // Özlem/Longing
+        'map': '🧭',             // Yolunu Arayan/Seeking
+        'crown': '👑',           // Müteşekkir/Blessed
+        'compass': '🔍',         // Meraklı/Curious
+
+        // Fallbacks
         'hands-praying': '🤲',
-        'sun': '😊',
         'sparkles': '✨',
-        'heart': '❤️',
         'fire': '🔥',
         'leaf': '🌿',
         'star': '⭐',
-        'moon': '🌙',
         'cloud': '☁️',
         'bolt': '⚡',
         'peace': '☮️',
@@ -98,15 +118,19 @@ class MoodModel {
 
 class AyahReference {
   final String surah;
+  final int surahNumber;
   final int ayahStart;
   final int? ayahEnd;
+  final String? arabicText;
   final Map<String, String> themeNote; // tr, en, fi
   final bool needsTextVerification;
 
   const AyahReference({
     required this.surah,
+    this.surahNumber = 0,
     required this.ayahStart,
     this.ayahEnd,
+    this.arabicText,
     this.themeNote = const {},
     this.needsTextVerification = true,
   });
@@ -114,6 +138,79 @@ class AyahReference {
   String getThemeNote(String languageCode) {
     return themeNote[languageCode] ?? themeNote['tr'] ?? '';
   }
+
+  /// Get Arabic text - returns stored text or fetches from known ayahs
+  String? getArabicText() {
+    if (arabicText != null && arabicText!.isNotEmpty) {
+      return arabicText;
+    }
+    // Return known Arabic texts for common ayahs
+    return _knownArabicTexts['$surahNumber:$ayahStart'];
+  }
+
+  /// Known Arabic texts for frequently referenced ayahs
+  static const Map<String, String> _knownArabicTexts = {
+    // Ar-Ra'd 13:28 - Kalpler ancak Allah'ı anmakla huzur bulur
+    '13:28': 'أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ',
+    // Al-Baqarah 2:286 - Allah kimseye gücünün yetmeyeceği yük yüklemez
+    '2:286': 'لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا',
+    // At-Talaq 65:2-3 - Kim Allah'a tevekkül ederse
+    '65:2': 'وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۞ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ',
+    // Ali Imran 3:173 - Hasbunallah
+    '3:173': 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+    // Ash-Sharh 94:5-6 - Zorlukla beraber kolaylık
+    '94:5': 'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۞ إِنَّ مَعَ الْعُسْرِ يُسْرًا',
+    // Yusuf 12:86 - Hüznümü Allah'a arz ediyorum
+    '12:86': 'إِنَّمَا أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ',
+    // Yusuf 12:87 - Allah'ın rahmetinden ümit kesmeyin
+    '12:87': 'وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ',
+    // Az-Zumar 39:53 - Rahmetinden ümit kesmeyin
+    '39:53': 'قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا',
+    // Ibrahim 14:7 - Şükrederseniz artırırım
+    '14:7': 'لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ',
+    // Ar-Rahman 55:13 - Nimetlerden hangisini yalanlarsınız
+    '55:13': 'فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ',
+    // Al-Baqarah 2:152 - Beni anın
+    '2:152': 'فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ',
+    // Al-Baqarah 2:186 - Ben yakınım
+    '2:186': 'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ',
+    // Al-Hadid 57:4 - Nerede olursanız O sizinle
+    '57:4': 'وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ',
+    // Qaf 50:16 - Şah damarından yakın
+    '50:16': 'وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ',
+    // Ali Imran 3:134 - Öfkelerini yutanlar
+    '3:134': 'وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ',
+    // Ta-Ha 20:25-26 - Rabbim göğsümü aç
+    '20:25': 'رَبِّ اشْرَحْ لِي صَدْرِي ۞ وَيَسِّرْ لِي أَمْرِي',
+    // Al-Fatiha 1:6 - Doğru yola ilet
+    '1:6': 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ',
+    // An-Nur 24:35 - Allah göklerin ve yerin nurudur
+    '24:35': 'اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ',
+    // Ta-Ha 20:114 - Rabbim ilmimi artır
+    '20:114': 'رَّبِّ زِدْنِي عِلْمًا',
+    // Al-Baqarah 2:255 - Ayetel Kursi (beginning)
+    '2:255': 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ',
+    // Al-Fajr 89:27-30 - Ey huzura kavuşmuş nefis
+    '89:27': 'يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ۞ ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً',
+    // Yunus 10:62 - Allah'ın velilerine korku yoktur
+    '10:62': 'أَلَا إِنَّ أَوْلِيَاءَ اللَّهِ لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ',
+    // At-Tawbah 9:51 - Allah'ın yazdığından başkası ulaşmaz
+    '9:51': 'قُل لَّن يُصِيبَنَا إِلَّا مَا كَتَبَ اللَّهُ لَنَا',
+    // At-Tin 95:4 - En güzel biçimde yarattık
+    '95:4': 'لَقَدْ خَلَقْنَا الْإِنسَانَ فِي أَحْسَنِ تَقْوِيمٍ',
+    // Al-Isra 17:70 - Ademoğullarını şerefli kıldık
+    '17:70': 'وَلَقَدْ كَرَّمْنَا بَنِي آدَمَ',
+    // Ali Imran 3:139 - Gevşemeyin üzülmeyin
+    '3:139': 'وَلَا تَهِنُوا وَلَا تَحْزَنُوا وَأَنتُمُ الْأَعْلَوْنَ إِن كُنتُم مُّؤْمِنِينَ',
+    // Ar-Ra'd 13:11 - Bir toplum kendini değiştirmedikçe
+    '13:11': 'إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ',
+    // An-Najm 53:39 - İnsan için ancak çalıştığı vardır
+    '53:39': 'وَأَن لَّيْسَ لِلْإِنسَانِ إِلَّا مَا سَعَىٰ',
+    // Al-Baqarah 2:153 - Sabır ve namazla yardım isteyin
+    '2:153': 'يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ',
+    // Ad-Duha 93:7 - Şaşırmış bulup yola iletti
+    '93:7': 'وَوَجَدَكَ ضَالًّا فَهَدَىٰ',
+  };
 
   String get reference {
     if (ayahEnd != null && ayahEnd != ayahStart) {
@@ -125,16 +222,20 @@ class AyahReference {
   factory AyahReference.fromJson(Map<String, dynamic> json) {
     // Handle surah as either String or int
     String surahStr;
+    int surahNum = 0;
     if (json['surah'] is int) {
-      surahStr = json['surah_name'] as String? ?? 'Surah ${json['surah']}';
+      surahNum = json['surah'] as int;
+      surahStr = json['surah_name'] as String? ?? 'Surah $surahNum';
     } else {
       surahStr = json['surah'] as String? ?? '';
     }
 
     return AyahReference(
       surah: surahStr,
+      surahNumber: surahNum,
       ayahStart: json['ayah'] as int? ?? json['ayah_start'] as int,
       ayahEnd: json['ayah_end'] as int?,
+      arabicText: json['arabic_text'] as String?,
       themeNote: _parseLocalizedMap(json['theme_notes'] ?? json['theme_note'] ?? {}),
       needsTextVerification: json['needs_text_verification'] as bool? ?? true,
     );

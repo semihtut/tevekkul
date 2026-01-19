@@ -345,7 +345,6 @@ class AppTheme {
       primary: AppColors.primary,
       secondary: AppColors.primaryLight,
       surface: AppColors.surfaceLight,
-      background: AppColors.backgroundLight,
       error: AppColors.error,
     ),
     
@@ -424,7 +423,6 @@ class AppTheme {
       primary: AppColors.accentDark,
       secondary: AppColors.primaryLight,
       surface: AppColors.surfaceDark,
-      background: AppColors.backgroundDark,
       error: AppColors.error,
     ),
     

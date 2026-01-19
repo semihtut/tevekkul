@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../services/storage_service.dart';
 
 class SettingsState {
   final ThemeMode themeMode;
@@ -38,38 +39,76 @@ class SettingsState {
 }
 
 class SettingsNotifier extends StateNotifier<SettingsState> {
-  SettingsNotifier() : super(const SettingsState());
+  SettingsNotifier() : super(const SettingsState()) {
+    _loadSettingsFromStorage();
+  }
+
+  void _loadSettingsFromStorage() {
+    final storage = StorageService();
+    final themeModeStr = storage.getThemeMode();
+    ThemeMode themeMode;
+    switch (themeModeStr) {
+      case 'light':
+        themeMode = ThemeMode.light;
+        break;
+      case 'dark':
+        themeMode = ThemeMode.dark;
+        break;
+      default:
+        themeMode = ThemeMode.system;
+    }
+
+    state = SettingsState(
+      themeMode: themeMode,
+      language: storage.getLanguage(),
+      hapticEnabled: storage.getHapticEnabled(),
+      soundEnabled: storage.getSoundEnabled(),
+      notificationsEnabled: storage.getNotificationsEnabled(),
+    );
+  }
 
   void setThemeMode(ThemeMode mode) {
     state = state.copyWith(themeMode: mode);
+    final modeStr = mode == ThemeMode.light ? 'light' : (mode == ThemeMode.dark ? 'dark' : 'system');
+    StorageService().saveThemeMode(modeStr);
   }
 
   void setLanguage(String language) {
     state = state.copyWith(language: language);
+    StorageService().saveLanguage(language);
   }
 
   void setHapticEnabled(bool enabled) {
     state = state.copyWith(hapticEnabled: enabled);
+    StorageService().saveHapticEnabled(enabled);
   }
 
   void setSoundEnabled(bool enabled) {
     state = state.copyWith(soundEnabled: enabled);
+    StorageService().saveSoundEnabled(enabled);
   }
 
   void setNotificationsEnabled(bool enabled) {
     state = state.copyWith(notificationsEnabled: enabled);
+    StorageService().saveNotificationsEnabled(enabled);
   }
 
   void toggleHaptic() {
-    state = state.copyWith(hapticEnabled: !state.hapticEnabled);
+    final newValue = !state.hapticEnabled;
+    state = state.copyWith(hapticEnabled: newValue);
+    StorageService().saveHapticEnabled(newValue);
   }
 
   void toggleSound() {
-    state = state.copyWith(soundEnabled: !state.soundEnabled);
+    final newValue = !state.soundEnabled;
+    state = state.copyWith(soundEnabled: newValue);
+    StorageService().saveSoundEnabled(newValue);
   }
 
   void toggleNotifications() {
-    state = state.copyWith(notificationsEnabled: !state.notificationsEnabled);
+    final newValue = !state.notificationsEnabled;
+    state = state.copyWith(notificationsEnabled: newValue);
+    StorageService().saveNotificationsEnabled(newValue);
   }
 
   void setDefaultTarget(int target) {
