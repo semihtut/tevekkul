@@ -10,6 +10,7 @@ import '../../providers/esma_provider.dart';
 import '../../services/data_loader_service.dart';
 import '../../services/storage_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/animated_ekg.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
 import '../favorites/favorites_screen.dart';
 import '../mood/mood_selection_screen.dart';
@@ -258,16 +259,8 @@ class _HomeContent extends ConsumerWidget {
       children: [
         Row(
           children: [
-            // Mini EKG icon
-            SizedBox(
-              width: 32,
-              height: 20,
-              child: CustomPaint(
-                painter: _MiniEkgPainter(
-                  color: isDark ? lightTealColor : tealColor,
-                ),
-              ),
-            ),
+            // Animated Mini EKG icon
+            const MiniAnimatedEkg(),
             const SizedBox(width: 8),
             // QalbHz styled text
             Text(
@@ -465,38 +458,4 @@ class _HomeContent extends ConsumerWidget {
       ),
     );
   }
-}
-
-class _MiniEkgPainter extends CustomPainter {
-  final Color color;
-
-  _MiniEkgPainter({required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 2
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round;
-
-    final path = Path();
-    final centerY = size.height / 2;
-
-    // Simplified EKG pattern
-    path.moveTo(0, centerY);
-    path.lineTo(size.width * 0.2, centerY);
-    // Main spike
-    path.lineTo(size.width * 0.35, centerY + 3);
-    path.lineTo(size.width * 0.45, centerY - size.height * 0.6);
-    path.lineTo(size.width * 0.55, centerY + size.height * 0.3);
-    path.lineTo(size.width * 0.65, centerY);
-    path.lineTo(size.width, centerY);
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
