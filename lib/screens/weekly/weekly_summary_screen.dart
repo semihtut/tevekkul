@@ -108,8 +108,7 @@ class _WeeklySummaryScreenState extends ConsumerState<WeeklySummaryScreen>
                       title: lang == 'en'
                           ? 'Best Streak'
                           : (lang == 'fi' ? 'Paras putki' : 'En İyi Seri'),
-                      value: '${progress.longestStreak}',
-                      subtitle: AppTranslations.get('days', lang),
+                      value: '${progress.longestStreak} ${AppTranslations.get('days', lang)}',
                       icon: Icons.emoji_events_rounded,
                       color: Colors.amber,
                       isDark: isDark,
