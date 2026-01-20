@@ -16,6 +16,7 @@
       },
       "emoji": "😰",
       "color": "#6B7280",
+      "suggested_esma_id": "al-muhaymin",
       "descriptions": {
         "tr": "Endişe ve huzursuzluk hissi",
         "en": "Feeling of worry and restlessness",
@@ -96,6 +97,7 @@
       },
       "emoji": "😢",
       "color": "#4B5563",
+      "suggested_esma_id": "as-sabur",
       "descriptions": {
         "tr": "Hüzün ve keder hali",
         "en": "State of sorrow and grief",
@@ -176,6 +178,7 @@
       },
       "emoji": "😠",
       "color": "#DC2626",
+      "suggested_esma_id": "al-halim",
       "descriptions": {
         "tr": "Öfke ve kızgınlık hali",
         "en": "State of anger and frustration",
@@ -254,6 +257,7 @@
       },
       "emoji": "😔",
       "color": "#6366F1",
+      "suggested_esma_id": "al-wadud",
       "descriptions": {
         "tr": "Yalnızlık ve kopukluk hissi",
         "en": "Feeling of loneliness and disconnection",
@@ -332,6 +336,7 @@
       },
       "emoji": "😴",
       "color": "#78716C",
+      "suggested_esma_id": "al-qawiyy",
       "descriptions": {
         "tr": "Fiziksel veya ruhsal yorgunluk",
         "en": "Physical or spiritual fatigue",
@@ -411,6 +416,7 @@
       },
       "emoji": "😨",
       "color": "#7C3AED",
+      "suggested_esma_id": "al-hafiz",
       "descriptions": {
         "tr": "Korku ve tedirginlik hali",
         "en": "State of fear and apprehension",
@@ -489,6 +495,7 @@
       },
       "emoji": "😤",
       "color": "#EF4444",
+      "suggested_esma_id": "al-latif",
       "descriptions": {
         "tr": "Baskı ve gerginlik hali",
         "en": "State of pressure and tension",
@@ -569,6 +576,7 @@
       },
       "emoji": "🙏",
       "color": "#F59E0B",
+      "suggested_esma_id": "ash-shakur",
       "descriptions": {
         "tr": "Minnettarlık ve şükür hali",
         "en": "State of gratitude and thankfulness",
@@ -647,6 +655,7 @@
       },
       "emoji": "😌",
       "color": "#22C55E",
+      "suggested_esma_id": "as-salam",
       "descriptions": {
         "tr": "İç huzur ve sükûnet hali",
         "en": "State of inner peace and tranquility",

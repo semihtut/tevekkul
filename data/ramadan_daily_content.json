@@ -1,0 +1,547 @@
+{
+  "ramadan_content": {
+    "description": "30 days of Ramadan-themed verses and recommended Esma",
+    "days": [
+      {
+        "day": 1,
+        "theme": {
+          "tr": "Ramazan'a Hoş Geldin",
+          "en": "Welcome to Ramadan",
+          "fi": "Tervetuloa Ramadaniin"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:185",
+          "arabic": "شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ",
+          "translation": {
+            "tr": "Ramazan ayı, insanlara yol gösterici, hidayeti açıklayıcı ve hak ile batılı ayırt edici olarak Kur'an'ın indirildiği aydır.",
+            "en": "The month of Ramadan in which the Quran was revealed, a guidance for mankind and clear proofs of guidance.",
+            "fi": "Ramadanin kuukausi, jolloin Koraani lähetettiin ihmisille opastukseksi."
+          }
+        },
+        "esma_id": "ar-rahman"
+      },
+      {
+        "day": 2,
+        "theme": {
+          "tr": "Oruç Emri",
+          "en": "The Command of Fasting",
+          "fi": "Paaston käsky"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:183",
+          "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",
+          "translation": {
+            "tr": "Ey iman edenler! Oruç, sizden öncekilere farz kılındığı gibi, size de farz kılındı. Umulur ki korunursunuz.",
+            "en": "O you who believe! Fasting is prescribed for you as it was prescribed for those before you, that you may attain taqwa.",
+            "fi": "Oi te jotka uskotte! Paasto on määrätty teille, kuten se määrättiin ennen teitä olleille."
+          }
+        },
+        "esma_id": "al-quddus"
+      },
+      {
+        "day": 3,
+        "theme": {
+          "tr": "Sabır",
+          "en": "Patience",
+          "fi": "Kärsivällisyys"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:153",
+          "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+          "translation": {
+            "tr": "Ey iman edenler! Sabır ve namazla yardım isteyin. Şüphesiz Allah, sabredenlerle beraberdir.",
+            "en": "O you who believe! Seek help through patience and prayer. Indeed, Allah is with the patient.",
+            "fi": "Oi te jotka uskotte! Etsikää apua kärsivällisyydestä ja rukouksesta. Allah on kärsivällisten kanssa."
+          }
+        },
+        "esma_id": "as-sabur"
+      },
+      {
+        "day": 4,
+        "theme": {
+          "tr": "Dua",
+          "en": "Supplication",
+          "fi": "Rukous"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:186",
+          "arabic": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ",
+          "translation": {
+            "tr": "Kullarım sana beni sorduğunda, şüphesiz ben yakınım. Bana dua edince duacının duasına karşılık veririm.",
+            "en": "When My servants ask you about Me, I am near. I respond to the call of the caller when he calls upon Me.",
+            "fi": "Kun palvelijani kysyvät sinulta Minusta, olen lähellä. Vastaan rukoilijan kutsuun."
+          }
+        },
+        "esma_id": "al-mujib"
+      },
+      {
+        "day": 5,
+        "theme": {
+          "tr": "Şükür",
+          "en": "Gratitude",
+          "fi": "Kiitollisuus"
+        },
+        "ayah": {
+          "reference": "Ibrahim 14:7",
+          "arabic": "لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+          "translation": {
+            "tr": "Andolsun, eğer şükrederseniz elbette size nimetimi artırırım.",
+            "en": "If you are grateful, I will surely increase you in favor.",
+            "fi": "Jos olette kiitollisia, lisään varmasti teille."
+          }
+        },
+        "esma_id": "ash-shakur"
+      },
+      {
+        "day": 6,
+        "theme": {
+          "tr": "Tövbe",
+          "en": "Repentance",
+          "fi": "Katumus"
+        },
+        "ayah": {
+          "reference": "Az-Zumar 39:53",
+          "arabic": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ",
+          "translation": {
+            "tr": "De ki: Ey kendilerine kötülük edip aşırı giden kullarım! Allah'ın rahmetinden umudunuzu kesmeyin.",
+            "en": "Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah.",
+            "fi": "Sano: Oi palvelijani, jotka olette tehneet väärin itseänne kohtaan, älkää menettäkö toivoanne Allahin armosta."
+          }
+        },
+        "esma_id": "at-tawwab"
+      },
+      {
+        "day": 7,
+        "theme": {
+          "tr": "Rahmet",
+          "en": "Mercy",
+          "fi": "Armo"
+        },
+        "ayah": {
+          "reference": "Al-A'raf 7:156",
+          "arabic": "وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ",
+          "translation": {
+            "tr": "Rahmetim her şeyi kuşatmıştır.",
+            "en": "My mercy encompasses all things.",
+            "fi": "Armoni kattaa kaiken."
+          }
+        },
+        "esma_id": "ar-rahim"
+      },
+      {
+        "day": 8,
+        "theme": {
+          "tr": "Tevekkül",
+          "en": "Trust in Allah",
+          "fi": "Luottamus Allahiin"
+        },
+        "ayah": {
+          "reference": "At-Talaq 65:3",
+          "arabic": "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+          "translation": {
+            "tr": "Kim Allah'a tevekkül ederse, O ona yeter.",
+            "en": "Whoever puts their trust in Allah, He will be sufficient for them.",
+            "fi": "Kuka ikinä luottaa Allahiin, Hän riittää hänelle."
+          }
+        },
+        "esma_id": "al-wakil"
+      },
+      {
+        "day": 9,
+        "theme": {
+          "tr": "Namaz",
+          "en": "Prayer",
+          "fi": "Rukous"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:238",
+          "arabic": "حَافِظُوا عَلَى الصَّلَوَاتِ وَالصَّلَاةِ الْوُسْطَىٰ وَقُومُوا لِلَّهِ قَانِتِينَ",
+          "translation": {
+            "tr": "Namazlara ve orta namaza devam edin. Allah için divan durun.",
+            "en": "Maintain your prayers, especially the middle prayer, and stand before Allah in devotion.",
+            "fi": "Pitäkää kiinni rukouksistanne, erityisesti keskimmäisestä rukouksesta."
+          }
+        },
+        "esma_id": "as-sami"
+      },
+      {
+        "day": 10,
+        "theme": {
+          "tr": "İlk 10 Gün: Rahmet",
+          "en": "First 10 Days: Mercy",
+          "fi": "Ensimmäiset 10 päivää: Armo"
+        },
+        "ayah": {
+          "reference": "Al-Anbiya 21:107",
+          "arabic": "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ",
+          "translation": {
+            "tr": "Seni ancak âlemlere rahmet olarak gönderdik.",
+            "en": "We have not sent you except as a mercy to the worlds.",
+            "fi": "Emme lähettäneet sinua muuten kuin armona maailmoille."
+          }
+        },
+        "esma_id": "ar-rahman"
+      },
+      {
+        "day": 11,
+        "theme": {
+          "tr": "Mağfiret Günleri Başlıyor",
+          "en": "Days of Forgiveness Begin",
+          "fi": "Anteeksiannon päivät alkavat"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:199",
+          "arabic": "وَاسْتَغْفِرُوا اللَّهَ إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",
+          "translation": {
+            "tr": "Allah'tan bağışlanma dileyin. Şüphesiz Allah çok bağışlayıcı, çok merhamet edicidir.",
+            "en": "Seek forgiveness from Allah. Indeed, Allah is Forgiving and Merciful.",
+            "fi": "Pyytäkää Allahilta anteeksiantoa. Allah on totisesti Anteeksiantava, Armollinen."
+          }
+        },
+        "esma_id": "al-ghaffar"
+      },
+      {
+        "day": 12,
+        "theme": {
+          "tr": "Kur'an Okumak",
+          "en": "Reading Quran",
+          "fi": "Koraanin lukeminen"
+        },
+        "ayah": {
+          "reference": "Al-Isra 17:9",
+          "arabic": "إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ",
+          "translation": {
+            "tr": "Şüphesiz bu Kur'an en doğru yola iletir.",
+            "en": "Indeed, this Quran guides to that which is most suitable.",
+            "fi": "Tämä Koraani ohjaa siihen, mikä on oikeinta."
+          }
+        },
+        "esma_id": "al-hadi"
+      },
+      {
+        "day": 13,
+        "theme": {
+          "tr": "İnfak",
+          "en": "Charity",
+          "fi": "Hyväntekeväisyys"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:261",
+          "arabic": "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ",
+          "translation": {
+            "tr": "Mallarını Allah yolunda harcayanların durumu, yedi başak veren bir dane gibidir.",
+            "en": "The example of those who spend their wealth in the way of Allah is like a seed which grows seven ears.",
+            "fi": "Niiden esimerkki, jotka käyttävät varojaan Allahin tiellä, on kuin siemen, josta kasvaa seitsemän tähkää."
+          }
+        },
+        "esma_id": "ar-razzaq"
+      },
+      {
+        "day": 14,
+        "theme": {
+          "tr": "Güzel Ahlak",
+          "en": "Good Character",
+          "fi": "Hyvä luonne"
+        },
+        "ayah": {
+          "reference": "Al-Qalam 68:4",
+          "arabic": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+          "translation": {
+            "tr": "Ve sen elbette yüce bir ahlak üzeresin.",
+            "en": "And indeed, you are of a great moral character.",
+            "fi": "Ja sinulla on totisesti ylevä luonne."
+          }
+        },
+        "esma_id": "al-karim"
+      },
+      {
+        "day": 15,
+        "theme": {
+          "tr": "Orta Nokta",
+          "en": "Halfway Point",
+          "fi": "Puoliväli"
+        },
+        "ayah": {
+          "reference": "Al-Inshirah 94:5-6",
+          "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translation": {
+            "tr": "Muhakkak ki zorlukla beraber kolaylık vardır. Şüphesiz zorlukla beraber kolaylık vardır.",
+            "en": "For indeed, with hardship comes ease. Indeed, with hardship comes ease.",
+            "fi": "Vaikeuden kanssa tulee helpotus. Vaikeuden kanssa tulee helpotus."
+          }
+        },
+        "esma_id": "al-latif"
+      },
+      {
+        "day": 16,
+        "theme": {
+          "tr": "Zikir",
+          "en": "Remembrance",
+          "fi": "Muistaminen"
+        },
+        "ayah": {
+          "reference": "Ar-Ra'd 13:28",
+          "arabic": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+          "translation": {
+            "tr": "Biliniz ki kalpler ancak Allah'ı anmakla huzur bulur.",
+            "en": "Verily, in the remembrance of Allah do hearts find rest.",
+            "fi": "Allahin muistamisessa sydämet löytävät rauhan."
+          }
+        },
+        "esma_id": "al-wadud"
+      },
+      {
+        "day": 17,
+        "theme": {
+          "tr": "İlim",
+          "en": "Knowledge",
+          "fi": "Tieto"
+        },
+        "ayah": {
+          "reference": "Ta-Ha 20:114",
+          "arabic": "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+          "translation": {
+            "tr": "Ve de ki: Rabbim, ilmimi artır.",
+            "en": "And say: My Lord, increase me in knowledge.",
+            "fi": "Ja sano: Herrani, lisää tietoani."
+          }
+        },
+        "esma_id": "al-alim"
+      },
+      {
+        "day": 18,
+        "theme": {
+          "tr": "Hidayet",
+          "en": "Guidance",
+          "fi": "Opastus"
+        },
+        "ayah": {
+          "reference": "Al-Fatiha 1:6",
+          "arabic": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+          "translation": {
+            "tr": "Bizi doğru yola ilet.",
+            "en": "Guide us to the straight path.",
+            "fi": "Ohjaa meitä suoralle tielle."
+          }
+        },
+        "esma_id": "al-hadi"
+      },
+      {
+        "day": 19,
+        "theme": {
+          "tr": "Nur",
+          "en": "Light",
+          "fi": "Valo"
+        },
+        "ayah": {
+          "reference": "An-Nur 24:35",
+          "arabic": "اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",
+          "translation": {
+            "tr": "Allah, göklerin ve yerin nurudur.",
+            "en": "Allah is the Light of the heavens and the earth.",
+            "fi": "Allah on taivaan ja maan valo."
+          }
+        },
+        "esma_id": "an-nur"
+      },
+      {
+        "day": 20,
+        "theme": {
+          "tr": "Kurtuluş Günleri",
+          "en": "Days of Salvation",
+          "fi": "Pelastuksen päivät"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:185",
+          "arabic": "يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ وَلَا يُرِيدُ بِكُمُ الْعُسْرَ",
+          "translation": {
+            "tr": "Allah sizin için kolaylık ister, zorluk istemez.",
+            "en": "Allah intends for you ease and does not intend for you hardship.",
+            "fi": "Allah haluaa teille helppoutta, ei vaikeutta."
+          }
+        },
+        "esma_id": "al-barr"
+      },
+      {
+        "day": 21,
+        "theme": {
+          "tr": "Kadir Gecesi Yaklaşıyor",
+          "en": "Laylat al-Qadr Approaches",
+          "fi": "Laylat al-Qadr lähestyy"
+        },
+        "ayah": {
+          "reference": "Al-Qadr 97:1-3",
+          "arabic": "إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+          "translation": {
+            "tr": "Biz onu Kadir gecesinde indirdik. Kadir gecesinin ne olduğunu sen bilir misin? Kadir gecesi bin aydan hayırlıdır.",
+            "en": "Indeed, We sent it down during the Night of Decree. And what can make you know what the Night of Decree is? The Night of Decree is better than a thousand months.",
+            "fi": "Me lähetimme sen alas Määräyksen yönä. Mikä voi saada sinut tietämään, mikä Määräyksen yö on? Määräyksen yö on parempi kuin tuhat kuukautta."
+          }
+        },
+        "esma_id": "al-malik"
+      },
+      {
+        "day": 22,
+        "theme": {
+          "tr": "Gece İbadeti",
+          "en": "Night Worship",
+          "fi": "Yöpalvonta"
+        },
+        "ayah": {
+          "reference": "Al-Muzzammil 73:6",
+          "arabic": "إِنَّ نَاشِئَةَ اللَّيْلِ هِيَ أَشَدُّ وَطْئًا وَأَقْوَمُ قِيلًا",
+          "translation": {
+            "tr": "Şüphesiz gece kalkışı, daha tesirli ve sözce daha sağlamdır.",
+            "en": "Indeed, the hours of the night are more effective and more suitable for recitation.",
+            "fi": "Yön tunnit ovat vaikuttavampia ja sopivampia resitaatioon."
+          }
+        },
+        "esma_id": "al-qayyum"
+      },
+      {
+        "day": 23,
+        "theme": {
+          "tr": "Tek Gece (23. Gece)",
+          "en": "Odd Night (23rd Night)",
+          "fi": "Pariton yö (23. yö)"
+        },
+        "ayah": {
+          "reference": "Ad-Dukhan 44:3-4",
+          "arabic": "إِنَّا أَنزَلْنَاهُ فِي لَيْلَةٍ مُّبَارَكَةٍ إِنَّا كُنَّا مُنذِرِينَ فِيهَا يُفْرَقُ كُلُّ أَمْرٍ حَكِيمٍ",
+          "translation": {
+            "tr": "Biz onu mübarek bir gecede indirdik. Şüphesiz biz uyarıcıyızdır. Her hikmetli iş o gecede ayrılır.",
+            "en": "Indeed, We sent it down during a blessed night. We were to warn. On that night, every wise affair is determined.",
+            "fi": "Me lähetimme sen siunatun yön aikana. Me varoitimme. Sinä yönä jokainen viisas asia määrätään."
+          }
+        },
+        "esma_id": "al-hakim"
+      },
+      {
+        "day": 24,
+        "theme": {
+          "tr": "İstiğfar",
+          "en": "Seeking Forgiveness",
+          "fi": "Anteeksiannon etsiminen"
+        },
+        "ayah": {
+          "reference": "Nuh 71:10-12",
+          "arabic": "فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا",
+          "translation": {
+            "tr": "Dedim ki: Rabbinizden bağışlanma dileyin; çünkü O çok bağışlayıcıdır.",
+            "en": "I said: Ask forgiveness of your Lord. Indeed, He is ever a Forgiver.",
+            "fi": "Sanoin: Pyytäkää Herraltanne anteeksiantoa. Hän on totisesti Anteeksiantaja."
+          }
+        },
+        "esma_id": "al-ghafur"
+      },
+      {
+        "day": 25,
+        "theme": {
+          "tr": "Tek Gece (25. Gece)",
+          "en": "Odd Night (25th Night)",
+          "fi": "Pariton yö (25. yö)"
+        },
+        "ayah": {
+          "reference": "Al-Qadr 97:4-5",
+          "arabic": "تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ",
+          "translation": {
+            "tr": "Melekler ve Ruh o gecede Rablerinin izniyle her iş için iner. O gece tan yeri ağarıncaya kadar esenlik ve selamdır.",
+            "en": "The angels and the Spirit descend therein by permission of their Lord for every matter. Peace it is until the emergence of dawn.",
+            "fi": "Enkelit ja Henki laskeutuvat sinä yönä Herransa luvalla joka asiassa. Rauha on aamunkoittoon asti."
+          }
+        },
+        "esma_id": "as-salam"
+      },
+      {
+        "day": 26,
+        "theme": {
+          "tr": "Son Günler",
+          "en": "Final Days",
+          "fi": "Viimeiset päivät"
+        },
+        "ayah": {
+          "reference": "Al-Hashr 59:18",
+          "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَلْتَنظُرْ نَفْسٌ مَّا قَدَّمَتْ لِغَدٍ",
+          "translation": {
+            "tr": "Ey iman edenler! Allah'tan korkun ve kişi yarına ne hazırladığına baksın.",
+            "en": "O you who believe! Fear Allah and let every soul look to what it has sent forth for tomorrow.",
+            "fi": "Oi te jotka uskotte! Pelkäkää Allahia ja katsokoon jokainen sielu, mitä se on lähettänyt huomiselle."
+          }
+        },
+        "esma_id": "al-basir"
+      },
+      {
+        "day": 27,
+        "theme": {
+          "tr": "Tek Gece (27. Gece - En Muhtemel)",
+          "en": "Odd Night (27th - Most Likely)",
+          "fi": "Pariton yö (27. - Todennäköisin)"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:186",
+          "arabic": "فَلْيَسْتَجِيبُوا لِي وَلْيُؤْمِنُوا بِي لَعَلَّهُمْ يَرْشُدُونَ",
+          "translation": {
+            "tr": "O halde bana karşılık versinler ve bana iman etsinler ki doğru yolu bulabilsinler.",
+            "en": "So let them respond to Me and believe in Me that they may be guided.",
+            "fi": "Niin vastatkoot Minulle ja uskokoot Minuun, jotta he löytäisivät oikean tien."
+          }
+        },
+        "esma_id": "al-mumin"
+      },
+      {
+        "day": 28,
+        "theme": {
+          "tr": "Şükür",
+          "en": "Thanksgiving",
+          "fi": "Kiitollisuus"
+        },
+        "ayah": {
+          "reference": "Al-Baqarah 2:185",
+          "arabic": "وَلِتُكْمِلُوا الْعِدَّةَ وَلِتُكَبِّرُوا اللَّهَ عَلَىٰ مَا هَدَاكُمْ وَلَعَلَّكُمْ تَشْكُرُونَ",
+          "translation": {
+            "tr": "Sayıyı tamamlamanız ve sizi doğru yola iletmesine karşılık Allah'ı tekbir etmeniz içindir. Umulur ki şükredersiniz.",
+            "en": "To complete the prescribed period and to glorify Allah for guiding you, that perhaps you will be grateful.",
+            "fi": "Täyttääksenne määrätyn ajan ja ylistääksenne Allahia ohjauksesta, ehkä olisitte kiitollisia."
+          }
+        },
+        "esma_id": "ash-shakur"
+      },
+      {
+        "day": 29,
+        "theme": {
+          "tr": "Veda Yaklaşıyor",
+          "en": "Farewell Approaches",
+          "fi": "Jäähyväiset lähestyvät"
+        },
+        "ayah": {
+          "reference": "Ali Imran 3:133",
+          "arabic": "وَسَارِعُوا إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا السَّمَاوَاتُ وَالْأَرْضُ",
+          "translation": {
+            "tr": "Rabbinizden bir bağışlanmaya ve genişliği gökler ve yer kadar olan cennete koşun.",
+            "en": "Race toward forgiveness from your Lord and a Garden whose width is the heavens and earth.",
+            "fi": "Kilpailkaa kohti Herranne anteeksiantoa ja Paratiisia, jonka leveys on taivaat ja maa."
+          }
+        },
+        "esma_id": "al-wahhab"
+      },
+      {
+        "day": 30,
+        "theme": {
+          "tr": "Bayrama Hazırlık",
+          "en": "Preparing for Eid",
+          "fi": "Valmistautuminen Eidiin"
+        },
+        "ayah": {
+          "reference": "Al-A'la 87:14-15",
+          "arabic": "قَدْ أَفْلَحَ مَن تَزَكَّىٰ وَذَكَرَ اسْمَ رَبِّهِ فَصَلَّىٰ",
+          "translation": {
+            "tr": "Temizlenen ve Rabbinin adını anıp namaz kılan kimse gerçekten kurtuluşa ermiştir.",
+            "en": "He has certainly succeeded who purifies himself, and mentions the name of his Lord and prays.",
+            "fi": "Hän on totisesti menestynyt, joka puhdistautuu ja mainitsee Herransa nimen ja rukoilee."
+          }
+        },
+        "esma_id": "al-quddus"
+      }
+    ]
+  }
+}

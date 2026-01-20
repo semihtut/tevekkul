@@ -10,6 +10,7 @@ class EsmaModel {
   final List<String> themes;
   final List<int> suggestedCounts;
   final Map<String, String> reflectionPrompts; // tr, en, fi
+  final Map<String, String> purposes; // tr, en, fi - what the name is recited for
   final bool isFavorite;
 
   const EsmaModel({
@@ -24,6 +25,7 @@ class EsmaModel {
     this.themes = const [],
     this.suggestedCounts = const [99, 100],
     this.reflectionPrompts = const {},
+    this.purposes = const {},
     this.isFavorite = false,
   });
 
@@ -39,6 +41,7 @@ class EsmaModel {
     List<String>? themes,
     List<int>? suggestedCounts,
     Map<String, String>? reflectionPrompts,
+    Map<String, String>? purposes,
     bool? isFavorite,
   }) {
     return EsmaModel(
@@ -53,6 +56,7 @@ class EsmaModel {
       themes: themes ?? this.themes,
       suggestedCounts: suggestedCounts ?? this.suggestedCounts,
       reflectionPrompts: reflectionPrompts ?? this.reflectionPrompts,
+      purposes: purposes ?? this.purposes,
       isFavorite: isFavorite ?? this.isFavorite,
     );
   }
@@ -63,6 +67,10 @@ class EsmaModel {
 
   String getReflectionPrompt(String languageCode) {
     return reflectionPrompts[languageCode] ?? reflectionPrompts['tr'] ?? '';
+  }
+
+  String getPurpose(String languageCode) {
+    return purposes[languageCode] ?? purposes['tr'] ?? '';
   }
 
   Map<String, dynamic> toJson() {

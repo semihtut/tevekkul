@@ -7,6 +7,7 @@ import '../../config/app_typography.dart';
 import '../../providers/dhikr_provider.dart';
 import '../../providers/user_progress_provider.dart';
 import '../../providers/settings_provider.dart';
+import '../../services/sound_service.dart';
 import '../../widgets/counter/circular_counter.dart';
 import '../../widgets/counter/tap_area.dart';
 import '../../widgets/counter/target_selector.dart';
@@ -206,8 +207,25 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
   }
 
   void _handleTap(WidgetRef ref, SettingsState settings) {
+    final dhikrState = ref.read(dhikrProvider);
+    final soundService = SoundService();
+
+    // Update sound service enabled state
+    soundService.setEnabled(settings.soundEnabled);
+
+    // Play tick sound
+    soundService.playTickSound();
+
+    // Increment counter
     ref.read(dhikrProvider.notifier).increment();
     ref.read(userProgressProvider.notifier).incrementDhikr(1);
+
+    // Check if target reached (after increment)
+    final newCount = dhikrState.currentCount + 1;
+    if (dhikrState.targetCount != AppConstants.infiniteTarget &&
+        newCount >= dhikrState.targetCount) {
+      soundService.playDoneSound();
+    }
   }
 
   void _showResetDialog(BuildContext context, WidgetRef ref, String lang) {

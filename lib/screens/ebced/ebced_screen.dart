@@ -9,6 +9,8 @@ import '../../providers/settings_provider.dart';
 import '../../services/ebced_service.dart';
 import '../../services/data_loader_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/custom_snackbar.dart';
+import '../../providers/esma_provider.dart';
 
 class EbcedScreen extends ConsumerStatefulWidget {
   const EbcedScreen({super.key});
@@ -36,6 +38,8 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
   Future<void> _loadEsmaList() async {
     final list = await DataLoaderService().loadEsmaList();
     if (mounted) {
+      // Also set to provider for favorite functionality
+      ref.read(esmaProvider.notifier).setEsmaList(list);
       setState(() {
         _esmaList = list;
         _isLoading = false;
@@ -186,6 +190,7 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
                       // Input Field
                       TextField(
                         controller: _controller,
+                        maxLength: 100,
                         style: const TextStyle(
                           fontSize: 16,
                           color: Color(0xFF134E4A),
@@ -284,24 +289,32 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: AppConstants.spacingM),
-                                // Esma Abjad value chip
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: AppConstants.spacingM,
-                                    vertical: AppConstants.spacingS,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    gradient: AppColors.primaryGradient,
-                                    borderRadius: BorderRadius.circular(
-                                      AppConstants.radiusFull,
+                                // Esma Abjad value chip and favorite button
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: AppConstants.spacingM,
+                                        vertical: AppConstants.spacingS,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        gradient: AppColors.primaryGradient,
+                                        borderRadius: BorderRadius.circular(
+                                          AppConstants.radiusFull,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Esma Ebced: ${_matchingEsma!.abjadValue}',
+                                        style: AppTypography.labelMedium.copyWith(
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  child: Text(
-                                    'Esma Ebced: ${_matchingEsma!.abjadValue}',
-                                    style: AppTypography.labelMedium.copyWith(
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                                    const SizedBox(width: AppConstants.spacingM),
+                                    // Favorite button
+                                    _buildFavoriteButton(isDark, lang),
+                                  ],
                                 ),
                               ],
                             ],
@@ -545,6 +558,56 @@ class _EbcedScreenState extends ConsumerState<EbcedScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildFavoriteButton(bool isDark, String lang) {
+    // Get current favorite status from esmaProvider
+    final esmaState = ref.watch(esmaProvider);
+    final currentEsma = esmaState.esmaList.firstWhere(
+      (e) => e.id == _matchingEsma!.id,
+      orElse: () => _matchingEsma!,
+    );
+    final isFavorite = currentEsma.isFavorite;
+
+    return GestureDetector(
+      onTap: () {
+        ref.read(esmaProvider.notifier).toggleFavorite(_matchingEsma!.id);
+        final message = isFavorite
+            ? AppTranslations.get('removed_from_favorites', lang)
+            : AppTranslations.get('added_to_favorites', lang);
+        if (isFavorite) {
+          CustomSnackbar.showFavoriteRemoved(context, message);
+        } else {
+          CustomSnackbar.showFavoriteAdded(context, message);
+        }
+      },
+      child: Container(
+        width: 44,
+        height: 44,
+        decoration: BoxDecoration(
+          color: isFavorite
+              ? Colors.pink.withValues(alpha: 0.15)
+              : (isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : Colors.grey.withValues(alpha: 0.1)),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isFavorite
+                ? Colors.pink.withValues(alpha: 0.3)
+                : (isDark
+                    ? Colors.white.withValues(alpha: 0.2)
+                    : Colors.grey.withValues(alpha: 0.2)),
+          ),
+        ),
+        child: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: isFavorite
+              ? Colors.pink
+              : (isDark ? Colors.white70 : Colors.grey),
+          size: 22,
+        ),
       ),
     );
   }

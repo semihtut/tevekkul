@@ -37,6 +37,9 @@ dependencies:
   # Utilities
   uuid: ^4.2.2
 
+  # HTTP
+  http: ^1.1.0
+
   # Icons
   cupertino_icons: ^1.0.6
 
@@ -55,3 +58,4 @@ flutter:
 
   assets:
     - data/
+    - assets/sounds/

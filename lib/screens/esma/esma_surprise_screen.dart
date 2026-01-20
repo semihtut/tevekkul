@@ -8,7 +8,12 @@ import '../../models/esma_model.dart';
 import '../../providers/esma_provider.dart';
 import '../../providers/settings_provider.dart';
 import '../../services/data_loader_service.dart';
+import '../../services/sound_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/custom_snackbar.dart';
+import '../../models/dhikr_model.dart';
+import '../../providers/dhikr_provider.dart';
+import '../home/home_screen.dart';
 
 class EsmaSurpriseScreen extends ConsumerStatefulWidget {
   const EsmaSurpriseScreen({super.key});
@@ -19,6 +24,7 @@ class EsmaSurpriseScreen extends ConsumerStatefulWidget {
 
 class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
   bool _isLoading = true;
+  bool _showDisclaimer = false;
 
   @override
   void initState() {
@@ -31,6 +37,13 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
     if (mounted) {
       ref.read(esmaProvider.notifier).setEsmaList(esmaList);
       ref.read(esmaProvider.notifier).generateSurpriseEsma();
+
+      // Play reveal sound
+      final settings = ref.read(settingsProvider);
+      final soundService = SoundService();
+      soundService.setEnabled(settings.soundEnabled);
+      soundService.playRevealSound();
+
       setState(() {
         _isLoading = false;
       });
@@ -103,12 +116,11 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
                             final message = currentEsma.isFavorite
                                 ? AppTranslations.get('removed_from_favorites', lang)
                                 : AppTranslations.get('added_to_favorites', lang);
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(message),
-                                behavior: SnackBarBehavior.floating,
-                              ),
-                            );
+                            if (currentEsma.isFavorite) {
+                              CustomSnackbar.showFavoriteRemoved(context, message);
+                            } else {
+                              CustomSnackbar.showFavoriteAdded(context, message);
+                            }
                           },
                         ),
                       ),
@@ -116,11 +128,30 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
                       Expanded(
                         child: _buildActionButton(
                           icon: Icons.play_arrow_rounded,
-                          label: AppTranslations.get('start', lang),
+                          label: AppTranslations.get('start_dhikr', lang),
                           isDark: isDark,
                           isPrimary: true,
                           onTap: () {
-                            Navigator.pop(context);
+                            // Convert Esma to DhikrModel and start dhikr
+                            // Use Esma's abjad value as the target (e.g., Ar-Raqib = 312)
+                            final dhikr = DhikrModel(
+                              id: 'esma_${currentEsma.id}',
+                              arabic: currentEsma.arabic,
+                              transliteration: currentEsma.transliteration,
+                              meaning: currentEsma.meaning,
+                              defaultTarget: currentEsma.abjadValue,
+                            );
+                            ref.read(dhikrProvider.notifier).selectDhikr(dhikr);
+                            // Set target to Esma's abjad value
+                            ref.read(dhikrProvider.notifier).setTarget(currentEsma.abjadValue);
+                            // Navigate to home and switch to zikirmatik tab
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                builder: (_) => const HomeScreen(),
+                                settings: const RouteSettings(arguments: 1), // zikirmatik tab index
+                              ),
+                              (route) => false,
+                            );
                           },
                         ),
                       ),
@@ -166,6 +197,10 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
         const Spacer(),
         GestureDetector(
           onTap: () {
+            final settings = ref.read(settingsProvider);
+            final soundService = SoundService();
+            soundService.setEnabled(settings.soundEnabled);
+            soundService.playRevealSound();
             ref.read(esmaProvider.notifier).generateSurpriseEsma();
           },
           child: Container(
@@ -291,6 +326,50 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
                   textAlign: TextAlign.center,
                 ),
 
+                // Purpose/Benefit section
+                if (esma.getPurpose(lang).isNotEmpty) ...[
+                  const SizedBox(height: AppConstants.spacingM),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppConstants.spacingM,
+                      vertical: AppConstants.spacingS,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                          const Color(0xFF0D9488).withValues(alpha: 0.1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.auto_awesome,
+                          size: 16,
+                          color: isDark ? AppColors.accentDark : AppColors.primary,
+                        ),
+                        const SizedBox(width: 8),
+                        Flexible(
+                          child: Text(
+                            esma.getPurpose(lang),
+                            style: AppTypography.bodySmall.copyWith(
+                              color: isDark ? AppColors.accentDark : AppColors.primary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+
                 const SizedBox(height: AppConstants.spacingL),
 
                 // Ebced Value Chip
@@ -344,7 +423,7 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
                   const SizedBox(height: AppConstants.spacingL),
                 ],
 
-                // Suggested Counts
+                // Suggested Count based on Ebced Value
                 Text(
                   AppTranslations.get('suggested_repetition', lang),
                   style: AppTypography.labelSmall.copyWith(
@@ -352,44 +431,124 @@ class _EsmaSurpriseScreenState extends ConsumerState<EsmaSurpriseScreen> {
                   ),
                 ),
                 const SizedBox(height: AppConstants.spacingS),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: esma.suggestedCounts.take(3).map((count) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: _buildCountChip(count, isDark, lang),
-                    );
-                  }).toList(),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppConstants.spacingL,
+                    vertical: AppConstants.spacingM,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                        const Color(0xFF0D9488).withValues(alpha: 0.15),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.refresh_rounded,
+                        size: 20,
+                        color: isDark ? AppColors.accentDark : AppColors.primary,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '${esma.abjadValue} ${AppTranslations.get('times', lang)}',
+                        style: AppTypography.headingSmall.copyWith(
+                          color: isDark ? AppColors.accentDark : AppColors.primary,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
+
+          // Collapsible Disclaimer
+          const SizedBox(height: AppConstants.spacingL),
+          _buildDisclaimer(isDark, lang),
         ],
       ),
     );
   }
 
-  Widget _buildCountChip(int count, bool isDark, String lang) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppConstants.spacingM,
-        vertical: AppConstants.spacingS,
-      ),
-      decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : Colors.white,
-        borderRadius: BorderRadius.circular(AppConstants.radiusFull),
-        border: Border.all(
+  Widget _buildDisclaimer(bool isDark, String lang) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _showDisclaimer = !_showDisclaimer;
+        });
+      },
+      child: Container(
+        padding: const EdgeInsets.all(AppConstants.spacingM),
+        decoration: BoxDecoration(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : Colors.grey.withValues(alpha: 0.2),
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.grey.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.grey.withValues(alpha: 0.1),
+          ),
         ),
-      ),
-      child: Text(
-        '$count ${AppTranslations.get('times', lang)}',
-        style: AppTypography.labelMedium.copyWith(
-          color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.info_outline,
+                  size: 14,
+                  color: isDark
+                      ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
+                      : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  AppTranslations.get('scholarly_note', lang),
+                  style: AppTypography.labelSmall.copyWith(
+                    color: isDark
+                        ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
+                        : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                    fontSize: 11,
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Icon(
+                  _showDisclaimer
+                      ? Icons.keyboard_arrow_up
+                      : Icons.keyboard_arrow_down,
+                  size: 16,
+                  color: isDark
+                      ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
+                      : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                ),
+              ],
+            ),
+            if (_showDisclaimer) ...[
+              const SizedBox(height: AppConstants.spacingS),
+              Text(
+                AppTranslations.get('scholarly_disclaimer', lang),
+                style: AppTypography.bodySmall.copyWith(
+                  color: isDark
+                      ? AppColors.textSecondaryDark.withValues(alpha: 0.7)
+                      : AppColors.textSecondaryLight.withValues(alpha: 0.7),
+                  fontSize: 11,
+                  height: 1.4,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ],
         ),
       ),
     );

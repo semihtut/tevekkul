@@ -5,7 +5,9 @@ class SoundService {
   factory SoundService() => _instance;
   SoundService._internal();
 
-  final AudioPlayer _audioPlayer = AudioPlayer();
+  final AudioPlayer _tickPlayer = AudioPlayer();
+  final AudioPlayer _donePlayer = AudioPlayer();
+  final AudioPlayer _revealPlayer = AudioPlayer();
   bool _isEnabled = false;
 
   void setEnabled(bool enabled) {
@@ -14,38 +16,40 @@ class SoundService {
 
   bool get isEnabled => _isEnabled;
 
-  /// Play a soft click sound for dhikr tap
-  Future<void> playTapSound() async {
+  /// Play tick sound for dhikr tap
+  Future<void> playTickSound() async {
     if (!_isEnabled) return;
     try {
-      await _audioPlayer.play(AssetSource('sounds/tap.mp3'));
+      await _tickPlayer.play(AssetSource('sounds/tick-tock-94356.mp3'));
     } catch (e) {
       // Silently fail if sound file not found
     }
   }
 
   /// Play completion sound when target is reached
-  Future<void> playCompletionSound() async {
+  Future<void> playDoneSound() async {
     if (!_isEnabled) return;
     try {
-      await _audioPlayer.play(AssetSource('sounds/complete.mp3'));
+      await _donePlayer.play(AssetSource('sounds/done-463074.mp3'));
     } catch (e) {
       // Silently fail if sound file not found
     }
   }
 
-  /// Play milestone sound (e.g., every 33 counts)
-  Future<void> playMilestoneSound() async {
+  /// Play reveal sound for Esma Surprise
+  Future<void> playRevealSound() async {
     if (!_isEnabled) return;
     try {
-      await _audioPlayer.play(AssetSource('sounds/milestone.mp3'));
+      await _revealPlayer.play(AssetSource('sounds/magical-reveal-start-388923.mp3'));
     } catch (e) {
       // Silently fail if sound file not found
     }
   }
 
-  /// Dispose the audio player
+  /// Dispose all audio players
   void dispose() {
-    _audioPlayer.dispose();
+    _tickPlayer.dispose();
+    _donePlayer.dispose();
+    _revealPlayer.dispose();
   }
 }

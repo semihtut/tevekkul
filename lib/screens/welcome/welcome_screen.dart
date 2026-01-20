@@ -7,6 +7,8 @@ import '../../config/app_typography.dart';
 import '../../providers/settings_provider.dart';
 import '../../services/storage_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/animated_ekg.dart';
+import '../../widgets/common/custom_snackbar.dart';
 import '../home/home_screen.dart';
 
 class WelcomeScreen extends ConsumerStatefulWidget {
@@ -36,17 +38,13 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
   Future<void> _continue() async {
     final name = _nameController.text.trim();
     if (name.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            _selectedLanguage == 'en'
-                ? 'Please enter your name'
-                : (_selectedLanguage == 'fi'
-                    ? 'Kirjoita nimesi'
-                    : 'Lütfen isminizi girin'),
-          ),
-          backgroundColor: Colors.red.shade400,
-        ),
+      CustomSnackbar.showError(
+        context,
+        _selectedLanguage == 'en'
+            ? 'Please enter your name'
+            : (_selectedLanguage == 'fi'
+                ? 'Kirjoita nimesi'
+                : 'Lütfen isminizi girin'),
       );
       return;
     }
@@ -77,14 +75,16 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
         ? mediaQuery.viewPadding.bottom
         : 24.0;
 
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: isDark
-              ? AppColors.backgroundGradientDark
-              : AppColors.backgroundGradientLight,
-        ),
-        child: SafeArea(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: isDark
+                ? AppColors.backgroundGradientDark
+                : AppColors.backgroundGradientLight,
+          ),
+          child: SafeArea(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
               AppConstants.spacingL,
@@ -100,8 +100,11 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                       children: [
                         const SizedBox(height: AppConstants.spacingXXL),
 
-                        // EKG Logo
-                        _buildEkgLogo(isDark),
+                        // Animated EKG Logo
+                        const AnimatedEkg(
+                          width: 120,
+                          height: 60,
+                        ),
                         const SizedBox(height: AppConstants.spacingL),
 
                         // App Title - QalbHz
@@ -196,6 +199,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                           child: TextField(
                             controller: _nameController,
                             textCapitalization: TextCapitalization.words,
+                            maxLength: 50,
                             style: TextStyle(
                               fontSize: 16,
                               color: isDark
@@ -321,20 +325,6 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildEkgLogo(bool isDark) {
-    const tealColor = Color(0xFF0D9488);
-    const lightTealColor = Color(0xFF2DD4BF);
-
-    return SizedBox(
-      width: 120,
-      height: 60,
-      child: CustomPaint(
-        painter: _EkgPainter(
-          color: isDark ? lightTealColor : tealColor,
-        ),
       ),
     );
   }
@@ -393,45 +383,4 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
       ),
     );
   }
-}
-
-class _EkgPainter extends CustomPainter {
-  final Color color;
-
-  _EkgPainter({required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 3
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round;
-
-    final path = Path();
-    final centerY = size.height / 2;
-
-    // EKG heartbeat pattern
-    path.moveTo(0, centerY);
-    path.lineTo(size.width * 0.2, centerY);
-    path.lineTo(size.width * 0.25, centerY - 5);
-    path.lineTo(size.width * 0.3, centerY);
-    path.lineTo(size.width * 0.35, centerY);
-    // Main spike (QRS complex)
-    path.lineTo(size.width * 0.4, centerY + 8);
-    path.lineTo(size.width * 0.45, centerY - size.height * 0.7);
-    path.lineTo(size.width * 0.5, centerY + size.height * 0.3);
-    path.lineTo(size.width * 0.55, centerY);
-    // T wave
-    path.lineTo(size.width * 0.65, centerY);
-    path.lineTo(size.width * 0.7, centerY - 10);
-    path.lineTo(size.width * 0.8, centerY);
-    path.lineTo(size.width, centerY);
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
