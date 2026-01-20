@@ -7,10 +7,12 @@ import '../../config/app_typography.dart';
 import '../../providers/settings_provider.dart';
 import '../../providers/user_progress_provider.dart';
 import '../../providers/esma_provider.dart';
+import '../../providers/ramadan_provider.dart';
 import '../../services/data_loader_service.dart';
 import '../../services/storage_service.dart';
 import '../../widgets/common/glass_container.dart';
 import '../../widgets/common/animated_ekg.dart';
+import '../../widgets/ramadan/ramadan_banner.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
 import '../favorites/favorites_screen.dart';
 import '../mood/mood_selection_screen.dart';
@@ -18,6 +20,8 @@ import '../ebced/ebced_screen.dart';
 import '../esma/esma_surprise_screen.dart';
 import '../weekly/weekly_summary_screen.dart';
 import '../settings/settings_screen.dart';
+import '../heart/heart_system_screen.dart';
+import '../../models/heart_stage_model.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -33,6 +37,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void initState() {
     super.initState();
     _loadData();
+    // Check if we should switch to a specific tab
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final args = ModalRoute.of(context)?.settings.arguments;
+      if (args is int && args >= 0 && args < 4) {
+        setState(() => _currentIndex = args);
+      }
+    });
   }
 
   Future<void> _loadData() async {
@@ -172,6 +183,12 @@ class _HomeContent extends ConsumerWidget {
             _buildAppBar(context, isDark, lang),
             const SizedBox(height: AppConstants.spacingL),
 
+            // Ramadan Banner (shows only during Ramadan or when manually enabled)
+            if (ref.watch(showRamadanModeProvider)) ...[
+              const RamadanBanner(),
+              const SizedBox(height: AppConstants.spacingM),
+            ],
+
             // Progress Card
             _buildProgressCard(context, isDark, progress, lang),
             const SizedBox(height: AppConstants.spacingXL),
@@ -188,6 +205,10 @@ class _HomeContent extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: AppConstants.spacingXL),
+
+            // Heart Status Card
+            _buildHeartStatusCard(context, isDark, progress, lang),
+            const SizedBox(height: AppConstants.spacingM),
 
             // Feature Cards
             _buildFeatureCard(
@@ -366,6 +387,129 @@ class _HomeContent extends ConsumerWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildHeartStatusCard(BuildContext context, bool isDark, dynamic progress, String lang) {
+    final todayDhikr = progress.todayDhikrCount;
+    final stage = HeartStageConfigs.getStageForDhikr(todayDhikr);
+    final stageProgress = HeartStageConfigs.getStageProgress(todayDhikr);
+
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const HeartSystemScreen()),
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(AppConstants.spacingM),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              stage.heartColor.withValues(alpha: isDark ? 0.3 : 0.15),
+              stage.heartColor.withValues(alpha: isDark ? 0.1 : 0.05),
+            ],
+          ),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: stage.heartColor.withValues(alpha: 0.3),
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: stage.heartColor.withValues(alpha: 0.2),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            // Heart icon with pulse effect
+            Container(
+              width: 56,
+              height: 56,
+              decoration: BoxDecoration(
+                color: stage.heartColor.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: stage.heartColor.withValues(alpha: 0.3),
+                    blurRadius: 12,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  stage.emoji,
+                  style: const TextStyle(fontSize: 28),
+                ),
+              ),
+            ),
+            const SizedBox(width: AppConstants.spacingM),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        stage.getName(lang),
+                        style: AppTypography.bodyLarge.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: stage.heartColor,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: stage.heartColor.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          '${stage.bpm} BPM',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: stage.heartColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  // Progress bar
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: LinearProgressIndicator(
+                      value: stageProgress,
+                      backgroundColor: stage.heartColor.withValues(alpha: 0.15),
+                      valueColor: AlwaysStoppedAnimation(stage.heartColor),
+                      minHeight: 5,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    '$todayDhikr / ${stage.maxDhikr} ${lang == 'en' ? 'dhikr' : (lang == 'fi' ? 'dhikr' : 'zikir')}',
+                    style: AppTypography.labelSmall.copyWith(
+                      color: isDark
+                          ? AppColors.textSecondaryDark
+                          : AppColors.textSecondaryLight,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.chevron_right_rounded,
+              color: stage.heartColor,
+              size: 24,
+            ),
+          ],
+        ),
       ),
     );
   }

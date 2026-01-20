@@ -1,0 +1,183 @@
+{
+  "version": "1.0.0",
+  "description": "Mood-specific dhikr recommendations based on Islamic scholarly sources",
+  "sources": [
+    "Hadis-i Şerifler",
+    "Sorularla İslamiyet",
+    "İslam ve İhsan",
+    "Klasik İslami Kaynaklar"
+  ],
+
+  "dhikr_recommendations": {
+    "anxious": {
+      "primary_dhikr": {
+        "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+        "transliteration": "Hasbunallahu ve ni'mel vekil",
+        "meanings": {
+          "tr": "Allah bize yeter, O ne güzel vekildir",
+          "en": "Allah is sufficient for us, and He is the best Disposer of affairs",
+          "fi": "Allah riittää meille, Hän on paras asioiden hoitaja"
+        },
+        "recommended_count": 7,
+        "source": "Ali İmran 3:173 - Hz. İbrahim'in ateşe atılırken okuduğu dua",
+        "notes": {
+          "tr": "Sabah akşam 7 kere okunması tavsiye edilir",
+          "en": "Recommended to recite 7 times morning and evening",
+          "fi": "Suositellaan luettavaksi 7 kertaa aamulla ja illalla"
+        }
+      }
+    },
+
+    "sad": {
+      "primary_dhikr": {
+        "arabic": "لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+        "transliteration": "La ilahe illa ente subhaneke inni kuntu minezzalimin",
+        "meanings": {
+          "tr": "Senden başka ilah yoktur, Seni tenzih ederim, ben zalimlerden oldum",
+          "en": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers",
+          "fi": "Ei ole jumalaa paitsi Sinä, ylistetty olet. Totisesti olen ollut väärintekijöistä"
+        },
+        "recommended_count": 41,
+        "source": "Enbiya 21:87 - Hz. Yunus'un balığın karnında okuduğu dua",
+        "notes": {
+          "tr": "Sıkıntı ve hüzün anlarında 41 kere okunması tavsiye edilir",
+          "en": "Recommended 41 times during moments of distress and sadness",
+          "fi": "Suositellaan 41 kertaa ahdistuksen ja surun hetkinä"
+        }
+      }
+    },
+
+    "angry": {
+      "primary_dhikr": {
+        "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+        "transliteration": "Euzubillahi mineş-şeytanir-racim",
+        "meanings": {
+          "tr": "Kovulmuş şeytandan Allah'a sığınırım",
+          "en": "I seek refuge in Allah from the accursed Satan",
+          "fi": "Turvaudun Allahiin kirotulta saatanalta"
+        },
+        "recommended_count": 3,
+        "source": "Buhari, Müslim - Peygamber Efendimiz'in öfke anında tavsiyesi",
+        "notes": {
+          "tr": "Öfke anında 3 kere okunup abdest alınması tavsiye edilir",
+          "en": "Recommended 3 times when angry, followed by wudu",
+          "fi": "Suositellaan 3 kertaa vihaisena, sen jälkeen wudu"
+        }
+      }
+    },
+
+    "lonely": {
+      "primary_dhikr": {
+        "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ غَضَبِهِ وَعِقَابِهِ وَشَرِّ عِبَادِهِ",
+        "transliteration": "Euzu bi kelimatillahit-tammati min gadabihi ve ikabihi ve şerri ibadihi",
+        "meanings": {
+          "tr": "Allah'ın gazabından, azabından ve kullarının şerrinden O'nun tam kelimelerine sığınırım",
+          "en": "I seek refuge in the perfect words of Allah from His anger, punishment, and evil of His servants",
+          "fi": "Turvaudun Allahin täydellisiin sanoihin Hänen vihaltaan, rangaistukseltaan ja palvelijoidensa pahuudelta"
+        },
+        "recommended_count": 7,
+        "source": "Tirmizi - Hz. Peygamber'in yalnızlık hissedenlere öğrettiği dua",
+        "notes": {
+          "tr": "Yatmadan önce 7 gün boyunca okunması tavsiye edilir",
+          "en": "Recommended before sleep for 7 consecutive days",
+          "fi": "Suositellaan ennen nukkumista 7 peräkkäisenä päivänä"
+        }
+      }
+    },
+
+    "tired": {
+      "primary_dhikr": {
+        "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+        "transliteration": "Subhanallahi ve bihamdihi",
+        "meanings": {
+          "tr": "Allah'ı hamd ile tesbih ederim",
+          "en": "Glory be to Allah and praise Him",
+          "fi": "Kunnia Allahille ja kiitos Hänelle"
+        },
+        "recommended_count": 100,
+        "source": "Buhari, Müslim - Peygamber Efendimiz'in sabah akşam zikri",
+        "notes": {
+          "tr": "Hz. Fatıma'ya öğretilen tesbih: 33 Subhanallah, 33 Elhamdulillah, 34 Allahu Ekber yorgunluğu giderir",
+          "en": "The tasbih taught to Fatimah: 33+33+34 removes fatigue",
+          "fi": "Fatimalle opetettu tasbih: 33+33+34 poistaa väsymyksen"
+        }
+      }
+    },
+
+    "fearful": {
+      "primary_dhikr": {
+        "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+        "transliteration": "Bismillahillezi la yedurru ma'asmihi şey'un fil erdi ve la fis-semai ve huves-semi'ul alim",
+        "meanings": {
+          "tr": "Allah'ın adıyla ki, O'nun adı anıldığında yerde ve gökte hiçbir şey zarar veremez. O işitendir, bilendir",
+          "en": "In the name of Allah, with whose name nothing can cause harm in earth or heaven, and He is the All-Hearing, All-Knowing",
+          "fi": "Allahin nimeen, jonka nimen kanssa mikään ei voi vahingoittaa maassa eikä taivaassa, ja Hän on Kaikkikuuleva, Kaikkitietävä"
+        },
+        "recommended_count": 3,
+        "source": "Tirmizi, Ebu Davud - Korku ve beladan korunma duası",
+        "notes": {
+          "tr": "Sabah akşam 3 kere okuyana hiçbir şey zarar vermez",
+          "en": "Nothing will harm one who recites this 3 times morning and evening",
+          "fi": "Mikään ei vahingoita sitä, joka lukee tämän 3 kertaa aamulla ja illalla"
+        }
+      }
+    },
+
+    "stressed": {
+      "primary_dhikr": {
+        "arabic": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",
+        "transliteration": "Ya Hayyu Ya Kayyum bi rahmetike esteğis",
+        "meanings": {
+          "tr": "Ey Hayy, ey Kayyum! Rahmetinle yardım diliyorum",
+          "en": "O Ever-Living, O Self-Sustaining! By Your mercy I seek help",
+          "fi": "Oi Iankaikkisesti Elävä, Oi Itsensä Ylläpitävä! Armosi kautta pyydän apua"
+        },
+        "recommended_count": 40,
+        "source": "Tirmizi - Peygamber Efendimiz'in sıkıntılı anlarda okuduğu dua",
+        "notes": {
+          "tr": "Stres ve sıkıntı anlarında 40 kere okunması tavsiye edilir",
+          "en": "Recommended 40 times during stress and distress",
+          "fi": "Suositellaan 40 kertaa stressin ja ahdistuksen aikana"
+        }
+      }
+    },
+
+    "grateful": {
+      "primary_dhikr": {
+        "arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+        "transliteration": "Allahumme einni ala zikrike ve şukrike ve husni ibadetik",
+        "meanings": {
+          "tr": "Allah'ım! Seni zikretmek, sana şükretmek ve güzel ibadet etmek için bana yardım et",
+          "en": "O Allah, help me to remember You, thank You, and worship You in the best way",
+          "fi": "Oi Allah, auta minua muistamaan Sinua, kiittämään Sinua ja palvelemaan Sinua parhaalla tavalla"
+        },
+        "recommended_count": 33,
+        "source": "Ebu Davud - Peygamber Efendimiz'in Hz. Muaz'a öğrettiği dua",
+        "notes": {
+          "tr": "Her namazdan sonra okunması tavsiye edilir",
+          "en": "Recommended after every prayer",
+          "fi": "Suositellaan jokaisen rukouksen jälkeen"
+        }
+      }
+    },
+
+    "peaceful": {
+      "primary_dhikr": {
+        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+        "transliteration": "Rabbena atina fiddunya haseneten ve fil ahireti haseneten ve kina azaben-nar",
+        "meanings": {
+          "tr": "Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi ateş azabından koru",
+          "en": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire",
+          "fi": "Herramme, anna meille hyvää tässä maailmassa ja hyvää tuonpuoleisessa, ja suojele meitä tulen rangaistukselta"
+        },
+        "recommended_count": 7,
+        "source": "Bakara 2:201 - Peygamber Efendimiz'in en çok okuduğu dualardan",
+        "notes": {
+          "tr": "Huzuru muhafaza etmek için günde 7 kere okunması tavsiye edilir",
+          "en": "Recommended 7 times daily to maintain peace",
+          "fi": "Suositellaan 7 kertaa päivittäin rauhan ylläpitämiseksi"
+        }
+      }
+    }
+  }
+}

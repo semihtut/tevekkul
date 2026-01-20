@@ -6,6 +6,7 @@ import '../../config/app_typography.dart';
 import '../../models/dhikr_model.dart';
 import '../../providers/dhikr_provider.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/custom_snackbar.dart';
 
 class CustomDhikrScreen extends ConsumerStatefulWidget {
   const CustomDhikrScreen({super.key});
@@ -94,6 +95,7 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                     controller: _arabicController,
                     textAlign: TextAlign.right,
                     textDirection: TextDirection.rtl,
+                    maxLength: 500,
                     style: AppTypography.headingSmall.copyWith(
                       fontFamily: 'Amiri',
                       color: isDark
@@ -131,6 +133,7 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                   ),
                   child: TextFormField(
                     controller: _latinController,
+                    maxLength: 200,
                     style: AppTypography.bodyLarge.copyWith(
                       color: isDark
                           ? AppColors.textPrimaryDark
@@ -167,6 +170,7 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                   child: TextFormField(
                     controller: _meaningController,
                     maxLines: 2,
+                    maxLength: 500,
                     style: AppTypography.bodyMedium.copyWith(
                       color: isDark
                           ? AppColors.textPrimaryDark
@@ -197,6 +201,7 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                   child: TextFormField(
                     controller: _benefitsController,
                     maxLines: 3,
+                    maxLength: 1000,
                     style: AppTypography.bodyMedium.copyWith(
                       color: isDark
                           ? AppColors.textPrimaryDark
@@ -376,12 +381,7 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
     ref.read(dhikrProvider.notifier).setDhikrs([...dhikrs, newDhikr]);
 
     // Show success message and go back
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('${_latinController.text} eklendi'),
-        backgroundColor: AppColors.primary,
-      ),
-    );
+    CustomSnackbar.showSuccess(context, '${_latinController.text} eklendi');
 
     Navigator.pop(context);
   }

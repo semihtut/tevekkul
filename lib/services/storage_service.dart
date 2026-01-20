@@ -226,6 +226,16 @@ class StorageService {
     return _prefs.getInt('longestStreak') ?? 0;
   }
 
+  // ==================== RAMADAN MODE STORAGE ====================
+
+  Future<void> saveRamadanEnabled(bool enabled) async {
+    await _settingsBox.put('ramadanEnabled', enabled);
+  }
+
+  bool getRamadanEnabled() {
+    return _settingsBox.get('ramadanEnabled', defaultValue: false) as bool;
+  }
+
   // ==================== DATA MANAGEMENT ====================
 
   Future<void> clearAllData() async {

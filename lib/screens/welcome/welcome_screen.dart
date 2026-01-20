@@ -8,6 +8,7 @@ import '../../providers/settings_provider.dart';
 import '../../services/storage_service.dart';
 import '../../widgets/common/glass_container.dart';
 import '../../widgets/common/animated_ekg.dart';
+import '../../widgets/common/custom_snackbar.dart';
 import '../home/home_screen.dart';
 
 class WelcomeScreen extends ConsumerStatefulWidget {
@@ -37,17 +38,13 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
   Future<void> _continue() async {
     final name = _nameController.text.trim();
     if (name.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            _selectedLanguage == 'en'
-                ? 'Please enter your name'
-                : (_selectedLanguage == 'fi'
-                    ? 'Kirjoita nimesi'
-                    : 'Lütfen isminizi girin'),
-          ),
-          backgroundColor: Colors.red.shade400,
-        ),
+      CustomSnackbar.showError(
+        context,
+        _selectedLanguage == 'en'
+            ? 'Please enter your name'
+            : (_selectedLanguage == 'fi'
+                ? 'Kirjoita nimesi'
+                : 'Lütfen isminizi girin'),
       );
       return;
     }
@@ -78,14 +75,16 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
         ? mediaQuery.viewPadding.bottom
         : 24.0;
 
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: isDark
-              ? AppColors.backgroundGradientDark
-              : AppColors.backgroundGradientLight,
-        ),
-        child: SafeArea(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: isDark
+                ? AppColors.backgroundGradientDark
+                : AppColors.backgroundGradientLight,
+          ),
+          child: SafeArea(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
               AppConstants.spacingL,
@@ -200,6 +199,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                           child: TextField(
                             controller: _nameController,
                             textCapitalization: TextCapitalization.words,
+                            maxLength: 50,
                             style: TextStyle(
                               fontSize: 16,
                               color: isDark
@@ -324,6 +324,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
             ),
           ),
         ),
+      ),
       ),
     );
   }

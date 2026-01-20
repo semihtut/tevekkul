@@ -133,6 +133,11 @@ class AppTranslations {
       'en': 'Start',
       'fi': 'Aloita',
     },
+    'start_dhikr': {
+      'tr': 'Zikre Başla',
+      'en': 'Start Dhikr',
+      'fi': 'Aloita Dhikr',
+    },
     'add_to_favorites': {
       'tr': 'Favorilere Ekle',
       'en': 'Add to Favorites',
@@ -439,6 +444,18 @@ class AppTranslations {
       'tr': 'Favorilerden çıkarıldı',
       'en': 'Removed from favorites',
       'fi': 'Poistettu suosikeista',
+    },
+
+    // Esma Purpose Disclaimer
+    'scholarly_note': {
+      'tr': 'Alimler notu',
+      'en': 'Scholarly note',
+      'fi': 'Oppineiden huomautus',
+    },
+    'scholarly_disclaimer': {
+      'tr': 'Bu faydalar sahih hadislerde geçmemekle birlikte, İslam alimleri ve tasavvuf geleneğinde önerilmektedir. Niyet ve ihlasla okunması tavsiye edilir.',
+      'en': 'These benefits are not mentioned in sahih hadith, but are recommended by Islamic scholars and in Sufi tradition. It is advised to recite with sincere intention.',
+      'fi': 'Näitä hyötyjä ei mainita sahih hadithissa, mutta islamilaiset oppineet ja sufi-perinne suosittelevat niitä. On suositeltavaa lausua vilpittömällä aikomuksella.',
     },
 
     // Welcome Screen

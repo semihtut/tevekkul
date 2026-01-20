@@ -5,8 +5,11 @@ import '../../config/app_constants.dart';
 import '../../config/app_translations.dart';
 import '../../config/app_typography.dart';
 import '../../providers/settings_provider.dart';
+import '../../providers/ramadan_provider.dart';
 import '../../services/storage_service.dart';
+import '../../services/ebced_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/custom_snackbar.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -19,9 +22,14 @@ class SettingsScreen extends ConsumerWidget {
     final lang = ref.watch(languageProvider);
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: isDark
+              ? AppColors.backgroundGradientDark
+              : AppColors.backgroundGradientLight,
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
           padding: const EdgeInsets.all(AppConstants.spacingL),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,19 +47,7 @@ class SettingsScreen extends ConsumerWidget {
               // Profile Section
               _SectionHeader(title: AppTranslations.get('profile', lang), isDark: isDark),
               const SizedBox(height: AppConstants.spacingM),
-              GlassContainer(
-                child: Column(
-                  children: [
-                    _SettingsTile(
-                      icon: Icons.person_rounded,
-                      title: AppTranslations.get('name', lang),
-                      subtitle: StorageService().getUserName(),
-                      isDark: isDark,
-                      onTap: () => _showNameEditDialog(context, isDark, lang),
-                    ),
-                  ],
-                ),
-              ),
+              _buildProfileCard(context, ref, isDark, lang),
 
               const SizedBox(height: AppConstants.spacingXL),
 
@@ -152,6 +148,32 @@ class SettingsScreen extends ConsumerWidget {
 
               const SizedBox(height: AppConstants.spacingXL),
 
+              // Ramadan Mode Section
+              _SectionHeader(title: _getRamadanSectionTitle(lang), isDark: isDark),
+              const SizedBox(height: AppConstants.spacingM),
+              GlassContainer(
+                child: Column(
+                  children: [
+                    _SettingsTile(
+                      icon: Icons.nightlight_round,
+                      title: _getRamadanModeTitle(lang),
+                      subtitle: _getRamadanModeSubtitle(lang),
+                      isDark: isDark,
+                      trailing: Switch(
+                        value: ref.watch(ramadanEnabledProvider),
+                        onChanged: (value) {
+                          ref.read(ramadanEnabledProvider.notifier).state = value;
+                          StorageService().saveRamadanEnabled(value);
+                        },
+                        activeThumbColor: AppColors.primary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: AppConstants.spacingXL),
+
               // Data Section
               _SectionHeader(title: AppTranslations.get('data', lang), isDark: isDark),
               const SizedBox(height: AppConstants.spacingM),
@@ -222,8 +244,126 @@ class SettingsScreen extends ConsumerWidget {
             ],
           ),
         ),
+        ),
       ),
     );
+  }
+
+  Widget _buildProfileCard(BuildContext context, WidgetRef ref, bool isDark, String lang) {
+    final userName = ref.watch(userNameProvider);
+    final ebcedValue = userName.isNotEmpty ? EbcedService().calculate(userName) : 0;
+    final kucukEbced = EbcedService().getDigitalRoot(ebcedValue);
+
+    return GlassContainer(
+      child: Column(
+        children: [
+          // Name with edit
+          _SettingsTile(
+            icon: Icons.person_rounded,
+            title: AppTranslations.get('name', lang),
+            subtitle: userName.isNotEmpty ? userName : '-',
+            isDark: isDark,
+            onTap: () => _showNameEditDialog(context, ref, isDark, lang),
+          ),
+          if (userName.isNotEmpty) ...[
+            _Divider(isDark: isDark),
+            // Ebced value display
+            Padding(
+              padding: const EdgeInsets.all(AppConstants.spacingM),
+              child: Row(
+                children: [
+                  // Ebced icon
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? AppColors.accentDark.withValues(alpha: 0.15)
+                          : AppColors.primary.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      Icons.calculate_rounded,
+                      color: isDark ? AppColors.accentDark : AppColors.primary,
+                      size: 24,
+                    ),
+                  ),
+                  const SizedBox(width: AppConstants.spacingM),
+                  // Ebced values
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          _getEbcedLabel(lang),
+                          style: AppTypography.bodyMedium.copyWith(
+                            color: isDark
+                                ? AppColors.textSecondaryDark
+                                : AppColors.textSecondaryLight,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Row(
+                          children: [
+                            // Big Ebced
+                            _EbcedBadge(
+                              label: _getBuyukEbcedLabel(lang),
+                              value: ebcedValue.toString(),
+                              isDark: isDark,
+                              isPrimary: true,
+                            ),
+                            const SizedBox(width: 12),
+                            // Small Ebced
+                            _EbcedBadge(
+                              label: _getKucukEbcedLabel(lang),
+                              value: kucukEbced.toString(),
+                              isDark: isDark,
+                              isPrimary: false,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  String _getEbcedLabel(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Your Ebced Value';
+      case 'fi':
+        return 'Ebced-arvosi';
+      default:
+        return 'Ebced Değerin';
+    }
+  }
+
+  String _getBuyukEbcedLabel(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Total';
+      case 'fi':
+        return 'Yhteensä';
+      default:
+        return 'Toplam';
+    }
+  }
+
+  String _getKucukEbcedLabel(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Root';
+      case 'fi':
+        return 'Juuri';
+      default:
+        return 'Küçük';
+    }
   }
 
   String _getThemeModeText(ThemeMode mode, String lang) {
@@ -234,6 +374,39 @@ class SettingsScreen extends ConsumerWidget {
         return lang == 'en' ? 'Light' : (lang == 'fi' ? 'Vaalea' : 'Açık');
       case ThemeMode.dark:
         return lang == 'en' ? 'Dark' : (lang == 'fi' ? 'Tumma' : 'Karanlık');
+    }
+  }
+
+  String _getRamadanSectionTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Ramadan';
+      case 'fi':
+        return 'Ramadan';
+      default:
+        return 'Ramazan';
+    }
+  }
+
+  String _getRamadanModeTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Ramadan Mode';
+      case 'fi':
+        return 'Ramadan-tila';
+      default:
+        return 'Ramazan Modu';
+    }
+  }
+
+  String _getRamadanModeSubtitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Show Ramadan features on home screen';
+      case 'fi':
+        return 'Näytä Ramadan-ominaisuudet aloitusnäytöllä';
+      default:
+        return 'Ana sayfada Ramazan özelliklerini göster';
     }
   }
 
@@ -282,12 +455,11 @@ class SettingsScreen extends ConsumerWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(
-                  lang == 'en' ? 'Backup completed'
-                      : (lang == 'fi' ? 'Varmuuskopiointi valmis'
-                      : 'Yedekleme tamamlandı')
-                )),
+              CustomSnackbar.showSuccess(
+                context,
+                lang == 'en' ? 'Backup completed'
+                    : (lang == 'fi' ? 'Varmuuskopiointi valmis'
+                    : 'Yedekleme tamamlandı'),
               );
             },
             child: Text(AppTranslations.get('backup', lang)),
@@ -329,12 +501,11 @@ class SettingsScreen extends ConsumerWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(
-                  lang == 'en' ? 'Restore completed'
-                      : (lang == 'fi' ? 'Palautus valmis'
-                      : 'Geri yükleme tamamlandı')
-                )),
+              CustomSnackbar.showSuccess(
+                context,
+                lang == 'en' ? 'Restore completed'
+                    : (lang == 'fi' ? 'Palautus valmis'
+                    : 'Geri yükleme tamamlandı'),
               );
             },
             child: Text(AppTranslations.get('restore', lang)),
@@ -377,12 +548,11 @@ class SettingsScreen extends ConsumerWidget {
             ),
             onPressed: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(
-                  lang == 'en' ? 'Data deleted'
-                      : (lang == 'fi' ? 'Tiedot poistettu'
-                      : 'Veriler silindi')
-                )),
+              CustomSnackbar.showInfo(
+                context,
+                lang == 'en' ? 'Data deleted'
+                    : (lang == 'fi' ? 'Tiedot poistettu'
+                    : 'Veriler silindi'),
               );
             },
             child: Text(AppTranslations.get('delete', lang)),
@@ -392,9 +562,9 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  void _showNameEditDialog(BuildContext context, bool isDark, String lang) {
-    final storage = StorageService();
-    final controller = TextEditingController(text: storage.getUserName());
+  void _showNameEditDialog(BuildContext context, WidgetRef ref, bool isDark, String lang) {
+    final currentName = ref.read(userNameProvider);
+    final controller = TextEditingController(text: currentName);
 
     showDialog(
       context: context,
@@ -416,6 +586,7 @@ class SettingsScreen extends ConsumerWidget {
           controller: controller,
           autofocus: true,
           textCapitalization: TextCapitalization.words,
+          maxLength: 50,
           style: TextStyle(
             fontSize: 16,
             color: isDark
@@ -462,19 +633,16 @@ class SettingsScreen extends ConsumerWidget {
             onPressed: () async {
               final newName = controller.text.trim();
               if (newName.isNotEmpty) {
-                await storage.saveUserName(newName);
+                await ref.read(settingsProvider.notifier).setUserName(newName);
                 if (context.mounted) {
                   Navigator.pop(context);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        lang == 'en'
-                            ? 'Name updated'
-                            : (lang == 'fi'
-                                ? 'Nimi päivitetty'
-                                : 'İsim güncellendi'),
-                      ),
-                    ),
+                  CustomSnackbar.showSuccess(
+                    context,
+                    lang == 'en'
+                        ? 'Name updated'
+                        : (lang == 'fi'
+                            ? 'Nimi päivitetty'
+                            : 'İsim güncellendi'),
                   );
                 }
               }
@@ -740,5 +908,59 @@ class _LanguageSelector extends StatelessWidget {
       default:
         return 'Türkçe';
     }
+  }
+}
+
+class _EbcedBadge extends StatelessWidget {
+  final String label;
+  final String value;
+  final bool isDark;
+  final bool isPrimary;
+
+  const _EbcedBadge({
+    required this.label,
+    required this.value,
+    required this.isDark,
+    required this.isPrimary,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: isPrimary
+            ? (isDark ? AppColors.accentDark.withValues(alpha: 0.2) : AppColors.primary.withValues(alpha: 0.15))
+            : (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.15)),
+        borderRadius: BorderRadius.circular(20),
+        border: isPrimary
+            ? Border.all(
+                color: isDark ? AppColors.accentDark.withValues(alpha: 0.3) : AppColors.primary.withValues(alpha: 0.3),
+              )
+            : null,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            label,
+            style: AppTypography.labelSmall.copyWith(
+              color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+              fontSize: 10,
+            ),
+          ),
+          const SizedBox(width: 6),
+          Text(
+            value,
+            style: AppTypography.labelLarge.copyWith(
+              color: isPrimary
+                  ? (isDark ? AppColors.accentDark : AppColors.primary)
+                  : (isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight),
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -4,9 +4,14 @@ import '../../config/app_colors.dart';
 import '../../config/app_constants.dart';
 import '../../config/app_translations.dart';
 import '../../config/app_typography.dart';
+import '../../models/dhikr_model.dart';
+import '../../models/esma_model.dart';
+import '../../models/mood_dhikr_model.dart';
+import '../../providers/dhikr_provider.dart';
 import '../../providers/mood_provider.dart';
 import '../../providers/settings_provider.dart';
 import '../../widgets/common/glass_container.dart';
+import '../home/home_screen.dart';
 
 class MoodResultScreen extends ConsumerWidget {
   const MoodResultScreen({super.key});
@@ -16,6 +21,8 @@ class MoodResultScreen extends ConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final mood = ref.watch(selectedMoodProvider);
     final ayah = ref.watch(recommendedAyahProvider);
+    final esmaAsync = ref.watch(recommendedEsmaProvider);
+    final dhikrAsync = ref.watch(recommendedDhikrProvider);
     final lang = ref.watch(languageProvider);
     final mediaQuery = MediaQuery.of(context);
     final bottomPadding = mediaQuery.viewPadding.bottom > 0
@@ -61,76 +68,72 @@ class MoodResultScreen extends ConsumerWidget {
                         ),
                       ],
 
-                      const SizedBox(height: AppConstants.spacingXXL),
+                      const SizedBox(height: AppConstants.spacingXL),
 
+                      // 1. AYAH CARD
                       if (ayah != null) ...[
-                        GlassContainer(
-                          padding: const EdgeInsets.all(AppConstants.spacingL),
-                          child: Column(
+                        _buildSectionTitle(
+                          context,
+                          icon: Icons.menu_book_rounded,
+                          title: _getAyahSectionTitle(lang),
+                          isDark: isDark,
+                        ),
+                        const SizedBox(height: AppConstants.spacingS),
+                        _buildAyahCard(context, ayah, isDark, lang),
+                      ],
+
+                      const SizedBox(height: AppConstants.spacingXL),
+
+                      // 2. ESMA CARD
+                      esmaAsync.when(
+                        data: (esma) {
+                          if (esma == null) return const SizedBox.shrink();
+                          return Column(
                             children: [
-                              // Surah reference as title
-                              Text(
-                                ayah.reference,
-                                style: AppTypography.headingSmall.copyWith(
-                                  fontSize: 20,
-                                  color: isDark
-                                      ? AppColors.accentDark
-                                      : AppColors.primary,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                textAlign: TextAlign.center,
+                              _buildSectionTitle(
+                                context,
+                                icon: Icons.auto_awesome_rounded,
+                                title: _getEsmaSectionTitle(lang),
+                                isDark: isDark,
                               ),
-                              const SizedBox(height: AppConstants.spacingL),
-
-                              // Arabic text
-                              if (ayah.getArabicText() != null) ...[
-                                Text(
-                                  ayah.getArabicText()!,
-                                  style: TextStyle(
-                                    fontFamily: 'Amiri',
-                                    fontSize: 24,
-                                    height: 2.0,
-                                    color: isDark
-                                        ? AppColors.textPrimaryDark
-                                        : AppColors.textPrimaryLight,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  textDirection: TextDirection.rtl,
-                                ),
-                                const SizedBox(height: AppConstants.spacingL),
-                              ],
-
-                              // Translation based on selected language
-                              Text(
-                                ayah.getThemeNote(lang),
-                                style: AppTypography.bodyLarge.copyWith(
-                                  color: isDark
-                                      ? AppColors.textSecondaryDark
-                                      : AppColors.textSecondaryLight,
-                                  fontStyle: FontStyle.italic,
-                                  height: 1.6,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-
-                              // Show English translation if current lang is not English and translation exists
-                              if (lang != 'en' && ayah.getThemeNote('en').isNotEmpty) ...[
-                                const SizedBox(height: AppConstants.spacingM),
-                                Text(
-                                  ayah.getThemeNote('en'),
-                                  style: AppTypography.bodyMedium.copyWith(
-                                    color: isDark
-                                        ? AppColors.textSecondaryDark.withValues(alpha: 0.7)
-                                        : AppColors.textSecondaryLight.withValues(alpha: 0.7),
-                                    height: 1.5,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
+                              const SizedBox(height: AppConstants.spacingS),
+                              _buildEsmaCard(context, ref, esma, isDark, lang),
                             ],
+                          );
+                        },
+                        loading: () => const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(AppConstants.spacingL),
+                            child: CircularProgressIndicator(),
                           ),
                         ),
-                      ],
+                        error: (_, __) => const SizedBox.shrink(),
+                      ),
+
+                      const SizedBox(height: AppConstants.spacingXL),
+
+                      // 3. DHIKR RECOMMENDATION CARD (separate from Esma)
+                      dhikrAsync.when(
+                        data: (dhikr) {
+                          if (dhikr == null) return const SizedBox.shrink();
+                          return Column(
+                            children: [
+                              _buildSectionTitle(
+                                context,
+                                icon: Icons.repeat_rounded,
+                                title: _getDhikrSectionTitle(lang),
+                                isDark: isDark,
+                              ),
+                              const SizedBox(height: AppConstants.spacingS),
+                              _buildDhikrCard(context, ref, dhikr, isDark, lang),
+                            ],
+                          );
+                        },
+                        loading: () => const SizedBox.shrink(),
+                        error: (_, __) => const SizedBox.shrink(),
+                      ),
+
+                      const SizedBox(height: AppConstants.spacingL),
                     ],
                   ),
                 ),
@@ -190,26 +193,21 @@ class MoodResultScreen extends ConsumerWidget {
 
   Widget _buildAppBar(BuildContext context, bool isDark, String lang) {
     final title = lang == 'en'
-        ? 'Your Special Ayah'
-        : (lang == 'fi' ? 'Erityinen Ayet sinulle' : 'Sana Özel Ayet');
+        ? 'Your Spiritual Guide'
+        : (lang == 'fi' ? 'Henkinen Oppaasi' : 'Manevi Rehberin');
 
     return Row(
       children: [
         GestureDetector(
           onTap: () => Navigator.pop(context),
-          child: Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: const Color(0xFF0D9488).withValues(alpha: 0.1),
-              ),
-            ),
-            child: const Icon(
-              Icons.arrow_back,
-              color: Color(0xFF134E4A),
+          child: GlassContainer(
+            isDark: isDark,
+            padding: const EdgeInsets.all(AppConstants.spacingS),
+            borderRadius: BorderRadius.circular(AppConstants.radiusFull),
+            child: Icon(
+              Icons.arrow_back_rounded,
+              color: isDark ? Colors.white : AppColors.textPrimaryLight,
+              size: 24,
             ),
           ),
         ),
@@ -223,6 +221,520 @@ class MoodResultScreen extends ConsumerWidget {
         const Spacer(),
         const SizedBox(width: 48),
       ],
+    );
+  }
+
+  Widget _buildSectionTitle(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required bool isDark,
+  }) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: 20,
+          color: isDark ? AppColors.accentDark : AppColors.primary,
+        ),
+        const SizedBox(width: 8),
+        Text(
+          title,
+          style: AppTypography.labelLarge.copyWith(
+            color: isDark ? AppColors.accentDark : AppColors.primary,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAyahCard(BuildContext context, dynamic ayah, bool isDark, String lang) {
+    return GlassContainer(
+      isDark: isDark,
+      padding: const EdgeInsets.all(AppConstants.spacingL),
+      child: Column(
+        children: [
+          // Surah reference as title
+          Text(
+            ayah.reference,
+            style: AppTypography.headingSmall.copyWith(
+              fontSize: 18,
+              color: isDark
+                  ? AppColors.accentDark
+                  : AppColors.primary,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppConstants.spacingM),
+
+          // Arabic text
+          if (ayah.getArabicText() != null) ...[
+            Text(
+              ayah.getArabicText()!,
+              style: TextStyle(
+                fontFamily: 'Amiri',
+                fontSize: 22,
+                height: 2.0,
+                color: isDark
+                    ? AppColors.textPrimaryDark
+                    : AppColors.textPrimaryLight,
+              ),
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+            ),
+            const SizedBox(height: AppConstants.spacingM),
+          ],
+
+          // Translation based on selected language
+          Text(
+            ayah.getThemeNote(lang),
+            style: AppTypography.bodyMedium.copyWith(
+              color: isDark
+                  ? AppColors.textSecondaryDark
+                  : AppColors.textSecondaryLight,
+              fontStyle: FontStyle.italic,
+              height: 1.6,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
+          // Show English translation if current lang is not English and translation exists
+          if (lang != 'en' && ayah.getThemeNote('en').isNotEmpty) ...[
+            const SizedBox(height: AppConstants.spacingS),
+            Text(
+              ayah.getThemeNote('en'),
+              style: AppTypography.bodySmall.copyWith(
+                color: isDark
+                    ? AppColors.textSecondaryDark.withValues(alpha: 0.7)
+                    : AppColors.textSecondaryLight.withValues(alpha: 0.7),
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildEsmaCard(
+    BuildContext context,
+    WidgetRef ref,
+    EsmaModel esma,
+    bool isDark,
+    String lang,
+  ) {
+    return GestureDetector(
+      onTap: () => _startEsmaZikir(context, ref, esma),
+      child: GlassContainer(
+        isDark: isDark,
+        padding: const EdgeInsets.all(AppConstants.spacingL),
+        child: Column(
+          children: [
+            // Arabic Name
+            Text(
+              esma.arabic,
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
+                height: 1.2,
+              ),
+              textAlign: TextAlign.center,
+            ),
+
+            const SizedBox(height: AppConstants.spacingS),
+
+            // Transliteration
+            Text(
+              esma.transliteration,
+              style: AppTypography.headingSmall.copyWith(
+                color: isDark ? AppColors.accentDark : AppColors.primary,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+              ),
+            ),
+
+            const SizedBox(height: AppConstants.spacingXS),
+
+            // Meaning
+            Text(
+              esma.getMeaning(lang),
+              style: AppTypography.bodyMedium.copyWith(
+                color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+              ),
+              textAlign: TextAlign.center,
+            ),
+
+            // Purpose/Benefit section
+            if (esma.getPurpose(lang).isNotEmpty) ...[
+              const SizedBox(height: AppConstants.spacingM),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppConstants.spacingM,
+                  vertical: AppConstants.spacingS,
+                ),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                      const Color(0xFF0D9488).withValues(alpha: 0.1),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.auto_awesome,
+                      size: 16,
+                      color: isDark ? AppColors.accentDark : AppColors.primary,
+                    ),
+                    const SizedBox(width: 8),
+                    Flexible(
+                      child: Text(
+                        esma.getPurpose(lang),
+                        style: AppTypography.bodySmall.copyWith(
+                          color: isDark ? AppColors.accentDark : AppColors.primary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+
+            const SizedBox(height: AppConstants.spacingM),
+
+            // Ebced Value Chip
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.spacingM,
+                vertical: AppConstants.spacingS,
+              ),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : AppColors.primary.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(AppConstants.radiusFull),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.2)
+                      : AppColors.primary.withValues(alpha: 0.3),
+                ),
+              ),
+              child: Text(
+                'Ebced: ${esma.abjadValue}',
+                style: AppTypography.labelMedium.copyWith(
+                  color: isDark ? AppColors.accentDark : AppColors.primary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: AppConstants.spacingS),
+
+            // Tap for more info hint
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.touch_app_rounded,
+                  size: 14,
+                  color: isDark
+                      ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
+                      : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                ),
+                const SizedBox(width: 4),
+                Text(
+                  _getTapForMoreText(lang),
+                  style: AppTypography.labelSmall.copyWith(
+                    color: isDark
+                        ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
+                        : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                    fontSize: 11,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDhikrCard(
+    BuildContext context,
+    WidgetRef ref,
+    MoodDhikrModel dhikr,
+    bool isDark,
+    String lang,
+  ) {
+    return GlassContainer(
+      isDark: isDark,
+      padding: const EdgeInsets.all(AppConstants.spacingL),
+      child: Column(
+        children: [
+          // Arabic Text
+          Text(
+            dhikr.arabic,
+            style: TextStyle(
+              fontFamily: 'Amiri',
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+              color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
+              height: 1.8,
+            ),
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.rtl,
+          ),
+
+          const SizedBox(height: AppConstants.spacingM),
+
+          // Transliteration
+          Text(
+            dhikr.transliteration,
+            style: AppTypography.bodyLarge.copyWith(
+              color: isDark ? AppColors.accentDark : AppColors.primary,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: AppConstants.spacingS),
+
+          // Meaning
+          Text(
+            dhikr.getMeaning(lang),
+            style: AppTypography.bodyMedium.copyWith(
+              color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+              fontStyle: FontStyle.italic,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: AppConstants.spacingM),
+
+          // Recommended count badge
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppConstants.spacingL,
+              vertical: AppConstants.spacingM,
+            ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                  const Color(0xFF0D9488).withValues(alpha: 0.15),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.refresh_rounded,
+                  size: 20,
+                  color: isDark ? AppColors.accentDark : AppColors.primary,
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  '${dhikr.recommendedCount} ${_getTimesText(lang)}',
+                  style: AppTypography.headingSmall.copyWith(
+                    color: isDark ? AppColors.accentDark : AppColors.primary,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Source note
+          if (dhikr.getNote(lang).isNotEmpty) ...[
+            const SizedBox(height: AppConstants.spacingS),
+            Text(
+              dhikr.getNote(lang),
+              style: AppTypography.bodySmall.copyWith(
+                color: isDark
+                    ? AppColors.textSecondaryDark.withValues(alpha: 0.7)
+                    : AppColors.textSecondaryLight.withValues(alpha: 0.7),
+                fontStyle: FontStyle.italic,
+                fontSize: 11,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+
+          const SizedBox(height: AppConstants.spacingL),
+
+          // Add to Zikirmatik button
+          GestureDetector(
+            onTap: () => _addDhikrToZikirmatik(context, ref, dhikr, lang),
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(
+                vertical: AppConstants.spacingM,
+              ),
+              decoration: BoxDecoration(
+                gradient: AppColors.primaryGradient,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.play_arrow_rounded,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    _getAddToZikirmatikText(lang),
+                    style: AppTypography.labelLarge.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _addDhikrToZikirmatik(BuildContext context, WidgetRef ref, MoodDhikrModel moodDhikr, String lang) {
+    // Convert MoodDhikrModel to DhikrModel
+    final dhikr = DhikrModel(
+      id: 'mood_dhikr_${moodDhikr.transliteration.toLowerCase().replaceAll(' ', '_')}',
+      arabic: moodDhikr.arabic,
+      transliteration: moodDhikr.transliteration,
+      meaning: moodDhikr.meanings,
+      defaultTarget: moodDhikr.recommendedCount,
+      isCustom: true,
+    );
+
+    // Set the dhikr and target
+    ref.read(dhikrProvider.notifier).selectDhikr(dhikr);
+    ref.read(dhikrProvider.notifier).setTarget(moodDhikr.recommendedCount);
+
+    // Navigate to home and switch to zikirmatik tab
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (_) => const HomeScreen(),
+        settings: const RouteSettings(arguments: 1), // zikirmatik tab index
+      ),
+      (route) => false,
+    );
+  }
+
+  // Localized strings
+  String _getAyahSectionTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Qur\'anic Verse';
+      case 'fi':
+        return 'Koraanin Jae';
+      default:
+        return 'Kur\'an Ayeti';
+    }
+  }
+
+  String _getEsmaSectionTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Divine Name';
+      case 'fi':
+        return 'Jumalan Nimi';
+      default:
+        return 'Esma-ül Hüsna';
+    }
+  }
+
+  String _getDhikrSectionTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Recommended Dhikr';
+      case 'fi':
+        return 'Suositeltu Dhikr';
+      default:
+        return 'Önerilen Zikir';
+    }
+  }
+
+  String _getTapForMoreText(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Tap to start dhikr';
+      case 'fi':
+        return 'Napauta aloittaaksesi dhikr';
+      default:
+        return 'Zikre başlamak için dokun';
+    }
+  }
+
+  String _getTimesText(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'times recommended';
+      case 'fi':
+        return 'kertaa suositellaan';
+      default:
+        return 'kere önerilir';
+    }
+  }
+
+  String _getAddToZikirmatikText(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Start Dhikr';
+      case 'fi':
+        return 'Aloita Dhikr';
+      default:
+        return 'Zikre Başla';
+    }
+  }
+
+  void _startEsmaZikir(BuildContext context, WidgetRef ref, EsmaModel esma) {
+    // Convert Esma to DhikrModel
+    final dhikr = DhikrModel(
+      id: 'esma_${esma.id}',
+      arabic: esma.arabic,
+      transliteration: esma.transliteration,
+      meaning: {
+        'tr': esma.getMeaning('tr'),
+        'en': esma.getMeaning('en'),
+        'fi': esma.getMeaning('fi'),
+      },
+      defaultTarget: esma.abjadValue,
+      isCustom: false,
+    );
+
+    // Set the dhikr and target (use ebced value as target)
+    ref.read(dhikrProvider.notifier).selectDhikr(dhikr);
+    ref.read(dhikrProvider.notifier).setTarget(esma.abjadValue);
+
+    // Navigate to home and switch to zikirmatik tab
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (_) => const HomeScreen(),
+        settings: const RouteSettings(arguments: 1), // zikirmatik tab index
+      ),
+      (route) => false,
     );
   }
 }

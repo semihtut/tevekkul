@@ -9,6 +9,7 @@ class SettingsState {
   final bool soundEnabled;
   final bool notificationsEnabled;
   final int defaultTarget;
+  final String userName;
 
   const SettingsState({
     this.themeMode = ThemeMode.system,
@@ -17,6 +18,7 @@ class SettingsState {
     this.soundEnabled = false,
     this.notificationsEnabled = true,
     this.defaultTarget = 33,
+    this.userName = '',
   });
 
   SettingsState copyWith({
@@ -26,6 +28,7 @@ class SettingsState {
     bool? soundEnabled,
     bool? notificationsEnabled,
     int? defaultTarget,
+    String? userName,
   }) {
     return SettingsState(
       themeMode: themeMode ?? this.themeMode,
@@ -34,6 +37,7 @@ class SettingsState {
       soundEnabled: soundEnabled ?? this.soundEnabled,
       notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
       defaultTarget: defaultTarget ?? this.defaultTarget,
+      userName: userName ?? this.userName,
     );
   }
 }
@@ -64,7 +68,13 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
       hapticEnabled: storage.getHapticEnabled(),
       soundEnabled: storage.getSoundEnabled(),
       notificationsEnabled: storage.getNotificationsEnabled(),
+      userName: storage.getUserName(),
     );
+  }
+
+  Future<void> setUserName(String name) async {
+    await StorageService().saveUserName(name);
+    state = state.copyWith(userName: name);
   }
 
   void setThemeMode(ThemeMode mode) {
@@ -135,4 +145,8 @@ final languageProvider = Provider<String>((ref) {
 
 final hapticEnabledProvider = Provider<bool>((ref) {
   return ref.watch(settingsProvider).hapticEnabled;
+});
+
+final userNameProvider = Provider<String>((ref) {
+  return ref.watch(settingsProvider).userName;
 });

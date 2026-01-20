@@ -1,0 +1,487 @@
+{
+  "Allah": {
+    "tr": "Manevi yakınlık, bereket, itaat edilme",
+    "en": "Spiritual closeness, blessings, gaining respect",
+    "fi": "Hengellinen läheisyys, siunaukset, kunnioituksen saaminen"
+  },
+  "Ar-Rahman": {
+    "tr": "Rahmet, merhamet kazanma",
+    "en": "Gaining mercy and compassion",
+    "fi": "Armon ja myötätunnon saaminen"
+  },
+  "Ar-Rahim": {
+    "tr": "Bağışlanma, af",
+    "en": "Forgiveness, pardon",
+    "fi": "Anteeksianto, armahdus"
+  },
+  "Al-Malik": {
+    "tr": "İzzet, yücelik",
+    "en": "Honor, dignity",
+    "fi": "Kunnia, arvokkuus"
+  },
+  "Al-Quddus": {
+    "tr": "Ruhsal arınma, temizlik",
+    "en": "Spiritual purification, cleansing",
+    "fi": "Hengellinen puhdistuminen"
+  },
+  "As-Salam": {
+    "tr": "İç huzuru, güvenlik",
+    "en": "Inner peace, safety",
+    "fi": "Sisäinen rauha, turvallisuus"
+  },
+  "Al-Mu'min": {
+    "tr": "Korku giderme, emniyet",
+    "en": "Removing fear, security",
+    "fi": "Pelon poistaminen, turvallisuus"
+  },
+  "Al-Muhaymin": {
+    "tr": "Korunma, unutkanlıktan kurtulma",
+    "en": "Protection, overcoming forgetfulness",
+    "fi": "Suojelu, unohtamisen voittaminen"
+  },
+  "Al-Aziz": {
+    "tr": "Düşmanlara karşı galip gelme, sevgi",
+    "en": "Victory over enemies, gaining love",
+    "fi": "Voitto vihollisista, rakkauden saaminen"
+  },
+  "Al-Jabbar": {
+    "tr": "İstek ve arzuların gerçekleşmesi",
+    "en": "Fulfillment of wishes and desires",
+    "fi": "Toiveiden ja halujen toteutuminen"
+  },
+  "Al-Mutakabbir": {
+    "tr": "İtibar, söz geçerlilik",
+    "en": "Prestige, having one's word respected",
+    "fi": "Arvovalta, sanan kunnioitus"
+  },
+  "Al-Khaliq": {
+    "tr": "Yaratıcılık, sanat yeteneği",
+    "en": "Creativity, artistic talent",
+    "fi": "Luovuus, taiteellinen lahjakkuus"
+  },
+  "Al-Bari": {
+    "tr": "Yeni başlangıçlar",
+    "en": "New beginnings",
+    "fi": "Uudet alut"
+  },
+  "Al-Musawwir": {
+    "tr": "Güzellik, estetik anlayış",
+    "en": "Beauty, aesthetic understanding",
+    "fi": "Kauneus, esteettinen ymmärrys"
+  },
+  "Al-Ghaffar": {
+    "tr": "Günah bağışlanması",
+    "en": "Forgiveness of sins",
+    "fi": "Syntien anteeksianto"
+  },
+  "Al-Qahhar": {
+    "tr": "Baskıdan kurtulma, güç kazanma",
+    "en": "Freedom from oppression, gaining strength",
+    "fi": "Vapautuminen sorrosta, voiman saaminen"
+  },
+  "Al-Wahhab": {
+    "tr": "Bolluk, bağış, hibe",
+    "en": "Abundance, gifts, grants",
+    "fi": "Runsaus, lahjat, apurahat"
+  },
+  "Ar-Razzaq": {
+    "tr": "Rızık artışı, bereket",
+    "en": "Increase in sustenance, blessings",
+    "fi": "Toimeentulon lisääntyminen, siunaukset"
+  },
+  "Al-Fattah": {
+    "tr": "Zorlukların çözümü, fırsat",
+    "en": "Resolution of difficulties, opportunities",
+    "fi": "Vaikeuksien ratkaiseminen, mahdollisuudet"
+  },
+  "Al-Alim": {
+    "tr": "İlim, bilgi artışı",
+    "en": "Knowledge, increase in learning",
+    "fi": "Tieto, oppimisen lisääntyminen"
+  },
+  "Al-Qabid": {
+    "tr": "Kontrol, sabır",
+    "en": "Control, patience",
+    "fi": "Hallinta, kärsivällisyys"
+  },
+  "Al-Basit": {
+    "tr": "Bolluk, genişlik",
+    "en": "Abundance, expansion",
+    "fi": "Runsaus, laajentuminen"
+  },
+  "Al-Khafid": {
+    "tr": "Tevazu, alçak gönüllülük",
+    "en": "Humility, modesty",
+    "fi": "Nöyryys, vaatimattomuus"
+  },
+  "Ar-Rafi": {
+    "tr": "Mevki yükselmesi, terfi",
+    "en": "Elevation in status, promotion",
+    "fi": "Aseman kohoaminen, ylennys"
+  },
+  "Al-Mu'izz": {
+    "tr": "Şeref, onur kazanma",
+    "en": "Gaining honor and dignity",
+    "fi": "Kunnian ja arvon saaminen"
+  },
+  "Al-Mudhill": {
+    "tr": "Düşmanların zayıflaması",
+    "en": "Weakening of enemies",
+    "fi": "Vihollisten heikentyminen"
+  },
+  "As-Sami": {
+    "tr": "Duaların kabulü",
+    "en": "Acceptance of prayers",
+    "fi": "Rukousten hyväksyminen"
+  },
+  "Al-Basir": {
+    "tr": "Basiret, gizli şeyleri öğrenme",
+    "en": "Insight, learning hidden things",
+    "fi": "Näkemys, piilotettujen asioiden oppiminen"
+  },
+  "Al-Hakam": {
+    "tr": "Dava kazanma, adalet",
+    "en": "Winning cases, justice",
+    "fi": "Oikeustapausten voittaminen, oikeus"
+  },
+  "Al-Adl": {
+    "tr": "Maddi-manevi halde düzelme",
+    "en": "Improvement in material and spiritual state",
+    "fi": "Aineellisen ja hengellisen tilan paraneminen"
+  },
+  "Al-Latif": {
+    "tr": "Sürpriz iyilikler, incelik",
+    "en": "Unexpected blessings, subtlety",
+    "fi": "Odottamattomat siunaukset, hienotunteisuus"
+  },
+  "Al-Khabir": {
+    "tr": "Gizli bilgilere erişim",
+    "en": "Access to hidden knowledge",
+    "fi": "Pääsy piilotettuun tietoon"
+  },
+  "Al-Halim": {
+    "tr": "Sabır, sükûnet",
+    "en": "Patience, tranquility",
+    "fi": "Kärsivällisyys, tyyneys"
+  },
+  "Al-Azim": {
+    "tr": "Heybetli olma, saygınlık",
+    "en": "Being majestic, respectability",
+    "fi": "Majesteettisuus, kunnioitettavuus"
+  },
+  "Al-Ghafur": {
+    "tr": "Günahların örtülmesi",
+    "en": "Covering of sins",
+    "fi": "Syntien peittäminen"
+  },
+  "Ash-Shakur": {
+    "tr": "Azla çoğa ulaşma",
+    "en": "Achieving much with little",
+    "fi": "Paljon saavuttaminen vähällä"
+  },
+  "Al-Ali": {
+    "tr": "Yücelik, Ali mertebeler",
+    "en": "Exaltedness, high ranks",
+    "fi": "Ylhäisyys, korkeat asemat"
+  },
+  "Al-Kabir": {
+    "tr": "Büyüklük, azamet",
+    "en": "Greatness, grandeur",
+    "fi": "Suuruus, loisto"
+  },
+  "Al-Hafiz": {
+    "tr": "Muhafaza, koruma",
+    "en": "Preservation, protection",
+    "fi": "Säilyttäminen, suojelu"
+  },
+  "Al-Muqit": {
+    "tr": "Fiziksel güç, kuvvet",
+    "en": "Physical strength, power",
+    "fi": "Fyysinen voima, valta"
+  },
+  "Al-Hasib": {
+    "tr": "Maddi yeterlilik",
+    "en": "Financial sufficiency",
+    "fi": "Taloudellinen riittävyys"
+  },
+  "Al-Jalil": {
+    "tr": "İhtişam, görkem",
+    "en": "Magnificence, splendor",
+    "fi": "Loisto, suurenmoisuus"
+  },
+  "Al-Karim": {
+    "tr": "Cömertlik, kerem",
+    "en": "Generosity, benevolence",
+    "fi": "Anteliaisuus, hyväntahtoisuus"
+  },
+  "Ar-Raqib": {
+    "tr": "Şuur, farkındalık",
+    "en": "Consciousness, awareness",
+    "fi": "Tietoisuus, havahtuneisuus"
+  },
+  "Al-Mujib": {
+    "tr": "Dua kabulü",
+    "en": "Answering of prayers",
+    "fi": "Rukousten vastaaminen"
+  },
+  "Al-Wasi": {
+    "tr": "Geniş imkanlar",
+    "en": "Vast opportunities",
+    "fi": "Laajat mahdollisuudet"
+  },
+  "Al-Hakim": {
+    "tr": "Akıl, hikmet",
+    "en": "Wisdom, insight",
+    "fi": "Viisaus, ymmärrys"
+  },
+  "Al-Wadud": {
+    "tr": "Sevgi, muhabbet",
+    "en": "Love, affection",
+    "fi": "Rakkaus, kiintymys"
+  },
+  "Al-Majid": {
+    "tr": "Şan, şeref",
+    "en": "Glory, honor",
+    "fi": "Kunnia, maine"
+  },
+  "Al-Ba'ith": {
+    "tr": "Yeni hayat, diriliş",
+    "en": "New life, resurrection",
+    "fi": "Uusi elämä, ylösnousemus"
+  },
+  "Ash-Shahid": {
+    "tr": "Hakikati görme",
+    "en": "Seeing the truth",
+    "fi": "Totuuden näkeminen"
+  },
+  "Al-Haqq": {
+    "tr": "Gerçeğe ulaşma",
+    "en": "Reaching the truth",
+    "fi": "Totuuden saavuttaminen"
+  },
+  "Al-Wakil": {
+    "tr": "Güven, emanet",
+    "en": "Trust, reliability",
+    "fi": "Luottamus, luotettavuus"
+  },
+  "Al-Qawi": {
+    "tr": "Güç, dayanıklılık",
+    "en": "Strength, endurance",
+    "fi": "Voima, kestävyys"
+  },
+  "Al-Matin": {
+    "tr": "Sebat, kararlılık",
+    "en": "Perseverance, determination",
+    "fi": "Sinnikkyys, päättäväisyys"
+  },
+  "Al-Wali": {
+    "tr": "Dostluk, yardım",
+    "en": "Friendship, assistance",
+    "fi": "Ystävyys, apu"
+  },
+  "Al-Hamid": {
+    "tr": "İyi nam kazanma",
+    "en": "Gaining good reputation",
+    "fi": "Hyvän maineen saaminen"
+  },
+  "Al-Muhsi": {
+    "tr": "Organizasyon, düzen",
+    "en": "Organization, order",
+    "fi": "Organisointi, järjestys"
+  },
+  "Al-Mubdi": {
+    "tr": "Başlangıçlar, teşebbüs",
+    "en": "Beginnings, initiatives",
+    "fi": "Aloitukset, hankkeet"
+  },
+  "Al-Muid": {
+    "tr": "Kayıpların dönüşü",
+    "en": "Return of what was lost",
+    "fi": "Menetetyn palautuminen"
+  },
+  "Al-Muhyi": {
+    "tr": "Hayat, canlılık",
+    "en": "Life, vitality",
+    "fi": "Elämä, elinvoima"
+  },
+  "Al-Mumit": {
+    "tr": "Kötü alışkanlıkların ölümü",
+    "en": "Death of bad habits",
+    "fi": "Huonojen tapojen kuolema"
+  },
+  "Al-Hayy": {
+    "tr": "Sağlık, hayat enerjisi",
+    "en": "Health, life energy",
+    "fi": "Terveys, elämänenergia"
+  },
+  "Al-Qayyum": {
+    "tr": "Daim olma, süreklilik",
+    "en": "Permanence, continuity",
+    "fi": "Pysyvyys, jatkuvuus"
+  },
+  "Al-Wajid": {
+    "tr": "Kayıpları bulma",
+    "en": "Finding what was lost",
+    "fi": "Kadonneen löytäminen"
+  },
+  "Al-Wahid": {
+    "tr": "Birlik, teklik şuuru",
+    "en": "Unity, awareness of oneness",
+    "fi": "Ykseys, tietoisuus ykseydestä"
+  },
+  "As-Samad": {
+    "tr": "Her ihtiyacın giderilmesi",
+    "en": "Fulfillment of every need",
+    "fi": "Kaikkien tarpeiden täyttäminen"
+  },
+  "Al-Qadir": {
+    "tr": "İktidar, yetki",
+    "en": "Power, authority",
+    "fi": "Valta, valtuudet"
+  },
+  "Al-Muqtadir": {
+    "tr": "Tasarruf, kontrol",
+    "en": "Disposal, control",
+    "fi": "Hallinta, kontrolli"
+  },
+  "Al-Muqaddim": {
+    "tr": "Terfi, yükselme",
+    "en": "Promotion, advancement",
+    "fi": "Ylennys, eteneminen"
+  },
+  "Al-Muakhkhir": {
+    "tr": "Zarar verenleri uzaklaştırma",
+    "en": "Distancing harmful people",
+    "fi": "Haitallisten ihmisten etäännyttäminen"
+  },
+  "Al-Awwal": {
+    "tr": "Öncelik, önderlik",
+    "en": "Priority, leadership",
+    "fi": "Etusija, johtajuus"
+  },
+  "Al-Akhir": {
+    "tr": "Sonuçlar, bitiş",
+    "en": "Results, completion",
+    "fi": "Tulokset, päätös"
+  },
+  "Az-Zahir": {
+    "tr": "Açıklık, netlik",
+    "en": "Clarity, openness",
+    "fi": "Selkeys, avoimuus"
+  },
+  "Al-Batin": {
+    "tr": "Gizli bilgilere erişim",
+    "en": "Access to hidden knowledge",
+    "fi": "Pääsy piilotettuun tietoon"
+  },
+  "Al-Muta'ali": {
+    "tr": "Yücelik, ulviyet",
+    "en": "Exaltedness, sublimity",
+    "fi": "Ylhäisyys, ylevyys"
+  },
+  "Al-Barr": {
+    "tr": "İyilik, hayır",
+    "en": "Goodness, virtue",
+    "fi": "Hyvyys, hyve"
+  },
+  "At-Tawwab": {
+    "tr": "Tövbe kabulü",
+    "en": "Acceptance of repentance",
+    "fi": "Katumuksen hyväksyminen"
+  },
+  "Al-Muntaqim": {
+    "tr": "Zalimlerin cezalandırılması",
+    "en": "Punishment of oppressors",
+    "fi": "Sortajien rankaiseminen"
+  },
+  "Al-Afuww": {
+    "tr": "Af, bağışlanma",
+    "en": "Pardon, forgiveness",
+    "fi": "Armahdus, anteeksianto"
+  },
+  "Ar-Ra'uf": {
+    "tr": "Şefkat, rahmet",
+    "en": "Compassion, mercy",
+    "fi": "Myötätunto, armo"
+  },
+  "Malik-ul-Mulk": {
+    "tr": "Mülkiyet, sahiplik",
+    "en": "Ownership, possession",
+    "fi": "Omistus, hallinta"
+  },
+  "Dhul-Jalali-wal-Ikram": {
+    "tr": "İhtişam ve cömertlik",
+    "en": "Majesty and generosity",
+    "fi": "Majesteettisuus ja anteliaisuus"
+  },
+  "Al-Muqsit": {
+    "tr": "Adalet, denge",
+    "en": "Justice, balance",
+    "fi": "Oikeus, tasapaino"
+  },
+  "Al-Jami": {
+    "tr": "Birleşme, toplama",
+    "en": "Unification, gathering",
+    "fi": "Yhdistyminen, kokoaminen"
+  },
+  "Al-Ghani": {
+    "tr": "Zenginlik, refah",
+    "en": "Wealth, prosperity",
+    "fi": "Rikkaus, vauraus"
+  },
+  "Al-Mughni": {
+    "tr": "Mali durum iyileşmesi",
+    "en": "Financial improvement",
+    "fi": "Taloudellinen parannus"
+  },
+  "Al-Mani": {
+    "tr": "Korunma, savunma",
+    "en": "Protection, defense",
+    "fi": "Suojelu, puolustus"
+  },
+  "Ad-Darr": {
+    "tr": "Düşman zayıflaması",
+    "en": "Weakening of enemies",
+    "fi": "Vihollisten heikkeneminen"
+  },
+  "An-Nafi": {
+    "tr": "Fayda, yarar",
+    "en": "Benefit, advantage",
+    "fi": "Hyöty, etu"
+  },
+  "An-Nur": {
+    "tr": "Aydınlanma, basiret",
+    "en": "Enlightenment, insight",
+    "fi": "Valaistuminen, näkemys"
+  },
+  "Al-Hadi": {
+    "tr": "Doğru yol, rehberlik",
+    "en": "Right path, guidance",
+    "fi": "Oikea tie, opastus"
+  },
+  "Al-Badi": {
+    "tr": "Yaratıcılık, özgünlük",
+    "en": "Creativity, originality",
+    "fi": "Luovuus, omaperäisyys"
+  },
+  "Al-Baqi": {
+    "tr": "Süreklilik, kalıcılık",
+    "en": "Permanence, lasting",
+    "fi": "Pysyvyys, kestävyys"
+  },
+  "Al-Warith": {
+    "tr": "Miras, devir",
+    "en": "Inheritance, succession",
+    "fi": "Perintö, seuraaminen"
+  },
+  "Ar-Rashid": {
+    "tr": "Doğru karar, rehberlik",
+    "en": "Right decision, guidance",
+    "fi": "Oikea päätös, opastus"
+  },
+  "As-Sabur": {
+    "tr": "Sabır, dayanma",
+    "en": "Patience, endurance",
+    "fi": "Kärsivällisyys, kestävyys"
+  }
+}

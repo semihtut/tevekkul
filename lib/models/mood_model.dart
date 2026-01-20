@@ -5,6 +5,7 @@ class MoodModel {
   final Map<String, String> description; // tr, en, fi
   final List<String> suggestedDhikrIds;
   final List<String> suggestedEsmaIds;
+  final String? suggestedEsmaId; // Primary suggested Esma for mood result screen
   final List<AyahReference> ayahReferences;
   final Map<String, String> reflectionPrompts; // tr, en, fi
 
@@ -15,6 +16,7 @@ class MoodModel {
     this.description = const {},
     this.suggestedDhikrIds = const [],
     this.suggestedEsmaIds = const [],
+    this.suggestedEsmaId,
     this.ayahReferences = const [],
     this.reflectionPrompts = const {},
   });
@@ -99,6 +101,7 @@ class MoodModel {
               ?.map((e) => e as String)
               .toList() ??
           [],
+      suggestedEsmaId: json['suggested_esma_id'] as String?,
       ayahReferences: (json['ayah_references'] as List<dynamic>?)
               ?.map((e) => AyahReference.fromJson(e as Map<String, dynamic>))
               .toList() ??
