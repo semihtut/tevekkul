@@ -236,6 +236,29 @@ class StorageService {
     return _settingsBox.get('ramadanEnabled', defaultValue: false) as bool;
   }
 
+  // ==================== DAILY WIRD STORAGE ====================
+
+  Future<void> saveWirdItems(List<Map<String, dynamic>> items) async {
+    await _dhikrsBox.put('wirdItems', jsonEncode(items));
+  }
+
+  List<Map<String, dynamic>> loadWirdItems() {
+    final jsonStr = _dhikrsBox.get('wirdItems');
+    if (jsonStr == null) return [];
+    final List<dynamic> jsonList = jsonDecode(jsonStr);
+    return jsonList.cast<Map<String, dynamic>>();
+  }
+
+  Future<void> saveWirdLastReset(DateTime date) async {
+    await _prefs.setString('wirdLastReset', date.toIso8601String());
+  }
+
+  DateTime? getWirdLastReset() {
+    final dateStr = _prefs.getString('wirdLastReset');
+    if (dateStr == null) return null;
+    return DateTime.parse(dateStr);
+  }
+
   // ==================== DATA MANAGEMENT ====================
 
   Future<void> clearAllData() async {

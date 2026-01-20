@@ -103,7 +103,7 @@ class _HeartSystemScreenState extends ConsumerState<HeartSystemScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Qalb',
+              'Soul',
               style: AppTypography.headingMedium.copyWith(
                 color: isDark
                     ? AppColors.textPrimaryDark
@@ -113,7 +113,7 @@ class _HeartSystemScreenState extends ConsumerState<HeartSystemScreen> {
             ShaderMask(
               shaderCallback: (bounds) => AppColors.primaryGradient.createShader(bounds),
               child: Text(
-                'Hz',
+                'Count',
                 style: AppTypography.headingMedium.copyWith(
                   color: Colors.white,
                 ),

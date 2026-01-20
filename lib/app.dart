@@ -17,7 +17,7 @@ class TevekkulApp extends ConsumerWidget {
     final isOnboardingComplete = storage.isOnboardingComplete();
 
     return MaterialApp(
-      title: 'QalbHz',
+      title: 'SoulCount',
       debugShowCheckedModeBanner: false,
       themeMode: settings.themeMode,
       theme: AppTheme.lightTheme.copyWith(

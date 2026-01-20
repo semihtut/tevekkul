@@ -7,6 +7,7 @@ import '../../config/app_typography.dart';
 import '../../providers/dhikr_provider.dart';
 import '../../providers/user_progress_provider.dart';
 import '../../providers/settings_provider.dart';
+import '../../providers/wird_provider.dart';
 import '../../services/sound_service.dart';
 import '../../widgets/counter/circular_counter.dart';
 import '../../widgets/counter/tap_area.dart';
@@ -14,13 +15,39 @@ import '../../widgets/counter/target_selector.dart';
 import '../../widgets/common/glass_container.dart';
 
 class ZikirmatikScreen extends ConsumerStatefulWidget {
-  const ZikirmatikScreen({super.key});
+  final String? wirdItemId;
+  final int? initialCount;
+
+  const ZikirmatikScreen({
+    super.key,
+    this.wirdItemId,
+    this.initialCount,
+  });
 
   @override
   ConsumerState<ZikirmatikScreen> createState() => _ZikirmatikScreenState();
 }
 
 class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
+  bool _initialCountSet = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Wird'den gelindiyse initial count ayarla
+    if (widget.initialCount != null && widget.initialCount! > 0) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!_initialCountSet) {
+          _initialCountSet = true;
+          // DhikrProvider'daki count'u wird'deki mevcut count ile başlat
+          for (int i = 0; i < widget.initialCount!; i++) {
+            ref.read(dhikrProvider.notifier).increment();
+          }
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -219,6 +246,12 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
     // Increment counter
     ref.read(dhikrProvider.notifier).increment();
     ref.read(userProgressProvider.notifier).incrementDhikr(1);
+
+    // Wird'den gelindiyse wird progress'i de güncelle
+    if (widget.wirdItemId != null) {
+      final newCount = dhikrState.currentCount + 1;
+      ref.read(wirdProvider.notifier).updateProgress(widget.wirdItemId!, newCount);
+    }
 
     // Check if target reached (after increment)
     final newCount = dhikrState.currentCount + 1;

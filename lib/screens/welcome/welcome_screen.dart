@@ -107,12 +107,12 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                         ),
                         const SizedBox(height: AppConstants.spacingL),
 
-                        // App Title - QalbHz
+                        // App Title - SoulCount
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Qalb',
+                              'Soul',
                               style: AppTypography.headingLarge.copyWith(
                                 color: isDark
                                     ? AppColors.textPrimaryDark
@@ -122,7 +122,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                               ),
                             ),
                             Text(
-                              'Hz',
+                              'Count',
                               style: AppTypography.headingLarge.copyWith(
                                 color: const Color(0xFF0D9488),
                                 fontWeight: FontWeight.bold,

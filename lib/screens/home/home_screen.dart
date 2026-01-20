@@ -8,11 +8,12 @@ import '../../providers/settings_provider.dart';
 import '../../providers/user_progress_provider.dart';
 import '../../providers/esma_provider.dart';
 import '../../providers/ramadan_provider.dart';
+import '../../providers/wird_provider.dart';
 import '../../services/data_loader_service.dart';
-import '../../services/storage_service.dart';
 import '../../widgets/common/glass_container.dart';
 import '../../widgets/common/animated_ekg.dart';
 import '../../widgets/ramadan/ramadan_banner.dart';
+import '../../widgets/wird/wird_banner.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
 import '../favorites/favorites_screen.dart';
 import '../mood/mood_selection_screen.dart';
@@ -189,12 +190,18 @@ class _HomeContent extends ConsumerWidget {
               const SizedBox(height: AppConstants.spacingM),
             ],
 
+            // Daily Wird Banner (shows only if there are wird items)
+            if (ref.watch(wirdItemsProvider).isNotEmpty) ...[
+              const WirdBanner(),
+              const SizedBox(height: AppConstants.spacingM),
+            ],
+
             // Progress Card
             _buildProgressCard(context, isDark, progress, lang),
             const SizedBox(height: AppConstants.spacingXL),
 
             // Greeting
-            _buildGreeting(isDark, lang),
+            _buildGreeting(ref, isDark, lang),
             const SizedBox(height: 4),
             Text(
               AppTranslations.get('whats_good_for_soul', lang),
@@ -255,9 +262,8 @@ class _HomeContent extends ConsumerWidget {
     );
   }
 
-  Widget _buildGreeting(bool isDark, String lang) {
-    final storage = StorageService();
-    final userName = storage.getUserName();
+  Widget _buildGreeting(WidgetRef ref, bool isDark, String lang) {
+    final userName = ref.watch(userNameProvider);
     final displayName = userName.isNotEmpty ? userName : 'User';
 
     return Text(
@@ -283,9 +289,9 @@ class _HomeContent extends ConsumerWidget {
             // Animated Mini EKG icon
             const MiniAnimatedEkg(),
             const SizedBox(width: 8),
-            // QalbHz styled text
+            // SoulCount styled text
             Text(
-              'Qalb',
+              'Soul',
               style: AppTypography.headingSmall.copyWith(
                 color: isDark
                     ? AppColors.textPrimaryDark
@@ -294,7 +300,7 @@ class _HomeContent extends ConsumerWidget {
               ),
             ),
             Text(
-              'Hz',
+              'Count',
               style: AppTypography.headingSmall.copyWith(
                 color: isDark ? lightTealColor : tealColor,
                 fontWeight: FontWeight.bold,
