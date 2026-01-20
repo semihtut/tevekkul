@@ -32,8 +32,7 @@ class WirdBanner extends ConsumerWidget {
         );
       },
       child: GlassContainer(
-        margin: const EdgeInsets.symmetric(horizontal: AppConstants.spacingL),
-        padding: const EdgeInsets.all(AppConstants.spacingL),
+        padding: const EdgeInsets.all(AppConstants.spacingM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
