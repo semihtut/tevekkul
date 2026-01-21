@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:logger/logger.dart';
 import 'storage_service.dart';
 
 class BackupService {
@@ -9,9 +10,21 @@ class BackupService {
   factory BackupService() => _instance;
   BackupService._internal();
 
+  final _logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 5,
+      lineLength: 80,
+      colors: true,
+      printEmojis: true,
+    ),
+  );
+
   /// Export data to a JSON file and share it with the user
   Future<String> exportToFile() async {
     try {
+      _logger.i('Starting backup export');
+
       // Get the data as JSON
       final jsonData = await StorageService().exportData();
 
@@ -27,8 +40,10 @@ class BackupService {
       final file = File(filePath);
       await file.writeAsString(jsonData);
 
+      _logger.i('Backup exported successfully to: $filePath');
       return filePath;
-    } catch (e) {
+    } catch (e, stackTrace) {
+      _logger.e('Failed to export backup', error: e, stackTrace: stackTrace);
       throw Exception('Failed to export backup: $e');
     }
   }
@@ -51,22 +66,47 @@ class BackupService {
   /// Let user pick a backup file and restore it
   Future<void> restoreFromFile() async {
     try {
+      _logger.i('Starting restore from file');
+
       // Let user pick a file
       final result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
         allowedExtensions: ['json'],
+        allowMultiple: false,
       );
 
       if (result == null || result.files.isEmpty) {
+        _logger.w('Restore cancelled: No file selected');
         throw Exception('No file selected');
       }
 
-      final file = File(result.files.single.path!);
+      final filePath = result.files.single.path;
+      if (filePath == null) {
+        _logger.e('Restore failed: File path is null');
+        throw Exception('Invalid file path');
+      }
+
+      final file = File(filePath);
+      if (!await file.exists()) {
+        _logger.e('Restore failed: File does not exist at $filePath');
+        throw Exception('File does not exist');
+      }
+
+      _logger.i('Reading backup file: $filePath');
       final jsonData = await file.readAsString();
 
+      if (jsonData.isEmpty) {
+        _logger.e('Restore failed: File is empty');
+        throw Exception('Backup file is empty');
+      }
+
       // Import the data
+      _logger.i('Importing backup data');
       await StorageService().importData(jsonData);
-    } catch (e) {
+
+      _logger.i('Restore completed successfully');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to restore backup', error: e, stackTrace: stackTrace);
       throw Exception('Failed to restore backup: $e');
     }
   }

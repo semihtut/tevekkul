@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:logger/logger.dart';
 import '../models/dhikr_model.dart';
 import '../models/user_progress_model.dart';
 
@@ -8,6 +9,16 @@ class StorageService {
   static final StorageService _instance = StorageService._internal();
   factory StorageService() => _instance;
   StorageService._internal();
+
+  final _logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 5,
+      lineLength: 80,
+      colors: true,
+      printEmojis: true,
+    ),
+  );
 
   static const String _dhikrsBoxName = 'dhikrs';
   static const String _progressBoxName = 'progress';
@@ -29,18 +40,28 @@ class StorageService {
   // ==================== DHIKR STORAGE ====================
 
   Future<void> saveDhikrs(List<DhikrModel> dhikrs) async {
-    final jsonList = dhikrs.map((d) => jsonEncode(d.toJson())).toList();
-    await _dhikrsBox.put('dhikrs', jsonEncode(jsonList));
+    try {
+      final jsonList = dhikrs.map((d) => jsonEncode(d.toJson())).toList();
+      await _dhikrsBox.put('dhikrs', jsonEncode(jsonList));
+    } catch (e, stackTrace) {
+      _logger.e('Failed to save dhikrs', error: e, stackTrace: stackTrace);
+      rethrow; // Re-throw for caller to handle
+    }
   }
 
   List<DhikrModel> loadDhikrs() {
-    final jsonStr = _dhikrsBox.get('dhikrs');
-    if (jsonStr == null) return [];
+    try {
+      final jsonStr = _dhikrsBox.get('dhikrs');
+      if (jsonStr == null) return [];
 
-    final List<dynamic> jsonList = jsonDecode(jsonStr);
-    return jsonList
-        .map((str) => DhikrModel.fromJson(jsonDecode(str as String)))
-        .toList();
+      final List<dynamic> jsonList = jsonDecode(jsonStr);
+      return jsonList
+          .map((str) => DhikrModel.fromJson(jsonDecode(str as String)))
+          .toList();
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load dhikrs', error: e, stackTrace: stackTrace);
+      return []; // Return empty list on error
+    }
   }
 
   Future<void> saveFavorites(List<String> favoriteIds) async {
@@ -48,9 +69,14 @@ class StorageService {
   }
 
   List<String> loadFavorites() {
-    final jsonStr = _dhikrsBox.get('favorites');
-    if (jsonStr == null) return [];
-    return List<String>.from(jsonDecode(jsonStr));
+    try {
+      final jsonStr = _dhikrsBox.get('favorites');
+      if (jsonStr == null) return [];
+      return List<String>.from(jsonDecode(jsonStr));
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load favorites', error: e, stackTrace: stackTrace);
+      return [];
+    }
   }
 
   // ==================== ESMA FAVORITES STORAGE ====================
@@ -60,51 +86,81 @@ class StorageService {
   }
 
   List<String> loadEsmaFavorites() {
-    final jsonStr = _dhikrsBox.get('esmaFavorites');
-    if (jsonStr == null) return [];
-    return List<String>.from(jsonDecode(jsonStr));
+    try {
+      final jsonStr = _dhikrsBox.get('esmaFavorites');
+      if (jsonStr == null) return [];
+      return List<String>.from(jsonDecode(jsonStr));
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load esma favorites', error: e, stackTrace: stackTrace);
+      return [];
+    }
   }
 
   // ==================== USER PROGRESS STORAGE ====================
 
   Future<void> saveUserProgress(UserProgressModel progress) async {
-    await _progressBox.put('userProgress', jsonEncode(progress.toJson()));
+    try {
+      await _progressBox.put('userProgress', jsonEncode(progress.toJson()));
+    } catch (e, stackTrace) {
+      _logger.e('Failed to save user progress', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
   }
 
   UserProgressModel? loadUserProgress() {
-    final jsonStr = _progressBox.get('userProgress');
-    if (jsonStr == null) return null;
-    return UserProgressModel.fromJson(jsonDecode(jsonStr));
+    try {
+      final jsonStr = _progressBox.get('userProgress');
+      if (jsonStr == null) return null;
+      return UserProgressModel.fromJson(jsonDecode(jsonStr));
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load user progress', error: e, stackTrace: stackTrace);
+      return null;
+    }
   }
 
   Future<void> updateDailyProgress(int count) async {
-    final today = DateTime.now().toIso8601String().split('T')[0];
-    final dailyKey = 'daily_$today';
-    final current = _progressBox.get(dailyKey);
-    final currentCount = current != null ? int.parse(current) : 0;
-    await _progressBox.put(dailyKey, (currentCount + count).toString());
+    try {
+      final today = DateTime.now().toIso8601String().split('T')[0];
+      final dailyKey = 'daily_$today';
+      final current = _progressBox.get(dailyKey);
+      final currentCount = current != null ? int.parse(current) : 0;
+      await _progressBox.put(dailyKey, (currentCount + count).toString());
+    } catch (e, stackTrace) {
+      _logger.e('Failed to update daily progress', error: e, stackTrace: stackTrace);
+      // Don't rethrow - silent fail for progress tracking
+    }
   }
 
   int getDailyProgress() {
-    final today = DateTime.now().toIso8601String().split('T')[0];
-    final dailyKey = 'daily_$today';
-    final current = _progressBox.get(dailyKey);
-    return current != null ? int.parse(current) : 0;
+    try {
+      final today = DateTime.now().toIso8601String().split('T')[0];
+      final dailyKey = 'daily_$today';
+      final current = _progressBox.get(dailyKey);
+      return current != null ? int.parse(current) : 0;
+    } catch (e, stackTrace) {
+      _logger.e('Failed to get daily progress', error: e, stackTrace: stackTrace);
+      return 0;
+    }
   }
 
   Map<String, int> getWeeklyProgress() {
-    final result = <String, int>{};
-    final now = DateTime.now();
+    try {
+      final result = <String, int>{};
+      final now = DateTime.now();
 
-    for (int i = 6; i >= 0; i--) {
-      final date = now.subtract(Duration(days: i));
-      final dateStr = date.toIso8601String().split('T')[0];
-      final dailyKey = 'daily_$dateStr';
-      final current = _progressBox.get(dailyKey);
-      result[dateStr] = current != null ? int.parse(current) : 0;
+      for (int i = 6; i >= 0; i--) {
+        final date = now.subtract(Duration(days: i));
+        final dateStr = date.toIso8601String().split('T')[0];
+        final dailyKey = 'daily_$dateStr';
+        final current = _progressBox.get(dailyKey);
+        result[dateStr] = current != null ? int.parse(current) : 0;
+      }
+
+      return result;
+    } catch (e, stackTrace) {
+      _logger.e('Failed to get weekly progress', error: e, stackTrace: stackTrace);
+      return {};
     }
-
-    return result;
   }
 
   // ==================== SETTINGS STORAGE ====================
@@ -243,10 +299,15 @@ class StorageService {
   }
 
   List<Map<String, dynamic>> loadWirdItems() {
-    final jsonStr = _dhikrsBox.get('wirdItems');
-    if (jsonStr == null) return [];
-    final List<dynamic> jsonList = jsonDecode(jsonStr);
-    return jsonList.cast<Map<String, dynamic>>();
+    try {
+      final jsonStr = _dhikrsBox.get('wirdItems');
+      if (jsonStr == null) return [];
+      final List<dynamic> jsonList = jsonDecode(jsonStr);
+      return jsonList.cast<Map<String, dynamic>>();
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load wird items', error: e, stackTrace: stackTrace);
+      return [];
+    }
   }
 
   Future<void> saveWirdLastReset(DateTime date) async {
