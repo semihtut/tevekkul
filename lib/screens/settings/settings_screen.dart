@@ -8,6 +8,7 @@ import '../../providers/settings_provider.dart';
 import '../../providers/ramadan_provider.dart';
 import '../../services/storage_service.dart';
 import '../../services/ebced_service.dart';
+import '../../services/backup_service.dart';
 import '../../widgets/common/glass_container.dart';
 import '../../widgets/common/custom_snackbar.dart';
 
@@ -441,6 +442,9 @@ class SettingsScreen extends ConsumerWidget {
       builder: (context) => AlertDialog(
         backgroundColor:
             isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusLarge),
+        ),
         title: Text(
           AppTranslations.get('backup', lang),
           style: TextStyle(
@@ -450,9 +454,11 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ),
         content: Text(
-          lang == 'en' ? 'Your data will be backed up locally.'
-              : (lang == 'fi' ? 'Tietosi varmuuskopioidaan paikallisesti.'
-              : 'Verileriniz yerel olarak yedeklenecek.'),
+          lang == 'en'
+              ? 'Your data will be exported as a JSON file that you can save or share.'
+              : (lang == 'fi'
+                  ? 'Tietosi viedään JSON-tiedostona, jonka voit tallentaa tai jakaa.'
+                  : 'Verileriniz JSON dosyası olarak dışa aktarılacak ve kaydedebilir veya paylaşabilirsiniz.'),
           style: TextStyle(
             color: isDark
                 ? AppColors.textSecondaryDark
@@ -462,17 +468,61 @@ class SettingsScreen extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppTranslations.get('cancel', lang)),
+            child: Text(
+              AppTranslations.get('cancel', lang),
+              style: TextStyle(
+                color: isDark
+                    ? AppColors.textSecondaryDark
+                    : AppColors.textSecondaryLight,
+              ),
+            ),
           ),
           ElevatedButton(
-            onPressed: () {
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isDark ? AppColors.accentDark : AppColors.primary,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () async {
               Navigator.pop(context);
-              CustomSnackbar.showSuccess(
-                context,
-                lang == 'en' ? 'Backup completed'
-                    : (lang == 'fi' ? 'Varmuuskopiointi valmis'
-                    : 'Yedekleme tamamlandı'),
+
+              // Show loading
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) => Center(
+                  child: CircularProgressIndicator(
+                    color: isDark ? AppColors.accentDark : AppColors.primary,
+                  ),
+                ),
               );
+
+              try {
+                await BackupService().shareBackup();
+
+                if (context.mounted) {
+                  Navigator.pop(context); // Close loading
+                  CustomSnackbar.showSuccess(
+                    context,
+                    lang == 'en'
+                        ? 'Backup created successfully!'
+                        : (lang == 'fi'
+                            ? 'Varmuuskopiointi onnistui!'
+                            : 'Yedekleme başarıyla oluşturuldu!'),
+                  );
+                }
+              } catch (e) {
+                if (context.mounted) {
+                  Navigator.pop(context); // Close loading
+                  CustomSnackbar.showError(
+                    context,
+                    lang == 'en'
+                        ? 'Backup failed: ${e.toString()}'
+                        : (lang == 'fi'
+                            ? 'Varmuuskopiointi epäonnistui: ${e.toString()}'
+                            : 'Yedekleme başarısız: ${e.toString()}'),
+                  );
+                }
+              }
             },
             child: Text(AppTranslations.get('backup', lang)),
           ),
@@ -487,18 +537,35 @@ class SettingsScreen extends ConsumerWidget {
       builder: (context) => AlertDialog(
         backgroundColor:
             isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-        title: Text(
-          AppTranslations.get('restore', lang),
-          style: TextStyle(
-            color: isDark
-                ? AppColors.textPrimaryDark
-                : AppColors.textPrimaryLight,
-          ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusLarge),
+        ),
+        title: Row(
+          children: [
+            Icon(
+              Icons.warning_rounded,
+              color: Colors.orange,
+              size: 24,
+            ),
+            const SizedBox(width: AppConstants.spacingS),
+            Expanded(
+              child: Text(
+                AppTranslations.get('restore', lang),
+                style: TextStyle(
+                  color: isDark
+                      ? AppColors.textPrimaryDark
+                      : AppColors.textPrimaryLight,
+                ),
+              ),
+            ),
+          ],
         ),
         content: Text(
-          lang == 'en' ? 'Do you want to restore your data from backup?'
-              : (lang == 'fi' ? 'Haluatko palauttaa tiedot varmuuskopiosta?'
-              : 'Yedekten verilerinizi geri yüklemek istiyor musunuz?'),
+          lang == 'en'
+              ? 'This will replace all your current data with the backup file. This action cannot be undone!'
+              : (lang == 'fi'
+                  ? 'Tämä korvaa kaikki nykyiset tiedot varmuuskopiotiedostolla. Tätä toimintoa ei voi peruuttaa!'
+                  : 'Bu işlem tüm mevcut verilerinizi yedek dosyasıyla değiştirecek. Bu işlem geri alınamaz!'),
           style: TextStyle(
             color: isDark
                 ? AppColors.textSecondaryDark
@@ -508,19 +575,110 @@ class SettingsScreen extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppTranslations.get('cancel', lang)),
+            child: Text(
+              AppTranslations.get('cancel', lang),
+              style: TextStyle(
+                color: isDark
+                    ? AppColors.textSecondaryDark
+                    : AppColors.textSecondaryLight,
+              ),
+            ),
           ),
           ElevatedButton(
-            onPressed: () {
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () async {
               Navigator.pop(context);
-              CustomSnackbar.showSuccess(
-                context,
-                lang == 'en' ? 'Restore completed'
-                    : (lang == 'fi' ? 'Palautus valmis'
-                    : 'Geri yükleme tamamlandı'),
-              );
+
+              try {
+                // Show file picker
+                await BackupService().restoreFromFile();
+
+                if (context.mounted) {
+                  CustomSnackbar.showSuccess(
+                    context,
+                    lang == 'en'
+                        ? 'Restore completed! Please restart the app.'
+                        : (lang == 'fi'
+                            ? 'Palautus valmis! Käynnistä sovellus uudelleen.'
+                            : 'Geri yükleme tamamlandı! Lütfen uygulamayı yeniden başlatın.'),
+                  );
+
+                  // Show restart dialog
+                  Future.delayed(const Duration(seconds: 2), () {
+                    if (context.mounted) {
+                      _showRestartDialog(context, isDark, lang);
+                    }
+                  });
+                }
+              } catch (e) {
+                if (context.mounted) {
+                  CustomSnackbar.showError(
+                    context,
+                    lang == 'en'
+                        ? 'Restore failed: ${e.toString()}'
+                        : (lang == 'fi'
+                            ? 'Palautus epäonnistui: ${e.toString()}'
+                            : 'Geri yükleme başarısız: ${e.toString()}'),
+                  );
+                }
+              }
             },
             child: Text(AppTranslations.get('restore', lang)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showRestartDialog(BuildContext context, bool isDark, String lang) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        backgroundColor:
+            isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusLarge),
+        ),
+        title: Text(
+          lang == 'en'
+              ? 'Restart Required'
+              : (lang == 'fi'
+                  ? 'Uudelleenkäynnistys vaaditaan'
+                  : 'Yeniden Başlatma Gerekli'),
+          style: TextStyle(
+            color: isDark
+                ? AppColors.textPrimaryDark
+                : AppColors.textPrimaryLight,
+          ),
+        ),
+        content: Text(
+          lang == 'en'
+              ? 'Please close and reopen the app to see your restored data.'
+              : (lang == 'fi'
+                  ? 'Sulje ja avaa sovellus uudelleen nähdäksesi palautetut tiedot.'
+                  : 'Geri yüklenen verilerinizi görmek için lütfen uygulamayı kapatıp yeniden açın.'),
+          style: TextStyle(
+            color: isDark
+                ? AppColors.textSecondaryDark
+                : AppColors.textSecondaryLight,
+          ),
+        ),
+        actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isDark ? AppColors.accentDark : AppColors.primary,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              lang == 'en'
+                  ? 'OK'
+                  : (lang == 'fi' ? 'OK' : 'Tamam'),
+            ),
           ),
         ],
       ),

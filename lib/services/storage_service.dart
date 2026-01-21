@@ -269,20 +269,45 @@ class StorageService {
   }
 
   Future<String> exportData() async {
+    // Collect all daily progress data
+    final dailyProgressData = <String, int>{};
+    for (var key in _progressBox.keys) {
+      if (key.toString().startsWith('daily_')) {
+        final value = _progressBox.get(key);
+        if (value != null) {
+          dailyProgressData[key.toString()] = int.parse(value.toString());
+        }
+      }
+    }
+
     final data = {
+      'version': 1, // For future migration support
       'dhikrs': _dhikrsBox.get('dhikrs'),
       'favorites': _dhikrsBox.get('favorites'),
+      'esmaFavorites': _dhikrsBox.get('esmaFavorites'),
+      'wirdItems': _dhikrsBox.get('wirdItems'),
       'userProgress': _progressBox.get('userProgress'),
+      'dailyProgress': dailyProgressData,
       'settings': {
         'themeMode': getThemeMode(),
         'language': getLanguage(),
         'hapticEnabled': getHapticEnabled(),
         'soundEnabled': getSoundEnabled(),
         'notificationsEnabled': getNotificationsEnabled(),
+        'userName': getUserName(),
+        'ramadanEnabled': getRamadanEnabled(),
       },
       'streak': {
         'currentStreak': getCurrentStreak(),
         'longestStreak': getLongestStreak(),
+        'lastActiveDate': _prefs.getString('lastActiveDate'),
+      },
+      'dailyEsma': {
+        'date': _prefs.getString('dailyEsmaDate'),
+        'index': _prefs.getInt('dailyEsmaIndex'),
+      },
+      'wird': {
+        'lastReset': _prefs.getString('wirdLastReset'),
       },
       'exportDate': DateTime.now().toIso8601String(),
     };
@@ -290,24 +315,84 @@ class StorageService {
   }
 
   Future<void> importData(String jsonData) async {
-    final data = jsonDecode(jsonData) as Map<String, dynamic>;
+    try {
+      final data = jsonDecode(jsonData) as Map<String, dynamic>;
 
-    if (data['dhikrs'] != null) {
-      await _dhikrsBox.put('dhikrs', data['dhikrs']);
-    }
-    if (data['favorites'] != null) {
-      await _dhikrsBox.put('favorites', data['favorites']);
-    }
-    if (data['userProgress'] != null) {
-      await _progressBox.put('userProgress', data['userProgress']);
-    }
-    if (data['settings'] != null) {
-      final settings = data['settings'] as Map<String, dynamic>;
-      await saveThemeMode(settings['themeMode'] ?? 'system');
-      await saveLanguage(settings['language'] ?? 'tr');
-      await saveHapticEnabled(settings['hapticEnabled'] ?? true);
-      await saveSoundEnabled(settings['soundEnabled'] ?? false);
-      await saveNotificationsEnabled(settings['notificationsEnabled'] ?? true);
+      // Import dhikrs and favorites
+      if (data['dhikrs'] != null) {
+        await _dhikrsBox.put('dhikrs', data['dhikrs']);
+      }
+      if (data['favorites'] != null) {
+        await _dhikrsBox.put('favorites', data['favorites']);
+      }
+      if (data['esmaFavorites'] != null) {
+        await _dhikrsBox.put('esmaFavorites', data['esmaFavorites']);
+      }
+      if (data['wirdItems'] != null) {
+        await _dhikrsBox.put('wirdItems', data['wirdItems']);
+      }
+
+      // Import user progress
+      if (data['userProgress'] != null) {
+        await _progressBox.put('userProgress', data['userProgress']);
+      }
+
+      // Import daily progress
+      if (data['dailyProgress'] != null) {
+        final dailyProgress = data['dailyProgress'] as Map<String, dynamic>;
+        for (var entry in dailyProgress.entries) {
+          await _progressBox.put(entry.key, entry.value.toString());
+        }
+      }
+
+      // Import settings
+      if (data['settings'] != null) {
+        final settings = data['settings'] as Map<String, dynamic>;
+        await saveThemeMode(settings['themeMode'] ?? 'system');
+        await saveLanguage(settings['language'] ?? 'tr');
+        await saveHapticEnabled(settings['hapticEnabled'] ?? true);
+        await saveSoundEnabled(settings['soundEnabled'] ?? false);
+        await saveNotificationsEnabled(settings['notificationsEnabled'] ?? true);
+        if (settings['userName'] != null) {
+          await saveUserName(settings['userName']);
+        }
+        await saveRamadanEnabled(settings['ramadanEnabled'] ?? false);
+      }
+
+      // Import streak data
+      if (data['streak'] != null) {
+        final streak = data['streak'] as Map<String, dynamic>;
+        if (streak['currentStreak'] != null) {
+          await _prefs.setInt('currentStreak', streak['currentStreak']);
+        }
+        if (streak['longestStreak'] != null) {
+          await _prefs.setInt('longestStreak', streak['longestStreak']);
+        }
+        if (streak['lastActiveDate'] != null) {
+          await _prefs.setString('lastActiveDate', streak['lastActiveDate']);
+        }
+      }
+
+      // Import daily esma data
+      if (data['dailyEsma'] != null) {
+        final dailyEsma = data['dailyEsma'] as Map<String, dynamic>;
+        if (dailyEsma['date'] != null) {
+          await _prefs.setString('dailyEsmaDate', dailyEsma['date']);
+        }
+        if (dailyEsma['index'] != null) {
+          await _prefs.setInt('dailyEsmaIndex', dailyEsma['index']);
+        }
+      }
+
+      // Import wird data
+      if (data['wird'] != null) {
+        final wird = data['wird'] as Map<String, dynamic>;
+        if (wird['lastReset'] != null) {
+          await _prefs.setString('wirdLastReset', wird['lastReset']);
+        }
+      }
+    } catch (e) {
+      throw Exception('Failed to import data: $e');
     }
   }
 }
