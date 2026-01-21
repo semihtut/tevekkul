@@ -10,8 +10,6 @@ import '../../providers/esma_provider.dart';
 import '../../providers/ramadan_provider.dart';
 import '../../providers/wird_provider.dart';
 import '../../services/data_loader_service.dart';
-import '../../widgets/common/glass_container.dart';
-import '../../widgets/common/animated_ekg.dart';
 import '../../widgets/ramadan/ramadan_banner.dart';
 import '../../widgets/wird/wird_banner.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
@@ -22,7 +20,7 @@ import '../esma/esma_surprise_screen.dart';
 import '../weekly/weekly_summary_screen.dart';
 import '../settings/settings_screen.dart';
 import '../heart/heart_system_screen.dart';
-import '../../models/heart_stage_model.dart';
+import 'home_widgets.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -78,88 +76,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: _buildBottomNavBar(context, isDark),
-    );
-  }
-
-  Widget _buildBottomNavBar(BuildContext context, bool isDark) {
-    final lang = ref.watch(languageProvider);
-    return Container(
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.surfaceDark : Colors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(24),
-          topRight: Radius.circular(24),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 20,
-            offset: const Offset(0, -5),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppConstants.spacingL,
-            vertical: AppConstants.spacingM,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(0, Icons.home_rounded, AppTranslations.get('home', lang), isDark),
-              _buildNavItem(1, Icons.touch_app_rounded, AppTranslations.get('zikirmatik', lang), isDark),
-              _buildNavItem(2, Icons.favorite_rounded, AppTranslations.get('favorites', lang), isDark),
-              _buildNavItem(3, Icons.bar_chart_rounded, AppTranslations.get('progress', lang), isDark),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildNavItem(int index, IconData icon, String label, bool isDark) {
-    final isSelected = _currentIndex == index;
-
-    return GestureDetector(
-      onTap: () => setState(() => _currentIndex = index),
-      behavior: HitTestBehavior.opaque,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedContainer(
-            duration: AppConstants.animationFast,
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: isSelected
-                  ? (isDark ? AppColors.accentDark : AppColors.primary).withValues(alpha: 0.15)
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(
-              icon,
-              size: 24,
-              color: isSelected
-                  ? (isDark ? AppColors.accentDark : AppColors.primary)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.5)
-                      : AppColors.textSecondaryLight),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: AppTypography.labelSmall.copyWith(
-              color: isSelected
-                  ? (isDark ? AppColors.accentDark : AppColors.primary)
-                  : (isDark
-                      ? Colors.white.withValues(alpha: 0.5)
-                      : AppColors.textSecondaryLight),
-              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-            ),
-          ),
-        ],
+      bottomNavigationBar: HomeBottomNavBar(
+        currentIndex: _currentIndex,
+        onIndexChanged: (index) => setState(() => _currentIndex = index),
+        isDark: isDark,
       ),
     );
   }
@@ -181,7 +101,13 @@ class _HomeContent extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // App Bar
-            _buildAppBar(context, isDark, lang),
+            HomeAppBar(
+              isDark: isDark,
+              onSettingsTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+              ),
+            ),
             const SizedBox(height: AppConstants.spacingL),
 
             // Ramadan Banner (shows only during Ramadan or when manually enabled)
@@ -197,11 +123,14 @@ class _HomeContent extends ConsumerWidget {
             ],
 
             // Progress Card
-            _buildProgressCard(context, isDark, progress, lang),
+            HomeProgressCard(
+              isDark: isDark,
+              progress: progress,
+            ),
             const SizedBox(height: AppConstants.spacingXL),
 
             // Greeting
-            _buildGreeting(ref, isDark, lang),
+            HomeGreeting(isDark: isDark),
             const SizedBox(height: 4),
             Text(
               AppTranslations.get('whats_good_for_soul', lang),
@@ -214,12 +143,18 @@ class _HomeContent extends ConsumerWidget {
             const SizedBox(height: AppConstants.spacingXL),
 
             // Heart Status Card
-            _buildHeartStatusCard(context, isDark, progress, lang),
+            HomeHeartStatusCard(
+              isDark: isDark,
+              progress: progress,
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const HeartSystemScreen()),
+              ),
+            ),
             const SizedBox(height: AppConstants.spacingM),
 
             // Feature Cards
-            _buildFeatureCard(
-              context: context,
+            HomeFeatureCard(
               isDark: isDark,
               icon: '🔢',
               title: AppTranslations.get('name_ebced', lang),
@@ -231,8 +166,7 @@ class _HomeContent extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: AppConstants.spacingM),
-            _buildFeatureCard(
-              context: context,
+            HomeFeatureCard(
               isDark: isDark,
               icon: '💭',
               title: AppTranslations.get('by_mood', lang),
@@ -244,8 +178,7 @@ class _HomeContent extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: AppConstants.spacingM),
-            _buildFeatureCard(
-              context: context,
+            HomeFeatureCard(
               isDark: isDark,
               icon: '✨',
               title: AppTranslations.get('esma_surprise', lang),
@@ -255,353 +188,6 @@ class _HomeContent extends ConsumerWidget {
                 context,
                 MaterialPageRoute(builder: (_) => const EsmaSurpriseScreen()),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildGreeting(WidgetRef ref, bool isDark, String lang) {
-    final userName = ref.watch(userNameProvider);
-    final displayName = userName.isNotEmpty ? userName : 'User';
-
-    return Text(
-      '${AppTranslations.get('greeting', lang)}, $displayName 👋',
-      style: AppTypography.headingMedium.copyWith(
-        color: isDark
-            ? AppColors.textPrimaryDark
-            : AppColors.textPrimaryLight,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _buildAppBar(BuildContext context, bool isDark, String lang) {
-    const tealColor = Color(0xFF0D9488);
-    const lightTealColor = Color(0xFF2DD4BF);
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            // Animated Mini EKG icon
-            const MiniAnimatedEkg(),
-            const SizedBox(width: 8),
-            // SoulCount styled text
-            Text(
-              'Soul',
-              style: AppTypography.headingSmall.copyWith(
-                color: isDark
-                    ? AppColors.textPrimaryDark
-                    : AppColors.textPrimaryLight,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Count',
-              style: AppTypography.headingSmall.copyWith(
-                color: isDark ? lightTealColor : tealColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const SettingsScreen()),
-          ),
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(
-              Icons.settings_outlined,
-              color: isDark ? Colors.white : AppColors.textPrimaryLight,
-              size: 22,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildProgressCard(BuildContext context, bool isDark, dynamic progress, String lang) {
-    return GlassContainer(
-      padding: const EdgeInsets.all(AppConstants.spacingM),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  AppTranslations.get('todays_progress', lang),
-                  style: AppTypography.bodySmall.copyWith(
-                    color: isDark
-                        ? AppColors.textSecondaryDark
-                        : AppColors.textSecondaryLight,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                // Progress bar
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: LinearProgressIndicator(
-                    value: progress.todayProgressPercent,
-                    backgroundColor: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : AppColors.primary.withValues(alpha: 0.1),
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      isDark ? AppColors.accentDark : AppColors.primary,
-                    ),
-                    minHeight: 6,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: AppConstants.spacingM),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppConstants.spacingM,
-              vertical: AppConstants.spacingS,
-            ),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFEF3C7),
-              borderRadius: BorderRadius.circular(AppConstants.radiusFull),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('🔥', style: TextStyle(fontSize: 14)),
-                const SizedBox(width: 4),
-                Text(
-                  '${progress.currentStreak} ${AppTranslations.get('days', lang)}',
-                  style: AppTypography.labelSmall.copyWith(
-                    color: const Color(0xFFB45309),
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeartStatusCard(BuildContext context, bool isDark, dynamic progress, String lang) {
-    final todayDhikr = progress.todayDhikrCount;
-    final stage = HeartStageConfigs.getStageForDhikr(todayDhikr);
-    final stageProgress = HeartStageConfigs.getStageProgress(todayDhikr);
-
-    return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const HeartSystemScreen()),
-      ),
-      child: Container(
-        padding: const EdgeInsets.all(AppConstants.spacingM),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              stage.heartColor.withValues(alpha: isDark ? 0.3 : 0.15),
-              stage.heartColor.withValues(alpha: isDark ? 0.1 : 0.05),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: stage.heartColor.withValues(alpha: 0.3),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: stage.heartColor.withValues(alpha: 0.2),
-              blurRadius: 16,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            // Heart icon with pulse effect
-            Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: stage.heartColor.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: stage.heartColor.withValues(alpha: 0.3),
-                    blurRadius: 12,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  stage.emoji,
-                  style: const TextStyle(fontSize: 28),
-                ),
-              ),
-            ),
-            const SizedBox(width: AppConstants.spacingM),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        stage.getName(lang),
-                        style: AppTypography.bodyLarge.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: stage.heartColor,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: stage.heartColor.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          '${stage.bpm} BPM',
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            color: stage.heartColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  // Progress bar
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: LinearProgressIndicator(
-                      value: stageProgress,
-                      backgroundColor: stage.heartColor.withValues(alpha: 0.15),
-                      valueColor: AlwaysStoppedAnimation(stage.heartColor),
-                      minHeight: 5,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '$todayDhikr / ${stage.maxDhikr} ${lang == 'en' ? 'dhikr' : (lang == 'fi' ? 'dhikr' : 'zikir')}',
-                    style: AppTypography.labelSmall.copyWith(
-                      color: isDark
-                          ? AppColors.textSecondaryDark
-                          : AppColors.textSecondaryLight,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.chevron_right_rounded,
-              color: stage.heartColor,
-              size: 24,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFeatureCard({
-    required BuildContext context,
-    required bool isDark,
-    required String icon,
-    required String title,
-    required String subtitle,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(AppConstants.spacingM),
-        decoration: BoxDecoration(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : color.withValues(alpha: 0.2),
-            width: 1,
-          ),
-          boxShadow: isDark
-              ? null
-              : [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.1),
-                    blurRadius: 12,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: Text(
-                  icon,
-                  style: const TextStyle(fontSize: 24),
-                ),
-              ),
-            ),
-            const SizedBox(width: AppConstants.spacingM),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTypography.bodyLarge.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: isDark
-                          ? AppColors.textPrimaryDark
-                          : AppColors.textPrimaryLight,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    subtitle,
-                    style: AppTypography.bodySmall.copyWith(
-                      color: isDark
-                          ? AppColors.textSecondaryDark
-                          : AppColors.textSecondaryLight,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.chevron_right_rounded,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.3)
-                  : color,
-              size: 24,
             ),
           ],
         ),
