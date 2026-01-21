@@ -23,6 +23,7 @@ class StorageService {
   static const String _dhikrsBoxName = 'dhikrs';
   static const String _progressBoxName = 'progress';
   static const String _settingsBoxName = 'settings';
+  static const int _currentVersion = 1; // Bump this when schema changes
 
   late Box<String> _dhikrsBox;
   late Box<String> _progressBox;
@@ -30,11 +31,77 @@ class StorageService {
   late SharedPreferences _prefs;
 
   Future<void> init() async {
-    await Hive.initFlutter();
-    _dhikrsBox = await Hive.openBox<String>(_dhikrsBoxName);
-    _progressBox = await Hive.openBox<String>(_progressBoxName);
-    _settingsBox = await Hive.openBox<dynamic>(_settingsBoxName);
-    _prefs = await SharedPreferences.getInstance();
+    try {
+      await Hive.initFlutter();
+      _dhikrsBox = await Hive.openBox<String>(_dhikrsBoxName);
+      _progressBox = await Hive.openBox<String>(_progressBoxName);
+      _settingsBox = await Hive.openBox<dynamic>(_settingsBoxName);
+      _prefs = await SharedPreferences.getInstance();
+
+      // Check and run migrations if needed
+      await _checkAndMigrate();
+
+      _logger.i('Storage initialized successfully (v$_currentVersion)');
+    } catch (e, stackTrace) {
+      _logger.e('Failed to initialize storage', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
+  /// Check storage version and run migrations if needed
+  Future<void> _checkAndMigrate() async {
+    try {
+      final storedVersion = _prefs.getInt('storageVersion') ?? 0;
+
+      if (storedVersion < _currentVersion) {
+        _logger.i('Migrating storage from v$storedVersion to v$_currentVersion');
+        await _runMigrations(storedVersion, _currentVersion);
+        await _prefs.setInt('storageVersion', _currentVersion);
+        _logger.i('Migration completed successfully');
+      }
+    } catch (e, stackTrace) {
+      _logger.e('Migration failed', error: e, stackTrace: stackTrace);
+      // Don't rethrow - allow app to continue with potentially old data
+    }
+  }
+
+  /// Run all necessary migrations
+  Future<void> _runMigrations(int fromVersion, int toVersion) async {
+    for (int version = fromVersion; version < toVersion; version++) {
+      _logger.i('Running migration: v$version -> v${version + 1}');
+
+      switch (version) {
+        case 0:
+          await _migrateV0ToV1();
+          break;
+        // Add future migrations here:
+        // case 1:
+        //   await _migrateV1ToV2();
+        //   break;
+      }
+    }
+  }
+
+  /// Initial migration - sets up version tracking
+  Future<void> _migrateV0ToV1() async {
+    try {
+      _logger.i('Migration v0->v1: Setting up version tracking');
+
+      // Check if data exists (not a fresh install)
+      final hasDhikrs = _dhikrsBox.get('dhikrs') != null;
+      final hasProgress = _progressBox.get('userProgress') != null;
+
+      if (hasDhikrs || hasProgress) {
+        _logger.i('Existing data found, marking as migrated');
+        // Data exists, mark as version 1
+        await _prefs.setInt('storageVersion', 1);
+      } else {
+        _logger.i('Fresh install detected');
+      }
+    } catch (e, stackTrace) {
+      _logger.e('Migration v0->v1 failed', error: e, stackTrace: stackTrace);
+      throw Exception('Migration v0->v1 failed: $e');
+    }
   }
 
   // ==================== DHIKR STORAGE ====================
