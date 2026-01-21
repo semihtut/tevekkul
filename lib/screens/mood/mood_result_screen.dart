@@ -10,7 +10,9 @@ import '../../models/mood_dhikr_model.dart';
 import '../../providers/dhikr_provider.dart';
 import '../../providers/mood_provider.dart';
 import '../../providers/settings_provider.dart';
+import '../../providers/wird_provider.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../widgets/common/custom_snackbar.dart';
 import '../home/home_screen.dart';
 
 class MoodResultScreen extends ConsumerWidget {
@@ -440,27 +442,109 @@ class MoodResultScreen extends ConsumerWidget {
               ),
             ),
 
-            const SizedBox(height: AppConstants.spacingS),
+            const SizedBox(height: AppConstants.spacingM),
 
-            // Tap for more info hint
+            // Action buttons row
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.touch_app_rounded,
-                  size: 14,
-                  color: isDark
-                      ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
-                      : AppColors.textSecondaryLight.withValues(alpha: 0.6),
+                // Add to Wird button
+                Expanded(
+                  child: Builder(
+                    builder: (context) {
+                      final isInWird = ref.watch(isInWirdProvider((id: esma.id, type: 'esma')));
+                      return GestureDetector(
+                        onTap: () {
+                          if (isInWird) {
+                            CustomSnackbar.showInfo(
+                              context,
+                              AppTranslations.get('already_in_wird', lang),
+                            );
+                          } else {
+                            ref.read(wirdProvider.notifier).addEsmaToWird(esma);
+                            CustomSnackbar.show(
+                              context,
+                              message: AppTranslations.get('added_to_wird', lang),
+                              icon: Icons.playlist_add_check_rounded,
+                              iconColor: AppColors.accentPurple,
+                            );
+                          }
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: AppConstants.spacingS,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isInWird
+                                ? AppColors.accentPurple.withValues(alpha: 0.15)
+                                : (isDark
+                                    ? Colors.white.withValues(alpha: 0.08)
+                                    : AppColors.accentPurple.withValues(alpha: 0.1)),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: isInWird
+                                  ? AppColors.accentPurple
+                                  : AppColors.accentPurple.withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                isInWird
+                                    ? Icons.playlist_add_check_rounded
+                                    : Icons.playlist_add_rounded,
+                                color: AppColors.accentPurple,
+                                size: 18,
+                              ),
+                              const SizedBox(width: 6),
+                              Text(
+                                isInWird
+                                    ? AppTranslations.get('in_wird', lang)
+                                    : AppTranslations.get('add_to_wird', lang),
+                                style: AppTypography.labelSmall.copyWith(
+                                  color: AppColors.accentPurple,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                const SizedBox(width: 4),
-                Text(
-                  _getTapForMoreText(lang),
-                  style: AppTypography.labelSmall.copyWith(
-                    color: isDark
-                        ? AppColors.textSecondaryDark.withValues(alpha: 0.6)
-                        : AppColors.textSecondaryLight.withValues(alpha: 0.6),
-                    fontSize: 11,
+                const SizedBox(width: AppConstants.spacingS),
+                // Start Dhikr button
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => _startEsmaZikir(context, ref, esma),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: AppConstants.spacingS,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: AppColors.primaryGradient,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            AppTranslations.get('start_dhikr', lang),
+                            style: AppTypography.labelSmall.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -580,37 +664,120 @@ class MoodResultScreen extends ConsumerWidget {
 
           const SizedBox(height: AppConstants.spacingL),
 
-          // Add to Zikirmatik button
-          GestureDetector(
-            onTap: () => _addDhikrToZikirmatik(context, ref, dhikr, lang),
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(
-                vertical: AppConstants.spacingM,
+          // Action buttons row
+          Row(
+            children: [
+              // Add to Wird button
+              Expanded(
+                child: Builder(
+                  builder: (context) {
+                    final dhikrId = 'mood_dhikr_${dhikr.transliteration.toLowerCase().replaceAll(' ', '_')}';
+                    final isInWird = ref.watch(isInWirdProvider((id: dhikrId, type: 'dhikr')));
+                    return GestureDetector(
+                      onTap: () {
+                        if (isInWird) {
+                          CustomSnackbar.showInfo(
+                            context,
+                            AppTranslations.get('already_in_wird', lang),
+                          );
+                        } else {
+                          // Convert MoodDhikrModel to DhikrModel for wird
+                          final dhikrModel = DhikrModel(
+                            id: dhikrId,
+                            arabic: dhikr.arabic,
+                            transliteration: dhikr.transliteration,
+                            meaning: dhikr.meanings,
+                            defaultTarget: dhikr.recommendedCount,
+                            isCustom: true,
+                          );
+                          ref.read(wirdProvider.notifier).addDhikrToWird(dhikrModel);
+                          CustomSnackbar.show(
+                            context,
+                            message: AppTranslations.get('added_to_wird', lang),
+                            icon: Icons.playlist_add_check_rounded,
+                            iconColor: AppColors.accentPurple,
+                          );
+                        }
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: AppConstants.spacingM,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isInWird
+                              ? AppColors.accentPurple.withValues(alpha: 0.15)
+                              : (isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : AppColors.accentPurple.withValues(alpha: 0.1)),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: isInWird
+                                ? AppColors.accentPurple
+                                : AppColors.accentPurple.withValues(alpha: 0.3),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              isInWird
+                                  ? Icons.playlist_add_check_rounded
+                                  : Icons.playlist_add_rounded,
+                              color: AppColors.accentPurple,
+                              size: 20,
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              isInWird
+                                  ? AppTranslations.get('in_wird', lang)
+                                  : AppTranslations.get('add_to_wird', lang),
+                              style: AppTypography.labelMedium.copyWith(
+                                color: AppColors.accentPurple,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
-              decoration: BoxDecoration(
-                gradient: AppColors.primaryGradient,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.play_arrow_rounded,
-                    color: Colors.white,
-                    size: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    _getAddToZikirmatikText(lang),
-                    style: AppTypography.labelLarge.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+              const SizedBox(width: AppConstants.spacingS),
+              // Start Dhikr button
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => _addDhikrToZikirmatik(context, ref, dhikr, lang),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: AppConstants.spacingM,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: AppColors.primaryGradient,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.play_arrow_rounded,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          _getAddToZikirmatikText(lang),
+                          style: AppTypography.labelMedium.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),
@@ -673,17 +840,6 @@ class MoodResultScreen extends ConsumerWidget {
         return 'Suositeltu Dhikr';
       default:
         return 'Önerilen Zikir';
-    }
-  }
-
-  String _getTapForMoreText(String lang) {
-    switch (lang) {
-      case 'en':
-        return 'Tap to start dhikr';
-      case 'fi':
-        return 'Napauta aloittaaksesi dhikr';
-      default:
-        return 'Zikre başlamak için dokun';
     }
   }
 

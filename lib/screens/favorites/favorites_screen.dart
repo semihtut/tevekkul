@@ -11,6 +11,7 @@ import '../../providers/esma_provider.dart';
 import '../../providers/settings_provider.dart';
 import '../../widgets/common/glass_container.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
+import '../home/home_screen.dart';
 
 class FavoritesScreen extends ConsumerStatefulWidget {
   const FavoritesScreen({super.key});
@@ -224,7 +225,28 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen>
           isDark: isDark,
           lang: lang,
           onTap: () {
-            // TODO: Navigate to esma detail screen
+            // Convert Esma to DhikrModel and navigate to counter
+            final dhikr = DhikrModel(
+              id: 'esma_${esma.id}',
+              arabic: esma.arabic,
+              transliteration: esma.transliteration,
+              meaning: {
+                'tr': esma.getMeaning('tr'),
+                'en': esma.getMeaning('en'),
+                'fi': esma.getMeaning('fi'),
+              },
+              defaultTarget: esma.abjadValue,
+              isCustom: false,
+            );
+            ref.read(dhikrProvider.notifier).selectDhikr(dhikr);
+            ref.read(dhikrProvider.notifier).setTarget(esma.abjadValue);
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (_) => const HomeScreen(),
+                settings: const RouteSettings(arguments: 1),
+              ),
+              (route) => false,
+            );
           },
           onFavoriteToggle: () {
             ref.read(esmaProvider.notifier).toggleFavorite(esma.id);
@@ -360,19 +382,33 @@ class _EsmaFavoriteCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(AppConstants.spacingS),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppConstants.spacingS,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: isDark
                         ? AppColors.accentDark.withValues(alpha: 0.2)
                         : AppColors.primary.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
                   ),
-                  child: Text(
-                    '${esma.order}',
-                    style: AppTypography.labelSmall.copyWith(
-                      color: isDark ? AppColors.accentDark : AppColors.primary,
-                      fontWeight: FontWeight.w700,
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.repeat_rounded,
+                        size: 12,
+                        color: isDark ? AppColors.accentDark : AppColors.primary,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${esma.abjadValue}',
+                        style: AppTypography.labelSmall.copyWith(
+                          color: isDark ? AppColors.accentDark : AppColors.primary,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 GestureDetector(

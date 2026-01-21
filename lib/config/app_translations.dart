@@ -2,14 +2,14 @@ class AppTranslations {
   static const Map<String, Map<String, String>> _translations = {
     // App Title
     'app_title': {
-      'tr': 'QalbHz',
-      'en': 'QalbHz',
-      'fi': 'QalbHz',
+      'tr': 'SoulCount',
+      'en': 'SoulCount',
+      'fi': 'SoulCount',
     },
     'app_slogan': {
-      'tr': 'Kalbinin Frekansı',
-      'en': "Your Heart's Frequency",
-      'fi': 'Sydämesi taajuus',
+      'tr': 'Ruhunun Sayacı',
+      'en': "Your Soul's Counter",
+      'fi': 'Sielusi laskuri',
     },
     // Home Screen
     'greeting': {
@@ -53,14 +53,19 @@ class AppTranslations {
       'fi': 'Ayet- ja dhikr-ehdotukset',
     },
     'esma_surprise': {
-      'tr': 'Esma Sürprizi',
-      'en': 'Esma Surprise',
-      'fi': 'Esma-yllätys',
+      'tr': 'Kalbe Düşen',
+      'en': "Heart's Gift",
+      'fi': 'Sydämen lahja',
     },
     'todays_esma': {
-      'tr': 'Günün esması',
-      'en': "Today's Esma",
-      'fi': 'Päivän Esma',
+      'tr': 'Esma-ul Husna / Güzel İsimler',
+      'en': 'Esma-ul Husna / Beautiful Names',
+      'fi': 'Esma-ul Husna / Kauniit Nimet',
+    },
+    'fallen_to_heart_today': {
+      'tr': 'Bugün kalbine düşen',
+      'en': "Today's gift for your heart",
+      'fi': 'Tämän päivän lahja sydämellesi',
     },
 
     // Bottom Navigation
@@ -109,14 +114,14 @@ class AppTranslations {
 
     // Esma Surprise Screen
     'discover_todays_esma': {
-      'tr': 'Bugünün esmasını keşfet',
-      'en': "Discover today's Esma",
-      'fi': 'Löydä päivän Esma',
+      'tr': 'Kalbine düşeni keşfet',
+      'en': 'Discover what falls into your heart',
+      'fi': 'Löydä mitä sydämeesi putoaa',
     },
     'special_esma_every_day': {
-      'tr': 'Her gün sana özel bir esma',
-      'en': 'A special Esma for you every day',
-      'fi': 'Erityinen Esma sinulle joka päivä',
+      'tr': 'Her gün kalbine özel bir güzel isim',
+      'en': 'A Beautiful Name for your heart every day',
+      'fi': 'Kaunis Nimi sydämellesi joka päivä',
     },
     'suggested_repetition': {
       'tr': 'Önerilen tekrar:',
@@ -480,6 +485,88 @@ class AppTranslations {
       'tr': 'İsmi Değiştir',
       'en': 'Change Name',
       'fi': 'Vaihda nimi',
+    },
+
+    // Daily Wird
+    'daily_wird': {
+      'tr': 'Günlük Vird',
+      'en': 'Daily Wird',
+      'fi': 'Päivittäinen Wird',
+    },
+    'add_to_wird': {
+      'tr': 'Virde Ekle',
+      'en': 'Add to Wird',
+      'fi': 'Lisää Wirdiin',
+    },
+    'in_wird': {
+      'tr': 'Virdde',
+      'en': 'In Wird',
+      'fi': 'Wirdissä',
+    },
+    'already_in_wird': {
+      'tr': 'Bu zaten virdde mevcut',
+      'en': 'This is already in your wird',
+      'fi': 'Tämä on jo Wirdissäsi',
+    },
+    'added_to_wird': {
+      'tr': 'Virde eklendi',
+      'en': 'Added to wird',
+      'fi': 'Lisätty Wirdiin',
+    },
+    'empty_wird': {
+      'tr': 'Henüz vird eklemediniz',
+      'en': 'No wird items yet',
+      'fi': 'Ei vielä Wird-kohteita',
+    },
+    'empty_wird_hint': {
+      'tr': 'Esma ve zikirlerden virde ekleyerek\ngünlük programınızı oluşturun',
+      'en': 'Add esmas and dhikrs to create\nyour daily program',
+      'fi': 'Lisää Esma ja dhikrejä luodaksesi\npäivittäisen ohjelmasi',
+    },
+    'total_items': {
+      'tr': 'Toplam',
+      'en': 'Total',
+      'fi': 'Yhteensä',
+    },
+    'all_completed': {
+      'tr': 'Tamamlandı!',
+      'en': 'All Done!',
+      'fi': 'Kaikki valmis!',
+    },
+    'reset_all': {
+      'tr': 'Tümünü Sıfırla',
+      'en': 'Reset All',
+      'fi': 'Nollaa kaikki',
+    },
+    'reset_all_confirm': {
+      'tr': 'Tüm ilerlemeyi sıfırlamak istediğinize emin misiniz?',
+      'en': 'Are you sure you want to reset all progress?',
+      'fi': 'Haluatko varmasti nollata kaiken edistymisen?',
+    },
+    'remove_from_wird': {
+      'tr': 'Virdden Çıkar',
+      'en': 'Remove from Wird',
+      'fi': 'Poista Wirdistä',
+    },
+    'remove_confirm': {
+      'tr': 'virdden çıkarılsın mı?',
+      'en': 'will be removed from wird?',
+      'fi': 'poistetaan Wirdistä?',
+    },
+    'remove': {
+      'tr': 'Çıkar',
+      'en': 'Remove',
+      'fi': 'Poista',
+    },
+    'esma': {
+      'tr': 'Esma',
+      'en': 'Esma',
+      'fi': 'Esma',
+    },
+    'dhikr': {
+      'tr': 'Zikir',
+      'en': 'Dhikr',
+      'fi': 'Dhikr',
     },
   };
 
