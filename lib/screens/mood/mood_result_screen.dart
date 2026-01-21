@@ -785,15 +785,8 @@ class MoodResultScreen extends ConsumerWidget {
   }
 
   void _addDhikrToZikirmatik(BuildContext context, WidgetRef ref, MoodDhikrModel moodDhikr, String lang) {
-    // Convert MoodDhikrModel to DhikrModel
-    final dhikr = DhikrModel(
-      id: 'mood_dhikr_${moodDhikr.transliteration.toLowerCase().replaceAll(' ', '_')}',
-      arabic: moodDhikr.arabic,
-      transliteration: moodDhikr.transliteration,
-      meaning: moodDhikr.meanings,
-      defaultTarget: moodDhikr.recommendedCount,
-      isCustom: true,
-    );
+    // Use factory method to convert MoodDhikrModel to DhikrModel
+    final dhikr = DhikrModel.fromMoodDhikr(moodDhikr);
 
     // Set the dhikr and target
     ref.read(dhikrProvider.notifier).selectDhikr(dhikr);

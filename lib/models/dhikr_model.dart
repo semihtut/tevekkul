@@ -84,4 +84,51 @@ class DhikrModel {
       isCustom: json['isCustom'] as bool? ?? false,
     );
   }
+
+  /// Factory: Create DhikrModel from MoodDhikrModel
+  ///
+  /// Converts mood-based dhikr recommendation to a standard dhikr
+  /// that can be used in zikirmatik or saved to favorites
+  factory DhikrModel.fromMoodDhikr(dynamic moodDhikr) {
+    final id = 'mood_dhikr_${moodDhikr.transliteration.toLowerCase().replaceAll(' ', '_')}';
+
+    return DhikrModel(
+      id: id,
+      arabic: moodDhikr.arabic,
+      transliteration: moodDhikr.transliteration,
+      meaning: moodDhikr.meanings,
+      defaultTarget: moodDhikr.recommendedCount,
+      note: moodDhikr.source,
+      isCustom: false,
+      isFavorite: false,
+      totalCount: 0,
+      createdAt: DateTime.now(),
+    );
+  }
+
+  /// Factory: Create DhikrModel from EsmaModel
+  ///
+  /// Converts Esma-ul Husna name to a dhikr that can be
+  /// used in zikirmatik or saved to favorites
+  factory DhikrModel.fromEsma(dynamic esma) {
+    final id = 'esma_${esma.order}_${esma.transliteration.toLowerCase().replaceAll(' ', '_')}';
+
+    // Use the first suggested count as default target
+    final defaultTarget = esma.suggestedCounts.isNotEmpty
+        ? esma.suggestedCounts.first
+        : 99;
+
+    return DhikrModel(
+      id: id,
+      arabic: esma.arabic,
+      transliteration: esma.transliteration,
+      meaning: esma.meaning,
+      defaultTarget: defaultTarget,
+      note: 'Esma-ul Husna #${esma.order}',
+      isCustom: false,
+      isFavorite: false,
+      totalCount: 0,
+      createdAt: DateTime.now(),
+    );
+  }
 }
