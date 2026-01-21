@@ -585,6 +585,8 @@ class SettingsScreen extends ConsumerWidget {
         content: TextField(
           controller: controller,
           autofocus: true,
+          autocorrect: false,
+          enableSuggestions: false,
           textCapitalization: TextCapitalization.words,
           maxLength: 50,
           style: TextStyle(
@@ -632,19 +634,48 @@ class SettingsScreen extends ConsumerWidget {
           TextButton(
             onPressed: () async {
               final newName = controller.text.trim();
-              if (newName.isNotEmpty) {
-                await ref.read(settingsProvider.notifier).setUserName(newName);
+
+              if (newName.isEmpty) {
                 if (context.mounted) {
-                  Navigator.pop(context);
-                  CustomSnackbar.showSuccess(
+                  CustomSnackbar.showError(
                     context,
                     lang == 'en'
-                        ? 'Name updated'
+                        ? 'Name cannot be empty'
                         : (lang == 'fi'
-                            ? 'Nimi päivitetty'
-                            : 'İsim güncellendi'),
+                            ? 'Nimi ei voi olla tyhjä'
+                            : 'İsim boş olamaz'),
                   );
                 }
+                return;
+              }
+
+              // Validate name: only letters, spaces, and common name characters
+              final nameRegex = RegExp(r'^[\p{L}\s\-\'\.]+$', unicode: true);
+              if (!nameRegex.hasMatch(newName)) {
+                if (context.mounted) {
+                  CustomSnackbar.showError(
+                    context,
+                    lang == 'en'
+                        ? 'Name can only contain letters and spaces'
+                        : (lang == 'fi'
+                            ? 'Nimi voi sisältää vain kirjaimia ja välilyöntejä'
+                            : 'İsim sadece harf ve boşluk içerebilir'),
+                  );
+                }
+                return;
+              }
+
+              await ref.read(settingsProvider.notifier).setUserName(newName);
+              if (context.mounted) {
+                Navigator.pop(context);
+                CustomSnackbar.showSuccess(
+                  context,
+                  lang == 'en'
+                      ? 'Name updated'
+                      : (lang == 'fi'
+                          ? 'Nimi päivitetty'
+                          : 'İsim güncellendi'),
+                );
               }
             },
             child: Text(

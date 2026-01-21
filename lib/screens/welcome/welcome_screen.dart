@@ -49,6 +49,20 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
       return;
     }
 
+    // Validate name: only letters, spaces, and common name characters
+    final nameRegex = RegExp(r'^[\p{L}\s\-\'\.]+$', unicode: true);
+    if (!nameRegex.hasMatch(name)) {
+      CustomSnackbar.showError(
+        context,
+        _selectedLanguage == 'en'
+            ? 'Name can only contain letters and spaces'
+            : (_selectedLanguage == 'fi'
+                ? 'Nimi voi sisältää vain kirjaimia ja välilyöntejä'
+                : 'İsim sadece harf ve boşluk içerebilir'),
+      );
+      return;
+    }
+
     setState(() => _isLoading = true);
 
     // Save user name and mark onboarding complete
@@ -198,6 +212,8 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                           padding: const EdgeInsets.all(AppConstants.spacingM),
                           child: TextField(
                             controller: _nameController,
+                            autocorrect: false,
+                            enableSuggestions: false,
                             textCapitalization: TextCapitalization.words,
                             maxLength: 50,
                             style: TextStyle(
