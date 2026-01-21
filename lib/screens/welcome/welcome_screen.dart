@@ -50,7 +50,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
     }
 
     // Validate name: only letters, spaces, and common name characters
-    final nameRegex = RegExp(r'^[\p{L}\s\-\'\.]+$', unicode: true);
+    final nameRegex = RegExp(r"^[\p{L}\s\-'.]+$", unicode: true);
     if (!nameRegex.hasMatch(name)) {
       CustomSnackbar.showError(
         context,

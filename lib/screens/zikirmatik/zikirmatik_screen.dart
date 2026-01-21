@@ -107,6 +107,8 @@ class _ZikirmatikScreenState extends ConsumerState<ZikirmatikScreen> {
                         // Tap Area
                         TapArea(
                           onTap: () => _handleTap(ref, settings),
+                          tapText: AppTranslations.get('tap_to_count', lang),
+                          hintText: AppTranslations.get('tap_hint', lang),
                         ),
 
                         const SizedBox(height: AppConstants.spacingL),

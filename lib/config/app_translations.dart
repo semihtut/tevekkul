@@ -378,6 +378,16 @@ class AppTranslations {
     },
 
     // Zikirmatik Screen
+    'tap_to_count': {
+      'tr': 'Dokun ve Say',
+      'en': 'Tap to Count',
+      'fi': 'Napauta laskemaan',
+    },
+    'tap_hint': {
+      'tr': 'Her dokunuş +1',
+      'en': 'Each tap +1',
+      'fi': 'Jokainen napautus +1',
+    },
     'reset': {
       'tr': 'Sıfırla',
       'en': 'Reset',
