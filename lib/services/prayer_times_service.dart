@@ -54,20 +54,20 @@ class PrayerTimesService {
     final dayIndex = clampedDay - 1; // 0-29
 
     // Calculate minutes from start
-    final totalDays = 29; // 30 days = 29 intervals
+    const totalDays = 29; // 30 days = 29 intervals
 
     // Imsak calculation (decreasing from 05:16 to 03:51)
-    final startImsakMinutes = _startImsakHour * 60 + _startImsakMinute; // 316
-    final endImsakMinutes = _endImsakHour * 60 + _endImsakMinute; // 231
-    final imsakChange = endImsakMinutes - startImsakMinutes; // -85
+    const startImsakMinutes = _startImsakHour * 60 + _startImsakMinute; // 316
+    const endImsakMinutes = _endImsakHour * 60 + _endImsakMinute; // 231
+    const imsakChange = endImsakMinutes - startImsakMinutes; // -85
     final imsakMinutesToday = startImsakMinutes + (imsakChange * dayIndex / totalDays).round();
     final imsakHour = imsakMinutesToday ~/ 60;
     final imsakMinute = imsakMinutesToday % 60;
 
     // Iftar calculation (increasing from 17:20 to 18:33)
-    final startIftarMinutes = _startIftarHour * 60 + _startIftarMinute; // 1040
-    final endIftarMinutes = _endIftarHour * 60 + _endIftarMinute; // 1113
-    final iftarChange = endIftarMinutes - startIftarMinutes; // 73
+    const startIftarMinutes = _startIftarHour * 60 + _startIftarMinute; // 1040
+    const endIftarMinutes = _endIftarHour * 60 + _endIftarMinute; // 1113
+    const iftarChange = endIftarMinutes - startIftarMinutes; // 73
     final iftarMinutesToday = startIftarMinutes + (iftarChange * dayIndex / totalDays).round();
     final iftarHour = iftarMinutesToday ~/ 60;
     final iftarMinute = iftarMinutesToday % 60;

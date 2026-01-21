@@ -18,7 +18,6 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
   late AnimationController _animationController;
   final double _compassHeading = 0;
   double _qiblaDirection = 0;
-  bool _hasPermission = false;
   bool _isLoading = true;
   String? _errorMessage;
 
@@ -43,7 +42,6 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
     await Future.delayed(const Duration(seconds: 1));
 
     setState(() {
-      _hasPermission = true;
       _isLoading = false;
       // Placeholder Qibla direction (would be calculated from user's location)
       _qiblaDirection = 136.5; // Example: Qibla from Helsinki
@@ -181,7 +179,7 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primary.withOpacity(0.4),
+                        color: AppColors.primary.withValues(alpha: 0.4),
                         blurRadius: 12,
                         spreadRadius: 2,
                       ),
@@ -202,7 +200,7 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
                       end: Alignment.bottomCenter,
                       colors: [
                         AppColors.primary,
-                        AppColors.primary.withOpacity(0),
+                        AppColors.primary.withValues(alpha: 0),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(2),
@@ -238,7 +236,7 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen>
             padding: const EdgeInsets.all(AppConstants.spacingM),
             decoration: BoxDecoration(
               color: (isDark ? AppColors.accentDark : AppColors.primary)
-                  .withOpacity(0.2),
+                  .withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
             ),
             child: Icon(
@@ -315,7 +313,7 @@ class _CompassPainter extends CustomPainter {
     // Draw compass ticks
     final tickPaint = Paint()
       ..color = (isDark ? Colors.white : AppColors.textPrimaryLight)
-          .withOpacity(0.3)
+          .withValues(alpha: 0.3)
       ..strokeWidth = 1;
 
     final majorTickPaint = Paint()

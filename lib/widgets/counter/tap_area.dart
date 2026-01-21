@@ -82,20 +82,20 @@ class _TapAreaState extends State<TapArea> with SingleTickerProviderStateMixin {
             gradient: LinearGradient(
               colors: isDark
                   ? [
-                      AppColors.accentDark.withOpacity(0.1),
-                      AppColors.primaryLight.withOpacity(0.05),
+                      AppColors.accentDark.withValues(alpha: 0.1),
+                      AppColors.primaryLight.withValues(alpha: 0.05),
                     ]
                   : [
-                      AppColors.primary.withOpacity(0.08),
-                      AppColors.primaryLight.withOpacity(0.04),
+                      AppColors.primary.withValues(alpha: 0.08),
+                      AppColors.primaryLight.withValues(alpha: 0.04),
                     ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             border: Border.all(
               color: isDark
-                  ? AppColors.accentDark.withOpacity(0.2)
-                  : AppColors.primary.withOpacity(0.2),
+                  ? AppColors.accentDark.withValues(alpha: 0.2)
+                  : AppColors.primary.withValues(alpha: 0.2),
               width: 2,
               strokeAlign: BorderSide.strokeAlignInside,
             ),
@@ -116,7 +116,7 @@ class _TapAreaState extends State<TapArea> with SingleTickerProviderStateMixin {
                 widget.hintText,
                 style: AppTypography.bodySmall.copyWith(
                   color: isDark
-                      ? Colors.white.withOpacity(0.4)
+                      ? Colors.white.withValues(alpha: 0.4)
                       : AppColors.textSecondaryLight,
                 ),
               ),

@@ -81,7 +81,7 @@ class AppButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppConstants.radiusMedium),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.25),
+            color: AppColors.primary.withValues(alpha: 0.25),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -106,7 +106,7 @@ class AppButton extends StatelessWidget {
       onPressed: isLoading ? null : onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor:
-            isDark ? AppColors.glassDark : AppColors.primary.withOpacity(0.1),
+            isDark ? AppColors.glassDark : AppColors.primary.withValues(alpha: 0.1),
         foregroundColor: isDark ? AppColors.accentDark : AppColors.primary,
         elevation: 0,
         shape: RoundedRectangleBorder(

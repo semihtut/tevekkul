@@ -31,10 +31,10 @@ class AppColors {
   static const Color accentDark = Color(0xFF2DD4BF);
 
   // Glass Effect Colors
-  static Color glassLight = Colors.white.withOpacity(0.85);
-  static Color glassDark = Colors.white.withOpacity(0.06);
-  static Color glassBorderLight = Colors.white.withOpacity(0.9);
-  static Color glassBorderDark = Colors.white.withOpacity(0.08);
+  static Color glassLight = Colors.white.withValues(alpha: 0.85);
+  static Color glassDark = Colors.white.withValues(alpha: 0.06);
+  static Color glassBorderLight = Colors.white.withValues(alpha: 0.9);
+  static Color glassBorderDark = Colors.white.withValues(alpha: 0.08);
 
   // Gradients
   static const LinearGradient primaryGradient = LinearGradient(

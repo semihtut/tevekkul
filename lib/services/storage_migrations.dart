@@ -92,7 +92,7 @@ class StorageMigrations {
       // This ensures we can recover if migration fails
 
       _logger.i('Pre-migration backup created');
-    } catch (e, stackTrace) {
+    } catch (e) {
       _logger.w('Failed to create pre-migration backup', error: e);
       // Don't throw - migration can continue without backup
     }

@@ -70,15 +70,15 @@ class TargetSelector extends StatelessWidget {
             color: isCustomSelected
                 ? null
                 : (isDark
-                    ? Colors.white.withOpacity(0.06)
-                    : Colors.white.withOpacity(0.8)),
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : Colors.white.withValues(alpha: 0.8)),
             borderRadius: BorderRadius.circular(AppConstants.radiusFull),
             border: isCustomSelected
                 ? null
                 : Border.all(
                     color: isDark
-                        ? Colors.white.withOpacity(0.1)
-                        : AppColors.primary.withOpacity(0.1),
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : AppColors.primary.withValues(alpha: 0.1),
                   ),
           ),
           child: Row(
@@ -90,7 +90,7 @@ class TargetSelector extends StatelessWidget {
                 color: isCustomSelected
                     ? Colors.white
                     : (isDark
-                        ? Colors.white.withOpacity(0.5)
+                        ? Colors.white.withValues(alpha: 0.5)
                         : AppColors.textSecondaryLight),
               ),
               if (isCustomSelected) ...[
@@ -220,15 +220,15 @@ class TargetSelector extends StatelessWidget {
             color: isSelected
                 ? null
                 : (isDark
-                    ? Colors.white.withOpacity(0.06)
-                    : Colors.white.withOpacity(0.8)),
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : Colors.white.withValues(alpha: 0.8)),
             borderRadius: BorderRadius.circular(AppConstants.radiusFull),
             border: isSelected
                 ? null
                 : Border.all(
                     color: isDark
-                        ? Colors.white.withOpacity(0.1)
-                        : AppColors.primary.withOpacity(0.1),
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : AppColors.primary.withValues(alpha: 0.1),
                   ),
           ),
           child: Text(
@@ -237,7 +237,7 @@ class TargetSelector extends StatelessWidget {
               color: isSelected
                   ? Colors.white
                   : (isDark
-                      ? Colors.white.withOpacity(0.5)
+                      ? Colors.white.withValues(alpha: 0.5)
                       : AppColors.textSecondaryLight),
               fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
             ),

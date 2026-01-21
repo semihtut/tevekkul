@@ -119,7 +119,7 @@ class SettingsDialogs {
         ),
         title: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.warning_rounded,
               color: Colors.orange,
               size: 24,

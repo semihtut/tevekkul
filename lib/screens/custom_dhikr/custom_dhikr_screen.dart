@@ -243,8 +243,8 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                             color: isSelected
                                 ? null
                                 : (isDark
-                                    ? Colors.white.withOpacity(0.1)
-                                    : AppColors.primary.withOpacity(0.1)),
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : AppColors.primary.withValues(alpha: 0.1)),
                             borderRadius:
                                 BorderRadius.circular(AppConstants.radiusSmall),
                           ),
@@ -285,8 +285,8 @@ class _CustomDhikrScreenState extends ConsumerState<CustomDhikrScreen> {
                             color: isSelected
                                 ? null
                                 : (isDark
-                                    ? Colors.white.withOpacity(0.1)
-                                    : AppColors.primary.withOpacity(0.1)),
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : AppColors.primary.withValues(alpha: 0.1)),
                             borderRadius:
                                 BorderRadius.circular(AppConstants.radiusSmall),
                           ),

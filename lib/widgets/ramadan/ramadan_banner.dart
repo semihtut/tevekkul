@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_constants.dart';
-import '../../config/app_translations.dart';
 import '../../config/app_typography.dart';
 import '../../providers/ramadan_provider.dart';
 import '../../providers/settings_provider.dart';

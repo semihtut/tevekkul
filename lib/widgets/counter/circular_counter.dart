@@ -37,8 +37,8 @@ class CircularCounter extends StatelessWidget {
             painter: _RingPainter(
               progress: 1.0,
               color: isDark
-                  ? Colors.white.withOpacity(0.08)
-                  : AppColors.primary.withOpacity(0.1),
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : AppColors.primary.withValues(alpha: 0.1),
               strokeWidth: strokeWidth,
             ),
           ),

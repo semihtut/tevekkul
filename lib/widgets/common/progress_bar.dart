@@ -31,8 +31,8 @@ class AppProgressBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ??
             (isDark
-                ? Colors.white.withOpacity(0.08)
-                : AppColors.primary.withOpacity(0.1)),
+                ? Colors.white.withValues(alpha: 0.08)
+                : AppColors.primary.withValues(alpha: 0.1)),
         borderRadius: radius,
       ),
       child: LayoutBuilder(
@@ -82,13 +82,13 @@ class DailyProgressWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withOpacity(0.06)
-            : Colors.white.withOpacity(0.9),
+            ? Colors.white.withValues(alpha: 0.06)
+            : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusMedium),
         border: Border.all(
           color: isDark
-              ? Colors.white.withOpacity(0.08)
-              : AppColors.primary.withOpacity(0.08),
+              ? Colors.white.withValues(alpha: 0.08)
+              : AppColors.primary.withValues(alpha: 0.08),
         ),
       ),
       child: Column(
@@ -103,7 +103,7 @@ class DailyProgressWidget extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: isDark
-                      ? Colors.white.withOpacity(0.7)
+                      ? Colors.white.withValues(alpha: 0.7)
                       : AppColors.textPrimaryLight,
                 ),
               ),
