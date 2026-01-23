@@ -72,9 +72,6 @@ class AppConstants {
   static const double tapAreaPaddingVertical = 40.0;
   static const double tapAreaPaddingHorizontal = 20.0;
 
-  // Compass
-  static const double compassSize = 200.0;
-
   // Widget sizes
   static const double widgetSmallSize = 140.0;
   static const double widgetMediumWidth = 280.0;
