@@ -1,7 +1,7 @@
 name: soulcount
 description: SoulCount - A beautiful dhikr and spiritual practice app with Ebced calculation, mood-based recommendations, and more.
 publish_to: 'none'
-version: 1.0.0+2
+version: 1.0.0+3
 
 environment:
   sdk: '>=3.2.0 <4.0.0'
@@ -44,8 +44,8 @@ dependencies:
 
   # File operations
   path_provider: ^2.1.1
-  share_plus: ^7.2.1
-  file_picker: ^6.1.1
+  share_plus: ^10.1.4
+  file_picker: ^8.1.7
 
   # Logging
   logger: ^2.0.2
