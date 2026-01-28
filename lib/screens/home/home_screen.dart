@@ -12,14 +12,18 @@ import '../../providers/wird_provider.dart';
 import '../../services/data_loader_service.dart';
 import '../../widgets/ramadan/ramadan_banner.dart';
 import '../../widgets/wird/wird_banner.dart';
+import '../../features/inner_journey/presentation/widgets/inner_journey_card.dart';
+import '../../features/inner_journey/providers/inner_journey_provider.dart';
 import '../zikirmatik/zikirmatik_screen.dart';
 import '../favorites/favorites_screen.dart';
 import '../mood/mood_selection_screen.dart';
 import '../ebced/ebced_screen.dart';
 import '../esma/esma_surprise_screen.dart';
+import '../esma/esma_search_screen.dart';
 import '../weekly/weekly_summary_screen.dart';
 import '../settings/settings_screen.dart';
 import '../heart/heart_system_screen.dart';
+import '../situation/situation_selection_screen.dart';
 import 'home_widgets.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -122,6 +126,12 @@ class _HomeContent extends ConsumerWidget {
               const SizedBox(height: AppConstants.spacingM),
             ],
 
+            // Inner Journey Card (shows only when enabled)
+            if (ref.watch(isJourneyEnabledProvider)) ...[
+              InnerJourneyCard(isDark: isDark),
+              const SizedBox(height: AppConstants.spacingM),
+            ],
+
             // Progress Card
             HomeProgressCard(
               isDark: isDark,
@@ -180,6 +190,18 @@ class _HomeContent extends ConsumerWidget {
             const SizedBox(height: AppConstants.spacingM),
             HomeFeatureCard(
               isDark: isDark,
+              icon: '🤲',
+              title: AppTranslations.get('situation_prayers', lang),
+              subtitle: AppTranslations.get('for_your_situation', lang),
+              color: const Color(0xFF06B6D4),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SituationSelectionScreen()),
+              ),
+            ),
+            const SizedBox(height: AppConstants.spacingM),
+            HomeFeatureCard(
+              isDark: isDark,
               icon: '✨',
               title: AppTranslations.get('esma_surprise', lang),
               subtitle: AppTranslations.get('todays_esma', lang),
@@ -187,6 +209,18 @@ class _HomeContent extends ConsumerWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const EsmaSurpriseScreen()),
+              ),
+            ),
+            const SizedBox(height: AppConstants.spacingM),
+            HomeFeatureCard(
+              isDark: isDark,
+              icon: '🔍',
+              title: AppTranslations.get('add_esma_to_wird', lang),
+              subtitle: AppTranslations.get('daily_wird', lang),
+              color: const Color(0xFFEC4899),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const EsmaSearchScreen()),
               ),
             ),
           ],

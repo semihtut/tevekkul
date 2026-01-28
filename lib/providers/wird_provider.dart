@@ -4,6 +4,7 @@ import '../models/wird_model.dart';
 import '../models/dhikr_model.dart';
 import '../models/esma_model.dart';
 import '../services/storage_service.dart';
+import '../services/widget_service.dart';
 
 class WirdState {
   final List<WirdItem> items;
@@ -64,11 +65,25 @@ class WirdNotifier extends StateNotifier<WirdState> {
       lastReset: lastReset,
       isLoading: false,
     );
+
+    // Update widget with loaded data
+    await _updateWidget();
   }
 
   Future<void> _saveToStorage() async {
     final jsonItems = state.items.map((item) => item.toJson()).toList();
     await _storage.saveWirdItems(jsonItems);
+    await _updateWidget();
+  }
+
+  Future<void> _updateWidget() async {
+    final summary = state.summary;
+    await WidgetService.updateWirdProgress(
+      completedItems: summary.completedItems,
+      totalItems: summary.totalItems,
+      completedCount: summary.totalProgress,
+      totalCount: summary.totalTarget,
+    );
   }
 
   Future<void> addDhikrToWird(DhikrModel dhikr, {int? customTarget}) async {

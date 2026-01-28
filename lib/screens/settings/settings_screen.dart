@@ -9,6 +9,8 @@ import '../../providers/ramadan_provider.dart';
 import '../../services/storage_service.dart';
 import '../../services/ebced_service.dart';
 import '../../widgets/common/glass_container.dart';
+import '../../features/inner_journey/providers/inner_journey_provider.dart';
+import '../../features/inner_journey/presentation/onboarding/journey_onboarding_screen.dart';
 import 'settings_dialogs.dart';
 import 'settings_widgets.dart';
 
@@ -161,12 +163,13 @@ class SettingsScreen extends ConsumerWidget {
 
               const SizedBox(height: AppConstants.spacingXL),
 
-              // Ramadan Mode Section
-              SettingsSectionHeader(title: _getRamadanSectionTitle(lang), isDark: isDark),
+              // Special Modes Section
+              SettingsSectionHeader(title: _getSpecialModesSectionTitle(lang), isDark: isDark),
               const SizedBox(height: AppConstants.spacingM),
               GlassContainer(
                 child: Column(
                   children: [
+                    // Ramadan Mode
                     SettingsTile(
                       icon: Icons.nightlight_round,
                       title: _getRamadanModeTitle(lang),
@@ -179,6 +182,32 @@ class SettingsScreen extends ConsumerWidget {
                           StorageService().saveRamadanEnabled(value);
                         },
                         activeThumbColor: AppColors.primary,
+                      ),
+                    ),
+                    SettingsDivider(isDark: isDark),
+                    // Inner Journey Mode
+                    SettingsTile(
+                      icon: Icons.eco_rounded,
+                      title: _getInnerJourneyTitle(lang),
+                      subtitle: _getInnerJourneySubtitle(lang),
+                      isDark: isDark,
+                      trailing: Switch(
+                        value: ref.watch(isJourneyEnabledProvider),
+                        onChanged: (value) {
+                          if (value) {
+                            // Show onboarding when enabling
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const JourneyOnboardingScreen(),
+                              ),
+                            );
+                          } else {
+                            // Show confirm dialog when disabling
+                            _showDisableJourneyDialog(context, ref, isDark, lang);
+                          }
+                        },
+                        activeThumbColor: const Color(0xFF22C55E),
                       ),
                     ),
                   ],
@@ -390,17 +419,6 @@ class SettingsScreen extends ConsumerWidget {
     }
   }
 
-  String _getRamadanSectionTitle(String lang) {
-    switch (lang) {
-      case 'en':
-        return 'Ramadan';
-      case 'fi':
-        return 'Ramadan';
-      default:
-        return 'Ramazan';
-    }
-  }
-
   String _getRamadanModeTitle(String lang) {
     switch (lang) {
       case 'en':
@@ -434,5 +452,107 @@ class SettingsScreen extends ConsumerWidget {
       default:
         return 'Türkçe';
     }
+  }
+
+  String _getSpecialModesSectionTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Special Modes';
+      case 'fi':
+        return 'Erikoistilat';
+      default:
+        return 'Özel Modlar';
+    }
+  }
+
+  String _getInnerJourneyTitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Inner Journey';
+      case 'fi':
+        return 'Sisäinen matka';
+      default:
+        return 'İç Yolculuk';
+    }
+  }
+
+  String _getInnerJourneySubtitle(String lang) {
+    switch (lang) {
+      case 'en':
+        return 'Private habit tracker with compassion';
+      case 'fi':
+        return 'Yksityinen tapaseuranta myötätunnolla';
+      default:
+        return 'Şefkatli gizli alışkanlık takibi';
+    }
+  }
+
+  void _showDisableJourneyDialog(BuildContext context, WidgetRef ref, bool isDark, String lang) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: isDark ? const Color(0xFF1A2F1A) : Colors.white,
+        title: Text(
+          lang == 'tr'
+              ? 'Inner Journey\'i Kapat'
+              : lang == 'fi'
+                  ? 'Sulje Inner Journey'
+                  : 'Disable Inner Journey',
+          style: TextStyle(
+            color: isDark ? Colors.white : AppColors.textPrimaryLight,
+          ),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              lang == 'tr'
+                  ? 'Ne yapmak istiyorsun?'
+                  : lang == 'fi'
+                      ? 'Mitä haluat tehdä?'
+                      : 'What would you like to do?',
+              style: TextStyle(
+                color: isDark ? Colors.white.withValues(alpha: 0.8) : AppColors.textSecondaryLight,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              lang == 'tr' ? 'İptal' : lang == 'fi' ? 'Peruuta' : 'Cancel',
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              ref.read(innerJourneyProvider.notifier).disableKeepData();
+              Navigator.pop(context);
+            },
+            child: Text(
+              lang == 'tr'
+                  ? 'Sadece Gizle'
+                  : lang == 'fi'
+                      ? 'Vain piilota'
+                      : 'Just Hide',
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              ref.read(innerJourneyProvider.notifier).deleteAllData();
+              Navigator.pop(context);
+            },
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            child: Text(
+              lang == 'tr'
+                  ? 'Tüm Verileri Sil'
+                  : lang == 'fi'
+                      ? 'Poista kaikki tiedot'
+                      : 'Delete All Data',
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

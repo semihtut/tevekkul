@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/ramadan_model.dart';
 import '../models/prayer_times_model.dart';
 import '../models/esma_model.dart';
+import '../models/city_model.dart';
 import '../services/ramadan_service.dart';
 import '../services/prayer_times_service.dart';
 import '../services/storage_service.dart';
@@ -45,6 +46,39 @@ final daysUntilRamadanProvider = Provider<int>((ref) {
   return RamadanService().getDaysUntilRamadan();
 });
 
+// ==================== CITY SELECTION ====================
+
+/// Provider for selected city ID (stored in preferences)
+final selectedCityIdProvider = StateNotifierProvider<SelectedCityNotifier, String>((ref) {
+  return SelectedCityNotifier();
+});
+
+class SelectedCityNotifier extends StateNotifier<String> {
+  SelectedCityNotifier() : super(PrayerCities.defaultCity.id) {
+    _loadFromStorage();
+  }
+
+  Future<void> _loadFromStorage() async {
+    final storage = StorageService();
+    final savedCityId = storage.getSelectedCityId();
+    if (savedCityId != null) {
+      state = savedCityId;
+    }
+  }
+
+  Future<void> selectCity(PrayerCity city) async {
+    state = city.id;
+    final storage = StorageService();
+    await storage.saveSelectedCityId(city.id);
+  }
+}
+
+/// Provider for the actual selected city object
+final selectedCityProvider = Provider<PrayerCity>((ref) {
+  final cityId = ref.watch(selectedCityIdProvider);
+  return PrayerCities.findById(cityId) ?? PrayerCities.defaultCity;
+});
+
 // ==================== RAMADAN CONTENT ====================
 
 /// Provider for today's Ramadan content
@@ -78,12 +112,13 @@ final ramadanEsmaProvider = FutureProvider<EsmaModel?>((ref) async {
 
 // ==================== PRAYER TIMES ====================
 
-/// Provider for prayer times (fixed imsakiye for Helsinki/Espoo/Vantaa)
+/// Provider for prayer times (calculated based on selected city)
 final prayerTimesProvider = Provider<PrayerTimes?>((ref) {
   final showRamadan = ref.watch(showRamadanModeProvider);
   if (!showRamadan) return null;
 
-  return PrayerTimesService().getTodayTimes();
+  final city = ref.watch(selectedCityProvider);
+  return PrayerTimesService().getTodayTimes(city);
 });
 
 /// Provider for time until Iftar (updates every second)

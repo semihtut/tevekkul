@@ -8,6 +8,7 @@ import '../../providers/settings_provider.dart';
 import '../../services/prayer_times_service.dart';
 import '../common/glass_container.dart';
 import '../../screens/ramadan/ramadan_detail_screen.dart';
+import 'city_selection_dialog.dart';
 
 /// Banner widget displayed on home screen during Ramadan
 class RamadanBanner extends ConsumerWidget {
@@ -26,6 +27,7 @@ class RamadanBanner extends ConsumerWidget {
     final imsakTime = ref.watch(formattedImsakTimeProvider);
     final iftarTime = ref.watch(formattedIftarTimeProvider);
     final countdownAsync = ref.watch(iftarCountdownProvider);
+    final selectedCity = ref.watch(selectedCityProvider);
 
     return GestureDetector(
       onTap: () {
@@ -97,24 +99,42 @@ class RamadanBanner extends ConsumerWidget {
 
             const SizedBox(height: 12),
 
-            // City name
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.location_on_outlined,
-                  size: 12,
-                  color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+            // City name (tappable)
+            GestureDetector(
+              onTap: () => showCitySelectionDialog(context),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : AppColors.primary.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                const SizedBox(width: 4),
-                Text(
-                  'Helsinki / Espoo / Vantaa',
-                  style: AppTypography.labelSmall.copyWith(
-                    color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
-                    fontSize: 10,
-                  ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.location_on_outlined,
+                      size: 12,
+                      color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      selectedCity.getName(lang),
+                      style: AppTypography.labelSmall.copyWith(
+                        color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                        fontSize: 10,
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 12,
+                      color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
 
             const SizedBox(height: 8),

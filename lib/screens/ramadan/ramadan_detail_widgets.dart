@@ -80,6 +80,8 @@ class RamadanPrayerTimesCard extends StatelessWidget {
   final AsyncValue<Duration> countdownAsync;
   final String lang;
   final bool isDark;
+  final String cityName;
+  final VoidCallback? onCityTap;
 
   const RamadanPrayerTimesCard({
     super.key,
@@ -88,6 +90,8 @@ class RamadanPrayerTimesCard extends StatelessWidget {
     required this.countdownAsync,
     required this.lang,
     required this.isDark,
+    required this.cityName,
+    this.onCityTap,
   });
 
   @override
@@ -97,24 +101,42 @@ class RamadanPrayerTimesCard extends StatelessWidget {
       padding: const EdgeInsets.all(AppConstants.spacingL),
       child: Column(
         children: [
-          // City name
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.location_on_outlined,
-                size: 14,
-                color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+          // City name (tappable)
+          GestureDetector(
+            onTap: onCityTap,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : AppColors.primary.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(8),
               ),
-              const SizedBox(width: 4),
-              Text(
-                'Helsinki / Espoo / Vantaa',
-                style: AppTypography.labelSmall.copyWith(
-                  color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
-                  fontSize: 12,
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.location_on_outlined,
+                    size: 14,
+                    color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    cityName,
+                    style: AppTypography.labelSmall.copyWith(
+                      color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 14,
+                    color: isDark ? AppColors.textSecondaryDark : AppColors.textSecondaryLight,
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
           const SizedBox(height: 12),
           // Prayer times row

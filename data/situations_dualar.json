@@ -1,0 +1,1092 @@
+{
+  "categories": [
+    {
+      "id": "daily",
+      "emoji": "🌅",
+      "label": {
+        "tr": "Günlük Dualar",
+        "en": "Daily Prayers",
+        "fi": "Päivittäiset rukoukset"
+      },
+      "situations": [
+        {
+          "id": "sabah",
+          "emoji": "🌄",
+          "label": {
+            "tr": "Sabah Kalktığında",
+            "en": "Upon Waking Up",
+            "fi": "Herättyä"
+          },
+          "description": {
+            "tr": "Yeni bir güne başlarken okunacak dualar",
+            "en": "Prayers for starting a new day",
+            "fi": "Rukoukset uuden päivän aloittamiseen"
+          },
+          "dualar": [
+            {
+              "id": "sabah_0",
+              "arabic": "يَا أَيُّهَا النَّاسُ أَنتُمُ الْفُقَرَاءُ إِلَى اللَّهِ وَاللَّهُ هُوَ الْغَنِيُّ الْحَمِيدُ",
+              "transliteration": "Ya eyyuhennas entumul fukarau ilallah, vallahu huvel ğaniyyul hamid",
+              "meaning": {
+                "tr": "Ey insanlar! Sizler Allah'a muhtaçsınız. Allah ise zengin ve övülmeye layık olandır.",
+                "en": "O mankind! You are the ones in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+                "fi": "Oi ihmiskunta! Te olette Allahia tarvitsevia, kun taas Allah on tarpeeton, Kiitettävä."
+              },
+              "source": "Kur'an, Fatır Suresi 35:15",
+              "source_type": "quran"
+            },
+            {
+              "id": "sabah_1",
+              "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+              "transliteration": "Elhamdulillahillezi ahyana ba'de ma ematena ve ileyhinnuşur",
+              "meaning": {
+                "tr": "Bizi öldürdükten sonra dirilten Allah'a hamd olsun. Dönüş O'nadır.",
+                "en": "Praise be to Allah who gave us life after death, and to Him is the return.",
+                "fi": "Kiitos Jumalalle, joka herätti meidät kuoleman jälkeen, ja Hänelle on paluu."
+              },
+              "source": "Buhari, Daavat 8; Müslim, Zikir 59",
+              "source_type": "hadith"
+            },
+            {
+              "id": "sabah_2",
+              "arabic": "اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",
+              "transliteration": "Allahumme bike asbahna ve bike emseyna ve bike nahya ve bike nemutu ve ileyken nuşur",
+              "meaning": {
+                "tr": "Allah'ım! Senin sayende sabaha erdik, senin sayende akşama erdik. Senin sayende yaşıyor, senin sayende ölüyoruz. Dönüş sanadır.",
+                "en": "O Allah! By You we enter the morning, by You we enter the evening. By You we live and by You we die, and to You is the return.",
+                "fi": "Oi Allah! Sinun avullasi aloitamme aamun, sinun avullasi aloitamme illan. Sinun kauttasi elämme ja kuolemme, ja Sinulle on paluu."
+              },
+              "source": "Tirmizi, Daavat 13; Ebu Davud, Edeb 101",
+              "source_type": "hadith"
+            },
+            {
+              "id": "sabah_3",
+              "arabic": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+              "transliteration": "Asbahna ve asbahal mulku lillah, velhamdulillah, la ilahe illallahu vahdehu la şerike leh",
+              "meaning": {
+                "tr": "Sabaha erdik, mülk de Allah'ındır. Hamd Allah'adır. Allah'tan başka ilah yoktur, O tektir, ortağı yoktur.",
+                "en": "We have entered the morning and the dominion belongs to Allah. Praise be to Allah. There is no god but Allah alone, with no partner.",
+                "fi": "Olemme aloittaneet aamun ja valtakunta kuuluu Allahille. Kiitos Allahille. Ei ole jumalaa paitsi Allah yksin, ilman kumppania."
+              },
+              "source": "Müslim, Zikir 75",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "aksam",
+          "emoji": "🌙",
+          "label": {
+            "tr": "Akşam Olduğunda",
+            "en": "In the Evening",
+            "fi": "Illalla"
+          },
+          "description": {
+            "tr": "Akşam vakti okunacak dualar",
+            "en": "Evening prayers",
+            "fi": "Iltarukoukset"
+          },
+          "dualar": [
+            {
+              "id": "aksam_quran_1",
+              "arabic": "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا",
+              "transliteration": "Tebarekellezi bi yedihil mulk, ve huve ala kulli şey'in kadir, ellezi halakal mevte vel hayate li yebluvekum eyyukum ahsenu amela",
+              "meaning": {
+                "tr": "Mülk elinde olan Allah ne yücedir! O, her şeye kadirdir. O, hanginizin daha güzel amel işleyeceğini denemek için ölümü ve hayatı yaratandır.",
+                "en": "Blessed is He in whose hand is dominion, and He is over all things competent. He who created death and life to test you as to which of you is best in deed.",
+                "fi": "Siunattu olkoon Hän, jonka kädessä on valtakunta, ja Hän kykenee kaikkeen. Hän, joka loi kuoleman ja elämän koetellakseen teitä, kuka teistä on paras teoissa."
+              },
+              "source": "Kur'an, Mülk Suresi 67:1-2",
+              "source_type": "quran",
+              "note": {
+                "tr": "Mülk Suresi akşam namazından sonra veya yatmadan önce okunması tavsiye edilir.",
+                "en": "Surah Al-Mulk is recommended to be recited after evening prayer or before sleeping.",
+                "fi": "Surah Al-Mulk on suositeltavaa lukea iltarukouksen jälkeen tai ennen nukkumista."
+              }
+            },
+            {
+              "id": "aksam_1",
+              "arabic": "اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ",
+              "transliteration": "Allahumme bike emseyna ve bike asbahna ve bike nahya ve bike nemutu ve ileykel masir",
+              "meaning": {
+                "tr": "Allah'ım! Senin sayende akşama erdik, senin sayende sabaha erdik. Senin sayende yaşıyor, senin sayende ölüyoruz. Dönüş sanadır.",
+                "en": "O Allah! By You we enter the evening, by You we enter the morning. By You we live and by You we die, and to You is the final return.",
+                "fi": "Oi Allah! Sinun avullasi aloitamme illan, sinun avullasi aloitamme aamun. Sinun kauttasi elämme ja kuolemme, ja Sinulle on lopullinen paluu."
+              },
+              "source": "Tirmizi, Daavat 13",
+              "source_type": "hadith"
+            },
+            {
+              "id": "aksam_2",
+              "arabic": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+              "transliteration": "Emseyna ve emsel mulku lillah, velhamdulillah, la ilahe illallahu vahdehu la şerike leh",
+              "meaning": {
+                "tr": "Akşama erdik, mülk de Allah'ındır. Hamd Allah'adır. Allah'tan başka ilah yoktur, O tektir, ortağı yoktur.",
+                "en": "We have entered the evening and the dominion belongs to Allah. Praise be to Allah. There is no god but Allah alone, with no partner.",
+                "fi": "Olemme aloittaneet illan ja valtakunta kuuluu Allahille. Kiitos Allahille. Ei ole jumalaa paitsi Allah yksin, ilman kumppania."
+              },
+              "source": "Müslim, Zikir 75",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "uyku_oncesi",
+          "emoji": "😴",
+          "label": {
+            "tr": "Uyumadan Önce",
+            "en": "Before Sleeping",
+            "fi": "Ennen nukkumista"
+          },
+          "description": {
+            "tr": "Yatmadan önce okunacak dualar",
+            "en": "Prayers before going to sleep",
+            "fi": "Rukoukset ennen nukkumaan menoa"
+          },
+          "dualar": [
+            {
+              "id": "uyku_0",
+              "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
+              "transliteration": "Allahu la ilahe illa huvel hayyul kayyum, la te'huzuhu sinetun vela nevm, lehu ma fis semavati ve ma fil ard",
+              "meaning": {
+                "tr": "Allah, O'ndan başka ilah yoktur, Hay'dır, Kayyum'dur. O'nu ne uyuklama tutar ne de uyku. Göklerde ve yerde ne varsa O'nundur.",
+                "en": "Allah - there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth.",
+                "fi": "Allah - ei ole jumalaa paitsi Hän, Ikuisesti Elävä, olemassaolon Ylläpitäjä. Häntä ei valtaa uneliaisuus eikä uni. Hänelle kuuluu kaikki mitä taivaissa ja maassa on."
+              },
+              "source": "Kur'an, Bakara Suresi 2:255 (Ayetel Kursi)",
+              "source_type": "quran",
+              "note": {
+                "tr": "Ayetel Kursi, yatmadan önce okunduğunda sabaha kadar koruma sağlar.",
+                "en": "Ayatul Kursi, when recited before sleep, provides protection until morning.",
+                "fi": "Ayatul Kursi, kun sitä luetaan ennen nukkumista, tarjoaa suojaa aamuun asti."
+              }
+            },
+            {
+              "id": "uyku_1",
+              "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+              "transliteration": "Bismike Allahumme emutu ve ahya",
+              "meaning": {
+                "tr": "Allah'ım! Senin ismini anarak ölür ve dirilirim.",
+                "en": "In Your name, O Allah, I die and I live.",
+                "fi": "Sinun nimessäsi, oi Allah, kuolen ja elän."
+              },
+              "source": "Buhari, Daavat 7; Müslim, Zikir 59",
+              "source_type": "hadith"
+            },
+            {
+              "id": "uyku_2",
+              "arabic": "اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ",
+              "transliteration": "Allahumme kini azabeke yevme teb'asu ibadek",
+              "meaning": {
+                "tr": "Allah'ım! Kullarını dirilttiğin gün beni azabından koru.",
+                "en": "O Allah! Protect me from Your punishment on the Day You resurrect Your servants.",
+                "fi": "Oi Allah! Suojele minua rangaistukseltasi päivänä, jona herätät palvelijasi."
+              },
+              "source": "Ebu Davud, Edeb 98; Tirmizi, Daavat 16",
+              "source_type": "hadith"
+            },
+            {
+              "id": "uyku_3",
+              "arabic": "اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ، رَغْبَةً وَرَهْبَةً إِلَيْكَ، لَا مَلْجَأَ وَلَا مَنْجَا مِنْكَ إِلَّا إِلَيْكَ",
+              "transliteration": "Allahumme eslemtu nefsi ileyke, ve fevvadtu emri ileyke, ve vecchehtu vechi ileyke, ve elce'tu zahri ileyke, rağbeten ve rehbeten ileyke, la melcee ve la menca minke illa ileyk",
+              "meaning": {
+                "tr": "Allah'ım! Nefsimi sana teslim ettim, işimi sana havale ettim, yüzümü sana çevirdim, sırtımı sana dayadım. Sana ümit ve korku ile yöneldim. Senden başka sığınak ve kurtuluş yeri yoktur.",
+                "en": "O Allah! I have submitted myself to You, entrusted my affairs to You, turned my face to You, and sought Your protection. There is no refuge or escape from You except with You.",
+                "fi": "Oi Allah! Olen antautunut Sinulle, uskonut asiani Sinulle, kääntänyt kasvoni Sinuun ja etsinyt suojaasi. Ei ole turvapaikkaa tai pakoa Sinulta paitsi Sinuun."
+              },
+              "source": "Buhari, Daavat 6; Müslim, Zikir 56",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "yemek_oncesi",
+          "emoji": "🍽️",
+          "label": {
+            "tr": "Yemekten Önce",
+            "en": "Before Eating",
+            "fi": "Ennen syömistä"
+          },
+          "description": {
+            "tr": "Yemek yemeye başlarken okunacak dua",
+            "en": "Prayer before starting to eat",
+            "fi": "Rukous ennen syömisen aloittamista"
+          },
+          "dualar": [
+            {
+              "id": "yemek_once_1",
+              "arabic": "بِسْمِ اللَّهِ",
+              "transliteration": "Bismillah",
+              "meaning": {
+                "tr": "Allah'ın adıyla başlıyorum.",
+                "en": "In the name of Allah.",
+                "fi": "Allahin nimeen."
+              },
+              "source": "Ebu Davud, Et'ime 15; Tirmizi, Et'ime 47",
+              "source_type": "hadith"
+            },
+            {
+              "id": "yemek_once_2",
+              "arabic": "اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+              "transliteration": "Allahumme barik lena fima razaktena ve kina azabennar",
+              "meaning": {
+                "tr": "Allah'ım! Bize verdiğin rızıkta bereket ihsan et ve bizi cehennem azabından koru.",
+                "en": "O Allah! Bless us in what You have provided for us and protect us from the punishment of the Fire.",
+                "fi": "Oi Allah! Siunaa meitä siinä, mitä olet meille antanut, ja suojele meitä tulen rangaistukselta."
+              },
+              "source": "İbn Sünni, Amelül Yevm 456",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "yemek_sonrasi",
+          "emoji": "🙏",
+          "label": {
+            "tr": "Yemekten Sonra",
+            "en": "After Eating",
+            "fi": "Syömisen jälkeen"
+          },
+          "description": {
+            "tr": "Yemek yedikten sonra okunacak dua",
+            "en": "Prayer after eating",
+            "fi": "Rukous syömisen jälkeen"
+          },
+          "dualar": [
+            {
+              "id": "yemek_sonra_1",
+              "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ",
+              "transliteration": "Elhamdulillahillezi at'amena ve sekana ve cealena müslimin",
+              "meaning": {
+                "tr": "Bizi yediren, içiren ve Müslüman kılan Allah'a hamd olsun.",
+                "en": "Praise be to Allah who fed us, gave us drink, and made us Muslims.",
+                "fi": "Kiitos Allahille, joka ruokki meitä, antoi meille juomaa ja teki meistä muslimeja."
+              },
+              "source": "Ebu Davud, Et'ime 52; Tirmizi, Daavat 55",
+              "source_type": "hadith"
+            },
+            {
+              "id": "yemek_sonra_2",
+              "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
+              "transliteration": "Elhamdulillahillezi at'ameni haza ve razekaniyhi min ğayri havlin minni ve la kuvveh",
+              "meaning": {
+                "tr": "Benim hiçbir güç ve kuvvetim olmaksızın beni bu yemekle rızıklandıran Allah'a hamd olsun.",
+                "en": "Praise be to Allah who fed me this and provided it for me without any power or strength from myself.",
+                "fi": "Kiitos Allahille, joka ruokki minua tällä ja antoi sen minulle ilman omaa voimaani tai kykyäni."
+              },
+              "source": "Tirmizi, Daavat 56; Ebu Davud, Libas 1",
+              "source_type": "hadith"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ozel_anlar",
+      "emoji": "⭐",
+      "label": {
+        "tr": "Özel Anlar",
+        "en": "Special Moments",
+        "fi": "Erityiset hetket"
+      },
+      "situations": [
+        {
+          "id": "sinav_oncesi",
+          "emoji": "📝",
+          "label": {
+            "tr": "Sınav Öncesi",
+            "en": "Before Exam",
+            "fi": "Ennen tenttiä"
+          },
+          "description": {
+            "tr": "Sınava girerken okunacak dualar",
+            "en": "Prayers before taking an exam",
+            "fi": "Rukoukset ennen tenttiä"
+          },
+          "dualar": [
+            {
+              "id": "sinav_1",
+              "arabic": "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي يَفْقَهُوا قَوْلِي",
+              "transliteration": "Rabbi'şrah li sadri ve yessir li emri vahlul ukdeten min lisani yefkahu kavli",
+              "meaning": {
+                "tr": "Rabbim! Göğsümü aç, işimi kolaylaştır ve dilimdeki düğümü çöz ki sözümü anlasınlar.",
+                "en": "My Lord! Expand my chest, ease my task, and remove the impediment from my tongue so they may understand my speech.",
+                "fi": "Herrani! Avaa rintani, helpota tehtävääni ja poista este kieleltäni, jotta he ymmärtäisivät puheeni."
+              },
+              "source": "Kur'an, Taha Suresi 20:25-28",
+              "source_type": "quran"
+            },
+            {
+              "id": "sinav_2",
+              "arabic": "رَبِّ زِدْنِي عِلْمًا",
+              "transliteration": "Rabbi zidni ilma",
+              "meaning": {
+                "tr": "Rabbim! İlmimi artır.",
+                "en": "My Lord! Increase me in knowledge.",
+                "fi": "Herrani! Lisää tietoani."
+              },
+              "source": "Kur'an, Taha Suresi 20:114",
+              "source_type": "quran"
+            },
+            {
+              "id": "sinav_3",
+              "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+              "transliteration": "Allahumme la sehle illa ma cealtehü sehla, ve ente tec'alul hazne iza şi'te sehla",
+              "meaning": {
+                "tr": "Allah'ım! Senin kolay kıldığından başka kolay yoktur. Sen dilersen zor olanı da kolay kılarsın.",
+                "en": "O Allah! Nothing is easy except what You make easy. If You wish, You make the difficult easy.",
+                "fi": "Oi Allah! Mikään ei ole helppoa paitsi se, minkä teet helpoksi. Jos haluat, teet vaikean helpoksi."
+              },
+              "source": "İbn Hibban, Ed'iye 974; Beyhaki, Daavat 351",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "is_gorusmesi",
+          "emoji": "💼",
+          "label": {
+            "tr": "İş Görüşmesi Öncesi",
+            "en": "Before Job Interview",
+            "fi": "Ennen työhaastattelua"
+          },
+          "description": {
+            "tr": "İş görüşmesine girerken okunacak dualar",
+            "en": "Prayers before a job interview",
+            "fi": "Rukoukset ennen työhaastattelua"
+          },
+          "dualar": [
+            {
+              "id": "is_1",
+              "arabic": "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ",
+              "transliteration": "Allahumme inni estehiruke bi ilmike, ve estakdiruke bi kudretike, ve es'eluke min fadlikel azim",
+              "meaning": {
+                "tr": "Allah'ım! İlminle senden hayırlısını istiyorum. Kudretinle senden güç istiyorum. Büyük lütfundan istiyorum.",
+                "en": "O Allah! I seek Your guidance by virtue of Your knowledge, and I seek ability by virtue of Your power, and I ask You of Your great bounty.",
+                "fi": "Oi Allah! Pyydän ohjaustasi tietosi perusteella, pyydän kykyä voimasi perusteella ja pyydän Sinulta suurta anteliaisuuttasi."
+              },
+              "source": "Buhari, Daavat 48",
+              "source_type": "hadith"
+            },
+            {
+              "id": "is_2",
+              "arabic": "رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَلْ لِي مِنْ لَدُنْكَ سُلْطَانًا نَصِيرًا",
+              "transliteration": "Rabbi edhilni mudhale sıdkın ve ahricni muhrace sıdkın vec'al li min ledunke sultanen nasira",
+              "meaning": {
+                "tr": "Rabbim! Beni doğrulukla girdir ve doğrulukla çıkar. Katından bana yardım edici bir güç ver.",
+                "en": "My Lord! Admit me an entrance of truth and let me exit an exit of truth, and grant me from Yourself a supporting authority.",
+                "fi": "Herrani! Päästä minut sisään totuuden sisäänkäynnistä ja vie minut ulos totuuden uloskäynnistä, ja anna minulle tukeva auktoriteetti."
+              },
+              "source": "Kur'an, İsra Suresi 17:80",
+              "source_type": "quran"
+            },
+            {
+              "id": "is_3",
+              "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+              "transliteration": "Hasbunallahu ve ni'mel vekil",
+              "meaning": {
+                "tr": "Allah bize yeter, O ne güzel vekildir.",
+                "en": "Allah is sufficient for us, and He is the best Disposer of affairs.",
+                "fi": "Allah riittää meille, ja Hän on paras asioiden hoitaja."
+              },
+              "source": "Kur'an, Al-i İmran 3:173",
+              "source_type": "quran"
+            }
+          ]
+        },
+        {
+          "id": "yolculuk_oncesi",
+          "emoji": "✈️",
+          "label": {
+            "tr": "Yolculuk Öncesi",
+            "en": "Before Travel",
+            "fi": "Ennen matkaa"
+          },
+          "description": {
+            "tr": "Yolculuğa çıkarken okunacak dualar",
+            "en": "Prayers before traveling",
+            "fi": "Rukoukset ennen matkustamista"
+          },
+          "dualar": [
+            {
+              "id": "yolculuk_1",
+              "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ",
+              "transliteration": "Subhanellezi sahhara lena haza ve ma kunna lehu mukrinin, ve inna ila Rabbina lemunkalibun",
+              "meaning": {
+                "tr": "Bunu bizim hizmetimize veren Allah'ı tenzih ederiz. Yoksa biz buna güç yetiremezdik. Şüphesiz biz Rabbimize döneceğiz.",
+                "en": "Glory be to Him who has subjected this to us, for we could never have accomplished it ourselves. And to our Lord we shall surely return.",
+                "fi": "Kunnia Hänelle, joka on alistanut tämän meille, sillä emme olisi koskaan voineet saavuttaa sitä itse. Ja Herrallemme me todella palaamme."
+              },
+              "source": "Kur'an, Zuhruf Suresi 43:13-14",
+              "source_type": "quran"
+            },
+            {
+              "id": "yolculuk_2",
+              "arabic": "اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى",
+              "transliteration": "Allahumme inna nes'eluke fi seferina hazal birre vettakva, ve minel ameli ma terda",
+              "meaning": {
+                "tr": "Allah'ım! Bu yolculuğumuzda senden iyilik ve takva istiyoruz. Amellerimizden razı olmanı istiyoruz.",
+                "en": "O Allah! We ask You in this journey for righteousness and piety, and for deeds that please You.",
+                "fi": "Oi Allah! Pyydämme Sinulta tällä matkalla hurskautta ja jumalisuutta sekä tekoja, jotka miellyttävät Sinua."
+              },
+              "source": "Müslim, Hac 425; Tirmizi, Daavat 46",
+              "source_type": "hadith"
+            },
+            {
+              "id": "yolculuk_3",
+              "arabic": "اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا، وَاطْوِ عَنَّا بُعْدَهُ",
+              "transliteration": "Allahumme hevvin aleyna seferena haza vatvi anna bu'deh",
+              "meaning": {
+                "tr": "Allah'ım! Bu yolculuğumuzu bize kolaylaştır ve uzaklığını bizden sar (kısalt).",
+                "en": "O Allah! Make this journey easy for us and fold up its distance for us.",
+                "fi": "Oi Allah! Tee tämä matka meille helpoksi ja lyhennä sen etäisyyttä meiltä."
+              },
+              "source": "Müslim, Hac 425",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "hasta_ziyareti",
+          "emoji": "🏥",
+          "label": {
+            "tr": "Hasta Ziyareti",
+            "en": "Visiting the Sick",
+            "fi": "Sairasvierailu"
+          },
+          "description": {
+            "tr": "Hasta ziyaretinde okunacak dualar",
+            "en": "Prayers when visiting the sick",
+            "fi": "Rukoukset sairasta vieraillessa"
+          },
+          "dualar": [
+            {
+              "id": "hasta_0",
+              "arabic": "يَا أَيُّهَا النَّاسُ قَدْ جَاءَتْكُم مَّوْعِظَةٌ مِّن رَّبِّكُمْ وَشِفَاءٌ لِّمَا فِي الصُّدُورِ وَهُدًى وَرَحْمَةٌ لِّلْمُؤْمِنِينَ",
+              "transliteration": "Ya eyyuhennas kad caetküm mev'izatun min Rabbikum ve şifaun lima fis suduri ve huden ve rahmetun lil mu'minin",
+              "meaning": {
+                "tr": "Ey insanlar! Size Rabbinizden bir öğüt, göğüslerdeki dertlere şifa, müminler için hidayet ve rahmet gelmiştir.",
+                "en": "O mankind! There has come to you instruction from your Lord and healing for what is in the breasts and guidance and mercy for the believers.",
+                "fi": "Oi ihmiskunta! Teille on tullut opetus Herraltanne ja parantuminen sille mitä rinnoissa on ja ohjaus ja armo uskoville."
+              },
+              "source": "Kur'an, Yunus Suresi 10:57",
+              "source_type": "quran"
+            },
+            {
+              "id": "hasta_quran_2",
+              "arabic": "وَنُنَزِّلُ مِنَ الْقُرْآنِ مَا هُوَ شِفَاءٌ وَرَحْمَةٌ لِّلْمُؤْمِنِينَ",
+              "transliteration": "Ve nunezzilu minel Kur'ani ma huve şifaun ve rahmetun lil mu'minin",
+              "meaning": {
+                "tr": "Biz Kur'an'dan, müminler için şifa ve rahmet olacak şeyler indiriyoruz.",
+                "en": "And We send down of the Quran that which is healing and mercy for the believers.",
+                "fi": "Ja Me lähetämme alas Koraanista sitä mikä on parantuminen ja armo uskoville."
+              },
+              "source": "Kur'an, İsra Suresi 17:82",
+              "source_type": "quran"
+            },
+            {
+              "id": "hasta_1",
+              "arabic": "اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ، اشْفِهِ وَأَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا",
+              "transliteration": "Allahumme Rabben nas, ezhibilbe's, işfihi ve enteş şafi, la şifae illa şifauke, şifaen la yuğadiru sakama",
+              "meaning": {
+                "tr": "Ey insanların Rabbi olan Allah'ım! Hastalığı gider, şifa ver. Şifa veren ancak sensin. Senin şifandan başka şifa yoktur. Öyle bir şifa ver ki hastalık bırakmasın.",
+                "en": "O Allah, Lord of mankind! Remove the hardship. Heal, for You are the Healer. There is no healing except Your healing, a healing that leaves no illness behind.",
+                "fi": "Oi Allah, ihmiskunnan Herra! Poista kärsimys. Paranna, sillä Sinä olet Parantaja. Ei ole parantumista paitsi Sinun parantumisesi, parantuminen joka ei jätä sairautta jäljelle."
+              },
+              "source": "Buhari, Merda 38; Müslim, Selam 46",
+              "source_type": "hadith"
+            },
+            {
+              "id": "hasta_2",
+              "arabic": "لَا بَأْسَ، طَهُورٌ إِنْ شَاءَ اللَّهُ",
+              "transliteration": "La be'se, tahurun inşaallah",
+              "meaning": {
+                "tr": "Bir şey yok, inşallah günahlarına keffaret olur.",
+                "en": "No harm, it will be a purification, God willing.",
+                "fi": "Ei hätää, se on puhdistus, jos Jumala suo."
+              },
+              "source": "Buhari, Merda 3",
+              "source_type": "hadith"
+            },
+            {
+              "id": "hasta_3",
+              "arabic": "أَسْأَلُ اللَّهَ الْعَظِيمَ، رَبَّ الْعَرْشِ الْعَظِيمِ، أَنْ يَشْفِيَكَ",
+              "transliteration": "Es'elullahel azim, Rabbel arşil azim, en yeşfiyeke",
+              "meaning": {
+                "tr": "Yüce Allah'tan, büyük arşın Rabbinden, sana şifa vermesini dilerim.",
+                "en": "I ask Allah the Magnificent, the Lord of the Magnificent Throne, to heal you.",
+                "fi": "Pyydän suurta Allahia, suuren valtaistuimen Herraa, parantamaan sinut."
+              },
+              "source": "Ebu Davud, Cenaze 8; Tirmizi, Tıbb 32",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "eve_girerken",
+          "emoji": "🏠",
+          "label": {
+            "tr": "Eve Girerken",
+            "en": "Entering Home",
+            "fi": "Kotiin tultaessa"
+          },
+          "description": {
+            "tr": "Eve girerken okunacak dua",
+            "en": "Prayer when entering home",
+            "fi": "Rukous kotiin tultaessa"
+          },
+          "dualar": [
+            {
+              "id": "eve_giris_1",
+              "arabic": "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+              "transliteration": "Bismillahi velecna, ve bismillahi haracna, ve alallahi Rabbina tevekkalna",
+              "meaning": {
+                "tr": "Allah'ın adıyla girdik, Allah'ın adıyla çıktık ve Rabbimiz Allah'a tevekkül ettik.",
+                "en": "In the name of Allah we enter, in the name of Allah we leave, and upon Allah our Lord we rely.",
+                "fi": "Allahin nimeen astumme sisään, Allahin nimeen poistumme, ja Allahiin, Herraamme, luotamme."
+              },
+              "source": "Ebu Davud, Edeb 102",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "evden_cikarken",
+          "emoji": "🚪",
+          "label": {
+            "tr": "Evden Çıkarken",
+            "en": "Leaving Home",
+            "fi": "Kotoa lähtiessä"
+          },
+          "description": {
+            "tr": "Evden çıkarken okunacak dua",
+            "en": "Prayer when leaving home",
+            "fi": "Rukous kotoa lähtiessä"
+          },
+          "dualar": [
+            {
+              "id": "evden_cikis_1",
+              "arabic": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+              "transliteration": "Bismillah, tevekkeltü alallah, ve la havle ve la kuvvete illa billah",
+              "meaning": {
+                "tr": "Allah'ın adıyla çıkıyorum, Allah'a tevekkül ettim. Güç ve kuvvet ancak Allah'tandır.",
+                "en": "In the name of Allah, I place my trust in Allah. There is no power nor strength except through Allah.",
+                "fi": "Allahin nimeen, luotan Allahiin. Ei ole voimaa eikä valtaa paitsi Allahin kautta."
+              },
+              "source": "Ebu Davud, Edeb 102; Tirmizi, Daavat 34",
+              "source_type": "hadith"
+            },
+            {
+              "id": "evden_cikis_2",
+              "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أَضِلَّ أَوْ أُضَلَّ، أَوْ أَزِلَّ أَوْ أُزَلَّ، أَوْ أَظْلِمَ أَوْ أُظْلَمَ، أَوْ أَجْهَلَ أَوْ يُجْهَلَ عَلَيَّ",
+              "transliteration": "Allahumme inni euzu bike en edille ev udalle, ev ezille ev uzelle, ev azlime ev uzleme, ev echele ev yuchele aleyye",
+              "meaning": {
+                "tr": "Allah'ım! Sapmaktan veya saptırılmaktan, kaymaktan veya kaydırılmaktan, zulmetmekten veya zulme uğramaktan, cahillik etmekten veya cahilliğe maruz kalmaktan sana sığınırım.",
+                "en": "O Allah! I seek refuge in You from going astray or being led astray, from slipping or being caused to slip, from wronging or being wronged, from behaving ignorantly or being treated ignorantly.",
+                "fi": "Oi Allah! Turvaudun Sinuun eksymiseltä tai eksyneeksi johdattamiselta, liukastumiselta tai liukastetuksi tulemiselta, vääryydeltä tai vääryydelle alistumiselta, tietämättömyydeltä tai tietämättömästi kohdeltuna olemiselta."
+              },
+              "source": "Ebu Davud, Edeb 103; Tirmizi, Daavat 35",
+              "source_type": "hadith"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ozel_gunler",
+      "emoji": "📅",
+      "label": {
+        "tr": "Özel Günler",
+        "en": "Special Days",
+        "fi": "Erityiset päivät"
+      },
+      "situations": [
+        {
+          "id": "cuma_gunu",
+          "emoji": "🕌",
+          "label": {
+            "tr": "Cuma Günü",
+            "en": "Friday",
+            "fi": "Perjantai"
+          },
+          "description": {
+            "tr": "Cuma gününe özel dualar ve zikirler",
+            "en": "Special prayers and remembrances for Friday",
+            "fi": "Erityiset rukoukset ja muistelut perjantaille"
+          },
+          "dualar": [
+            {
+              "id": "cuma_quran_1",
+              "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِن يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَىٰ ذِكْرِ اللَّهِ وَذَرُوا الْبَيْعَ",
+              "transliteration": "Ya eyyuhellezine amenu iza nudiye lissalati min yevmil cumuati fes'av ila zikrillahi ve zerul bey'",
+              "meaning": {
+                "tr": "Ey iman edenler! Cuma günü namaza çağrıldığında Allah'ı anmaya koşun ve alışverişi bırakın.",
+                "en": "O you who have believed, when the call to prayer is made on Friday, then proceed to the remembrance of Allah and leave trade.",
+                "fi": "Oi te jotka uskotte, kun kutsu rukoukseen kuuluu perjantaina, niin rientäkää Allahin muistamiseen ja jättäkää kaupanteko."
+              },
+              "source": "Kur'an, Cuma Suresi 62:9",
+              "source_type": "quran"
+            },
+            {
+              "id": "cuma_1",
+              "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+              "transliteration": "Allahumme salli ala Muhammedin ve ala ali Muhammed, kema salleyte ala İbrahime ve ala ali İbrahim, inneke hamidun mecid",
+              "meaning": {
+                "tr": "Allah'ım! İbrahim'e ve ailesine rahmet ettiğin gibi, Muhammed'e ve ailesine de rahmet et. Şüphesiz sen övülmeye layık ve yücesin.",
+                "en": "O Allah! Send blessings upon Muhammad and upon the family of Muhammad, as You sent blessings upon Ibrahim and upon the family of Ibrahim. Indeed, You are praiseworthy and glorious.",
+                "fi": "Oi Allah! Lähetä siunauksia Muhammadille ja Muhammadin perheelle, kuten lähetit siunauksia Ibrahimille ja Ibrahimin perheelle. Totisesti, Sinä olet ylistettävä ja kunniallinen."
+              },
+              "source": "Buhari, Enbiya 10; Müslim, Salat 65",
+              "source_type": "hadith",
+              "recommended_count": 100
+            },
+            {
+              "id": "cuma_2",
+              "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+              "transliteration": "Subhanallahi ve bihamdihi, subhanallahil azim",
+              "meaning": {
+                "tr": "Allah'ı hamd ile tesbih ederim. Yüce Allah'ı tesbih ederim.",
+                "en": "Glory be to Allah and His praise. Glory be to Allah the Magnificent.",
+                "fi": "Kunnia Allahille ja Hänen kiitokselleen. Kunnia suurelle Allahille."
+              },
+              "source": "Buhari, Daavat 65; Müslim, Zikir 31",
+              "source_type": "hadith",
+              "recommended_count": 100
+            }
+          ]
+        },
+        {
+          "id": "ramazan",
+          "emoji": "🌙",
+          "label": {
+            "tr": "Ramazan Ayı",
+            "en": "Ramadan",
+            "fi": "Ramadan"
+          },
+          "description": {
+            "tr": "Ramazan ayına özel dualar",
+            "en": "Special prayers for Ramadan",
+            "fi": "Erityiset rukoukset Ramadanille"
+          },
+          "dualar": [
+            {
+              "id": "ramazan_quran_1",
+              "arabic": "شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ",
+              "transliteration": "Şehru Ramadanellezi unzile fihil Kur'anu huden linnas ve beyyinatin minel huda vel furkan",
+              "meaning": {
+                "tr": "Ramazan ayı, insanlara yol gösterici, doğrunun ve doğruyu eğriden ayırmanın açık delilleri olarak Kur'an'ın indirildiği aydır.",
+                "en": "The month of Ramadan in which was revealed the Quran, a guidance for mankind, clear proofs of guidance and the criterion.",
+                "fi": "Ramadanin kuukausi, jona Koraani ilmoitettiin, opastuksena ihmiskunnalle, selvinä todisteina opastuksesta ja kriteerinä."
+              },
+              "source": "Kur'an, Bakara Suresi 2:185",
+              "source_type": "quran"
+            },
+            {
+              "id": "ramazan_quran_2",
+              "arabic": "إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+              "transliteration": "İnna enzelnahu fi leyletil kadr, ve ma edrake ma leyletulkadr, leyletulkadri hayrun min elfi şehr",
+              "meaning": {
+                "tr": "Şüphesiz biz onu Kadir Gecesi'nde indirdik. Kadir Gecesi'nin ne olduğunu sen bilir misin? Kadir Gecesi bin aydan hayırlıdır.",
+                "en": "Indeed, We sent the Quran down during the Night of Decree. And what can make you know what is the Night of Decree? The Night of Decree is better than a thousand months.",
+                "fi": "Totisesti, Me lähetimme Koraanin Kohtalon Yönä. Ja mikä voi kertoa sinulle mikä on Kohtalon Yö? Kohtalon Yö on parempi kuin tuhat kuukautta."
+              },
+              "source": "Kur'an, Kadr Suresi 97:1-3",
+              "source_type": "quran",
+              "note": {
+                "tr": "Kadr Suresi, Kadir Gecesi'nde özellikle okunması gereken suredir.",
+                "en": "Surah Al-Qadr is especially recommended to be recited on the Night of Decree.",
+                "fi": "Surah Al-Qadr on erityisesti suositeltava luettavaksi Kohtalon Yönä."
+              }
+            },
+            {
+              "id": "ramazan_1",
+              "arabic": "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+              "transliteration": "Allahumme inneke afuvvun tuhibbul afve fa'fu anni",
+              "meaning": {
+                "tr": "Allah'ım! Sen affedicisin, affetmeyi seversin, beni de affet.",
+                "en": "O Allah! You are the Pardoner, You love to pardon, so pardon me.",
+                "fi": "Oi Allah! Sinä olet Anteeksiantaja, rakastat anteeksiantamista, anna minulle anteeksi."
+              },
+              "source": "Tirmizi, Daavat 84; İbn Mace, Dua 5",
+              "source_type": "hadith",
+              "note": {
+                "tr": "Kadir Gecesi başta olmak üzere Ramazan'da çokça okunması tavsiye edilir.",
+                "en": "Recommended to be recited frequently during Ramadan, especially on the Night of Power.",
+                "fi": "Suositellaan luettavaksi usein Ramadanin aikana, erityisesti Voiman Yönä."
+              }
+            },
+            {
+              "id": "ramazan_iftar",
+              "arabic": "ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ",
+              "transliteration": "Zehebes zame'u, vebtellettil uruku, ve sebetel ecru inşaallah",
+              "meaning": {
+                "tr": "Susuzluk gitti, damarlar ıslandı, inşallah ecir de sabit oldu.",
+                "en": "The thirst has gone, the veins are moistened, and the reward is confirmed, God willing.",
+                "fi": "Jano on mennyt, suonet ovat kostuneet, ja palkinto on vahvistettu, jos Jumala suo."
+              },
+              "source": "Ebu Davud, Savm 22",
+              "source_type": "hadith",
+              "note": {
+                "tr": "İftar açarken okunur.",
+                "en": "Recited when breaking the fast.",
+                "fi": "Luetaan paastoa murrettaessa."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kandil_geceleri",
+          "emoji": "✨",
+          "label": {
+            "tr": "Kandil Geceleri",
+            "en": "Holy Nights",
+            "fi": "Pyhät yöt"
+          },
+          "description": {
+            "tr": "Mübarek gecelerde okunacak dualar",
+            "en": "Prayers for blessed nights",
+            "fi": "Rukoukset siunatuille öille"
+          },
+          "dualar": [
+            {
+              "id": "kandil_1",
+              "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+              "transliteration": "La ilahe illallahu vahdehu la şerike leh, lehul mulku ve lehul hamdu ve huve ala kulli şey'in kadir",
+              "meaning": {
+                "tr": "Allah'tan başka ilah yoktur. O tektir, ortağı yoktur. Mülk O'nundur, hamd O'nadır. O her şeye kadirdir.",
+                "en": "There is no god but Allah alone, with no partner. His is the dominion, His is the praise, and He is capable of all things.",
+                "fi": "Ei ole jumalaa paitsi Allah yksin, ilman kumppania. Hänelle kuuluu valtakunta, Hänelle kuuluu kiitos, ja Hän kykenee kaikkeen."
+              },
+              "source": "Buhari, Daavat 64; Müslim, Zikir 28",
+              "source_type": "hadith",
+              "recommended_count": 100
+            },
+            {
+              "id": "kandil_2",
+              "arabic": "سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ",
+              "transliteration": "Subhanallah, velhamdulillah, ve la ilahe illallah, vallahu ekber",
+              "meaning": {
+                "tr": "Allah'ı tenzih ederim, hamd Allah'adır, Allah'tan başka ilah yoktur, Allah en büyüktür.",
+                "en": "Glory be to Allah, praise be to Allah, there is no god but Allah, Allah is the Greatest.",
+                "fi": "Kunnia Allahille, kiitos Allahille, ei ole jumalaa paitsi Allah, Allah on Suurin."
+              },
+              "source": "Müslim, Zikir 32; Tirmizi, Daavat 124",
+              "source_type": "hadith",
+              "recommended_count": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hayat_olaylari",
+      "emoji": "💫",
+      "label": {
+        "tr": "Hayat Olayları",
+        "en": "Life Events",
+        "fi": "Elämäntapahtumat"
+      },
+      "situations": [
+        {
+          "id": "evlilik",
+          "emoji": "💍",
+          "label": {
+            "tr": "Evlilik/Düğün",
+            "en": "Marriage/Wedding",
+            "fi": "Avioliitto/Häät"
+          },
+          "description": {
+            "tr": "Evlilik ve düğün için dualar",
+            "en": "Prayers for marriage and wedding",
+            "fi": "Rukoukset avioliitolle ja häille"
+          },
+          "dualar": [
+            {
+              "id": "evlilik_1",
+              "arabic": "بَارَكَ اللَّهُ لَكَ، وَبَارَكَ عَلَيْكَ، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
+              "transliteration": "Barekallahu leke, ve bareke aleyke, ve cemea beynekuma fi hayr",
+              "meaning": {
+                "tr": "Allah sana bereket versin, seni mübarek kılsın ve ikinizi hayırda birleştirsin.",
+                "en": "May Allah bless you, bestow blessings upon you, and unite you both in goodness.",
+                "fi": "Allah siunatkoon sinua, antakoon siunauksia sinulle ja yhdistäköön teidät molemmat hyvyydessä."
+              },
+              "source": "Ebu Davud, Nikah 37; Tirmizi, Nikah 7",
+              "source_type": "hadith"
+            },
+            {
+              "id": "evlilik_2",
+              "arabic": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+              "transliteration": "Rabbena heb lena min ezvacina ve zurriyyatina kurrete a'yunin vec'alna lil muttekine imama",
+              "meaning": {
+                "tr": "Rabbimiz! Bize eşlerimizden ve çocuklarımızdan göz aydınlığı bağışla ve bizi takva sahiplerine önder kıl.",
+                "en": "Our Lord! Grant us from our spouses and offspring comfort to our eyes and make us leaders for the righteous.",
+                "fi": "Herramme! Anna meille puolisoistamme ja jälkeläisistämme silmien lohtua ja tee meistä johtajia vanhurskaille."
+              },
+              "source": "Kur'an, Furkan Suresi 25:74",
+              "source_type": "quran"
+            }
+          ]
+        },
+        {
+          "id": "bebek",
+          "emoji": "👶",
+          "label": {
+            "tr": "Yeni Doğan Bebek",
+            "en": "Newborn Baby",
+            "fi": "Vastasyntynyt vauva"
+          },
+          "description": {
+            "tr": "Yeni doğan bebek için dualar",
+            "en": "Prayers for newborn baby",
+            "fi": "Rukoukset vastasyntyneelle vauvalle"
+          },
+          "dualar": [
+            {
+              "id": "bebek_1",
+              "arabic": "بَارَكَ اللَّهُ لَكَ فِي الْمَوْهُوبِ لَكَ، وَشَكَرْتَ الْوَاهِبَ، وَبَلَغَ أَشُدَّهُ، وَرُزِقْتَ بِرَّهُ",
+              "transliteration": "Barekallahu leke fil mevhubi leke, ve şekertell vahibe, ve beleğa eşuddeh, ve ruzıkte birrah",
+              "meaning": {
+                "tr": "Allah sana bağışlanan çocukta bereket versin. Bağışlayana şükrettiğin gibi, çocuk da güçlü kuvvetli olsun ve onun iyiliğinden nasiplendirilirsin.",
+                "en": "May Allah bless you in what He has given you, and may you thank the Giver, may the child reach maturity, and may you be blessed with his/her piety.",
+                "fi": "Allah siunatkoon sinua siinä, mitä Hän on sinulle antanut, ja kiittäköön Antajaa, lapsi saavuttakoon kypsyyden, ja sinua siunattakoon hänen hurskauttaan."
+              },
+              "source": "Nevevi, el-Ezkar",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "vefat",
+          "emoji": "🕯️",
+          "label": {
+            "tr": "Vefat/Taziye",
+            "en": "Death/Condolence",
+            "fi": "Kuolema/Surunvalittelu"
+          },
+          "description": {
+            "tr": "Vefat durumunda okunacak dualar",
+            "en": "Prayers upon death",
+            "fi": "Rukoukset kuoleman yhteydessä"
+          },
+          "dualar": [
+            {
+              "id": "vefat_0",
+              "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+              "transliteration": "İnna lillahi ve inna ileyhi raciun",
+              "meaning": {
+                "tr": "Şüphesiz biz Allah'a aidiz ve O'na döneceğiz.",
+                "en": "Indeed we belong to Allah and to Him we shall return.",
+                "fi": "Totisesti me kuulumme Allahille ja Hänelle me palaamme."
+              },
+              "source": "Kur'an, Bakara Suresi 2:156",
+              "source_type": "quran",
+              "note": {
+                "tr": "İsticra ayeti olarak bilinen bu ayet, musibet anında okunur.",
+                "en": "Known as the verse of returning, this verse is recited in times of calamity.",
+                "fi": "Tunnetaan palaamisen jakeena, tämä jae luetaan onnettomuuden aikana."
+              }
+            },
+            {
+              "id": "vefat_quran_2",
+              "arabic": "كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ثُمَّ إِلَيْنَا تُرْجَعُونَ",
+              "transliteration": "Kullu nefsin zaikatulmevt, summe ileyna turceun",
+              "meaning": {
+                "tr": "Her nefis ölümü tadacaktır. Sonra bize döndürüleceksiniz.",
+                "en": "Every soul will taste death. Then to Us will you be returned.",
+                "fi": "Jokainen sielu maistaa kuoleman. Sitten te palautetaan Meille."
+              },
+              "source": "Kur'an, Ankebut Suresi 29:57",
+              "source_type": "quran"
+            },
+            {
+              "id": "vefat_1",
+              "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي وَأَخْلِفْ لِي خَيْرًا مِنْهَا",
+              "transliteration": "İnna lillahi ve inna ileyhi raciun. Allahumme ecirni fi musibeti ve ahlif li hayran minha",
+              "meaning": {
+                "tr": "Şüphesiz biz Allah'a aidiz ve O'na döneceğiz. Allah'ım! Bu musibetimde bana ecir ver ve onun yerine daha hayırlısını ihsan et.",
+                "en": "Indeed we belong to Allah and to Him we shall return. O Allah! Reward me in my affliction and replace it with something better.",
+                "fi": "Totisesti me kuulumme Allahille ja Hänelle me palaamme. Oi Allah! Palkitse minut koettelemuksessani ja korvaa se jollain paremmalla."
+              },
+              "source": "Müslim, Cenaiz 3",
+              "source_type": "hadith"
+            },
+            {
+              "id": "vefat_2",
+              "arabic": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ",
+              "transliteration": "Allahummağfir lehu verhamhu ve afihi va'fu anhu",
+              "meaning": {
+                "tr": "Allah'ım! Onu bağışla, ona merhamet et, ona afiyet ver ve onu affet.",
+                "en": "O Allah! Forgive him, have mercy on him, grant him wellness, and pardon him.",
+                "fi": "Oi Allah! Anna hänelle anteeksi, armahda häntä, anna hänelle hyvinvointia ja anna hänelle anteeksi."
+              },
+              "source": "Müslim, Cenaiz 85",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "sikinti_aninda",
+          "emoji": "😔",
+          "label": {
+            "tr": "Sıkıntı Anında",
+            "en": "In Times of Distress",
+            "fi": "Ahdistuksen hetkellä"
+          },
+          "description": {
+            "tr": "Zor zamanlarda okunacak dualar",
+            "en": "Prayers during difficult times",
+            "fi": "Rukoukset vaikeina aikoina"
+          },
+          "dualar": [
+            {
+              "id": "sikinti_0",
+              "arabic": "لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+              "transliteration": "La ilahe illa ente subhaneke inni kuntu minez zalimin",
+              "meaning": {
+                "tr": "Senden başka ilah yoktur, Seni tenzih ederim. Şüphesiz ben zalimlerden oldum.",
+                "en": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
+                "fi": "Ei ole jumalaa paitsi Sinä; ylistetty olet Sinä. Totisesti, olen ollut väärintekijöiden joukossa."
+              },
+              "source": "Kur'an, Enbiya Suresi 21:87 (Yunus Duası)",
+              "source_type": "quran",
+              "note": {
+                "tr": "Hz. Yunus'un balığın karnındayken okuduğu dua. Sıkıntı anında çok etkilidir.",
+                "en": "The prayer Prophet Yunus recited while in the belly of the whale. Very effective in times of distress.",
+                "fi": "Rukous, jonka profeetta Yunus lausui ollessaan valaan vatsassa. Erittäin tehokas ahdistuksen hetkellä."
+              }
+            },
+            {
+              "id": "sikinti_quran_2",
+              "arabic": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+              "transliteration": "Ve men yettekillah yec'al lehu mahrace, ve yerzukhu min haysu la yahtesib, ve men yetevekkel alallahi fehuve hasbuh",
+              "meaning": {
+                "tr": "Kim Allah'tan korkarsa, Allah ona bir çıkış yolu yaratır ve onu ummadığı yerden rızıklandırır. Kim Allah'a tevekkül ederse O, ona yeter.",
+                "en": "And whoever fears Allah - He will make for him a way out and will provide for him from where he does not expect. And whoever relies upon Allah - then He is sufficient for him.",
+                "fi": "Ja kuka pelkää Allahia - Hän tekee hänelle ulospääsyn ja antaa hänelle elatusta mistä hän ei odota. Ja kuka luottaa Allahiin - Hän riittää hänelle."
+              },
+              "source": "Kur'an, Talak Suresi 65:2-3",
+              "source_type": "quran"
+            },
+            {
+              "id": "sikinti_quran_3",
+              "arabic": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+              "transliteration": "La yukellifulllahu nefsen illa vus'aha",
+              "meaning": {
+                "tr": "Allah hiçbir kimseye gücünün yettiğinden başkasını yüklemez.",
+                "en": "Allah does not burden a soul beyond that it can bear.",
+                "fi": "Allah ei kuormita sielua yli sen kestokyvyn."
+              },
+              "source": "Kur'an, Bakara Suresi 2:286",
+              "source_type": "quran"
+            },
+            {
+              "id": "sikinti_1",
+              "arabic": "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
+              "transliteration": "La ilahe illallahul azimul halim, la ilahe illallahu Rabbul arşil azim, la ilahe illallahu Rabbus semavati ve Rabbul ardi ve Rabbul arşil kerim",
+              "meaning": {
+                "tr": "Yüce ve halim olan Allah'tan başka ilah yoktur. Büyük arşın Rabbi Allah'tan başka ilah yoktur. Göklerin ve yerin Rabbi, şerefli arşın Rabbi Allah'tan başka ilah yoktur.",
+                "en": "There is no god but Allah, the Magnificent, the Forbearing. There is no god but Allah, Lord of the Mighty Throne. There is no god but Allah, Lord of the heavens and the earth, and Lord of the Noble Throne.",
+                "fi": "Ei ole jumalaa paitsi Allah, Suurenmoinen, Kärsivällinen. Ei ole jumalaa paitsi Allah, Mahtavan valtaistuimen Herra. Ei ole jumalaa paitsi Allah, taivaiden ja maan Herra, ja Jalon valtaistuimen Herra."
+              },
+              "source": "Buhari, Daavat 27; Müslim, Zikir 83",
+              "source_type": "hadith"
+            },
+            {
+              "id": "sikinti_2",
+              "arabic": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",
+              "transliteration": "Ya Hayyu ya Kayyumu bi rahmetike esteğis",
+              "meaning": {
+                "tr": "Ey Hay, ey Kayyum! Senin rahmetinle yardım diliyorum.",
+                "en": "O Living, O Self-Sustaining! By Your mercy I seek help.",
+                "fi": "Oi Elävä, oi Itseriittoisa! Sinun armossasi etsin apua."
+              },
+              "source": "Tirmizi, Daavat 99; Hakim, Dua 1/545",
+              "source_type": "hadith"
+            },
+            {
+              "id": "sikinti_3",
+              "arabic": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ",
+              "transliteration": "Allahumme rahmeteke ercu fela tekilni ila nefsi tarfete aynin, ve aslih li şe'ni kullehu, la ilahe illa ente",
+              "meaning": {
+                "tr": "Allah'ım! Rahmetini umuyorum. Beni göz açıp kapayıncaya kadar bile nefsime bırakma. Bütün işlerimi düzelt. Senden başka ilah yoktur.",
+                "en": "O Allah! I hope for Your mercy. Do not leave me to myself even for the blink of an eye. Rectify all my affairs. There is no god but You.",
+                "fi": "Oi Allah! Toivon armoasi. Älä jätä minua itselleni edes silmänräpäykseksi. Korjaa kaikki asiani. Ei ole jumalaa paitsi Sinä."
+              },
+              "source": "Ebu Davud, Edeb 101",
+              "source_type": "hadith"
+            }
+          ]
+        },
+        {
+          "id": "borc_odeme",
+          "emoji": "💰",
+          "label": {
+            "tr": "Borç Sıkıntısı",
+            "en": "Debt Difficulty",
+            "fi": "Velkavaikeudet"
+          },
+          "description": {
+            "tr": "Borç ve maddi sıkıntı için dualar",
+            "en": "Prayers for debt and financial difficulty",
+            "fi": "Rukoukset velkaan ja taloudellisiin vaikeuksiin"
+          },
+          "dualar": [
+            {
+              "id": "borc_0",
+              "arabic": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ",
+              "transliteration": "Ve men yettekillah yec'al lehu mahrace, ve yerzukhu min haysu la yahtesib",
+              "meaning": {
+                "tr": "Kim Allah'tan korkarsa, Allah ona bir çıkış yolu yaratır ve onu ummadığı yerden rızıklandırır.",
+                "en": "And whoever fears Allah - He will make for him a way out and will provide for him from where he does not expect.",
+                "fi": "Ja kuka pelkää Allahia - Hän tekee hänelle ulospääsyn ja antaa hänelle elatusta mistä hän ei odota."
+              },
+              "source": "Kur'an, Talak Suresi 65:2-3",
+              "source_type": "quran",
+              "note": {
+                "tr": "Maddi sıkıntılarda çokça okunması tavsiye edilen ayet.",
+                "en": "A verse recommended to be recited frequently during financial difficulties.",
+                "fi": "Jae, jota suositellaan luettavaksi usein taloudellisten vaikeuksien aikana."
+              }
+            },
+            {
+              "id": "borc_quran_2",
+              "arabic": "وَاسْأَلُوا اللَّهَ مِن فَضْلِهِ",
+              "transliteration": "Ves'elullahe min fadlih",
+              "meaning": {
+                "tr": "Allah'tan O'nun lütfunu isteyin.",
+                "en": "And ask Allah of His bounty.",
+                "fi": "Ja pyytäkää Allahilta Hänen anteliaisuuttaan."
+              },
+              "source": "Kur'an, Nisa Suresi 4:32",
+              "source_type": "quran"
+            },
+            {
+              "id": "borc_1",
+              "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+              "transliteration": "Allahummekfini bi halalike an haramike, ve ağnini bi fadlike ammen sivak",
+              "meaning": {
+                "tr": "Allah'ım! Helalinle beni haramdan koru, lütfunla beni senden başkasına muhtaç etme.",
+                "en": "O Allah! Suffice me with what You have made lawful so that I have no need for what You have made unlawful, and make me independent by Your grace from all besides You.",
+                "fi": "Oi Allah! Riitä minulle sillä, minkä olet tehnyt lailliseksi, jotta minun ei tarvitse sitä, minkä olet tehnyt laittomaksi, ja tee minut riippumattomaksi armostasi kaikesta muusta paitsi Sinusta."
+              },
+              "source": "Tirmizi, Daavat 111",
+              "source_type": "hadith"
+            },
+            {
+              "id": "borc_2",
+              "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ",
+              "transliteration": "Allahumme inni euzu bike minel hemmi vel hazen, ve euzu bike minel aczi vel kesel, ve euzu bike minel cubni vel buhl, ve euzu bike min ğalebetid deyni ve kahrir rical",
+              "meaning": {
+                "tr": "Allah'ım! Keder ve üzüntüden, acizlik ve tembellikten, korkaklık ve cimrilikten, borç altında ezilmekten ve insanların kahrından sana sığınırım.",
+                "en": "O Allah! I seek refuge in You from anxiety and grief, from incapacity and laziness, from cowardice and miserliness, and from being overwhelmed by debt and overpowered by people.",
+                "fi": "Oi Allah! Turvaudun Sinuun ahdistukselta ja surulta, kyvyttömyydeltä ja laiskuudelta, pelkuruudelta ja saituudelta, ja velan alle musertumiselta ja ihmisten ylivallalta."
+              },
+              "source": "Buhari, Daavat 36",
+              "source_type": "hadith"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

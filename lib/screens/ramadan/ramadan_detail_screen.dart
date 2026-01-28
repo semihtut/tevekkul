@@ -4,6 +4,7 @@ import '../../config/app_colors.dart';
 import '../../config/app_constants.dart';
 import '../../providers/ramadan_provider.dart';
 import '../../providers/settings_provider.dart';
+import '../../widgets/ramadan/city_selection_dialog.dart';
 import 'ramadan_detail_widgets.dart';
 import 'ramadan_detail_helpers.dart';
 
@@ -27,6 +28,7 @@ class RamadanDetailScreen extends ConsumerWidget {
     final imsakTime = ref.watch(formattedImsakTimeProvider);
     final iftarTime = ref.watch(formattedIftarTimeProvider);
     final countdownAsync = ref.watch(iftarCountdownProvider);
+    final selectedCity = ref.watch(selectedCityProvider);
 
     return Scaffold(
       body: Container(
@@ -62,6 +64,8 @@ class RamadanDetailScreen extends ConsumerWidget {
                         countdownAsync: countdownAsync,
                         lang: lang,
                         isDark: isDark,
+                        cityName: selectedCity.getName(lang),
+                        onCityTap: () => showCitySelectionDialog(context),
                       ),
 
                       const SizedBox(height: AppConstants.spacingXL),

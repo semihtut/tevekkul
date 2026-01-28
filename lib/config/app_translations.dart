@@ -578,6 +578,192 @@ class AppTranslations {
       'en': 'Dhikr',
       'fi': 'Dhikr',
     },
+
+    // Situation Prayers
+    'situation_prayers': {
+      'tr': 'Durum Duaları',
+      'en': 'Situation Prayers',
+      'fi': 'Tilannerukoukset',
+    },
+    'situation_prayers_title': {
+      'tr': 'Duruma Özel Dualar',
+      'en': 'Situation-Based Prayers',
+      'fi': 'Tilannekohtaiset rukoukset',
+    },
+    'situation_prayers_subtitle': {
+      'tr': 'Bulunduğun duruma göre okunacak dualar',
+      'en': 'Prayers for your current situation',
+      'fi': 'Rukoukset nykyiseen tilanteeseesi',
+    },
+    'situations': {
+      'tr': 'durum',
+      'en': 'situations',
+      'fi': 'tilannetta',
+    },
+    'duas': {
+      'tr': 'dua',
+      'en': 'prayers',
+      'fi': 'rukousta',
+    },
+    'transliteration': {
+      'tr': 'Okunuşu',
+      'en': 'Transliteration',
+      'fi': 'Translitterointi',
+    },
+    'meaning': {
+      'tr': 'Anlamı',
+      'en': 'Meaning',
+      'fi': 'Merkitys',
+    },
+    'copied': {
+      'tr': 'Kopyalandı',
+      'en': 'Copied',
+      'fi': 'Kopioitu',
+    },
+    'recommended_count': {
+      'tr': 'Önerilen tekrar',
+      'en': 'Recommended count',
+      'fi': 'Suositeltu määrä',
+    },
+    'for_your_situation': {
+      'tr': 'Durumuna özel dualar',
+      'en': 'Prayers for your situation',
+      'fi': 'Rukoukset tilanteeseesi',
+    },
+    'quran': {
+      'tr': 'Ayet',
+      'en': 'Verse',
+      'fi': 'Jae',
+    },
+    'hadith': {
+      'tr': 'Hadis',
+      'en': 'Hadith',
+      'fi': 'Hadith',
+    },
+    'source': {
+      'tr': 'Kaynak',
+      'en': 'Source',
+      'fi': 'Lähde',
+    },
+
+    // Esma Search & Wird
+    'esma_search_title': {
+      'tr': 'Esma Ara',
+      'en': 'Search Esma',
+      'fi': 'Etsi Esma',
+    },
+    'esma_search_hint': {
+      'tr': 'Latif, Gani, Rezzak...',
+      'en': 'Latif, Ghani, Razzaq...',
+      'fi': 'Latif, Ghani, Razzaq...',
+    },
+    'popular_esmas': {
+      'tr': 'Sık Aranan Esmalar',
+      'en': 'Popular Names',
+      'fi': 'Suositut nimet',
+    },
+    'no_results_found': {
+      'tr': 'Sonuç bulunamadı',
+      'en': 'No results found',
+      'fi': 'Tuloksia ei löytynyt',
+    },
+    'suggested_counts': {
+      'tr': 'Önerilen',
+      'en': 'Suggested',
+      'fi': 'Suositeltu',
+    },
+    'select_count': {
+      'tr': 'Tekrar Sayısı Seç',
+      'en': 'Select Count',
+      'fi': 'Valitse määrä',
+    },
+    'similar_esmas': {
+      'tr': 'Benzer Esmalar',
+      'en': 'Similar Names',
+      'fi': 'Samankaltaiset nimet',
+    },
+    'add_esma_to_wird': {
+      'tr': 'Esma Bul',
+      'en': 'Find Esma',
+      'fi': 'Etsi Esma',
+    },
+
+    // Tevbe/Istigfar translations
+    'tevbe': {
+      'tr': 'Tevbe',
+      'en': 'Repentance',
+      'fi': 'Parannus',
+    },
+    'istigfar': {
+      'tr': 'İstiğfar',
+      'en': 'Seeking Forgiveness',
+      'fi': 'Anteeksipyyntö',
+    },
+    'tevbe_header': {
+      'tr': 'Gönül Arınması',
+      'en': 'Purification of Heart',
+      'fi': 'Sydämen puhdistus',
+    },
+    'tevbe_subtitle': {
+      'tr': 'Her tevbe yeni bir başlangıçtır',
+      'en': 'Every repentance is a new beginning',
+      'fi': 'Jokainen parannus on uusi alku',
+    },
+    'quick_start': {
+      'tr': 'Hızlı Başla',
+      'en': 'Quick Start',
+      'fi': 'Nopea aloitus',
+    },
+    'istigfar_types': {
+      'tr': 'İstiğfar Çeşitleri',
+      'en': 'Types of Istigfar',
+      'fi': 'Istigfar-tyypit',
+    },
+    'remaining': {
+      'tr': 'kaldı',
+      'en': 'remaining',
+      'fi': 'jäljellä',
+    },
+    'cancel_tevbe': {
+      'tr': 'Tevbeyi İptal Et',
+      'en': 'Cancel Repentance',
+      'fi': 'Peruuta parannus',
+    },
+    'cancel_tevbe_confirm': {
+      'tr': 'Tevbeyi yarıda bırakmak istediğinizden emin misiniz?',
+      'en': 'Are you sure you want to cancel the repentance session?',
+      'fi': 'Haluatko varmasti peruuttaa parannussession?',
+    },
+    'continue': {
+      'tr': 'Devam Et',
+      'en': 'Continue',
+      'fi': 'Jatka',
+    },
+    'tevbe_accepted': {
+      'tr': 'Tevben Kabul Olsun',
+      'en': 'May Your Repentance Be Accepted',
+      'fi': 'Parannuksesi hyväksyttäköön',
+    },
+    'done': {
+      'tr': 'Tamam',
+      'en': 'Done',
+      'fi': 'Valmis',
+    },
+    'repeat_tevbe': {
+      'tr': 'Tekrar Tevbe Et',
+      'en': 'Repeat Repentance',
+      'fi': 'Toista parannus',
+    },
+    'seek_forgiveness': {
+      'tr': 'Af Dile',
+      'en': 'Seek Forgiveness',
+      'fi': 'Pyydä anteeksi',
+    },
+    'peace_of_heart': {
+      'tr': 'Kalp Huzuru',
+      'en': 'Peace of Heart',
+      'fi': 'Sydämen rauha',
+    },
   };
 
   static String get(String key, String languageCode) {

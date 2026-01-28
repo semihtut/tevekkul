@@ -65,10 +65,11 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
 
     setState(() => _isLoading = true);
 
-    // Save user name and mark onboarding complete
-    final storage = StorageService();
-    await storage.saveUserName(name);
-    await storage.saveOnboardingComplete(true);
+    // Save user name (updates both storage and provider state)
+    await ref.read(settingsProvider.notifier).setUserName(name);
+
+    // Mark onboarding complete
+    await StorageService().saveOnboardingComplete(true);
 
     // Save language
     ref.read(settingsProvider.notifier).setLanguage(_selectedLanguage);

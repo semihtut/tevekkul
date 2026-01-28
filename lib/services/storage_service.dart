@@ -359,6 +359,16 @@ class StorageService {
     return _settingsBox.get('ramadanEnabled', defaultValue: false) as bool;
   }
 
+  // ==================== PRAYER CITY STORAGE ====================
+
+  Future<void> saveSelectedCityId(String cityId) async {
+    await _settingsBox.put('selectedCityId', cityId);
+  }
+
+  String? getSelectedCityId() {
+    return _settingsBox.get('selectedCityId') as String?;
+  }
+
   // ==================== DAILY WIRD STORAGE ====================
 
   Future<void> saveWirdItems(List<Map<String, dynamic>> items) async {
@@ -385,6 +395,28 @@ class StorageService {
     final dateStr = _prefs.getString('wirdLastReset');
     if (dateStr == null) return null;
     return DateTime.parse(dateStr);
+  }
+
+  // ==================== TEVBE STORAGE ====================
+
+  Future<void> saveTevbeSessions(List<Map<String, dynamic>> sessions) async {
+    await _dhikrsBox.put('tevbeSessions', jsonEncode(sessions));
+  }
+
+  List<Map<String, dynamic>> loadTevbeSessions() {
+    try {
+      final jsonStr = _dhikrsBox.get('tevbeSessions');
+      if (jsonStr == null) return [];
+      final List<dynamic> jsonList = jsonDecode(jsonStr);
+      return jsonList.cast<Map<String, dynamic>>();
+    } catch (e, stackTrace) {
+      _logger.e('Failed to load tevbe sessions', error: e, stackTrace: stackTrace);
+      return [];
+    }
+  }
+
+  Future<void> clearTevbeData() async {
+    await _dhikrsBox.delete('tevbeSessions');
   }
 
   // ==================== DATA MANAGEMENT ====================

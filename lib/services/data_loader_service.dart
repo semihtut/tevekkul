@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../models/esma_model.dart';
 import '../models/mood_model.dart';
 import '../models/mood_dhikr_model.dart';
+import '../models/situation_model.dart';
 
 class DataLoaderService {
   static final DataLoaderService _instance = DataLoaderService._internal();
@@ -14,6 +15,7 @@ class DataLoaderService {
   List<MoodModel>? _cachedMoodList;
   Map<String, Map<String, String>>? _cachedPurposes;
   Map<String, MoodDhikrModel>? _cachedMoodDhikr;
+  List<SituationCategory>? _cachedSituationCategories;
 
   Future<Map<String, Map<String, String>>> _loadPurposes() async {
     if (_cachedPurposes != null) return _cachedPurposes!;
@@ -96,9 +98,29 @@ class DataLoaderService {
     return dhikrMap[moodId];
   }
 
+  /// Load situation-based prayer categories
+  Future<List<SituationCategory>> loadSituationCategories() async {
+    if (_cachedSituationCategories != null) return _cachedSituationCategories!;
+
+    try {
+      final jsonString = await rootBundle.loadString('data/situations_dualar.json');
+      final Map<String, dynamic> jsonData = json.decode(jsonString);
+
+      final List<dynamic> categoriesData = jsonData['categories'] ?? [];
+      _cachedSituationCategories = categoriesData
+          .map((e) => SituationCategory.fromJson(e as Map<String, dynamic>))
+          .toList();
+      return _cachedSituationCategories!;
+    } catch (e) {
+      debugPrint('Error loading situation categories: $e');
+      return [];
+    }
+  }
+
   void clearCache() {
     _cachedEsmaList = null;
     _cachedMoodList = null;
     _cachedMoodDhikr = null;
+    _cachedSituationCategories = null;
   }
 }

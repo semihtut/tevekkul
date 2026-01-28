@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'app.dart';
 import 'services/storage_service.dart';
+import 'services/widget_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,9 @@ void main() async {
 
   // Initialize StorageService
   await StorageService().init();
+
+  // Initialize Widget Service
+  await WidgetService.initialize();
 
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
